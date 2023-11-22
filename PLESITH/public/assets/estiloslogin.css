@@ -1,0 +1,10 @@
+.container {
+  max-width: 950px; /* Ajusta el ancho según tus preferencias */
+  margin: auto; /* Centra el contenedor en la página */
+  padding: 100px; /* Añade espacio alrededor del contenido */
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: bold;
+}
