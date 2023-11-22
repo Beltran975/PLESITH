@@ -22,3 +22,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
+
+Route::get('header', function(){
+    return view('header');
+});
+Route::get('footer', function(){
+    return view('footer');
+});
