@@ -30,3 +30,6 @@ Route::get('footer', function(){
     return view('layouts/footer');
 });
 
+Route::get('index', function(){
+    return view('index');
+});
