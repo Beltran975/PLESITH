@@ -30,6 +30,7 @@
             background-color: #CBD9DA;
         }
         </style>
+        <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png">
     </head>
     <body>
         <header>

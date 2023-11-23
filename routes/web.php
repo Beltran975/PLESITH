@@ -22,8 +22,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('header', function(){
-    return view('header');
+    return view('layouts/header');
 });
 Route::get('footer', function(){
-    return view('footer');
+    return view('layouts/footer');
 });
+

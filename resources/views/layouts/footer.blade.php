@@ -50,6 +50,7 @@
         <!--FONT AWESOME-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!--GOOGLE FONTS-->
+        <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
     </head>
@@ -58,18 +59,18 @@
             <div class="footer">
                 <div class="row">
                     <img src="https://cdn.hidalgo.gob.mx/gobierno/images/logos/logo_gob.png" alt="Logo de la empresa">
-                    <div class="row">
+                    <div>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-whatsapp"></i></a>
                     </div>
                     <div class="list-container">
                         <ul>
-                            <li><a href="#">Aviso de privasidad</a></li>
+                            <li><a href="https://gobierno.hidalgo.gob.mx/AvisoPrivacidad" target="_blank">Aviso de privacidad</a></li>
                             <li><p>Contacto: citnova@hidalgo.gob.mx</p></li>
                             <li><p>Teléfono: 771 657 5103 y 771 657 5104</p></li>
                             <li><p>Boulevard Circuito la Concepción #3</p></li>
                             <li><p>San Agustin Tlaxiaca, Hidalgo, México</p></li>
-                            <li><a href="#">Aviso de privacidad CITNOVA</a></li>
+                            <li><a href="https://drive.google.com/file/d/1vOWKk9IierD6XnpzIBiv-lQnhbbv9o1z/view?usp=sharing" target="_blank">Aviso de privacidad CITNOVA</a></li>
                         </ul>
                     </div>
                 </div>
