@@ -18,7 +18,7 @@
 
 <div class="container">
     <div class="row justify-content-center align-items-center vh-100">
-      
+      <div class="card">
       <form>
         <p class="titulo">Datos Generales</p>
   <!-- Nombre -->
@@ -78,11 +78,11 @@
   </div>
 
   <!-- Botones -->
+  <a href="{{ route('login') }}">Login</a>
   <button type="button" class="btn btn-primary btn-block mb-4">Enviar</button>
-  <a href="{{ route('login') }}" class="btn btn-primary btn-block mb-4">Login</a>
   
 </form>
-      </form>
+      </div>
     </div>
   </div>
 
