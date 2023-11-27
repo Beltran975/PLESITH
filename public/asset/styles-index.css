@@ -1,11 +1,88 @@
-body{
-    font-family: Arial;
+
+
+.inicio{
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido no se desborde del contenedor */
 }
 
-main{
-    background-color: aqua;
+.inicio::before {
+    margin: 0;
+    padding:0;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(https://citnova.hidalgo.gob.mx/assets/imgs/1.jpg);
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(50%); /* Ajusta el valor para cambiar la opacidad del filtro */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+}
+.section-content{
+    margin-top: 5%;
+    margin-left: 10%;
+    color:#ffffff;
 }
 
-.nav-ple{
+.logo{
+    width: 120px;
+}
+
+/*barra de navegación*/
+.nav input{
+    margin-top: 5%;
+}
+.nav button{
+    margin-top: 5%;
+}
+
+.section-cards{
+    height: 100%;
+    background-color: #952d3d;
+    justify-content: center;
+    display: flex;
+}
+
+/*cards */
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
     
 }
+.tarjeta-content{
+    display: flex;
+    justify-content: center;
+}
+.tarjeta-content a{
+    font-size: 44px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.tarjeta {
+    text-align: center;
+    width: 200px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.image{
+    margin-top: -10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #952d3d;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+    
+}
+
