@@ -27,6 +27,9 @@ Route::get('/la', function () {
     return view('prueba_layouts');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
 
 
 Auth::routes();
