@@ -3,12 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <title>Document</title>
     </head>
     <style>
-    @import "https://cdn.hidalgo.gob.mx/transicion/colors.css";
     .fa-brands{
         font-family: "Font Awesome 5 Brands" !important;
     }
@@ -23,7 +21,9 @@
         left: 0;
         right: 0;
     }
-    .main-footer .first-row-footer{  }
+    footer{
+        background-color: #691b32;
+    }
     .main-footer .footer-logo-tels{
         display: flex;
         justify-content: space-between;
@@ -75,6 +75,9 @@
         font-size: 30px;
         margin: 0 20px;
     }
+    .contacto a{
+        color: #fff;
+    }
     @media (max-width: 992px){
         .main-footer .footer-logo{
             margin-left: 0px;
@@ -121,6 +124,7 @@
     }
     </style>
     <body>
+        <footer>
         <div class="main-footer"> 
             <div class="container-fluid">
                 <div class="row first-row-footer">
@@ -170,5 +174,6 @@
                 </div>
             </div>
         </div>
+        </footer>
     </body>
 </html>

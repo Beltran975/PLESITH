@@ -13,15 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/*rutas de vistas*/
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/pru', function () {
     return view('prueba-index');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/la', function () {
+    return view('prueba_layouts');
+});
+
+
 
 Auth::routes();
 
@@ -33,6 +39,3 @@ Route::get('footer', function(){
     return view('layouts/footer');
 });
 
-Route::get('index', function(){
-    return view('index');
-});
