@@ -8,83 +8,79 @@
   <title>Registro</title>
 </head>
 <body>
-@include('layouts/headregob')
-        @include('layouts/header')
-<main class="page">
-  <br>
-  <div class="content">
-    <div class="card">
-    <div class="content-form">
-      
-      <form class="form">
-        <p class="titulo">Datos Generales</p>
-  <!-- Nombre -->
-  <div class="mb-4">
-  <label class="form-label" for="form2Example1">Nombre completo</label>
-    <input type="text" id="form3Example4" class="form-control" 
-    pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios"
-              required/>
-  </div>
-<!-- Curp -->
-  <div class=" mb-4">
-  <label class="form-label" for="form2Example1">Curp</label>
-    <input type="file" id="form3Example3" class="form-control" 
-    accept=".pdf" placeholder="Seleccionar archivo PDF"/>
-  </div>
-
-  <!-- Corre -->
-  <div class=" mb-4">
-  <label class="form-label" for="form2Example1">Correo electronico</label>
-    <input type="email" id="form3Example3" class="form-control"/>
-  </div>
-
-  <!-- Contraseña -->
-  <div class=" mb-4">
-  <label class="form-label" for="form2Example2">Contraseña</label>
-    <input type="password" id="form3Example3" class="form-control" />
-  </div>
-
-   <!-- Confirmar Contraseña -->
-   <div class=" mb-4">
-   <label class="form-label" for="confirmPassword">Confirmar Contraseña</label>
-    <input type="password" id="confirmPassword" class="form-control" />
-  </div>
-
-  <!-- Institucion-->
-  <div class=" mb-4">
-  <label class="form-label" for="institucion">Institución a la que pertenece</label>
-  <select id="institucion" class="form-select">
-  <option value="" disabled selected>Seleccionar institución</option>
-    <option value="opcion1">institución 1</option>
-    <option value="opcion2">institución 2</option>
-    <option value="opcion3">institución 3</option>
-    </select>
-  </div>
-
-  <!-- Programa educativo -->
-  <div class=" mb-4">
-  <label class="form-label" for="form3Example4">Programa educativo</label>
-    <input type="text" id="form3Example4" class="form-control" />
-  </div>
-
-   <!-- Fotografia -->
-   <div class="form-outline mb-4">
-   <label class="form-label" for="form3Example4">Fotografia</label>
-    <input type="file" id="form3Example4" class="form-control" accept="image/*"
-    placeholder="Seleccionar imagen"/>
-  </div>
-
-  <!-- Botones -->
-  <a href="{{ route('login') }}">Login</a>
-  <button type="button" class="btn btn-primary btn-block mb-4">Enviar</button>
-  
-</form>
-      
-    </div>
+  @include('layouts/headregob')
+  @include('layouts/header')
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          
+          <div class="card-body">
+            <form method="POST" action="{{ route('register') }}">
+              @csrf
+              
+              <div class="row mb-3">
+                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre completo*') }}</label>
+                <div class="col-md-6">
+                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                  @error('name')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+              </div>
+              
+              <div class="row mb-3">
+                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Correo*') }}</label>
+                
+                <div class="col-md-6">
+                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                  
+                  @error('email')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+              </div>
+              
+              <div class="row mb-3">
+                <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña*') }}</label>
+                
+                <div class="col-md-6">
+                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                  
+                  @error('password')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+              </div>
+              
+              <div class="row mb-3">
+                <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirmar contraseña*') }}</label>
+                
+                <div class="col-md-6">
+                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                </div>
+              </div>
+              
+              <div class="row mb-0">
+                <div class="col-md-6 offset-md-4">
+                  <button type="submit" class="btn btn-primary">
+                    {{ __('Register') }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</main>
-@include('layouts/footer')
+  @include('layouts/footer')
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8N+1lUE3+XjwIXqityaM2UwEJrHjeZX/nezF8+Ad5A0tjFkA5Vx7Js1KrI95" crossorigin="anonymous"></script>
 </body>
 </html>
