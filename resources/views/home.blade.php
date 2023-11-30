@@ -8,15 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-@include('layouts/headregob')
-        @include('layouts/header')
-   <main class="page">
-  <div class="content">
-  <div class="green-box">
-
-<div class="titulo">
-<h3>Datos Generales</h3>
-</div>
+    @include('layouts/headregob')
+    @include('layouts/header')
+    <main class="page">
+        <div class="content">
+            <div class="green-box">
+                
+                <div class="titulo">
+                    <h3>Datos Generales</h3>
+                    <ul class="hidden">
+                        <li><a href="#">{{ Auth::user()->name }}</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </ul>
+                </div>
 
 <!-- Informacion personal -->
 <div class="card mb-3">
