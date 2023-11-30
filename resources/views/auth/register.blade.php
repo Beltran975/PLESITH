@@ -10,13 +10,13 @@
   <body>
     @include('layouts/headregob')
     @include('layouts/header')
-    <br><br>
+    <br><br><br><br>
     
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8">
           <div >
-            <div class="card-header">{{ __('Iniciar Sesion') }}</div>
+            <div class="card-header">{{ __('Registro de usuario') }}</div>
             
             <div>
               <form method="POST" action="{{ route('register') }}">
