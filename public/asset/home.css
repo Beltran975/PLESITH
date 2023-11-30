@@ -17,19 +17,68 @@ body {
     border-radius: 10px;
     
 }
-.nav-tabs{
-    width: 100%;
-    background-color:#691b32 ;
-}
-.nav{
-    width: 100%;
-}
-.crud-producciones a{
-    
-    font-size:30px;
-}
-.nav-tabs li{
-    background-color:#bc955b ;
+/*Información personal*/
+.image-Ipersonal img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
+/*navegador de producciones*/
+
+.nav-producciones {
+    display: flex;
+    
+}
+.nav-producciones a{
+    font-size:20px;
+}
+
+
+.nav li{
+    margin-top: 0;
+    margin-left: 5px;
+
+}
+.nav-item 
+.active {
+    color: #ffffff;
+    background-color: #bc955b;
+}
+
+.nav-crud{
+    margin-left: 55%;
+}
+
+.tabs-producciones{
+    width: 300px;
+}
+
+/*contenedor de card*/
+.content-body-card{
+    margin-top: 2%;
+    margin-left:5%;
+}
+
+
+.btn-guardar{
+    margin-left: 10px;
+}
+
+ /* Contenido de producciones */
+ .produccion-contenido {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fila-contenido{
+    display: table-row;
+}
+
+.celda-contenido {
+    display: table-cell;
+    vertical-align: top;
+    padding: 10px;
+}
 
