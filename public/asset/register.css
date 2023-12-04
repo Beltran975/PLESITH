@@ -1,10 +1,13 @@
-.content{
-    margin-top: 5%;
+.main{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
+    margin-top: 5%;
 }
 
-.card{
-    width: 300px;
+.content-registro{
+    width: 700px;
 }
+
+
+
