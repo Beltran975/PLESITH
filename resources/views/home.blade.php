@@ -43,13 +43,13 @@
                 <p>Fotografia del perfil:</p>
             </div>
             <div class="col-md-6">
-                <p>Valentina Sánchez</p>
-                <p>valentina.sanchez@email.com</p>
-                <p>SANV031020MDFLR05</p>
-                <p>Universidad Tecnológica del Valle</p>
-                <p>Ingeniería en Sistemas Computacionales</p>
+                <p>{{ Auth::user()->name}}</p>
+                <p>{{ Auth::user()->email}}</p>
+                <p>{{ Auth::user()->curp}} <a href="{{ Auth::user()->archivoCurp}}">{{ Auth::user()->archivoCurp}}</a></p>
+                <p>{{ Auth::user()->institucion}}</p>
+                <p>{{ Auth::user()->programa}}</p>
                 <div class="image-Ipersonal">
-                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="IMGperfil">
+                    <img src="{{ Auth::user()->foto}}" alt="IMGperfil">
                 </div>
             </div>
             
