@@ -16,8 +16,13 @@
             <div class="row ml-5">
               <h3>{{ __('Registro de usuario') }}</h3>
             </div>
-            <hr>
-             <form method="POST" action="{{ route('register') }}">
+            <hr class="hr-gob" >
+            <div class="card">
+              <div class="card-header">
+                <h3>Datos generales</h3>
+              </div>
+                <div class="card-body">
+                <form method="POST" action="{{ route('register') }}">
                 @csrf
                 
                 <div class="row justify-content-center mb-3">
@@ -40,7 +45,7 @@
                   </div>
                   <div class="col-md-6">
                     <input id="curp" type="text" class="form-control" name="curp" required><br>
-                    <input class="form-control id="archivoCurp" type="file"  name="archivoCurp" required>
+                    <input class="form-control" id="archivoCurp" type="file"  name="archivoCurp" required>
                   </div>
                 </div>
                 
@@ -120,6 +125,8 @@
                 </div>
                 
               </form>
+                </div>
+            </div>
     </div> 
     </main>
     @include('layouts/footer')

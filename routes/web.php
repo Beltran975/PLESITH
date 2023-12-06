@@ -30,6 +30,9 @@ Route::get('/la', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/nodos', function () {
+    return view('nodos');
+});
 
 
 Auth::routes();
@@ -37,6 +40,9 @@ Auth::routes();
 
 Route::get('header', function(){
     return view('layouts/header');
+});
+Route::get('headers', function(){
+    return view('layouts/header-nav');
 });
 Route::get('footer', function(){
     return view('layouts/footer');

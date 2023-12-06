@@ -17,6 +17,24 @@ body {
     border-radius: 10px;
     
 }
+
+/*hr de gobierno*/
+.content .hr-gob{
+  margin: 10px 0 10px;
+  background-color: var(--gold);
+  border-top: 1px solid var(--gold);
+  opacity: 1;
+  margin-bottom: 50px;
+}
+
+.content .hr-gob::before{
+  content: " ";
+  width: 35px;
+  height: 5px;
+  background-color: var(--wine) !important;
+  display: block;
+  position: absolute;
+}
 /*Información personal*/
 .image-Ipersonal img{
     width: 200px;
@@ -103,5 +121,8 @@ body {
 
 
  /* Contenido de producciones */
- 
+ .modal-header{
+  background-color: #691b32;
+  color: #ffffff;
+ }
 
