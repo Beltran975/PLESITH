@@ -33,7 +33,10 @@
                   <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                     @error('name')
                     <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
+                      <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>{{ $message }}</strong>
+                      </div>
                     </span>
                     @enderror
                   </div>
@@ -57,7 +60,10 @@
                   <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                     @error('email')
                     <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
+                      <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>{{ $message }}</strong>
+                      </div>
                     </span>
                     @enderror
                   </div>
@@ -71,7 +77,10 @@
                   <input class="form-control @error('password') is-invalid @enderror" id="password" type="password" name="password" required autocomplete="new-password">
                     @error('password')
                     <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
+                      <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>{{ $message }}</strong>
+                      </div>
                     </span>
                     @enderror
                   </div>
