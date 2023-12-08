@@ -375,3 +375,11 @@ body{
         
     }
 }
+
+/*Modales */
+
+.modal 
+.modal-header{
+    background-color: #691b32;
+    color: #ffffff; 
+}

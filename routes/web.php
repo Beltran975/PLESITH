@@ -24,7 +24,7 @@ Route::get('/pru', function () {
 });
 
 Route::get('/la', function () {
-    return view('prueba_layouts');
+    return view('prueba-layouts');
 });
 
 Route::get('/home', function () {
@@ -33,6 +33,10 @@ Route::get('/home', function () {
 Route::get('/nodos', function () {
     return view('nodos');
 });
+Route::get('/edit-perfil', function () {
+    return view('auth/edit-perfil');
+});
+
 
 
 Auth::routes();
@@ -47,4 +51,9 @@ Route::get('headers', function(){
 Route::get('footer', function(){
     return view('layouts/footer');
 });
+
+// En routes/web.php
+
+Route::get('edit-perfil/{id}', 'Auth\RegisterController@edit')->name('edit-perfil');
+Route::put('update/{id}', 'Auth\RegisterController@update')->name('update');
 
