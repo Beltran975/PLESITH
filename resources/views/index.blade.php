@@ -44,7 +44,7 @@
                 <div class="inicio">
                     <div class="section-content">
                         <div class="titulo bottom-buffer">
-                            <h1 class="display-6">PLESITH</h1>
+                            <h1>PLESITH</h1>
                             <h2>Plataforma Estatal de Investigadores y Tecnólogos de Hidalgo</h2>
                             <a href="{{ route('register') }}" class="btn btn-primary">Formar parte</a>
                         </div>
@@ -103,20 +103,25 @@
 
                 <!-- Modal de producciones -->
                 <div class="modal fade" id="ModalProducciones">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Producciones</h4>
-                                    </div>
-                                    <div class="modal-body">
+                    <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                            <div class="modal-img">
+                                <div class="img-produccion">
+                                    <img src="https://images.pexels.com/photos/1181307/pexels-photo-1181307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagen de producción">
+                                    <div class="modal-des">
+                                        <h1>Producciones</h1>
                                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis in eius eum explicabo quia nulla deserunt necessitatibus aut neque. Perferendis consequatur beatae cumque necessitatibus possimus, vero officia provident dolore quaerat!</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <a href="#" class="btn btn-primary">
+                                            Formar parte
+                                            <i class="bi bi-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
+                    </div>
+                </div>
 
                         <!-- Modal de Instituciones Ligadas -->
                         <div class="modal fade" id="ModalInstituciones">

@@ -68,7 +68,7 @@ body{
 
 /*barra de navegación*/
 .nav-plesith {
-    margin-top: 2%;
+    margin-top: 4%;
     height: 100%;
     list-style-type: none;
     overflow: hidden;
@@ -378,8 +378,32 @@ body{
 
 /*Modales */
 
-.modal 
-.modal-header{
-    background-color: #691b32;
-    color: #ffffff; 
+
+.modal-content
+.modal-img{
+    width: 600px;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    
 }
+
+.modal img{
+width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  filter: brightness(0.2);
+}
+
+.modal-des{
+    position: absolute;
+    top: 40%;
+    left: 10px;
+    color: #ffffff;
+}
+
+
+

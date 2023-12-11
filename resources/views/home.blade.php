@@ -254,7 +254,7 @@
             <div class="nav-crud">
 
                 <!--Boton crear nodo-->
-                <a href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo">
+                <a href="#Modal-crear-nodo" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo">
                         <i class="bi bi-plus-circle-fill"></i>
                     </a>
 
@@ -327,6 +327,7 @@
   </div>
             <hr>
             <!-- Modales de edición -->
+            
             <!--Modal con formulario de producciones-->
             <div class="modal fade" id="Modal-crear-produccion">
                         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -493,7 +494,11 @@
     @include('layouts/footer')
 
     <!-- Include Bootstrap JS and Popper.js before closing body tag -->
+    <!-- Asegúrate de incluir estas versiones específicas de Popper.js y jQuery para Bootstrap 5 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
     
     <script>
   function showTab(tabId) {
