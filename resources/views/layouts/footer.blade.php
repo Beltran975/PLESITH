@@ -124,7 +124,7 @@
     }
     </style>
     <body>
-        <footer>
+        <footer id="footer">
         <div class="main-footer"> 
             <div class="container-fluid">
                 <div class="row first-row-footer">

@@ -37,6 +37,12 @@ Route::get('/edit-perfil', function () {
     return view('auth/edit-perfil');
 });
 
+Route::get('/infotech', function () {
+    return view('infotech');
+});
+Route::get('/bibliotech', function () {
+    return view('bibliotech');
+});
 
 
 Auth::routes();
