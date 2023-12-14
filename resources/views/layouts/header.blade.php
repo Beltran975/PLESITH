@@ -9,7 +9,7 @@
 <body>
     <header>
         <a class="btn btn-xs" href="/">
-            <h3>PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLOGOS DE HIDALGO</h3>
+            <h3>PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO</h3>
         </a>
         <div>
             <!-- <ul>
