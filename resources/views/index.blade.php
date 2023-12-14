@@ -34,8 +34,8 @@
                             <input type="search" class="form-control rounded" aria-label="Search" aria-describedby="search-addon" />
                         </li>
                         <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="#">Acerca</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#seccion-descrpcion">Acerca</a></li>
+                        <li><a href="#footer">Contacto</a></li>
                         <li><a href="#">Inicio</a></li>
                     </ul>
                 </nav>
@@ -46,7 +46,10 @@
                         <div class="titulo bottom-buffer">
                             <h1>PLESITH</h1>
                             <h2>Plataforma Estatal de Investigadores y Tecnólogos de Hidalgo</h2>
-                            <a href="{{ route('register') }}" class="btn btn-primary">Formar parte</a>
+                            <a href="{{ route('register') }}" class="btn btn-primary">
+                                Formar parte
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                         </div>
                         <br>
@@ -106,12 +109,12 @@
                     <div class="modal-dialog modal-dialog-centered ">
                         <div class="modal-content">
                             <div class="modal-img">
-                                <div class="img-produccion">
+                                <div>
                                     <img src="https://images.pexels.com/photos/1181307/pexels-photo-1181307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagen de producción">
                                     <div class="modal-des">
                                         <h1>Producciones</h1>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis in eius eum explicabo quia nulla deserunt necessitatibus aut neque. Perferendis consequatur beatae cumque necessitatibus possimus, vero officia provident dolore quaerat!</p>
-                                        <a href="#" class="btn btn-primary">
+                                        <p>Aquí, los investigadores comparten sus descubrimientos más recientes, investigaciones destacadas y patentes revolucionarias. </p>
+                                        <a href="/register" class="btn btn-primary">
                                             Formar parte
                                             <i class="bi bi-arrow-right"></i>
                                         </a>
@@ -119,43 +122,48 @@
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
-
-                        <!-- Modal de Instituciones Ligadas -->
-                        <div class="modal fade" id="ModalInstituciones">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Instituciones Ligadas</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo cumque vitae unde harum. Commodi, eaque distinctio eveniet saepe impedit animi praesentium. Necessitatibus sunt qui tempore, facilis est molestias odio laudantium.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    
+                <!-- Modal de Instituciones Ligadas -->
+                <div class="modal fade" id="ModalInstituciones">
+                    <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                            <div class="modal-img">
+                                <div>
+                                    <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="imagen de instituciones">
+                                    <div class="modal-des">
+                                        <h1>Instituciones Ligadas</h1>
+                                        <p>Cada institución en esta sección representa un pilar fundamental en la construcción de un entorno de investigación colaborativo y enriquecedor. </p>
+                                        <a href="/register" class="btn btn-primary">
+                                            Formar parte
+                                            <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
                         <!-- Modal de Nodos de colaboración-->
                         <div class="modal fade" id="ModalNodos">
-                            <div class="modal-dialog modal-dialog-centered ">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Nodos de Colaboración</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo cumque vitae unde harum. Commodi, eaque distinctio eveniet saepe impedit animi praesentium. Necessitatibus sunt qui tempore, facilis est molestias odio laudantium.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                            <div class="modal-img">
+                                <div>
+                                    <img src="https://images.pexels.com/photos/3182792/pexels-photo-3182792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagen de nodos">
+                                    <div class="modal-des">
+                                        <h1>Nodos de colaboración</h1>
+                                        <p>En esta sección los investigadores se unen para abordar desafíos complejos y desarrollar soluciones innovadoras. Cada nodo representa un punto de encuentro donde las ideas convergen y florecen, generando investigaciones y creaciones únicas que trascienden los límites individuales.</p>
+                                        <a href="register" class="btn btn-primary">
+                                            Formar parte
+                                            <i class="bi bi-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
                         </div>
                 <br>
                 <br>
@@ -175,8 +183,8 @@
                                 <h1>Bibliotech</h1>
                             </div>
                             <div class="tarjeta-info-des">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, aspernatur odio dolores, totam deserunt at iste molestias quos laboriosam animi cupiditate reiciendis, perferendis dolorum vero quidem laborum quasi optio velit.</p>
-                                <a href="#" class="btn btn-info">Explorar</a>
+                                <p>Esta biblioteca digital proporciona acceso a investigaciones publicadas en revistas especializadas, contribuyendo al avance del conocimiento en múltiples áreas. </p>
+                                <a href="/bibliotech" class="btn btn-info">Explorar</a>
                             </div>
                         </div>
                     </div>
@@ -189,8 +197,8 @@
                                 <h1>Infotech</h1>
                             </div>
                             <div class="tarjeta-info-des">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, aspernatur odio dolores, totam deserunt at iste molestias quos laboriosam animi cupiditate reiciendis, perferendis dolorum vero quidem laborum quasi optio velit.</p>
-                                <a href="#" class="btn btn-info">Explorar</a>
+                                <p>Infotech se erige como un faro informativo, ofreciendo a los investigadores un acceso centralizado a convocatorias de becas, programas de financiamiento, oportunidades de colaboración y eventos científicos de relevancia.</p>
+                                <a href="/infotech" class="btn btn-info">Explorar</a>
                             </div>
                         </div>
                     </div>
@@ -198,7 +206,7 @@
                 </div>
                 
                 <!--sección de descripción PLESITH-->
-                <div class="seccion-descrpcion">
+                <div class="seccion-descrpcion" id="seccion-descrpcion">
                     <div class="img-descrpcion">
                         <div class="img-descrpcion-1">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS27izVvvw5idm_jAHGR5Z8ucjADd8O8gMZiw&usqp=CAU" alt="">
