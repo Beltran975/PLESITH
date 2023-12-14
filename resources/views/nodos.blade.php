@@ -44,7 +44,7 @@
             <div class="seccion">
                 <ul>
                     <li><h3>Nodos de la comunidad</h3></li>
-                    <li><h5>Resulrados Encontrados:</h5></li>
+                    <li><h5>Resultados encontrados:</h5></li>
                 </ul>
             </div>
             <table class="tabla-nodos">

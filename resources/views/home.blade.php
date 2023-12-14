@@ -29,7 +29,7 @@
                     <!-- Informacion personal -->
                     <div class="card mb-3">
                         <div class="card-header" data-bs-toggle="collapse" href="#informacionPersonal">
-                            Informacion personal
+                        Información personal
                         </div>
                         <div class="card-body collapse" id="informacionPersonal">
                             <div class="row">
@@ -61,7 +61,7 @@
                             <br>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Institucion a la que pertenece:</p>
+                                    <p>Institución a la que pertenece:</p>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{ Auth::user()->institucion}}</p>
@@ -77,7 +77,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Fotografia del perfil:</p>
+                                    <p>Fotografía del perfil:</p>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-Ipersonal">
@@ -91,7 +91,7 @@
                     <!-- Informacion PLESITH -->
                     <div class="card mb-3">
                         <div class="card-header" data-bs-toggle="collapse" href="#informacionPLESITH">
-                            Informacion PLESITH
+                            Información PLESITH
                         </div>
                         <div class="card-body collapse" id="informacionPLESITH">
                             <form>
@@ -156,7 +156,7 @@
                     <!-- Produccion -->
                     <div class="card mb-3">
                         <div class="card-header" data-bs-toggle="collapse" href="#produccion">
-                            Produccion
+                            Producción
                         </div>
                         <div class="card-body collapse" id="produccion">
                             <div class="nav-producciones">
@@ -198,7 +198,7 @@
                                             <td class="contenido-produccion">Dr. Ana García, Ing. Carlos Martínez</td>
                                         </tr>
                                         <tr>
-                                            <th class="rotated-header">Titulo:</th>
+                                            <th class="rotated-header">Título:</th>
                                             <td class="contenido-produccion">"Avances en la Eficiencia Energética de Celdas Solares: Un Enfoque Multidisciplinario"</td>
                                         </tr>
                                         <tr>
