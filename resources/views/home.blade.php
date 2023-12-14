@@ -104,9 +104,9 @@
                                     <div class="col-md-8">
                                         <select id="linea_investigacion" class="form-select" name="linea_investigacion">
                                             <option name="linea_investigacion" value="" disabled selected>Tipo de línea de investigación</option>
-                                            <option name="linea_investigacion" value="opcion1">institución 1</option>
-                                            <option name="linea_investigacion" value="opcion2">institución 2</option>
-                                            <option name="linea_investigacion" value="opcion3">institución 3</option>
+                                            <option name="linea_investigacion" value="opcion1">Tecnología</option>
+                                            <option name="linea_investigacion" value="opcion2">Ciencia</option>
+                                            <option name="linea_investigacion" value="opcion3">Filosofía</option>
                                         </select>
                                     </div>
                                 </div>
