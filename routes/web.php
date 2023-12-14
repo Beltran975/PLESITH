@@ -63,3 +63,5 @@ Route::get('footer', function(){
 Route::get('edit-perfil/{id}', 'Auth\RegisterController@edit')->name('edit-perfil');
 Route::put('update/{id}', 'Auth\RegisterController@update')->name('update');
 
+Route::post('/home/create', 'App\\Http\\Controllers\\ProduccionController@create')->name('produccion.create');
+
