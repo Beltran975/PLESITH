@@ -27,7 +27,7 @@
                         <h3>Nodos de colaboración</h3>
                     </div>
                     <div class="col-2 barra-nodo">
-                        <a class="btn " href="#">Crear nodo</a>
+                        <a class="btn " href="/home"   data-bs-target="#Modal-crear-produccion">Crear nodo</a>
                     </div>
                     <div class="col-3 barra-nodo">
                     <input type="search" class="form-control rounded" aria-label="Search" aria-describedby="search-addon" />
@@ -42,10 +42,10 @@
             </div>
             <hr class="hr-gob" >
             <div class="seccion">
-                <ul>
-                    <li><h3>Nodos de la comunidad</h3></li>
-                    <li><h5>Resultados encontrados:</h5></li>
-                </ul>
+            
+                    <h3>Nodos de la comunidad</h3>
+                    <h5>Resultados encontrados:</h5>
+                
             </div>
             <table class="tabla-nodos">
                 <tbody>
@@ -68,7 +68,7 @@
                         <th class="rotated-header">Línea de investigación: </th>
                         <td class="contenido-produccion">Inteligencia Artificial</td>
                         <td>
-                            <a href="#" class="btn btn-primary" id="btnAbrirModalnodo">
+                            <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
                                 Leer más
                             </a>
                         </td>
@@ -76,7 +76,7 @@
                     
                     <tr>
                         <th class="rotated-header">Institución ligada: </th>
-                        <td class="contenido-produccion">Univercidad Tecnológica del Valle del Mezquital</td>
+                        <td class="contenido-produccion">Universidad Tecnológica del Valle del Mezquital</td>
                       
                     </tr>
                 </tbody>
@@ -86,7 +86,7 @@
                         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Nodo-{Titulo}</h4>
+                                    <h4 class="modal-title">Investigación en criptomonedas</h4>
                                 </div>
                                 <div class="modal-body">
                                 <table class="tabla-modal table table-borderless" >
@@ -111,7 +111,7 @@
                     </tr>
                     <tr>
                         <th class="rotated-header">Institución ligada: </th>
-                        <td class="contenido-produccion">Univercidad Tecnológica del Valle del Mezquital</td>
+                        <td class="contenido-produccion">Univers|idad Tecnológica del Valle del Mezquital</td>
                       
                     </tr>
                     <tr>
