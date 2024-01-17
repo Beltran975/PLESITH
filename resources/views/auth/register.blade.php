@@ -97,9 +97,18 @@
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
-                    <label for="institucion" class="control-label">{{ __('Institución a la que pertenece *')}}</label>
+                    <label for="instituciones" class="control-label">{{ __('Institución a la que pertenece *')}}</label>
                   </div>
                   <div class="col-md-6">
+                    <select name="institucion_id" id="inputInstitucion_id" class="form-control">
+                      @foreach ($instituciones as $institucion)
+                        <option value="{{ $institucion['id'] }}">{{ $institucion['nombre']}}</option>
+                      @endforeach
+                    </select>
+
+
+
+
                   <select class="form-control" name="institucion" id="institucion" required>
                       <option name="institucion" value="" disabled selected>Seleccionar</option>
                       <option name="institucion" value="opcion1">INSTITUTO TECNOLOGICO DE HUEJUTLA</option>
