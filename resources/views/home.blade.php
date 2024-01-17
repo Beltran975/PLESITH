@@ -34,7 +34,7 @@
                         <div class="card-body collapse" id="informacionPersonal">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Nombre:</p>
+                                    <p>Nombre :</p>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{ Auth::user()->name}}</p>
@@ -43,7 +43,7 @@
                             
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Correo:</p>
+                                    <p>Correo :</p>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{ Auth::user()->email}}</p>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>CURP:</p>
+                                    <p>CURP :</p>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{ Auth::user()->curp}}</p>
@@ -61,7 +61,7 @@
                             <br>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Institución a la que pertenece:</p>
+                                    <p>Institución a la que pertenece :</p>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{ Auth::user()->institucion}}</p>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Programa educativo:</p>
+                                    <p>Programa educativo :</p>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{ Auth::user()->programa}}</p>
@@ -77,7 +77,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p>Fotografía del perfil:</p>
+                                    <p>Fotografía del perfil :</p>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-Ipersonal">

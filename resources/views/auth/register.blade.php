@@ -102,7 +102,7 @@
                   <div class="col-md-6">
                   <select class="form-control" name="institucion" id="institucion" required>
                       <option name="institucion" value="" disabled selected>Seleccionar</option>
-                      <option name="institucion" value="opcion1">Escuela Superior de Actopan</option>
+                      <option name="institucion" value="opcion1">INSTITUTO TECNOLOGICO DE HUEJUTLA</option>
                       <option name="institucion" value="opcion2">Universidad Tecnológica del Valle del Mezquital</option>
                       <option name="institucion" value="opcion3">Centro Universitarío Hídalguense</option>
                     </select>
