@@ -97,21 +97,12 @@
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
-                    <label for="instituciones" class="control-label">{{ __('Institución a la que pertenece *')}}</label>
+                    <label for="institucion" class="control-label">{{ __('Institución a la que pertenece *')}}</label>
                   </div>
                   <div class="col-md-6">
-                    <select name="institucion_id" id="inputInstitucion_id" class="form-control">
-                      @foreach ($instituciones as $institucion)
-                        <option value="{{ $institucion['id'] }}">{{ $institucion['nombre']}}</option>
-                      @endforeach
-                    </select>
-
-
-
-
                   <select class="form-control" name="institucion" id="institucion" required>
                       <option name="institucion" value="" disabled selected>Seleccionar</option>
-                      <option name="institucion" value="opcion1">INSTITUTO TECNOLOGICO DE HUEJUTLA</option>
+                      <option name="institucion" value="opcion1">Escuela Superior de Actopan</option>
                       <option name="institucion" value="opcion2">Universidad Tecnológica del Valle del Mezquital</option>
                       <option name="institucion" value="opcion3">Centro Universitarío Hídalguense</option>
                     </select>

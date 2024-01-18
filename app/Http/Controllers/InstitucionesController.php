@@ -21,8 +21,7 @@ class InstitucionesController extends Controller
      */
     public function create()
     {
-        $instituciones = Instituciones::all();
-        return \view('register', compact('instituciones'));
+        //
     }
 
     /**
@@ -31,8 +30,6 @@ class InstitucionesController extends Controller
     public function store(StoreInstitucionesRequest $request)
     {
         //
-        Instituciones::create($request->all());
-        return 'Completado';
     }
 
     /**
