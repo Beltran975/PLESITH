@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/register/{id}',)
+
 Route::get('/pru', function () {
     return view('prueba-index');
 });
