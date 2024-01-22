@@ -16,6 +16,7 @@
         <div class="title">
             <h1>Infotech</h1>
             <h1>Pagina en proceso</h1>
+            <br>
         </div>
         
     </main>
