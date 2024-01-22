@@ -266,6 +266,7 @@
                       <option name="institucion" value="SISTEMA DE UNIVERSIDAD VIRTUAL">SISTEMA DE UNIVERSIDAD VIRTUAL</option>
                     </select>
                   </div>
+                  <br>
                 </div>
                 
                 <div class="row justify-content-center mb-3">

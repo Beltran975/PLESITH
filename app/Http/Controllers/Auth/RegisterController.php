@@ -85,8 +85,4 @@ class RegisterController extends Controller
         return view('register', compact('instituciones'));
     }
 
-    
-
-    
-
 }
