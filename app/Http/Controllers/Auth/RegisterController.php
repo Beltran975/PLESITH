@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Instituciones;
 
 class RegisterController extends Controller
 {
@@ -79,6 +80,9 @@ class RegisterController extends Controller
             'foto' => $data['foto'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $instituciones = Instituciones::all();
+        return view('register', compact('instituciones'));
     }
 
     
