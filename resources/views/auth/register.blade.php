@@ -43,7 +43,7 @@
                 </div>
                 
                 <div class="row justify-content-center mb-3">
-                  <div class="col-md-4">
+                  <div class="col">
                     <label class="control-label" for="curp" class="">{{ __('CURP *')}}</label>
                   </div>
                   <div class="col-md-6">
