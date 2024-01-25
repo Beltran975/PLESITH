@@ -44,6 +44,17 @@ Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
 
+Route::get('administrador/postulaciones', function () {
+    return view('administrador/postulaciones');
+});
+
+Route::get('/administrador/formaprovacion', function () {
+    return view('/administrador/formaprovacion');
+});
+
+Route::get('/administrador/formnegacion', function () {
+    return view('/administrador/formnegacion');
+});
 
 Auth::routes();
 
