@@ -328,25 +328,26 @@
                             <h4 class="modal-title">Producción</h4>
                         </div>
                         <div class="modal-body">
-                            <form method="POST">
+                            <form action="EnvioProduccion" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row justify-content-center mb-2">
                                     <div class="col-md-4">
                                         <label class="form-label" for="tipo">{{ __('Tipo *') }}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="tipo" id="tipo" required>
+                                        <select class="form-control" name="tipo" required>
                                             <option name="tipo" value="" disabled selected>Seleccionar tipo</option>
-                                            <option name="tipo" value="opcion1">Libros o capitulos de libro</option>
-                                            <option name="tipo" value="opcion2">Articulos arbitrados y articulos indexados</option>
-                                            <option name="tipo" value="opcion3">Propiedad intelectual</option>
-                                            <option name="tipo" value="opcion4">Modelos de utilidad</option>
-                                            <option name="tipo" value="opcion5">Patentes</option>
-                                            <option name="tipo" value="opcion6">Prototipos</option>
-                                            <option name="tipo" value="opcion7">Transferencia de tecnología</option>
-                                            <option name="tipo" value="opcion8">Desarrollo de infraestructura</option>
-                                            <option name="tipo" value="opcion9">Informes técnicos</option>
-                                            <option name="tipo" value="opcion10">Obras artísticas</option>
-                                            <option name="tipo" value="opcion11">Otro</option>
+                                            <option name="tipo" value="Libros o capitulos de libro">Libros o capitulos de libro</option>
+                                            <option name="tipo" value="Articulos arbitrados y articulos indexados">Articulos arbitrados y articulos indexados</option>
+                                            <option name="tipo" value="Propiedad intelectual">Propiedad intelectual</option>
+                                            <option name="tipo" value="Modelos de utilidad">Modelos de utilidad</option>
+                                            <option name="tipo" value="Patentes">Patentes</option>
+                                            <option name="tipo" value="Prototipos">Prototipos</option>
+                                            <option name="tipo" value="Transferencia de tecnología">Transferencia de tecnología</option>
+                                            <option name="tipo" value="Desarrollo de infraestructura">Desarrollo de infraestructura</option>
+                                            <option name="tipo" value="Informes técnicos">Informes técnicos</option>
+                                            <option name="tipo" value="Obras artísticas">Obras artísticas</option>
+                                            <option name="tipo" value="Otro">Otro</option>
                                         </select>
                                     </div>
                                 </div>
@@ -355,15 +356,15 @@
                                         <label class="form-label" for="evidencia">{{ __('Evidencia *')}}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input class="form-control" type="file" name="evidencia" id="evidencia" required>
+                                        <input class="form-control" type="file" name="evidencia" required>
                                     </div>                                                
                                 </div>
                                 <div class="row justify-content-center mb-2">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="autor_es">{{ __('Autor (es) *')}}</label>
+                                        <label class="form-label" for="autores">{{ __('Autor (es) *')}}</label>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input class="form-control" id="autor_es" name="autor_es" type="text" required>
+                                        <input class="form-control" name="autores" type="text" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mb-2">
@@ -371,7 +372,7 @@
                                         <label class="form-label" for="titulo">{{ __('Titulo *')}}</label>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input class="form-control" id="titulo" name="titulo" type="text" required>
+                                        <input class="form-control" name="titulo" type="text" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mb-2">
@@ -379,7 +380,7 @@
                                         <label class="form-label" for="descripcion">{{ __('Descripción *')}}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <textarea class="form-control" name="descripcion" id="descripcion" required></textarea>
+                                        <textarea class="form-control" name="descripcion" required></textarea>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mb-2">
@@ -388,7 +389,7 @@
                                             <label class="form-label" for="pais">{{ __('Pais *')}}</label>
                                         </div>
                                         <div class="col-md-4">
-                                            <input class="form-control" id="pais" name="pais" type="country-name" required>
+                                            <input class="form-control" name="pais" type="text" required>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -396,7 +397,7 @@
                                             <label class="form-label" for="year">{{ __('Año *')}}</label>
                                         </div>
                                         <div class="col-md-4">
-                                            <input class="form-control" id="year" name="year" type="text" min="1900" max="2099" step="1" required />
+                                            <input class="form-control" name="year" type="text" min="1900" max="2099" step="1" required />
                                         </div>
                                     </div>
                                 </div>
@@ -405,11 +406,11 @@
                                         <label class="form-label" for="proposito">{{ __('Propósito *')}}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="proposito" id="proposito" required>
+                                        <select class="form-control" name="proposito" required>
                                             <option name="proposito" value="" disabled selected>Seleccionar propósito</option>
-                                            <option name="proposito" value="opcion1">Proposito 1</option>
-                                            <option name="proposito" value="opcion2">Proposito 2</option>
-                                            <option name="proposito" value="opcion3">Proposito 3</option>
+                                            <option name="proposito" value="Proposito 1">Proposito 1</option>
+                                            <option name="proposito" value="Proposito 2">Proposito 2</option>
+                                            <option name="proposito" value="Proposito 3">Proposito 3</option>
                                         </select>
                                     </div>
                                 </div>

@@ -76,4 +76,7 @@ Route::put('update/{id}', 'Auth\RegisterController@update')->name('update');
 
 Route::post('/home/create', 'App\\Http\\Controllers\\ProduccionController@create')->name('produccion.create');
 
+//ruta para registrar Informacion PLESITH
 Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
+//ruta para registrar Informacion Producciones
+Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
