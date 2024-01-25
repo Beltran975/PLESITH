@@ -94,61 +94,63 @@
                             Información PLESITH
                         </div>
                         <div class="card-body collapse" id="informacionPLESITH">
-                            <form>
+                            <form action="EnvioInformacion" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row form-outline md-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="linea_investigacion">Línea de investigación</label>
+                                        <label class="form-label" for="lineaInv">Línea de investigación</label>
                                     </div>
                                     <br>
                                     <br>
                                     <div class="col-md-8">
-                                        <select id="linea_investigacion" class="form-select" name="linea_investigacion">
-                                            <option name="linea_investigacion" value="" disabled selected>Tipo de línea de investigación</option>
-                                            <option name="linea_investigacion" value="opcion1">Tecnología</option>
-                                            <option name="linea_investigacion" value="opcion2">Ciencia</option>
-                                            <option name="linea_investigacion" value="opcion3">Filosofía</option>
+                                        <select class="form-select" name="lineaInv">
+                                            <option name="lineaInv" value="" disabled selected>Tipo de línea de investigación</option>
+                                            <option name="lineaInv" value="Tecnología">Tecnología</option>
+                                            <option name="lineaInv" value="Ciencia">Ciencia</option>
+                                            <option name="lineaInv" value="Filosofía">Filosofía</option>
                                         </select>
                                     </div>
                                 </div>
                                 <!-- Grado Academico -->
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="grado_academico">Grado académico</label>
+                                        <label class="form-label" for="grado">Grado académico</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="text" id="grado_academico" name="grado_academico" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required/>
+                                        <input type="text" name="grado" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required/>
                                     </div>
                                 </div>
                                 <!-- Evidencia Grado Academico -->
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="evidencia_grado_academico">Evidencia del del grado académico </label>
+                                        <label class="form-label" for="evidenciaGrado">Evidencia del del grado académico </label>
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="file" id="evidencia_grado_academico" name="evidencia_grado_academico" accept=".pdf" placeholder="Seleccionar archivo PDF"/>
+                                        <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF"/>
                                     </div>
                                 </div>
                                 <!-- Pertenece al SNI -->
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="pertenece_SNI">¿Pertenece al SNI?</label>
+                                        <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="radio" class="btn-check" name="pertenece_SNI" id="pertenece_SNI" autocomplete="off" value="si">
-                                        <label class="btn" for="pertenece_SNI">Sí</label>
-                                        <input type="radio" class="btn-check" name="pertenece_SNI" id="pertenece_SNI" autocomplete="off" value="no">
-                                        <label class="btn" for="pertenece_SNI">No</label>
+                                        <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="si">
+                                        <label class="btn" for="pertenece">Sí</label>
+                                        <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="no">
+                                        <label class="btn" for="pertenece">No</label>
                                     </div>
                                 </div>
                                 <!-- Evidencia de SNI -->
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="form2Exevidencia_SNIample1">Evidencia SNI </label>
+                                        <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="file" id="evidencia_SNI" name="evidencia_SNI" accept=".pdf" placeholder="Seleccionar archivo PDF"/>
+                                        <input type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF"/>
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
                             </form>
                         </div>
                     </div>

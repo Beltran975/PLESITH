@@ -76,3 +76,4 @@ Route::put('update/{id}', 'Auth\RegisterController@update')->name('update');
 
 Route::post('/home/create', 'App\\Http\\Controllers\\ProduccionController@create')->name('produccion.create');
 
+Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
