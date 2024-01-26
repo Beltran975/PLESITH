@@ -118,9 +118,9 @@
             var optionsMenu = document.createElement('div');
             optionsMenu.className = 'optionsMenu';
             optionsMenu.innerHTML = `
-                <a href="#" onclick="verPostulacion('${usuario}')">Ver Postulación</a>
-                <a href="#" onclick="aprobarPostulacion('${usuario}')">Aprobar Postulación</a>
-                <a href="#" onclick="negarPostulacion('${usuario}')">Negar Postulación</a>
+                <a href="#0" onclick="verPostulacion('${usuario}')">Ver Postulación</a>
+                <a href="#1" onclick="aprobarPostulacion('${usuario}')">Aprobar Postulación</a>
+                <a href="#2" onclick="negarPostulacion('${usuario}')">Negar Postulación</a>
             `;
 
             button.appendChild(optionsMenu);

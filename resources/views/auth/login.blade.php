@@ -48,7 +48,7 @@
                 
                 <div class="row mb-0">
                   <div class="col-md-8 offset-md-4">
-                    <a href="{{ route('register') }}" class="btn btn-primary ">Regístrate aquí</a>
+                    <a href="/register" class="btn btn-primary ">Regístrate aquí</a>
                     <button type="submit" class="btn btn-primary">
                       {{ __('Enviar') }}
                     </button>

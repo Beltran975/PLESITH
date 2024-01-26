@@ -70,9 +70,8 @@ Route::get('footer', function(){
 });
 
 // En routes/web.php
+use App\Http\Controllers\Auth\RegisterController;
 
-Route::get('edit-perfil/{id}', 'Auth\RegisterController@edit')->name('edit-perfil');
-Route::put('update/{id}', 'Auth\RegisterController@update')->name('update');
-
-Route::post('/home/create', 'App\\Http\\Controllers\\ProduccionController@create')->name('produccion.create');
-
+Route::get('/register', [RegisterController::class, 'create'])->name('auth.create');
+Route::post('/store', [RegisterController::class, 'store'])->name('auth.store');
+Route::get('/showFilesById/{id}/files', [RegisterController::class, 'showFilesById'])->name('auth.showFilesById');

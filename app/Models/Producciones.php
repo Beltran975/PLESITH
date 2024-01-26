@@ -5,14 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Produccion extends Model
+class Producciones extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    protected $table = 'producciones';
+    protected $primaryKey = 'id_pro';
 
-    protected $fillable =[
+    public $timestamps=false;
+
+    protected $fillable=[
         'tipo',
         'evidencia',
-        'autor_es',
+        'autores',
         'titulo',
         'descripcion',
         'pais',
