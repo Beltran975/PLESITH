@@ -1,0 +1,35 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 5%;
+}
+
+.content-registro{
+    width: 700px;
+}
+
+/*hr gobierno*/
+ .hr-gob{
+    margin: 10px 0 10px;
+    background-color: var(--gold);
+    border-top: 1px solid var(--gold);
+    opacity: 1;
+    margin-bottom: 50px;
+  }
+  
+   .hr-gob::before{
+    content: " ";
+    width: 35px;
+    height: 5px;
+    background-color: var(--wine) !important;
+    display: block;
+    position: absolute;
+  }
+
+/*card de registro*/
+.card 
+.card-header{
+    color: #ffffff;
+    background-color: #691b32;
+}

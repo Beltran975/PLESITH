@@ -1,0 +1,35 @@
+
+main{
+    margin-top: 5%;
+    margin-bottom: 5%;
+   
+}
+
+.bottom-buffer {
+    margin-bottom: 20px; /* Agrega margen inferior según tus necesidades */
+  }
+
+  .content {
+    max-width: 600px; /* Ajusta el ancho máximo del contenido según tus necesidades */
+    margin: 0 auto; /* Centra el contenido en la página */
+  }
+
+
+
+  .input-span {
+    display: block;
+    margin-bottom: 15px; /* Agrega margen inferior entre elementos de entrada */
+  }
+
+  .content .mb-3{
+    margin-left: 60%;
+  } 
+
+  @media screen and (max-width: 768px) {
+    .content .mb-3 button{
+        margin-top: 10px;
+  } 
+  .row{
+    margin-bottom: 10%;
+  }
+} 
