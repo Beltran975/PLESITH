@@ -63,10 +63,11 @@
             <h2>Formulario de Aprobación</h2>
             <p>El postulado <span id="modalUsuarioAprobar"></span> cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
             <label for="dictamenAprobar">Dictamen de Aceptación:</label>
-            <input type="file" id="dictamenAprobar" name="dictamenAprobar" accept=".pdf">
+            <input type="file" id="dictamenAprobar" name="dictamenAprobar">
             <br><br>
             <button onclick="enviarAprobacion()">Enviar</button>
         </div>
+    </div>
 
     <div class="modal" id="negarModal">
         <div class="modal-content">
@@ -74,13 +75,10 @@
             <h2>Formulario de Negación</h2>
             <p>El postulado <span id="modalUsuarioNegar"></span> no cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
             <label for="dictamenNegar">Dictamen de Negación:</label>
-            <input type="file" id="dictamenNegar" name="dictamenNegar"  accept=".pdf">
-
+            <input type="file" id="dictamenNegar" name="dictamenNegar">
             <br><br>
             <button onclick="enviarNegacion()">Enviar</button>
         </div>
-    </div>
-
     <script>
         function openTab(evt, contentId) {
             var i, tabcontent, tablinks;
@@ -107,7 +105,7 @@
         var postulacionesData1 = [
             { usuario: 'Usuario1', investigacion: 'Investigación1', fecha: '2022-01-01' },
             { usuario: 'Usuario2', investigacion: 'Investigación2', fecha: '2022-02-01' },
-            { usuario: 'Usuario3', investigacion: 'Investigación2', fecha: '2020-02-01' }
+            { usuario: 'Usuario2', investigacion: 'Investigación2', fecha: '2022-02-01' }
 
         ];
 
@@ -137,7 +135,7 @@
             var table = document.querySelector(tableId + ' tbody');
             table.innerHTML = '';
 
-            // Ordenar por fecha de más antiguo a más reciente tomando en cuenta la simulacion despues con el order by
+            // Ordenar por fecha de más antiguo a más reciente
             data.sort(function (a, b) {
                 return new Date(a.fecha) - new Date(b.fecha);
             });
