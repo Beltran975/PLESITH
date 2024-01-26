@@ -22,7 +22,7 @@
                 <h3>Datos generales</h3>
               </div>
                 <div class="card-body">
-                <form method="POST" action="{{ route('register') }}">
+                <form action="{{ route('auth.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 
                 <div class="row justify-content-center mb-3">
@@ -86,14 +86,14 @@
                   </div>
                 </div>
                 
-                <div class="row justify-content-center mb-3">
+               <!-- <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
                     <label class="control-label" for="password-confirm">{{ __('Confirmar contraseña *') }}</label>
                   </div>
                   <div class="col-md-6">
                   <input class="form-control" id="password-confirm" type="password"  name="password_confirmation" required autocomplete="new-password">
                   </div>
-                </div>
+                </div> -->
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
@@ -283,7 +283,7 @@
                     <label for="foto" class="control-label">{{ __('Fotografia de perfil *')}}</label>
                   </div>  
                   <div class="col-md-6">
-                    <input class="form-control" id="foto" type="file" name="foto" required>
+                    <input class="form-control" id="image" type="file" name="image" required>
                   </div>
                 </div>
                 

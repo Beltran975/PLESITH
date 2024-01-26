@@ -56,11 +56,6 @@ class RegisterController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-<<<<<<< Updated upstream
-        //$instituciones = Instituciones::all();
-        //return view('register', compact('instituciones'));
-=======
-<<<<<<< HEAD
         $profileData = [
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -82,12 +77,18 @@ class RegisterController extends Controller
             $profile->update(['image_path' => $imagePath]);
         }
 
-        return redirect()->route('profiles.create')->with('success', 'Perfil creado exitosamente!');
-=======
-        //$instituciones = Instituciones::all();
-        //return view('register', compact('instituciones'));
->>>>>>> 0cd4144cd04a523d2bde5683ef461413541383f0
->>>>>>> Stashed changes
+
+    }
+
+    public function showFilesById($id)
+    {
+        $profile = User::find($id);
+
+        if (!$profile) {
+            return redirect()->route('auth.index')->with('error', 'Perfil no encontrado');
+        }
+
+        return view('auth.showFilesById', compact('profile'));
     }
 
     
