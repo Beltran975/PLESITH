@@ -81,8 +81,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $instituciones = Instituciones::all();
-        return view('register', compact('instituciones'));
     }
 
 }
