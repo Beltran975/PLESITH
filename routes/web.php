@@ -71,6 +71,8 @@ Route::get('footer', function(){
 
 // En routes/web.php
 
+<<<<<<< HEAD
+=======
 Route::get('edit-perfil/{id}', 'Auth\RegisterController@edit')->name('edit-perfil');
 Route::put('update/{id}', 'Auth\RegisterController@update')->name('update');
 
@@ -79,4 +81,9 @@ Route::post('/home/create', 'App\\Http\\Controllers\\ProduccionController@create
 //ruta para registrar Informacion PLESITH
 Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
 //ruta para registrar Informacion Producciones
+<<<<<<< Updated upstream
 Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
+=======
+Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
+>>>>>>> 0cd4144cd04a523d2bde5683ef461413541383f0
+>>>>>>> Stashed changes
