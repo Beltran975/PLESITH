@@ -75,3 +75,8 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/register', [RegisterController::class, 'create'])->name('auth.create');
 Route::post('/store', [RegisterController::class, 'store'])->name('auth.store');
 Route::get('/showFilesById/{id}/files', [RegisterController::class, 'showFilesById'])->name('auth.showFilesById');
+
+//ruta para registrar Informacion PLESITH
+Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
+//ruta para registrar Informacion Producciones
+Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
