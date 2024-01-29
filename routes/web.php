@@ -80,3 +80,4 @@ Route::post('/home/create', 'App\\Http\\Controllers\\ProduccionController@create
 Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
 //ruta para registrar Informacion Producciones
 Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
+Route::get('ListadoPro', [App\Http\Controllers\ListaprodController::class, 'index']);

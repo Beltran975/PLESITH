@@ -187,38 +187,41 @@
                             <div id="tab1" class="tabs-producciones active">
                                 <table class="table contenido produccion">
                                     <tbody>
+                                        @foreach ($datos as $p)
+                                        
                                         <tr>
                                             <th class="rotated-header">Tipo:</th>
-                                            <td class="contenido-produccion">Investigación</td>
+                                            <td class="contenido-produccion">{{ $p->tipo}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Evidencia:</th>
-                                            <td class="contenido-produccion">Datos recopilados de experimentos controlados y análisis estadísticos.</td>
+                                            <td class="contenido-produccion"><a href="produccion/{{ $p->evidencia}}" target="blanck_">Evidencia PDF</a></td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Autor(es):</th>
-                                            <td class="contenido-produccion">Dr. Ana García, Ing. Carlos Martínez</td>
+                                            <td class="contenido-produccion">{{ $p->autores}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Título:</th>
-                                            <td class="contenido-produccion">"Avances en la Eficiencia Energética de Celdas Solares: Un Enfoque Multidisciplinario"</td>
+                                            <td class="contenido-produccion">{{ $p->titulo}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Descripción:</th>
-                                            <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, combinando principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
+                                            <td class="contenido-produccion">{{ $p->descripcion}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">País:</th>
-                                            <td class="contenido-produccion">Estados Unidos</td>
+                                            <td class="contenido-produccion">{{ $p->pais}}</td>
                                         </tr>                
                                         <tr>
                                             <th class="rotated-header">Año:</th>
-                                            <td class="contenido-produccion">2023</td>
+                                            <td class="contenido-produccion">{{ $p->year}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Propósito:</th>
-                                            <td class="contenido-produccion">El propósito principal de esta investigación es proponer soluciones innovadoras para aumentar la eficiencia de las celdas solares, contribuyendo así a la transición hacia fuentes de energía más sostenibles. Además, se busca establecer un estándar para futuras investigaciones en el campo de la energía renovable.</td>
+                                            <td class="contenido-produccion">{{ $p->proposito}}</td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
