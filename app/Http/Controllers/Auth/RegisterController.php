@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Instituciones;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -37,52 +38,58 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function create()
     {
-        $this->middleware('guest');
+        return view('auth.register');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    public function store(Request  $request)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'curp' => ['required', 'string', 'max:20'],
-            'archivoCurp' => ['required', 'string'],
-            'institucion' => ['required', 'string', 'max:255'],
-            'foto' => ['required', 'string'],
-            'programa' => ['required', 'string'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'curp' => $data['curp'],
-            'archivoCurp' => $data['archivoCurp'],
-            'institucion' => $data['institucion'],
-            'programa' => $data['programa'],
-            'foto' => $data['foto'],
-            'password' => Hash::make($data['password']),
+        $request ->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'curp'=> 'required',
+            'institucion' => 'required',
+            'programa' => 'required',
+            'password' => 'required',
+            'archivoCurp' => 'required|mimes:pdf|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        //$instituciones = Instituciones::all();
-        //return view('register', compact('instituciones'));
+        $profileData = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'curp' => $request->input('curp'),
+            'institucion' => $request->input('institucion'),
+            'programa' => $request->input('programa'),
+            'password' => bcrypt($request->input('password')),
+        ];
+
+        $profile = User::create($profileData);
+
+        if ($request->hasFile('archivoCurp')) {
+            $pdfPath = $request->file('archivoCurp')->store('archivos_curp', 'public');
+            $profile->update(['archivoCurp' => $pdfPath]);
+        }
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('profiles', 'public');
+            $profile->update(['image_path' => $imagePath]);
+        }
+
+
     }
 
+    public function showFilesById($id)
+    {
+        $profile = User::find($id);
+
+        if (!$profile) {
+            return redirect()->route('auth.index')->with('error', 'Perfil no encontrado');
+        }
+
+        return view('auth.showFilesById', compact('profile'));
+    }
+
+    
 }

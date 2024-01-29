@@ -46,7 +46,7 @@
                         <div class="titulo bottom-buffer">
                             <h1>PLESITH</h1>
                             <h2>Plataforma Estatal de Investigadores y Tecnólogos de Hidalgo</h2>
-                            <a href="{{ route('register') }}" class="btn btn-primary">
+                            <a href="/register" class="btn btn-primary">
                                 Formar parte
                                 <i class="bi bi-arrow-right"></i>
                             </a>
