@@ -1,7 +1,28 @@
+.hr-gob{
+    margin: 10px 0 10px;
+    background-color: var(--gold);
+    border-top: 1px solid var(--gold);
+    opacity: 1;
+    margin-bottom: 50px;
+  }
+  
+   .hr-gob::before{
+    content: " ";
+    width: 35px;
+    height: 5px;
+    background-color: var(--wine) !important;
+    display: block;
+    position: absolute;
+  }
+  #postulacionesHeader{
+    margin-left: 10px;
+  }
+/*contenido*/
 .tabcontent {
-    display: none;
-    border: 1px solid #ccc;
-    padding: 10px;
+    background-color: #ffffff;
+    color: #333;
+    width: 1000px;
+    padding: 5px;
     border-radius: 5px;
 }
 
@@ -10,16 +31,17 @@
 }
 
 .tablinks {
-    background-color: #f0f0f0;
+    background-color: #bfbfbf;
     border: 1px solid #ccc;
+    color: #ffffff;
     padding: 10px;
     border-radius: 5px 5px 0 0;
     cursor: pointer;
-    margin-right: -1px; /* Para ajustar la separación entre pestañas */
+    margin-right: 2px; /* Para ajustar la separación entre pestañas */
 }
 
 .tablinks.active {
-    background-color: #fff;
+    background-color: #691b32;
     border-bottom: none;
 }
 
@@ -29,20 +51,21 @@
 }
 
 #postulacionesHeader {
-    margin-right: 10px;
+    margin-right: 1px;
 }
 
 table {
+    border-top: 1px solid rgb(208, 208, 208);
+    border-bottom: 1px solid rgb(208, 208, 208);
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    padding: 100px;
 }
 
 th,
 td {
-    border: 1px solid #ccc;
-    padding: 8px;
+    border-top: 1px solid rgb(208, 208, 208);
     text-align: left;
+   
 }
 
 .optionsMenu {
@@ -55,11 +78,8 @@ td {
 }
 
 .optionsButton {
-    background-color: #4CAF50;
-    color: white;
     border: none;
-    padding: 5px 10px;
-    text-align: center;
+    padding: 10px 10px;
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
@@ -86,8 +106,8 @@ td {
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -97,12 +117,12 @@ td {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 60%;
+    width: 60px;
     text-align: center;
 }
 
 .close {
-    color: #aaa;
+    color: #691b32;
     float: right;
     font-size: 28px;
     font-weight: bold;

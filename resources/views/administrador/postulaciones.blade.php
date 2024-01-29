@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('asset/infotech.css') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
+    <link rel="stylesheet" href="{{ asset('asset/administrador.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/estilosformulario.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
 
     <title>Administrador | PLESITH</title>
     
@@ -13,10 +13,16 @@
 <body class="body">
 @include('layouts/headregob')
     @include('layouts/header')
+
     <main class="main">
-        
-            <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
+
+    <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
+
             <div class="title">
+            <div class="row ml-5">
+              <h3>{{ __('Postulaciones') }}</h3>
+            </div>
+            <hr class="hr-gob" >
             <div id="tabGroup">
         <button class="tablinks" id="tab1" onclick="openTab(event, 'content1')">No revisados</button>
         <button class="tablinks" id="tab2" onclick="openTab(event, 'content2')">Revisados</button>
@@ -30,9 +36,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>Nombre de Usuario</th>
-                    <th>Nombre de Investigación</th>
-                    <th>Fecha de Envío</th>
+                    <th>Postulante</th>
+                    <th>Línea Investigación</th>
+                    <th>Fecha de Postulación</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,9 +52,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>Nombre de Usuario</th>
-                    <th>Nombre de Investigación</th>
-                    <th>Fecha de Envío</th>
+                    <th>Postulante</th>
+                    <th>Línea Investigación</th>
+                    <th>Fecha de Postulación</th>
                 </tr>
             </thead>
             <tbody>
@@ -153,7 +159,7 @@
 
                 var optionsButton = document.createElement('button');
                 optionsButton.className = 'optionsButton';
-                optionsButton.innerHTML = 'Opciones';
+                optionsButton.innerHTML = '<i class="bi bi-list"></i>';
 
                 optionsButton.addEventListener('click', function (event) {
                     event.stopPropagation(); // Evita que el click en el botón cierre el menú al mismo tiempo

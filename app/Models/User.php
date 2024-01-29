@@ -25,7 +25,7 @@ class User extends Authenticatable
         'programa',
         'password',
         'archivoCurp',
-        'image_path'
+        'image_path',
 
     ];
 }
