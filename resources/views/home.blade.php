@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{ Auth::user()->curp}}</p>
-                                    <a href="">{{ Auth::user()->archivoCurp}}</a>
+                                    <a href="storage/archivos_curp/{{ Auth::user()->archivoCurp}}" target="blanck_">{{ Auth::user()->archivoCurp}}</a>
                                 </div>
                             </div>
                             <br>
@@ -185,45 +185,7 @@
                                 </div>
                             </div>
                             <div id="tab1" class="tabs-producciones active">
-                                <table class="table contenido produccion">
-                                    <tbody>
-                                        @foreach ($datos as $p)
-                                        
-                                        <tr>
-                                            <th class="rotated-header">Tipo:</th>
-                                            <td class="contenido-produccion">{{ $p->tipo}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Evidencia:</th>
-                                            <td class="contenido-produccion"><a href="produccion/{{ $p->evidencia}}" target="blanck_">Evidencia PDF</a></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Autor(es):</th>
-                                            <td class="contenido-produccion">{{ $p->autores}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Título:</th>
-                                            <td class="contenido-produccion">{{ $p->titulo}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Descripción:</th>
-                                            <td class="contenido-produccion">{{ $p->descripcion}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">País:</th>
-                                            <td class="contenido-produccion">{{ $p->pais}}</td>
-                                        </tr>                
-                                        <tr>
-                                            <th class="rotated-header">Año:</th>
-                                            <td class="contenido-produccion">{{ $p->year}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Propósito:</th>
-                                            <td class="contenido-produccion">{{ $p->proposito}}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                include('layouts.listaProducciones')
                             </div>
                             <div id="tab2" class="tabs-producciones">
                                 <!-- Contenido del tab 2 -->
