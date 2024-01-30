@@ -8,9 +8,9 @@ use DB;
 class ListaprodController extends Controller
 {
     //
-    public function index()
+    public function list()
     {
         $query = DB::table('producciones')->get();
-        return view('home', ['datos'=>$query]);
+        return view('listaProducciones', ['datos'=>$query]);
     }
 }
