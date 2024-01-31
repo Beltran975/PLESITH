@@ -47,7 +47,9 @@ Route::get('/bibliotech', function () {
 Route::get('administrador/postulaciones', function () {
     return view('administrador/postulaciones');
 });
-
+Route::get('administrador/prueba-postulaciones', function () {
+    return view('administrador/prueba-postulaciones');
+});
 Route::get('/administrador/formaprovacion', function () {
     return view('/administrador/formaprovacion');
 });
@@ -81,3 +83,8 @@ Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::cla
 //ruta para registrar Informacion Producciones
 Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
 Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'list']);
+
+//ruta para ver postulantes 
+
+
+Route::get('/administrador/tabla', [App\Http\Controllers\pstulacionesController::class, 'verPostulaciones']);

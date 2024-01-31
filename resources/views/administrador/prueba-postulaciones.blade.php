@@ -6,14 +6,15 @@
     <link rel="stylesheet" href="{{ asset('asset/administrador.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/estilosformulario.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Administrador | PLESITH</title>
     
 </head>
 <body class="body">
 @include('layouts/headregob')
     @include('layouts/header')
-
+    
     <main class="main">
 
     <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
@@ -30,7 +31,7 @@
             <p>Total de Postulaciones: <span id="postulacionCount">0</span></p>
         </div>
     </div>
-
+    @foreach ($postulantes as $postulante)
     <div id="content1" class="tabcontent active">
         <h3>No revisados</h3>
         <table>
@@ -49,6 +50,8 @@
 
     <div id="content2" class="tabcontent">
         <h3>Revisados</h3>
+       
+        
         <table>
             <thead>
                 <tr>
@@ -58,22 +61,54 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Aquí puedes añadir filas con información de postulaciones -->
+            <tr>
+               
+            </tr>
             </tbody>
         </table>
+      
     </div>
     </div>
-    <div class="modal-ap" id="aprobarModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeAprobarModal()">&times;</span>
-            <h2>Formulario de Aprobación</h2>
-            <p>El postulado <span id="modalUsuarioAprobar"></span> cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="aprobacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de Aprobación</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <p>El postulado <span id="modalUsuarioAprobar"></span> cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
             <label for="dictamenAprobar">Dictamen de Aceptación:</label>
             <input type="file" id="dictamenAprobar" name="dictamenAprobar">
-            <button onclick="enviarAprobacion()">Enviar</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-primary" onclick="enviarAprobacion()">Enviar</button>
+      </div>
     </div>
-
+  </div>
+</div>
+<div class="modal fade" id="negacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de Negación</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <p>El postulado <span id="modalUsuarioNegar"></span> no cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
+            <label for="dictamenNegar">Dictamen de Negación:</label>
+            <input type="file" id="dictamenNegar" name="dictamenNegar">
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-primary" onclick="enviarAprobacion()">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="modal" id="negarModal">
         <div class="modal-content">
             <span class="close" onclick="closeNegarModal()">&times;</span>
@@ -83,6 +118,7 @@
             <input type="file" id="dictamenNegar" name="dictamenNegar">
             <br><br>
             <button onclick="enviarNegacion()">Enviar</button>
+        </div>
         </div>
     <script>
         function openTab(evt, contentId) {
@@ -108,10 +144,8 @@
 
         // Simulación de datos de postulaciones porque no puedo con la bd troste
         var postulacionesData1 = [
-            { usuario: 'Usuario1', investigacion: 'Investigación1', fecha: '2022-01-01' },
-            { usuario: 'Usuario2', investigacion: 'Investigación2', fecha: '2022-02-01' },
-            { usuario: 'Usuario2', investigacion: 'Investigación2', fecha: '2022-02-01' }
-
+            { usuario: '{{ $postulante->name }}', investigacion: '{{ $postulante->email }}', fecha: '2022-01-01' },
+            { usuario: '{{ $postulante->name }}', investigacion: '{{ $postulante->email }}', fecha: '2022-01-01' },
         ];
 
         var postulacionesData2 = [
@@ -124,9 +158,8 @@
             optionsMenu.className = 'optionsMenu';
             optionsMenu.innerHTML = `
                 <a href="#0" onclick="verPostulacion('${usuario}')">Ver Postulación</a>
-                <a href="#1" onclick="aprobarPostulacion('${usuario}')">Aprobar Postulación</a>
-                <a href="#2" onclick="negarPostulacion('${usuario}')">Negar Postulación</a>
-            `;
+                <a data-bs-toggle="modal" data-bs-target="#aprobacion">Aprobar postulación</a>                
+                <a data-bs-toggle="modal" data-bs-target="#negacion">Negar postulación</a>`;
 
             button.appendChild(optionsMenu);
 
@@ -183,57 +216,9 @@
         }
 
         // Funciones de ejemplo para ver, aprobar y negar postulación
-        function verPostulacion(usuario) {
-        console.log('Ver postulación de ' + usuario);
-    }
-
-    function aprobarPostulacion(usuario) {
-        console.log('Aprobar postulación de ' + usuario);
-    }
-
-    function negarPostulacion(usuario) {
-        console.log('Negar postulación de ' + usuario);
-    }
-        function aprobarPostulacion(usuario) {
-            openAprobarModal();
-            document.getElementById('modalUsuarioAprobar').textContent = usuario;
-        }
-
-        function negarPostulacion(usuario) {
-            openNegarModal();
-            document.getElementById('modalUsuarioNegar').textContent = usuario;
-        }
-
-        function openAprobarModal() {
-            document.getElementById('aprobarModal').style.display = 'block';
-        }
-
-        function closeAprobarModal() {
-            document.getElementById('aprobarModal').style.display = 'none';
-        }
-
-        function enviarAprobacion() {
-            // Lógica para enviar el formulario de aprobación
-            console.log('Formulario de aprobación enviado');
-            closeAprobarModal();
-        }
-
-        function openNegarModal() {
-            document.getElementById('negarModal').style.display = 'block';
-        }
-
-        function closeNegarModal() {
-            document.getElementById('negarModal').style.display = 'none';
-        }
-
-        function enviarNegacion() {
-            // Lógica para enviar el formulario de negación
-            console.log('Formulario de negación enviado');
-            closeNegarModal();
-        }
+      
     </script>
-</div>
-        
+         @endforeach
     </main>
 @include('layouts/footer')
 </body>
