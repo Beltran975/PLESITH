@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-Ipersonal">
-                                        <img src="{{ Auth::user()->foto}}" alt="IMGperfil">
+                                        <img src="{{ asset('storage/'.Auth::user()->image_path)}}" alt="">
                                     </div>
                                 </div>
                             </div>

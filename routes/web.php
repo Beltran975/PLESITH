@@ -80,4 +80,4 @@ Route::get('/showFilesById/{id}/files', [RegisterController::class, 'showFilesBy
 Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
 //ruta para registrar Informacion Producciones
 Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
-Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'list']);
+Route::get('ListaProduccion', [App\Http\Controllers\HomeController::class,'list']);
