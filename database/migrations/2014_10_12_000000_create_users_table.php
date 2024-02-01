@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('archivoCurp')->nullable();
             $table->string('image_path')->nullable();
+            $table->string('estatus');
+            $table->string('verificacion');
             $table->timestamps();
         });
     }

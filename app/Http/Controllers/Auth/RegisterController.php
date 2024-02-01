@@ -63,6 +63,8 @@ class RegisterController extends Controller
             'institucion' => $request->input('institucion'),
             'programa' => $request->input('programa'),
             'password' => bcrypt($request->input('password')),
+            'estatus' => 'No revisado',
+            'verificacion' => 'En proceso',
         ];
 
         $profile = User::create($profileData);
