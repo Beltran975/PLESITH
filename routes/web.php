@@ -88,3 +88,9 @@ Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'
 
 
 Route::get('/administrador/tabla', [App\Http\Controllers\pstulacionesController::class, 'verPostulaciones']);
+
+
+//ruta para documento de investigación 
+Route::get('/documentoInvestigacion', function(){
+    return view('docInvestigacion');
+});

@@ -278,10 +278,10 @@
                 </div>
             </div>
             <hr>
-            <div class="row d-flex justify-content-center mb-3">
+            <!--<div class="row d-flex justify-content-center mb-3">
                 <button type="submit" class="btn btn-primary btn-sm " name="accion" value="descargar">Descargar</button>
                 <button type="button" class="btn btn-primary btn-sm ml-2">Guardar</button>
-            </div>
+            </div>-->
             <hr>
 
             <!-- Modales de edición -->
