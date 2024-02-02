@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{ Auth::user()->curp}}</p>
-                                    <a href="">{{ Auth::user()->archivoCurp}}</a>
+                                    <a href="storage/archivos_curp/{{ Auth::user()->archivoCurp}}" target="blanck_">{{ Auth::user()->archivoCurp}}</a>
                                 </div>
                             </div>
                             <br>
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="image-Ipersonal">
-                                        <img src="{{ Auth::user()->foto}}" alt="IMGperfil">
+                                        <img src="{{ asset('storage/'.Auth::user()->image_path)}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -94,61 +94,63 @@
                             Información PLESITH
                         </div>
                         <div class="card-body collapse" id="informacionPLESITH">
-                            <form>
+                            <form action="EnvioInformacion" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row form-outline md-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="linea_investigacion">Línea de investigación</label>
+                                        <label class="form-label" for="lineaInv">Línea de investigación</label>
                                     </div>
                                     <br>
                                     <br>
                                     <div class="col-md-8">
-                                        <select id="linea_investigacion" class="form-select" name="linea_investigacion">
-                                            <option name="linea_investigacion" value="" disabled selected>Tipo de línea de investigación</option>
-                                            <option name="linea_investigacion" value="opcion1">Tecnología</option>
-                                            <option name="linea_investigacion" value="opcion2">Ciencia</option>
-                                            <option name="linea_investigacion" value="opcion3">Filosofía</option>
+                                        <select class="form-select" name="lineaInv">
+                                            <option name="lineaInv" value="" disabled selected>Tipo de línea de investigación</option>
+                                            <option name="lineaInv" value="Tecnología">Tecnología</option>
+                                            <option name="lineaInv" value="Ciencia">Ciencia</option>
+                                            <option name="lineaInv" value="Filosofía">Filosofía</option>
                                         </select>
                                     </div>
                                 </div>
                                 <!-- Grado Academico -->
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="grado_academico">Grado académico</label>
+                                        <label class="form-label" for="grado">Grado académico</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="text" id="grado_academico" name="grado_academico" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required/>
+                                        <input type="text" name="grado" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required/>
                                     </div>
                                 </div>
                                 <!-- Evidencia Grado Academico -->
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="evidencia_grado_academico">Evidencia del del grado académico </label>
+                                        <label class="form-label" for="evidenciaGrado">Evidencia del del grado académico </label>
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="file" id="evidencia_grado_academico" name="evidencia_grado_academico" accept=".pdf" placeholder="Seleccionar archivo PDF"/>
+                                        <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF"/>
                                     </div>
                                 </div>
                                 <!-- Pertenece al SNI -->
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="pertenece_SNI">¿Pertenece al SNI?</label>
+                                        <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="radio" class="btn-check" name="pertenece_SNI" id="pertenece_SNI" autocomplete="off" value="si">
-                                        <label class="btn" for="pertenece_SNI">Sí</label>
-                                        <input type="radio" class="btn-check" name="pertenece_SNI" id="pertenece_SNI" autocomplete="off" value="no">
-                                        <label class="btn" for="pertenece_SNI">No</label>
+                                        <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="si">
+                                        <label class="btn" for="pertenece">Sí</label>
+                                        <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="no">
+                                        <label class="btn" for="pertenece">No</label>
                                     </div>
                                 </div>
                                 <!-- Evidencia de SNI -->
                                 <div class="row form-outline mb-4">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="form2Exevidencia_SNIample1">Evidencia SNI </label>
+                                        <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="file" id="evidencia_SNI" name="evidencia_SNI" accept=".pdf" placeholder="Seleccionar archivo PDF"/>
+                                        <input type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF"/>
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
                             </form>
                         </div>
                     </div>
@@ -183,42 +185,7 @@
                                 </div>
                             </div>
                             <div id="tab1" class="tabs-producciones active">
-                                <table class="table contenido produccion">
-                                    <tbody>
-                                        <tr>
-                                            <th class="rotated-header">Tipo:</th>
-                                            <td class="contenido-produccion">Investigación</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Evidencia:</th>
-                                            <td class="contenido-produccion">Datos recopilados de experimentos controlados y análisis estadísticos.</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Autor(es):</th>
-                                            <td class="contenido-produccion">Dr. Ana García, Ing. Carlos Martínez</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Título:</th>
-                                            <td class="contenido-produccion">"Avances en la Eficiencia Energética de Celdas Solares: Un Enfoque Multidisciplinario"</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Descripción:</th>
-                                            <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, combinando principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">País:</th>
-                                            <td class="contenido-produccion">Estados Unidos</td>
-                                        </tr>                
-                                        <tr>
-                                            <th class="rotated-header">Año:</th>
-                                            <td class="contenido-produccion">2023</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="rotated-header">Propósito:</th>
-                                            <td class="contenido-produccion">El propósito principal de esta investigación es proponer soluciones innovadoras para aumentar la eficiencia de las celdas solares, contribuyendo así a la transición hacia fuentes de energía más sostenibles. Además, se busca establecer un estándar para futuras investigaciones en el campo de la energía renovable.</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                include('layouts.listaProducciones')
                             </div>
                             <div id="tab2" class="tabs-producciones">
                                 <!-- Contenido del tab 2 -->
@@ -326,25 +293,26 @@
                             <h4 class="modal-title">Producción</h4>
                         </div>
                         <div class="modal-body">
-                            <form method="POST">
+                            <form action="EnvioProduccion" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row justify-content-center mb-2">
                                     <div class="col-md-4">
                                         <label class="form-label" for="tipo">{{ __('Tipo *') }}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="tipo" id="tipo" required>
+                                        <select class="form-control" name="tipo" required>
                                             <option name="tipo" value="" disabled selected>Seleccionar tipo</option>
-                                            <option name="tipo" value="opcion1">Libros o capitulos de libro</option>
-                                            <option name="tipo" value="opcion2">Articulos arbitrados y articulos indexados</option>
-                                            <option name="tipo" value="opcion3">Propiedad intelectual</option>
-                                            <option name="tipo" value="opcion4">Modelos de utilidad</option>
-                                            <option name="tipo" value="opcion5">Patentes</option>
-                                            <option name="tipo" value="opcion6">Prototipos</option>
-                                            <option name="tipo" value="opcion7">Transferencia de tecnología</option>
-                                            <option name="tipo" value="opcion8">Desarrollo de infraestructura</option>
-                                            <option name="tipo" value="opcion9">Informes técnicos</option>
-                                            <option name="tipo" value="opcion10">Obras artísticas</option>
-                                            <option name="tipo" value="opcion11">Otro</option>
+                                            <option name="tipo" value="Libros o capitulos de libro">Libros o capitulos de libro</option>
+                                            <option name="tipo" value="Articulos arbitrados y articulos indexados">Articulos arbitrados y articulos indexados</option>
+                                            <option name="tipo" value="Propiedad intelectual">Propiedad intelectual</option>
+                                            <option name="tipo" value="Modelos de utilidad">Modelos de utilidad</option>
+                                            <option name="tipo" value="Patentes">Patentes</option>
+                                            <option name="tipo" value="Prototipos">Prototipos</option>
+                                            <option name="tipo" value="Transferencia de tecnología">Transferencia de tecnología</option>
+                                            <option name="tipo" value="Desarrollo de infraestructura">Desarrollo de infraestructura</option>
+                                            <option name="tipo" value="Informes técnicos">Informes técnicos</option>
+                                            <option name="tipo" value="Obras artísticas">Obras artísticas</option>
+                                            <option name="tipo" value="Otro">Otro</option>
                                         </select>
                                     </div>
                                 </div>
@@ -353,15 +321,15 @@
                                         <label class="form-label" for="evidencia">{{ __('Evidencia *')}}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input class="form-control" type="file" name="evidencia" id="evidencia" required>
+                                        <input class="form-control" type="file" name="evidencia" required>
                                     </div>                                                
                                 </div>
                                 <div class="row justify-content-center mb-2">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="autor_es">{{ __('Autor (es) *')}}</label>
+                                        <label class="form-label" for="autores">{{ __('Autor (es) *')}}</label>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input class="form-control" id="autor_es" name="autor_es" type="text" required>
+                                        <input class="form-control" name="autores" type="text" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mb-2">
@@ -369,7 +337,7 @@
                                         <label class="form-label" for="titulo">{{ __('Titulo *')}}</label>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input class="form-control" id="titulo" name="titulo" type="text" required>
+                                        <input class="form-control" name="titulo" type="text" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mb-2">
@@ -377,7 +345,7 @@
                                         <label class="form-label" for="descripcion">{{ __('Descripción *')}}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <textarea class="form-control" name="descripcion" id="descripcion" required></textarea>
+                                        <textarea class="form-control" name="descripcion" required></textarea>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mb-2">
@@ -386,7 +354,7 @@
                                             <label class="form-label" for="pais">{{ __('Pais *')}}</label>
                                         </div>
                                         <div class="col-md-4">
-                                            <input class="form-control" id="pais" name="pais" type="country-name" required>
+                                            <input class="form-control" name="pais" type="text" required>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -394,7 +362,7 @@
                                             <label class="form-label" for="year">{{ __('Año *')}}</label>
                                         </div>
                                         <div class="col-md-4">
-                                            <input class="form-control" id="year" name="year" type="text" min="1900" max="2099" step="1" required />
+                                            <input class="form-control" name="year" type="text" min="1900" max="2099" step="1" required />
                                         </div>
                                     </div>
                                 </div>
@@ -403,11 +371,15 @@
                                         <label class="form-label" for="proposito">{{ __('Propósito *')}}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="proposito" id="proposito" required>
+                                        <select class="form-control" name="proposito" required>
                                             <option name="proposito" value="" disabled selected>Seleccionar propósito</option>
-                                            <option name="proposito" value="opcion1">Proposito 1</option>
-                                            <option name="proposito" value="opcion2">Proposito 2</option>
-                                            <option name="proposito" value="opcion3">Proposito 3</option>
+                                            <option name="proposito" value="Asimilacion de tecnologia">Asimilacion de tecnologia</option>
+                                            <option name="proposito" value="Creación">Creación</option>
+                                            <option name="proposito" value="Desarrollo tecnológico">Desarrollo tecnológico</option>
+                                            <option name="proposito" value="Difusión">Difusión</option>
+                                            <option name="proposito" value="Generación de conocimiento">Generación de conocimiento</option>
+                                            <option name="proposito" value="Investigación aplicada">Investigación aplicada</option>
+                                            <option name="proposito" value="Transferencia tecnologica">Transferencia tecnologica</option>
                                         </select>
                                     </div>
                                 </div>

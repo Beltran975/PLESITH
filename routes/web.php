@@ -44,6 +44,19 @@ Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
 
+Route::get('administrador/postulaciones', function () {
+    return view('administrador/postulaciones');
+});
+Route::get('administrador/prueba-postulaciones', function () {
+    return view('administrador/prueba-postulaciones');
+});
+Route::get('/administrador/formaprovacion', function () {
+    return view('/administrador/formaprovacion');
+});
+
+Route::get('/administrador/formnegacion', function () {
+    return view('/administrador/formnegacion');
+});
 
 Auth::routes();
 
@@ -59,9 +72,19 @@ Route::get('footer', function(){
 });
 
 // En routes/web.php
+use App\Http\Controllers\Auth\RegisterController;
 
-Route::get('edit-perfil/{id}', 'Auth\RegisterController@edit')->name('edit-perfil');
-Route::put('update/{id}', 'Auth\RegisterController@update')->name('update');
+Route::get('/register', [RegisterController::class, 'create'])->name('auth.create');
+Route::post('/store', [RegisterController::class, 'store'])->name('auth.store');
+Route::get('/showFilesById/{id}/files', [RegisterController::class, 'showFilesById'])->name('auth.showFilesById');
 
-Route::post('/home/create', 'App\\Http\\Controllers\\ProduccionController@create')->name('produccion.create');
+//ruta para registrar Informacion PLESITH
+Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
+//ruta para registrar Informacion Producciones
+Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
+Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'list']);
 
+//ruta para ver postulantes 
+
+
+Route::get('/administrador/tabla', [App\Http\Controllers\pstulacionesController::class, 'verPostulaciones']);

@@ -1,0 +1,135 @@
+.hr-gob{
+    margin: 10px 0 10px;
+    background-color: var(--gold);
+    border-top: 1px solid var(--gold);
+    opacity: 1;
+    margin-bottom: 50px;
+  }
+  
+   .hr-gob::before{
+    content: " ";
+    width: 35px;
+    height: 5px;
+    background-color: var(--wine) !important;
+    display: block;
+    position: absolute;
+  }
+  #postulacionesHeader{
+    margin-left: 10px;
+  }
+/*contenido*/
+.tabcontent {
+    background-color: #ffffff;
+    color: #333;
+    width: 1000px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.tablinks {
+    background-color: #bfbfbf;
+    border: 1px solid #ccc;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    margin-right: 2px; /* Para ajustar la separación entre pestañas */
+}
+
+.tablinks.active {
+    background-color: #691b32;
+    border-bottom: none;
+}
+
+#tabGroup {
+    display: flex;
+    align-items: center;
+}
+
+#postulacionesHeader {
+    margin-right: 1px;
+}
+
+table {
+    border-top: 1px solid rgb(208, 208, 208);
+    border-bottom: 1px solid rgb(208, 208, 208);
+    width: 100%;
+    padding: 100px;
+}
+
+th,
+td {
+    border-top: 1px solid rgb(208, 208, 208);
+    text-align: left;
+   
+}
+
+.optionsMenu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.optionsButton {
+    border: none;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+
+.optionsButton:hover .optionsMenu {
+    display: block;
+}
+
+.optionsMenu a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+   
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    text-align: center;
+}
+.modal-footer{
+    align-items: center;
+}
+
+.close {
+    color: #691b32;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

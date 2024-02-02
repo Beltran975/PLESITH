@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Instituciones;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -37,9 +38,9 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function create()
     {
-        $this->middleware('guest');
+        return view('auth.register');
     }
 
     /**
@@ -81,6 +82,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+        $instituciones = Instituciones::all();
+        return view('register', compact('instituciones'));
     }
 
+    
 }
