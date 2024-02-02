@@ -89,14 +89,14 @@ Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'
 
 Route::get('/administrador/tabla', [App\Http\Controllers\pstulacionesController::class, 'verPostulaciones']);
 
-<<<<<<< Updated upstream
+
 
 //ruta para documento de investigación 
 Route::get('/documentoInvestigacion', function(){
     return view('docInvestigacion');
 });
-=======
+
 use App\Http\Controllers\PdfController;
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
->>>>>>> Stashed changes
+
