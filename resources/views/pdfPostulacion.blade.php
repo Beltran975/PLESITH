@@ -7,26 +7,10 @@
     <title>PDF Title</title>
 </head>
 <body>
-    <h1>PDF Content</h1>
-
+    <h1>Postulacion PLESITH</h1>
     <p>Usuario: {{ $user->name }}</p>
     <p>Email: {{ $user->email }}</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <!-- Otros encabezados según tu modelo -->
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($data as $item)
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <!-- Otros campos según tu modelo -->
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <p>Email: {{ $user->curp }}</p>
+    <p>Email: {{ $user-> institucion}}</p>
 </body>
 </html>

@@ -23,6 +23,7 @@
                         <h3>Datos Generales</h3>
                         <h3>|</h3>
                         <h3>{{ Auth::user()->name }}</h3>
+                        <a href="/generate-pdf">descarga</a>
                     </div>
                     <hr class="hr-gob" >
                     
