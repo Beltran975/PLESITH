@@ -373,9 +373,13 @@
                                     <div class="col-md-6">
                                         <select class="form-control" name="proposito" required>
                                             <option name="proposito" value="" disabled selected>Seleccionar propósito</option>
-                                            <option name="proposito" value="Proposito 1">Proposito 1</option>
-                                            <option name="proposito" value="Proposito 2">Proposito 2</option>
-                                            <option name="proposito" value="Proposito 3">Proposito 3</option>
+                                            <option name="proposito" value="Asimilacion de tecnologia">Asimilacion de tecnologia</option>
+                                            <option name="proposito" value="Creación">Creación</option>
+                                            <option name="proposito" value="Desarrollo tecnológico">Desarrollo tecnológico</option>
+                                            <option name="proposito" value="Difusión">Difusión</option>
+                                            <option name="proposito" value="Generación de conocimiento">Generación de conocimiento</option>
+                                            <option name="proposito" value="Investigación aplicada">Investigación aplicada</option>
+                                            <option name="proposito" value="Transferencia tecnologica">Transferencia tecnologica</option>
                                         </select>
                                     </div>
                                 </div>
