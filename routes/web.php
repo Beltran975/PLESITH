@@ -100,3 +100,6 @@ use App\Http\Controllers\PdfController;
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
+use App\Http\Controllers\tablaController;
+
+Route::get('/datos', [tablaController::class, 'mostrarDatos']);

@@ -1,21 +1,39 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User; // Reemplaza "TuModelo" con el nombre de tu modelo
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Barryvdh\DomPDF\Facade\PDF;
+use App\Models\Postulaciones;
 
 class PdfController extends Controller
 {
     public function generatePdf()
     {
-        $user = Auth::user(); // Obtén el usuario autenticado
-        $data = User::all(); // Obtén los datos de tu base de datos
+        $user = Auth::user();
+        $data = User::all();
 
         $pdf = PDF::loadView('pdfPostulacion', compact('user', 'data'));
+        
+        // Guardar el PDF en el almacenamiento público
+        $pdfFilename = $user->name . '_Postulacion.pdf';        
+        $pdf->save(storage_path('app/public/postulaciones/' . $pdfFilename));
 
-        return $pdf->download('archivo.pdf');
+        // Llamar a la función para insertar en la tabla de postulaciones
+        $this->insertProduccionRecord($pdfFilename);
+
+        return $pdf->download($pdfFilename);
+    }
+
+    public function insertProduccionRecord($filename)
+    {
+        // Insertar el registro en la tabla de postulaciones
+        Postulaciones::create([
+            'user_id' => Auth::id(),
+            'pdfPostulacion' => $filename,
+        ]);
+
+        // Puedes personalizar este método según la estructura de tu tabla de postulaciones
     }
 }

@@ -30,4 +30,9 @@ class User extends Authenticatable
         'verificacion',
 
     ];
+
+    public function postulaciones()
+    {
+        return $this->hasMany(Postulaciones::class, 'user_id');
+    }
 }
