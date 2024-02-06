@@ -13,8 +13,8 @@
         <title>Documentos de investigación</title>
     </head>
     <body>
-        @include('layouts/headregob')
-        @include('layouts/header')
+    @include('layouts/headregob')
+    @include('layouts/header')
         <main class="page">
             <div class="content">
                 <div class="green-box">
@@ -117,11 +117,11 @@
                             <h4 class="modal-title">Agregar</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="#" method="post" enctype="multipart/form-data">
+                            <form action="EnvioDocInves" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row justify-content-center mb-2">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="tipo">{{ __('Titulo *') }}</label>
+                                        <label class="form-label" for="titulo">{{ __('Titulo *') }}</label>
                                     </div>
                                     <div class="col-md-6">
                                         <input class="form-control" type="text" name="titulo" required>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="row justify-content-center mb-2">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="evidencia">{{ __('Documento *')}}</label>
+                                        <label class="form-label" for="documento">{{ __('Documento *')}}</label>
                                     </div>
                                     <div class="col-md-6">
                                         <input class="form-control" type="file" name="documento" required>

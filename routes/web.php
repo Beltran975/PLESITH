@@ -93,8 +93,11 @@ Route::get('/administrador/tabla', [App\Http\Controllers\pstulacionesController:
 
 //ruta para documento de investigación 
 Route::get('/documentoInvestigacion', function(){
-    return view('docInvestigacion');
+    return view('administrador.docInvestigacion');
 });
+//ruta para guardar datos de form docInvestigacion
+Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
+
 
 use App\Http\Controllers\PdfController;
 
