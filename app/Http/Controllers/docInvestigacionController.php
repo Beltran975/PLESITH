@@ -29,4 +29,10 @@ class docInvestigacionController extends Controller
         }
         return view('administrador.docInvestigacion');
     }
+
+    public function index()
+    {
+        $query = DB::table('dovInves')->get();
+        return view('administrador.docInvestigacion', ['datos'=>$query]);
+    }
 }

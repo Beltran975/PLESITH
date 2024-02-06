@@ -97,6 +97,7 @@ Route::get('/documentoInvestigacion', function(){
 });
 //ruta para guardar datos de form docInvestigacion
 Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
+Route::get('ListaDocInvestigacion', [App\Http\Controllers\docInvestigacionController::class, 'index']);
 
 
 use App\Http\Controllers\PdfController;
