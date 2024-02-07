@@ -43,6 +43,9 @@ Route::get('/infotech', function () {
 Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
+Route::get('/home-Admin', function () {
+    return view('administrador.home-admin');
+});
 
 Route::get('administrador/postulaciones', function () {
     return view('administrador/postulaciones');
@@ -106,4 +109,4 @@ Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
 use App\Http\Controllers\tablaController;
 
-Route::get('/datos', [tablaController::class, 'mostrarDatos']);
+Route::get('administrador/prueba-postulaciones', [tablaController::class, 'mostrarDatos']);
