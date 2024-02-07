@@ -43,8 +43,13 @@ Route::get('/infotech', function () {
 Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
+<<<<<<< Updated upstream
 Route::get('/home-Admin', function () {
     return view('administrador.home-admin');
+=======
+Route::get('/gestionDatos', function () {
+    return view('gestionDatos');
+>>>>>>> Stashed changes
 });
 
 Route::get('administrador/postulaciones', function () {

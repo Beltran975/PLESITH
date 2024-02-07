@@ -1,0 +1,58 @@
+h1{
+    position: absolute;
+}
+nav{
+    padding-top: 4%;
+    margin: 2%;
+    width: auto;
+    height: auto;
+    border-bottom: solid black;
+}
+.nav-right-section{
+    display: flex;
+    list-style: none;
+    justify-content: right;
+    /* align-items: center; */
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+}
+main div.container-fluid{
+    margin: 2%;
+    border: solid black;
+    height: auto;
+    width: auto;
+}
+div.row{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+main h2{
+    font-size: 30px;
+    margin: 2%;
+    height: auto;
+    width: auto;
+}
+main h6{
+    margin: 2%;
+}
+input.search{
+    width: 100%;
+    border: 1px solid black;
+}
+select.form-select{
+    width: 100%;
+}
+input.date{
+    width: 100%;
+}
+div.card{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: solid black;
+}
