@@ -63,13 +63,18 @@ class RegisterController extends Controller
             'institucion' => $request->input('institucion'),
             'programa' => $request->input('programa'),
             'password' => bcrypt($request->input('password')),
+            'estatus' => 'No revisado',
+            'verificacion' => 'En proceso',
         ];
 
         $profile = User::create($profileData);
 
         if ($request->hasFile('archivoCurp')) {
-            $pdfPath = $request->file('archivoCurp')->store('archivos_curp', 'public');
-            $profile->update(['archivoCurp' => $pdfPath]);
+            $pdfPath = $request->file('archivoCurp');
+            $pdfPath->move(public_path().'/storage/archivos_curp',$pdfPath->getClientOriginalName());
+            $profile->archivoCurp=$pdfPath->getClientOriginalName();
+            //$pdfPath = $request->file('archivoCurp')->store('archivos_curp', 'public');
+            //$profile->update(['archivoCurp' => $pdfPath]);
         }
 
         if ($request->hasFile('image')) {
@@ -77,6 +82,7 @@ class RegisterController extends Controller
             $profile->update(['image_path' => $imagePath]);
         }
 
+        return view('auth.login');
 
     }
 

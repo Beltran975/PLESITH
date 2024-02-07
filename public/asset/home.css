@@ -5,6 +5,9 @@ body {
     margin: 0;
     
 }
+.page{
+  margin-top: 2%;
+}
 .content{
     display: flex;
     justify-content: center;

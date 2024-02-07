@@ -103,7 +103,7 @@
                   <select class="form-control" name="institucion" id="institucion" required>
                       <option name="institucion" value="" disabled selected>Seleccionar</option>
                       <option name="institucion" value="INSTITUTO TECNOLOGICO DE HUEJUTLA">INSTITUTO TECNOLOGICO DE HUEJUTLA</option>
-                      <option name="institucion" value="INSTITUTO TECNOLOGICO DE ATITALAQUIA">INSTITUTO TECNOLOGICO DE ATITALAQUIA/option>
+                      <option name="institucion" value="INSTITUTO TECNOLOGICO DE ATITALAQUIA">INSTITUTO TECNOLOGICO DE ATITALAQUIA</option>
                       <option name="institucion" value="INSTITUTO TECNOLOGICO DE PACHUCA">INSTITUTO TECNOLOGICO DE PACHUCA</option>
                       <option name="institucion" value="NORMAL DE LAS HUASTECAS">NORMAL DE LAS HUASTECAS</option>
                       <option name="institucion" value="NORMAL SIERRA HIDALGUENSE">NORMAL SIERRA HIDALGUENSE</option>

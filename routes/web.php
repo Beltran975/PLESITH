@@ -43,11 +43,21 @@ Route::get('/infotech', function () {
 Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
+<<<<<<< Updated upstream
+Route::get('/home-Admin', function () {
+    return view('administrador.home-admin');
+=======
+Route::get('/gestionDatos', function () {
+    return view('gestionDatos');
+>>>>>>> Stashed changes
+});
 
 Route::get('administrador/postulaciones', function () {
     return view('administrador/postulaciones');
 });
-
+Route::get('administrador/prueba-postulaciones', function () {
+    return view('administrador/prueba-postulaciones');
+});
 Route::get('/administrador/formaprovacion', function () {
     return view('/administrador/formaprovacion');
 });
@@ -75,3 +85,33 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/register', [RegisterController::class, 'create'])->name('auth.create');
 Route::post('/store', [RegisterController::class, 'store'])->name('auth.store');
 Route::get('/showFilesById/{id}/files', [RegisterController::class, 'showFilesById'])->name('auth.showFilesById');
+
+//ruta para registrar Informacion PLESITH
+Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
+//ruta para registrar Informacion Producciones
+Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
+Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'list']);
+
+//ruta para ver postulantes 
+
+
+Route::get('/administrador/tabla', [App\Http\Controllers\pstulacionesController::class, 'verPostulaciones']);
+
+
+
+//ruta para documento de investigación 
+Route::get('/documentoInvestigacion', function(){
+    return view('administrador.docInvestigacion');
+});
+//ruta para guardar datos de form docInvestigacion
+Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
+Route::get('ListaDocInvestigacion', [App\Http\Controllers\docInvestigacionController::class, 'index']);
+
+
+use App\Http\Controllers\PdfController;
+
+Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
+
+use App\Http\Controllers\tablaController;
+
+Route::get('administrador/prueba-postulaciones', [tablaController::class, 'mostrarDatos']);

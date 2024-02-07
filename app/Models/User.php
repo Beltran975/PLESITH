@@ -25,7 +25,14 @@ class User extends Authenticatable
         'programa',
         'password',
         'archivoCurp',
-        'image_path'
+        'image_path',
+        'estatus',
+        'verificacion',
 
     ];
+
+    public function postulaciones()
+    {
+        return $this->hasMany(Postulaciones::class, 'user_id');
+    }
 }
