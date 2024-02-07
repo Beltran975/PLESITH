@@ -21,8 +21,8 @@ class docInvestigacionController extends Controller
                 $docInves->move(public_path().'/docInvestigacion/',$docInves->getClientOriginalName());
                 $reg->documento = $docInves->getClientOriginalName();
             }
-            $reg->descripcion = $request->get('descripcion');
-            $reg->save();
+        $reg->descripcion = $request->get('descripcion');
+        $reg->save();
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
