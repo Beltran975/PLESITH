@@ -39,7 +39,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h3>Area del conocimiento</h3>
+                            <h3>Área del conocimiento</h3>
                             <div class="linea">
                                 <select class="form-select" aria-label="Default select example">
                                 <option selected>Seleccionar</option>
@@ -126,8 +126,7 @@
 <br><br>
                         <div class="row">
                             <div class="col">
-                                <div class="resultado">
-                                <i class="bi bi-doc"></i>  
+                                <div class="resultado">  
                                 </div>
                             </div>
                             <div class="col">
