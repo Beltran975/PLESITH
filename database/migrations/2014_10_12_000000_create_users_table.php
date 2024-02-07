@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('image_path')->nullable();
             $table->string('estatus');
             $table->string('verificacion');
-            $table->string('role');
             $table->timestamps();
         });
     }
