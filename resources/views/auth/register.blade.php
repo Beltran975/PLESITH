@@ -48,7 +48,7 @@
                   </div>
                   <div class="col-md-6">
                     <input id="curp" type="text" class="form-control" name="curp" required><br>
-                    <input class="form-control" id="archivoCurp" type="file"  name="archivoCurp" required>
+                    <input class="form-control" id="archivoCurp" type="file" accept="application/pdf"  name="archivoCurp" required>
                   </div>
                 </div>
                 
@@ -280,7 +280,7 @@
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
-                    <label for="foto" class="control-label">{{ __('Fotografia de perfil *')}}</label>
+                    <label for="foto" class="control-label">{{ __('Fotografía de perfil *')}}</label>
                   </div>  
                   <div class="col-md-6">
                     <input class="form-control" id="image" type="file" name="image" required>
