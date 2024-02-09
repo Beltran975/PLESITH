@@ -48,6 +48,10 @@ Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser']
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::get('/home-Admin', function () {
+    return view('administrador.home-admin');
+});
+
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
 });

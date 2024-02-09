@@ -17,5 +17,62 @@
     transform: translate(-50%, -50%);
     color: #ffffff;
 }
+#body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#carousel-container {
+    width: 80%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#carousel {
+    display: flex;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    max-width: 300px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+select {
+    margin-bottom: 20px;
+}
+
+.months {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.months td {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
 
