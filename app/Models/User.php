@@ -28,7 +28,8 @@ class User extends Authenticatable
         'image_path',
         'estatus',
         'verificacion',
-
+        'fullacces',
+        'codigo',
     ];
 
     public function postulaciones()

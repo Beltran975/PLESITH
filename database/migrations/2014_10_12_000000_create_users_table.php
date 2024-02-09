@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('image_path')->nullable();
             $table->string('estatus');
             $table->string('verificacion');
+            $table->string('codigo')->unique()->nullable();
+            $table->enum('fullacces',['yes','no'])->nullable();
             $table->timestamps();
         });
     }

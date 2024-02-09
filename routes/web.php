@@ -27,9 +27,6 @@ Route::get('/la', function () {
     return view('prueba-layouts');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
 Route::get('/nodos', function () {
     return view('nodos');
 });
@@ -43,13 +40,16 @@ Route::get('/infotech', function () {
 Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
-<<<<<<< Updated upstream
-Route::get('/home-Admin', function () {
-    return view('administrador.home-admin');
-=======
+
+Auth::routes();
+
+Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
->>>>>>> Stashed changes
 });
 
 Route::get('administrador/postulaciones', function () {
@@ -65,9 +65,6 @@ Route::get('/administrador/formaprovacion', function () {
 Route::get('/administrador/formnegacion', function () {
     return view('/administrador/formnegacion');
 });
-
-Auth::routes();
-
 
 Route::get('header', function(){
     return view('layouts/header');

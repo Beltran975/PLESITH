@@ -14,6 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('soloadmin',['only'=>'getUser']);
     }
 
     /**
@@ -21,8 +22,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function getUser()
+    {
+        return view('administrador.home-admin');
+    }
+    
     public function index()
     {
-        return view('index');
+        return view('home');
     }
+
 }
