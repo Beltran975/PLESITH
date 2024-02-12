@@ -48,7 +48,7 @@
                                 </select>
                 </div>
                 <div class="col-3">
-                    <h5>Área del conocimiento</h5>
+                    <h5>Área del Conocimiento</h5>
                     <select class="form-select" aria-label="Default select example">
                                 <option disabled selected>Seleccionar</option>
                                 <option value="linea1">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra  </option>
@@ -249,35 +249,35 @@
             <div class="row justify-content-center">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
+                    <h5 class="card-title">Título</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatum quisquam accusantium incidunt nihil ducimus inventore, officiis, culpa quis molestiae veniam cumque alias maxime quidem eveniet debitis dicta deserunt? Esse.</p>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Más información</a>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
+                    <h5 class="card-title">Título</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatum quisquam accusantium incidunt nihil ducimus inventore, officiis, culpa quis molestiae veniam cumque alias maxime quidem eveniet debitis dicta deserunt? Esse.</p>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Más información</a>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
+                    <h5 class="card-title">Título</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatum quisquam accusantium incidunt nihil ducimus inventore, officiis, culpa quis molestiae veniam cumque alias maxime quidem eveniet debitis dicta deserunt? Esse.</p>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Más información</a>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
+                    <h5 class="card-title">Título</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatum quisquam accusantium incidunt nihil ducimus inventore, officiis, culpa quis molestiae veniam cumque alias maxime quidem eveniet debitis dicta deserunt? Esse.</p>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Más información</a>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Titulo</h5>
+                    <h5 class="card-title">Título</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatum quisquam accusantium incidunt nihil ducimus inventore, officiis, culpa quis molestiae veniam cumque alias maxime quidem eveniet debitis dicta deserunt? Esse.</p>
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Más información</a>
 
@@ -296,11 +296,11 @@
                             <p>Categoría:</p>
                             <p>Líder:</p>
                             <p>Colaboradores:</p>
-                            <p>Institución ligada:</p>
+                            <p>Institución Ligada:</p>
                             <p>Descripción:</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Generar reporte</button>
+                            <button type="button" class="btn btn-primary">Generar Reporte</button>
                         </div>
                     </div>
                 </div>
