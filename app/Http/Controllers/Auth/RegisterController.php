@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Instituciones;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered; // Importa la clase Registered
+use App\Mail\ConfirmacionCorreo; // Importa la clase Mailable para el correo de confirmación
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -96,6 +99,9 @@ class RegisterController extends Controller
 
         return view('auth.showFilesById', compact('profile'));
     }
-
+    protected function registered(Request $request, $user)
+    {
+        Mail::to($user->email)->send(new ConfirmacionCorreo($user));
+    }
     
 }

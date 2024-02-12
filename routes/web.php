@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\PdfController;
+use App\Http\Controllers\tablaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +43,7 @@ Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
 
+<<<<<<< Updated upstream
 Auth::routes();
 
 Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
@@ -48,12 +51,18 @@ Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser']
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+=======
+>>>>>>> Stashed changes
 Route::get('/home-Admin', function () {
     return view('administrador.home-admin');
 });
 
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 });
 
 Route::get('administrador/postulaciones', function () {
@@ -81,7 +90,7 @@ Route::get('footer', function(){
 });
 
 // En routes/web.php
-use App\Http\Controllers\Auth\RegisterController;
+
 
 Route::get('/register', [RegisterController::class, 'create'])->name('auth.create');
 Route::post('/store', [RegisterController::class, 'store'])->name('auth.store');
@@ -109,10 +118,14 @@ Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::c
 Route::get('ListaDocInvestigacion', [App\Http\Controllers\docInvestigacionController::class, 'index']);
 
 
-use App\Http\Controllers\PdfController;
+
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
-use App\Http\Controllers\tablaController;
+
 
 Route::get('administrador/prueba-postulaciones', [tablaController::class, 'mostrarDatos']);
+
+use App\Http\Controllers\EmailController;
+
+Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
