@@ -36,7 +36,7 @@
                 <!-- Informacion personal -->
                 <div class="card mb-3">
                     <div class="card-header" data-bs-toggle="collapse" href="#informacionPersonal">
-                        Información personal
+                        Información Personal
                     </div>
                     <div class="card-body collapse" id="informacionPersonal">
                         <div class="row">
@@ -76,7 +76,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <p>Programa educativo :</p>
+                                <p>Programa Educativo :</p>
                             </div>
                             <div class="col-md-6">
                                 <p>{{ Auth::user()->programa}}</p>
@@ -84,7 +84,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <p>Fotografía del perfil :</p>
+                                <p>Fotografía del Perfil :</p>
                             </div>
                             <div class="col-md-6">
                                 <div class="image-Ipersonal">
@@ -105,7 +105,7 @@
                             @csrf
                             <div class="row form-outline md-4">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="lineaInv">Línea de investigación</label>
+                                    <label class="form-label" for="lineaInv">Línea de Investigación</label>
                                 </div>
                                 <br>
                                 <br>
@@ -121,7 +121,7 @@
                             <!-- Grado Academico -->
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="grado">Grado académico</label>
+                                    <label class="form-label" for="grado">Grado Académico</label>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="text" name="grado" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
@@ -130,7 +130,7 @@
                             <!-- Evidencia Grado Academico -->
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="evidenciaGrado">Evidencia del del grado académico </label>
+                                    <label class="form-label" for="evidenciaGrado">Evidencia del Grado Académico </label>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF" />
@@ -212,7 +212,7 @@
                 <!-- Nodos de colaboración -->
                 <div class="card mb-3">
                     <div class="card-header" data-bs-toggle="collapse" href="#nodos">
-                        Nodos de colaboración
+                        Nodos de Colaboración
                     </div>
                     <div class="card-body collapse" id="nodos">
                         <div class="nav-producciones">
@@ -243,7 +243,7 @@
                                 <tbody>
                                     <tr>
                                         <th class="rotated-header">Tema de la investigación:</th>
-                                        <td class="contenido-produccion">Bases de datos</td>
+                                        <td class="contenido-produccion">Bases de Datos</td>
                                     </tr>
                                     <tr>
                                         <th class="rotated-header">Categoría:</th>
@@ -259,11 +259,11 @@
                                     </tr>
                                     <tr>
                                         <th class="rotated-header">Descripción:</th>
-                                        <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, combinando principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
+                                        <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, al combinar los principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
                                     </tr>
                                     <tr>
                                         <th class="rotated-header">Documentación:</th>
-                                        <td class="contenido-produccion"><a href="#">ejemplo.pdf</a></td>
+                                        <td class="contenido-produccion"><a href="#">Ejemplo.pdf</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -309,16 +309,16 @@
                                 <div class="col-md-6">
                                     <select class="form-control" name="tipo" required>
                                         <option name="tipo" value="" disabled selected>Seleccionar tipo</option>
-                                        <option name="tipo" value="Libros o capitulos de libro">Libros o capitulos de libro</option>
-                                        <option name="tipo" value="Articulos arbitrados y articulos indexados">Articulos arbitrados y articulos indexados</option>
+                                        <option name="tipo" value="Libros o capitulos de libro">Libros o Capítulos de libro</option>
+                                        <option name="tipo" value="Articulos arbitrados y articulos indexados">Artículos arbitrados y Artículos indexados</option>
                                         <option name="tipo" value="Propiedad intelectual">Propiedad intelectual</option>
                                         <option name="tipo" value="Modelos de utilidad">Modelos de utilidad</option>
                                         <option name="tipo" value="Patentes">Patentes</option>
                                         <option name="tipo" value="Prototipos">Prototipos</option>
-                                        <option name="tipo" value="Transferencia de tecnología">Transferencia de tecnología</option>
-                                        <option name="tipo" value="Desarrollo de infraestructura">Desarrollo de infraestructura</option>
-                                        <option name="tipo" value="Informes técnicos">Informes técnicos</option>
-                                        <option name="tipo" value="Obras artísticas">Obras artísticas</option>
+                                        <option name="tipo" value="Transferencia de tecnología">Transferencia de Tecnología</option>
+                                        <option name="tipo" value="Desarrollo de infraestructura">Desarrollo de Infraestructura</option>
+                                        <option name="tipo" value="Informes técnicos">Informes Técnicos</option>
+                                        <option name="tipo" value="Obras artísticas">Obras Artísticas</option>
                                         <option name="tipo" value="Otro">Otro</option>
                                     </select>
                                 </div>
@@ -341,7 +341,7 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="titulo">{{ __('Titulo *')}}</label>
+                                    <label class="form-label" for="titulo">{{ __('Título *')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" name="titulo" type="text" required>
@@ -379,14 +379,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <select class="form-control" name="proposito" required>
-                                        <option name="proposito" value="" disabled selected>Seleccionar propósito</option>
-                                        <option name="proposito" value="Asimilacion de tecnologia">Asimilacion de tecnologia</option>
+                                        <option name="proposito" value="" disabled selected>Seleccionar Propósito</option>
+                                        <option name="proposito" value="Asimilacion de tecnologia">Asimilación de Tecnología</option>
                                         <option name="proposito" value="Creación">Creación</option>
-                                        <option name="proposito" value="Desarrollo tecnológico">Desarrollo tecnológico</option>
+                                        <option name="proposito" value="Desarrollo tecnológico">Desarrollo Tecnológico</option>
                                         <option name="proposito" value="Difusión">Difusión</option>
-                                        <option name="proposito" value="Generación de conocimiento">Generación de conocimiento</option>
-                                        <option name="proposito" value="Investigación aplicada">Investigación aplicada</option>
-                                        <option name="proposito" value="Transferencia tecnologica">Transferencia tecnologica</option>
+                                        <option name="proposito" value="Generación de conocimiento">Generación de Conocimiento</option>
+                                        <option name="proposito" value="Investigación aplicada">Investigación Aplicada</option>
+                                        <option name="proposito" value="Transferencia tecnologica">Transferencia Tecnológica</option>
                                     </select>
                                 </div>
                             </div>
@@ -439,7 +439,7 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="InstitucionLigada">{{ __('Institución ligada* ')}}</label>
+                                    <label class="form-label" for="InstitucionLigada">{{ __('Institución Ligada* ')}}</label>
                                 </div>
                                 <div class="col-md-6">
                                     <select class="form-control" name="InstitucionLigada" id="InstitucionLigada" required>
@@ -539,7 +539,7 @@
 
                 // Mostrar otra alerta SweetAlert2 después de la redirección
                 Swal.fire({
-                    title: "¡Postulacion enviada con exito!",
+                    title: "¡Postulación enviada con exito!",
                     text: "En breve se descargará una copia de su postulación",
                     icon: "success",
                     iconColor: '#bc955b',
