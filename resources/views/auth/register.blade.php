@@ -7,6 +7,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-rbs5oRmyz9BDjzS9nEIEUnzM1qDe5ICorxF9uF8g5SeFOByuB+8Z3Gk5Sck/GJvI" crossorigin="anonymous">
     <title>Registro | PLESITH</title>
+    <script> //funcion para mayusculas
+    function mayus(e) {
+      e.value = e.value.toUpperCase();
+    }
+    </script>
   </head>
   <body>
     @include('layouts/headregob')
@@ -47,7 +52,8 @@
                     <label class="control-label" for="curp" class="">{{ __('CURP *')}}</label>
                   </div>
                   <div class="col-md-6">
-                    <input id="curp" type="text" class="form-control" name="curp" required><br>
+                  <!--<input type="text" onkeyup="mayus(this);">-->
+                    <input id="curp" ttype="text" onkeyup="mayus(this);" class="form-control" name="curp" required maxlength="18"><br>
                     <input class="form-control" id="archivoCurp" type="file" accept="application/pdf"  name="archivoCurp" required>
                   </div>
                 </div>
@@ -283,7 +289,7 @@
                     <label for="foto" class="control-label">{{ __('Fotografía de perfil *')}}</label>
                   </div>  
                   <div class="col-md-6">
-                    <input class="form-control" id="image" type="file" name="image" required>
+                    <input class="form-control" id="image" type="file"  name="image" required>
                   </div>
                 </div>
                 
