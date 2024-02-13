@@ -148,12 +148,12 @@
                     <div class="col-md-3 col-12">
                         <div class="contacto">
                             <h6>
-                                <a href="https://gobierno.hidalgo.gob.mx/AvisoPrivacidad">Aviso de privacidad</a>
+                                <a href="https://gobierno.hidalgo.gob.mx/AvisoPrivacidad">Aviso de Privacidad</a>
                             </h6>
                             <h6>Contacto: citnova@hidalgo.gob.mx</h6>
                             <h6>Teléfonos: 771 657 5103 y 771 657 5104</h6>
                             <p>Boulevard Circuito la Concepción #3</p>
-                            <p>San Agustín Tlaxiaca, Hidalgo, México</p>
+                            <p>San Agustín Tlaxiaca, Hidalgo, México.</p>
                             <h6>
                                 <a href="https://drive.google.com/file/d/1vOWKk9IierD6XnpzIBiv-lQnhbbv9o1z/view?usp=sharing" target="_blank">Aviso de privacidad CITNOVA</a>
                             </h6>
@@ -168,7 +168,7 @@
                                 let date =  new Date().getFullYear();
                                 document.write( date ); 
                             </script> 
-                            Todos los derechos reservados por Hidalgo de la Transformación
+                            Todos los derechos reservados por Hidalgo de la Transformación.
                         </p>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>¡Bienvenido, {{ $user->name }}!</h1>
-    <p>Gracias por registrarte en nuestro sitio. Por favor, haz clic en el siguiente enlace para confirmar tu correo electrónico:</p>
+    <p>Gracias por registrarte en nuestro sitio. Por favor, haz clic en el siguiente enlace para confirmar tú correo electrónico:</p>
     <a href="{{ route('confirmacion', $user->email_token) }}">Confirmar Correo Electrónico</a>
 </body>
 </html>

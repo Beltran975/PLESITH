@@ -54,8 +54,8 @@
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Ver postulación</a></li>
-                                            <li><button class="dropdown-item" href="#" onclick="abrirModalAprobacion('{{ $postulante->name }}')">Aprobar postulación</button></li>
-                                            <li><button class="dropdown-item" href="#" onclick="abrirModalNegacion('{{ $postulante->name }}')">Negar postulación</button></li>
+                                            <li><button class="dropdown-item" href="#" onclick="abrirModalAprobacion('{{ $postulante->name }}')">Aprobar Postulación</button></li>
+                                            <li><button class="dropdown-item" href="#" onclick="abrirModalNegacion('{{ $postulante->name }}')">Negar Postulación</button></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -89,8 +89,8 @@
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Ver postulación</a></li>
-                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aprobacion" onclick="abrirModalAprobacion('{{ $postulante->name }}')">Aprobar postulación</a></li>
-                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#negacion">Negar postulación</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aprobacion" onclick="abrirModalAprobacion('{{ $postulante->name }}')">Aprobar Postulación</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#negacion">Negar Postulación</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -114,7 +114,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>El postulado <span id="modalTituloAprobacion"></span> cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
+                        <p>El postulado <span id="modalTituloAprobacion"></span> Cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
                         <label for="dictamenAprobar">Dictamen de Aceptación:</label>
                         <input type="file" id="dictamenAprobar" name="dictamenAprobar">
                     </div>
@@ -133,7 +133,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>El postulado <span id="modalUsuarioNegar"></span> no cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
+                        <p>El postulado <span id="modalUsuarioNegar"></span> No cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
                         <label for="dictamenNegar">Dictamen de Negación:</label>
                         <input type="file" id="dictamenNegar" name="dictamenNegar">
                     </div>

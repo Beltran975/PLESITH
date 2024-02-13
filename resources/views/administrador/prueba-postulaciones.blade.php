@@ -18,7 +18,7 @@
         <div class="title">
             <div class="row ml-5">
                 <h3>{{ __('Postulaciones') }}</h3>
-                <a href="/enviar-correo" class="btn btn-primary">Enviar correos</a>
+                <a href="/enviar-correo" class="btn btn-primary">Enviar Correos</a>
             </div>
             <hr class="hr-gob">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -39,7 +39,7 @@
                         <thead>
                             <tr>
                                 <th>Postulante</th>
-                                <th>Area del conocimiento</th>
+                                <th>Area de Conocimiento</th>
                                 <th>Fecha de Postulación</th>
                             </tr>
                         </thead>
@@ -78,7 +78,7 @@
                         <thead>
                             <tr>
                                 <th>Postulante</th>
-                                <th>Area del conocimiento</th>
+                                <th>Área de Conocimiento</th>
                                 <th>Fecha de Postulación</th>
                             </tr>
                         </thead>
@@ -123,7 +123,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>El postulado <span id="modalTituloAprobacion"></span> cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
+                        <p>El postulado <span id="modalTituloAprobacion"></span> Cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
                         <label for="dictamenAprobar">Dictamen de Aceptación:</label>
                         <input type="file" id="dictamenAprobar" name="dictamenAprobar">
                     </div>
@@ -142,7 +142,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>El postulado <span id="modalUsuarioNegar"></span> no cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGICOS DE HIDALGO.</p>
+                        <p>El postulado <span id="modalUsuarioNegar"></span> No cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
                         <label for="dictamenNegar">Dictamen de Negación:</label>
                         <input type="file" id="dictamenNegar" name="dictamenNegar">
                     </div>
