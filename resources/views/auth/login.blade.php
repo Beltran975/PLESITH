@@ -56,7 +56,7 @@
                     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                   </div>
                   <div class="col-md-8 offset-md-4">
-                    <a href="/register" class="btn btn-primary ">Regístrate aquí</a>
+                    <a href="/register" class="btn btn-primary ">Regístrate Aquí</a>
                     <button type="submit" class="btn btn-primary">
                       {{ __('Enviar') }}
                     </button>

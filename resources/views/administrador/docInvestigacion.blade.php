@@ -23,7 +23,7 @@
                     </div>
                     <hr class="hr-gob" >
                     <div class="titulo row d-flex mb-3">
-                        <h4>Documentos de investigación</h4>
+                        <h4>Documentos de Investigación</h4>
                     </div>
                     
                     <!-- Produccion -->
@@ -72,8 +72,8 @@
                                     <table class="table contenido produccion">
                                         <tbody>
                                             <tr>
-                                                <th class="rotated-header">Titulo :</th>
-                                                <td class="contenido-produccion">Titulo</td>
+                                                <th class="rotated-header">Título :</th>
+                                                <td class="contenido-produccion">Título</td>
                                             </tr>
                                             <tr>
                                                 <th class="rotated-header">Año :</th>
@@ -85,7 +85,7 @@
                                             </tr>
                                             <tr>
                                                 <th class="rotated-header">Descripción:</th>
-                                                <td class="contenido-produccion">Descripcion</td>
+                                                <td class="contenido-produccion">Descripción</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -121,7 +121,7 @@
                                 @csrf
                                 <div class="row justify-content-center mb-2">
                                     <div class="col-md-4">
-                                        <label class="form-label" for="titulo">{{ __('Titulo *') }}</label>
+                                        <label class="form-label" for="titulo">{{ __('Título *') }}</label>
                                     </div>
                                     <div class="col-md-6">
                                         <input class="form-control" type="text" name="titulo" required>

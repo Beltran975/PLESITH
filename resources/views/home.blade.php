@@ -29,8 +29,8 @@
                     <h3>{{ Auth::user()->name }}</h3>
 
                 </div>
-                <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
-                <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
+                <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar Postulación</a>
+                <button class="btn btn-primary" id="botonPostulacion">Enviar Postulación</button>
                 <hr class="hr-gob">
 
                 <!-- Informacion personal -->
@@ -68,7 +68,7 @@
                         <br>
                         <div class="row">
                             <div class="col-md-6">
-                                <p>Institución a la que pertenece :</p>
+                                <p>Institución a la que Pertenece :</p>
                             </div>
                             <div class="col-md-6">
                                 <p>{{ Auth::user()->institucion}}</p>
@@ -242,7 +242,7 @@
                             <table class="table contenido produccion">
                                 <tbody>
                                     <tr>
-                                        <th class="rotated-header">Tema de la investigación:</th>
+                                        <th class="rotated-header">Tema de la Investigación:</th>
                                         <td class="contenido-produccion">Bases de Datos</td>
                                     </tr>
                                     <tr>
@@ -358,7 +358,7 @@
                             <div class="row justify-content-center mb-2">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label class="form-label" for="pais">{{ __('Pais *')}}</label>
+                                        <label class="form-label" for="pais">{{ __('País *')}}</label>
                                     </div>
                                     <div class="col-md-4">
                                         <input class="form-control" name="pais" type="text" required>
@@ -405,13 +405,13 @@
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Nodos de colaboración</h4>
+                        <h4 class="modal-title">Nodos de Colaboración</h4>
                     </div>
                     <div class="modal-body">
                         <form action="post">
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="tema">{{ __('Tema de la investigación*')}}</label>
+                                    <label class="form-label" for="tema">{{ __('Tema de la Investigación*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" id="tema" name="tema" type="text" required>
@@ -431,7 +431,7 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="linea">{{ __('Línea de investigación*')}}</label>
+                                    <label class="form-label" for="linea">{{ __('Línea de Investigación*')}}</label>
                                 </div>
                                 <div class="col-md-6">
                                     <input class="form-control" type="text" name="linea" id="linea">

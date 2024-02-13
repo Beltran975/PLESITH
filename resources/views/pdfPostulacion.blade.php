@@ -60,7 +60,7 @@
 
 <body>
     <div class="title">
-        <p>Datos de postulación</p>
+        <p>Datos de Postulación</p>
     </div>
     <table class="table">
         <tbody>
@@ -69,7 +69,7 @@
                 <td>{{ $user->name }}</td>
             </tr>
             <tr>
-                <th class="rotated-header">Email</th>
+                <th class="rotated-header">E-mail</th>
                 <td>{{ $user->email }}</td>
             </tr>
             <tr>
@@ -92,7 +92,7 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Area del Conocimiento</th>
+                <th>Area de Conocimiento</th>
                 <td>Físico-Matemático y Ciencias de la Tierra</td>
             </tr>
             <tr>

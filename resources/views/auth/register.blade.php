@@ -19,7 +19,7 @@
             <hr class="hr-gob" >
             <div class="card">
               <div class="card-header">
-                <h3>Datos generales</h3>
+                <h3>Datos Generales</h3>
               </div>
                 <div class="card-body">
                 <form action="{{ route('auth.store') }}" method="post" enctype="multipart/form-data">
@@ -27,7 +27,7 @@
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
-                    <label class="control-label" for="name" >{{ __('Nombre completo *') }}</label>
+                    <label class="control-label" for="name" >{{ __('Nombre Completo *') }}</label>
                   </div>
                   <div class="col-md-6">
                   <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -97,7 +97,7 @@
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
-                    <label for="institucion" class="control-label">{{ __('Institución a la que pertenece *')}}</label>
+                    <label for="institucion" class="control-label">{{ __('Institución a la que Pertenece *')}}</label>
                   </div>
                   <div class="col-md-6">
                   <select class="form-control" name="institucion" id="institucion" required>
@@ -271,7 +271,7 @@
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
-                    <label class="control-label" for="programa" class="">{{ __('Programa educativo *')}}</label>
+                    <label class="control-label" for="programa" class="">{{ __('Programa Educativo *')}}</label>
                   </div>
                   <div class="col-md-6">
                     <input class="form-control" id="programa" type="text"  name="programa" required>
@@ -280,7 +280,7 @@
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
-                    <label for="foto" class="control-label">{{ __('Fotografía de perfil *')}}</label>
+                    <label for="foto" class="control-label">{{ __('Fotografía de Perfil *')}}</label>
                   </div>  
                   <div class="col-md-6">
                     <input class="form-control" id="image" type="file" name="image" required>
