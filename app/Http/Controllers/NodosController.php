@@ -29,5 +29,6 @@ class NodosController extends Controller
         } catch (Exception $e) {
             DB::rollback();
         }
+        return view('home');
     }
 }
