@@ -92,7 +92,7 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Area de Conocimiento</th>
+                <th>Área de Conocimiento</th>
                 <td>Físico-Matemático y Ciencias de la Tierra</td>
             </tr>
             <tr>
@@ -100,7 +100,7 @@
                 <td>Ingeniería</td>
             </tr>
             <tr>
-                <th class="rotated-header">¿Pertenece al ESNI?:</th>
+                <th class="rotated-header">¿Pertenece al SNI?:</th>
                 <td>Sí</td>
             </tr>
             <tr>
