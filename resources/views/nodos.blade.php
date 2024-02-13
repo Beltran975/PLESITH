@@ -43,15 +43,15 @@
             <hr class="hr-gob" >
             <div class="seccion">
             
-                    <h3>Nodos de la comunidad</h3>
-                    <h5>Resultados encontrados:</h5>
+                    <h3>Nodos de la Comunidad</h3>
+                    <h5>Resultados Encontrados:</h5>
                 
             </div>
             <table class="tabla-nodos">
                 <tbody>
                     <tr>
-                        <th class="rotated-header">Titulo:</th>
-                        <td class="contenido-produccion">Investigación en criptomonedas</td>
+                        <th class="rotated-header">Título:</th>
+                        <td class="contenido-produccion">Investigación en Criptomonedas</td>
                         
                     </tr>
                     
@@ -75,7 +75,7 @@
                     </tr>
                     
                     <tr>
-                        <th class="rotated-header">Institución ligada: </th>
+                        <th class="rotated-header">Institución Ligada: </th>
                         <td class="contenido-produccion">Universidad Tecnológica del Valle del Mezquital</td>
                       
                     </tr>
@@ -86,13 +86,13 @@
                         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Investigación en criptomonedas</h4>
+                                    <h4 class="modal-title">Investigación en Criptomonedas</h4>
                                 </div>
                                 <div class="modal-body">
                                 <table class="tabla-modal table table-borderless" >
                 <tbody>
                     <tr>
-                        <th class="rotated-header">Línea de investigación: </th>
+                        <th class="rotated-header">Línea de Investigación: </th>
                         <td class="contenido-produccion">Inteligencia Artificial</td>
                     </tr>
                     <tr>

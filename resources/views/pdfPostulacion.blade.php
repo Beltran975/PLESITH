@@ -77,11 +77,11 @@
                 <td>{{ $user->curp }}</td>
             </tr>
             <tr>
-                <th class="rotated-header">Institución a la que pertenece</th>
+                <th class="rotated-header">Institución a la que Pertenece</th>
                 <td>{{ $user-> institucion}}</td>
             </tr>
             <tr>
-                <th class="rotated-header">Programa educativo</th>
+                <th class="rotated-header">Programa Educativo</th>
                 <td>{{ $user-> programa}}</td>
             </tr>
         </tbody>
@@ -92,16 +92,16 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Area del conocimiento</th>
-                <td>Físico-Matemáticas y Ciencias de la Tierra</td>
+                <th>Area del Conocimiento</th>
+                <td>Físico-Matemático y Ciencias de la Tierra</td>
             </tr>
             <tr>
-                <th class="rotated-header">Grado académico</th>
+                <th class="rotated-header">Grado Académico</th>
                 <td>Ingeniería</td>
             </tr>
             <tr>
                 <th class="rotated-header">¿Pertenece al ESNI?:</th>
-                <td>si</td>
+                <td>Sí</td>
             </tr>
             <tr>
                 <th class="rotated-header">Evidencia SNI</th>
@@ -117,8 +117,8 @@
     <table class="table contenido-produccion">
         <tbody>
             <tr>
-                <th class="rotated-header">Tema de la investigación:</th>
-                <td class="contenido-produccion">Bases de datos</td>
+                <th class="rotated-header">Tema de la Investigación:</th>
+                <td class="contenido-produccion">Bases de Datos</td>
             </tr>
             <tr>
                 <th class="rotated-header">Categoría:</th>
@@ -134,11 +134,11 @@
             </tr>
             <tr>
                 <th class="rotated-header">Descripción:</th>
-                <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, combinando principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
+                <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, al combinar los principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
             </tr>
             <tr>
                 <th class="rotated-header">Documentación:</th>
-                <td class="contenido-produccion"><a href="storage/archivos_curp/{{ $user-> archivoCurp}}">ejemplo.pdf</a></td>
+                <td class="contenido-produccion"><a href="storage/archivos_curp/{{ $user-> archivoCurp}}">Ejemplo.pdf</a></td>
             </tr>
         </tbody>
     </table>
@@ -146,8 +146,8 @@
     <table class="table contenido-produccion">
         <tbody>
             <tr>
-                <th class="rotated-header">Tema de la investigación:</th>
-                <td class="contenido-produccion">Bases de datos</td>
+                <th class="rotated-header">Tema de la Investigación:</th>
+                <td class="contenido-produccion">Bases de Datos</td>
             </tr>
             <tr>
                 <th class="rotated-header">Categoría:</th>
@@ -167,7 +167,7 @@
             </tr>
             <tr>
                 <th class="rotated-header">Documentación:</th>
-                <td class="contenido-produccion"><a href="storage/archivos_curp/{{ $user-> archivoCurp}}">ejemplo.pdf</a></td>
+                <td class="contenido-produccion"><a href="storage/archivos_curp/{{ $user-> archivoCurp}}">Ejemplo.pdf</a></td>
             </tr>
         </tbody>
     </table>
