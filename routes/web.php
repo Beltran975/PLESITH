@@ -51,8 +51,6 @@ Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser']
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-=======
->>>>>>> Stashed changes
 Route::get('/home-Admin', function () {
     return view('administrador.home-admin');
 });
