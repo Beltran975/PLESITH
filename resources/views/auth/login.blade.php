@@ -17,7 +17,7 @@
       <div class="row justify-content-center">
         <div class="col-md-8">
           <div >
-            <div><h1>{{ __('Iniciar Sesin') }}</h1></div>
+            <div><h1>{{ __('Iniciar Sesión') }}</h1></div>
             
             <div class="card-body">
               <form method="POST" action="{{ route('login') }}">
@@ -53,9 +53,6 @@
                     <form onsubmit="event.preventDefault(); handleFormSubmit();">
                       <div id="example1" class="g-recaptcha" data-sitekey="6LcU_JcoAAAAAMwrNBsFob_Ocf7DHZJnKBF8ls37" data-callback="onCaptchaSubmit"></div>
                       <br>
-                      <button type="submit" class="btn btn-primary">
-                        {{ __('Enviar') }}
-                      </button>
                     </form>
                     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                   </div>
