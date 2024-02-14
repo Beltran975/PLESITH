@@ -13,9 +13,7 @@
 
   <section class="container">
     <div class="sidebar">
-      <div class="side-hide">
-        <i class="fa fa-times" aria-hidden="true"></i>
-      </div>
+      
       <div class="profile-info">
         <div class="avatar-circle">
           <i class="fa fa-user fa-2x"></i>
@@ -46,21 +44,6 @@
       @csrf
     </form>
 </div>
-
-<!-- JS Script -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-<script>
-  // Mostrar Sidebar cuando el cursor entra en el área de activación
-  $(".trigger-area").on('mouseenter', function() {
-    $(".container").addClass('show');
-  });
-
-  // Ocultar Sidebar cuando el cursor sale del área de activación
-  $('.side-hide').on('click', function() {
-    $(".container").toggleClass('show');
-  }); 
-</script>
 
 </body>
 </html>
