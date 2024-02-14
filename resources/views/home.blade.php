@@ -24,16 +24,16 @@
             <div class="green-box">
 
                 <div class="titulo row d-flex  mb-3">
-                    <h3>Datos Generales</h3>
+                    <h3>Datos generales</h3>
                     <h3>|</h3>
                     <h3>{{ Auth::user()->name }}</h3>
                 </div>
 
                 @if(Auth::user()->verificacion == 'en proceso') 
-                <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar Postulación</a>
-                <button class="btn btn-primary" id="botonPostulacion">Enviar Postulación</button>
+                <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
+                <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
                 @elseif(Auth::user()->verificacion == 'ninguno')
-                <a href="/verificar-Correo" class="btn btn-secondary">verficar correo</a>
+                <a href="/verificar-Correo" class="btn btn-secondary">Verificar correo</a>
                 @endif
                 @if(session('success'))
                 <div class="alert alert-success">
@@ -52,7 +52,7 @@
                 <!-- Informacion personal -->
                 <div class="card mb-3">
                     <div class="card-header" data-bs-toggle="collapse" href="#informacionPersonal">
-                        Información Personal
+                        Información personal
                     </div>
                     <div class="card-body collapse" id="informacionPersonal">
                         <div class="row">
@@ -127,7 +127,7 @@
                                 <br>
                                 <div class="col-md-8">
                                     <select class="form-select" name="lineaInv">
-                                        <option name="lineaInv" value="" disabled selected>Tipo de línea de investigación</option>
+                                        <option name="lineaInv" value="" disabled selected>Seleccionar</option>
                                         <option name="lineaInv" value="Tecnología">Tecnología</option>
                                         <option name="lineaInv" value="Ciencia">Ciencia</option>
                                         <option name="lineaInv" value="Filosofía">Filosofía</option>
@@ -228,7 +228,7 @@
                 <!-- Nodos de colaboración -->
                 <div class="card mb-3">
                     <div class="card-header" data-bs-toggle="collapse" href="#nodos">
-                        Nodos de Colaboración
+                        Nodos de colaboración
                     </div>
                     <div class="card-body collapse" id="nodos">
                         <div class="nav-producciones">
@@ -258,7 +258,7 @@
                             <table class="table contenido produccion">
                                 <tbody>
                                     <tr>
-                                        <th class="rotated-header">Tema de la Investigación:</th>
+                                        <th class="rotated-header">Tema de la investigación:</th>
                                         <td class="contenido-produccion">Bases de Datos</td>
                                     </tr>
                                     <tr>
@@ -324,17 +324,17 @@
                                 </div>
                                 <div class="col-md-6">
                                     <select class="form-control" name="tipo" required>
-                                        <option name="tipo" value="" disabled selected>Seleccionar tipo</option>
-                                        <option name="tipo" value="Libros o capitulos de libro">Libros o Capítulos de libro</option>
-                                        <option name="tipo" value="Articulos arbitrados y articulos indexados">Artículos arbitrados y Artículos indexados</option>
+                                        <option name="tipo" value="" disabled selected>Seleccionar</option>
+                                        <option name="tipo" value="Libros o capitulos de libro">Libros o capítulos de libro</option>
+                                        <option name="tipo" value="Articulos arbitrados y articulos indexados">Artículos arbitrados y artículos indexados</option>
                                         <option name="tipo" value="Propiedad intelectual">Propiedad intelectual</option>
                                         <option name="tipo" value="Modelos de utilidad">Modelos de utilidad</option>
                                         <option name="tipo" value="Patentes">Patentes</option>
                                         <option name="tipo" value="Prototipos">Prototipos</option>
-                                        <option name="tipo" value="Transferencia de tecnología">Transferencia de Tecnología</option>
-                                        <option name="tipo" value="Desarrollo de infraestructura">Desarrollo de Infraestructura</option>
-                                        <option name="tipo" value="Informes técnicos">Informes Técnicos</option>
-                                        <option name="tipo" value="Obras artísticas">Obras Artísticas</option>
+                                        <option name="tipo" value="Transferencia de tecnología">Transferencia de tecnología</option>
+                                        <option name="tipo" value="Desarrollo de infraestructura">Desarrollo de infraestructura</option>
+                                        <option name="tipo" value="Informes técnicos">Informes técnicos</option>
+                                        <option name="tipo" value="Obras artísticas">Obras artísticas</option>
                                         <option name="tipo" value="Otro">Otro</option>
                                     </select>
                                 </div>
@@ -395,14 +395,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <select class="form-control" name="proposito" required>
-                                        <option name="proposito" value="" disabled selected>Seleccionar Propósito</option>
-                                        <option name="proposito" value="Asimilacion de tecnologia">Asimilación de Tecnología</option>
+                                        <option name="proposito" value="" disabled selected>Seleccionar</option>
+                                        <option name="proposito" value="Asimilacion de tecnologia">Asimilación de tecnología</option>
                                         <option name="proposito" value="Creación">Creación</option>
-                                        <option name="proposito" value="Desarrollo tecnológico">Desarrollo Tecnológico</option>
+                                        <option name="proposito" value="Desarrollo tecnológico">Desarrollo tecnológico</option>
                                         <option name="proposito" value="Difusión">Difusión</option>
-                                        <option name="proposito" value="Generación de conocimiento">Generación de Conocimiento</option>
-                                        <option name="proposito" value="Investigación aplicada">Investigación Aplicada</option>
-                                        <option name="proposito" value="Transferencia tecnologica">Transferencia Tecnológica</option>
+                                        <option name="proposito" value="Generación de conocimiento">Generación de conocimiento</option>
+                                        <option name="proposito" value="Investigación aplicada">Investigación aplicada</option>
+                                        <option name="proposito" value="Transferencia tecnologica">Transferencia tecnológica</option>
                                     </select>
                                 </div>
                             </div>
@@ -436,7 +436,7 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="categoria">{{ __('Categoria*') }}</label>
+                                    <label class="form-label" for="categoria">{{ __('Categoría*') }}</label>
                                 </div>
                                 <div class="col-md-6">
                                     <select class="form-control" name="categoria" id="categoria" required>
@@ -456,7 +456,7 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="institucion_ligada">{{ __('Institución Ligada* ')}}</label>
+                                    <label class="form-label" for="institucion_ligada">{{ __('Institución ligada* ')}}</label>
                                 </div>
                                 <div class="col-md-6">
                                     <select class="form-control" name="institucion_ligada" id="institucion_ligada" required>
