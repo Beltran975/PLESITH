@@ -45,11 +45,11 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                            @if($user->estatus == 'No revisado' && $user->postulaciones->count() > 0)
+                            @foreach ($user->postulaciones as $postulacion)
+                            @if($user->postulaciones->count() > 0 && $postulacion->estatus == 'No revisado' )
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user-> programa}}</td>
-                                @foreach ($user->postulaciones as $postulacion)
                                 <td>{{ $postulacion->created_at->format('H:i d/m/Y') }}</td>
                                 <td>
                                     <div class="btn-group">
@@ -57,15 +57,17 @@
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <a class="dropdown-item" href="../storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
-                                                @endforeach
+
                                             </li>
                                             <li><button class="dropdown-item" href="#" onclick="abrirModalAprobacion('{{ $user->name }}')">Aprobar postulación</button></li>
                                             <li><button class="dropdown-item" href="#" onclick="abrirModalNegacion('{{ $user->name }}')">Negar postulación</button></li>
                                         </ul>
                                     </div>
                                 </td>
+
                             </tr>
                             @endif
+                            @endforeach
                             @endforeach
                         </tbody>
                     </table>
@@ -84,11 +86,11 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                            @if($user->estatus == 'revisado' && $user->postulaciones->count() > 0)
+                            @foreach ($user->postulaciones as $postulacion)
+                            @if($user->postulaciones->count() > 0 && $postulacion->estatus == 'Revisado' )
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user-> programa}}</td>
-                                @foreach ($user->postulaciones as $postulacion)
                                 <td>{{ $postulacion->created_at->format('H:i d/m/Y') }}</td>
                                 <td>
                                     <div class="btn-group">
@@ -96,7 +98,6 @@
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <a class="dropdown-item" href="../storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
-                                                @endforeach
                                             </li>
                                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aprobacion" onclick="abrirModalAprobacion('{{$user->name }}')">Aprobar postulación</a></li>
                                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#negacion">Negar postulación</a></li>
@@ -105,6 +106,7 @@
                                 </td>
                             </tr>
                             @endif
+                            @endforeach
                             @endforeach
                         </tbody>
                     </table>
@@ -122,17 +124,21 @@
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de Aprobación</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <p>El postulado <span id="modalTituloAprobacion"></span> Cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
-                        <label for="dictamenAprobar">Dictamen de Aceptación:</label>
-                        <input type="file" id="dictamenAprobar" name="dictamenAprobar">
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" onclick="enviarAprobacion()">Enviar</button>
-                    </div>
+                    <form action="{{ route('postulaciones.aprobar', ['id' => $postulacion->id]) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="modal-body">
+                            <p>El postulado <span id="modalTituloAprobacion"></span> Cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
+                            <label for="dictamenAprobar">Dictamen de Aceptación:</label>
+                            <input type="file" id="dictamenAprobar" name="dictamenAprobar">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+
         <!--Formulario de negación-->
         <div class="modal fade" id="negacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -141,14 +147,17 @@
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de Negación</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <p>El postulado <span id="modalUsuarioNegar"></span> No cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
-                        <label for="dictamenNegar">Dictamen de Negación:</label>
-                        <input type="file" id="dictamenNegar" name="dictamenNegar">
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" onclick="enviarAprobacion()">Enviar</button>
-                    </div>
+                    <form action="{{ route('postulaciones.negar', ['id' => $postulacion->id]) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="modal-body">
+                            <p>El postulado <span id="modalUsuarioNegar"></span> No cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
+                            <label for="dictamenNegar">Dictamen de Negación:</label>
+                            <input type="file" id="dictamenNegar" name="dictamenNegar">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

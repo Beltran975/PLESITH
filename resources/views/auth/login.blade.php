@@ -17,7 +17,7 @@
       <div class="row justify-content-center">
         <div class="col-md-8">
           <div >
-            <div><h1>{{ __('Iniciar Sesin') }}</h1></div>
+            <div><h1>{{ __('Iniciar sesión') }}</h1></div>
             
             <div class="card-body">
               <form method="POST" action="{{ route('login') }}">
@@ -61,9 +61,7 @@
                   </div>
                   <div class="col-md-8 offset-md-4">
                     <a href="/register" class="btn btn-primary ">Regístrate aquí</a>
-                    <button type="submit" class="btn btn-primary">
-                      {{ __('Enviar') }}
-                    </button>
+                   
                   </div>
                 </div>
                 

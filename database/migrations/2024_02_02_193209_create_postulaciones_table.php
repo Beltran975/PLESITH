@@ -12,6 +12,8 @@ class CreatePostulacionesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->longText('pdfPostulacion');
+            $table->string('estatus');
+            $table->longText('pdfDictamen');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
