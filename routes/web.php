@@ -134,3 +134,6 @@ Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class
 Route::post('/postulaciones/{id}/aprobar', [DictamenController::class, 'aprobarPostulacion'])->name('postulaciones.aprobar');
 
 Route::post('/postulaciones/{id}/negar', [DictamenController::class, 'negarPostulacion'])->name('postulaciones.negar');
+//ruta nodos
+Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
+

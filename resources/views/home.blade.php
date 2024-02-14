@@ -424,13 +424,14 @@
                         <h4 class="modal-title">Nodos de Colaboración</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="post">
+                        <form action="EnvioNodo" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="tema">{{ __('Tema de la Investigación*')}}</label>
+                                    <label class="form-label" for="tema">{{ __('Tema de la investigación*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" id="tema" name="tema" type="text" required>
+                                    <input class="form-control" id="tema_inv" name="tema_inv" type="text" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
@@ -447,21 +448,21 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="linea">{{ __('Línea de Investigación*')}}</label>
+                                    <label class="form-label" for="linea">{{ __('Línea de investigación*')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" name="linea" id="linea">
+                                    <input class="form-control" type="text" name="linea_inv" id="linea_inv">
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="InstitucionLigada">{{ __('Institución Ligada* ')}}</label>
+                                    <label class="form-label" for="institucion_ligada">{{ __('Institución Ligada* ')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="InstitucionLigada" id="InstitucionLigada" required>
-                                        <option name="InstitucionLigada" value="" disabled selected>Seleccionar</option>
-                                        <option name="InstitucionLigada" value="opcion1">Institución Ligada 1</option>
-                                        <option name="InstitucionLigada" value="opcion2">Institución Ligada 2</option>
+                                    <select class="form-control" name="institucion_ligada" id="institucion_ligada" required>
+                                        <option name="institucion_ligada" value="" disabled selected>Seleccionar</option>
+                                        <option name="institucion_ligada" value="opcion1">Institución Ligada 1</option>
+                                        <option name="institucion_ligada" value="opcion2">Institución Ligada 2</option>
                                     </select>
                                 </div>
                             </div>
@@ -475,16 +476,17 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="pais">{{ __('Documentación:')}}</label>
+                                    <label class="form-label" for="documento">{{ __('Documentación:')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="file" name="evidencia" id="evidencia">
+                                    <input class="form-control" type="file" name="documento" id="documento">
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
             </div>
@@ -553,6 +555,7 @@
                     const url = document.getElementById('ruta').getAttribute('href');
                     window.location.href = url;
 
+
                     // Mostrar otra alerta SweetAlert2 después de la redirección
                     Swal.fire({
                         title: "¡Postulación enviada con exito!",
@@ -566,9 +569,21 @@
                     });
                 }
             });
-        });
+
+                // Mostrar otra alerta SweetAlert2 después de la redirección
+                Swal.fire({
+                    title: "¡Postulación enviada con éxito!",
+                    text: "En breve se descarga una copia de su postulación",
+                    icon: "success",
+                    iconColor: '#bc955b',
+                    confirmButtonText: 'Aceptar',
+            customClass: {
+                confirmButton: 'btn btn-primary'
+            }
+                });
+            }
+
     </script>
 
 </body>
-
 </html>
