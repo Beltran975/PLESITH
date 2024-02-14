@@ -534,46 +534,31 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Asociar un evento de clic al botón
-        document.getElementById('botonPostulacion').addEventListener('click', function(event) {
-            // Prevenir la acción predeterminada del enlace
-            event.preventDefault();
+        document.getElementById('botonPostulacion').addEventListener('click', function (event) {
+        // Prevenir la acción predeterminada del enlace
+        event.preventDefault();
 
-            // Mostrar una alerta SweetAlert2
-            Swal.fire({
-                title: "Enviar postulación",
-                text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema",
-                icon: "warning",
-                iconColor: '#bc955b',
-                showCancelButton: true,
-                confirmButtonColor: "#bc955b",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Enviar",
-                cancelButtonText: "Cancelar"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Obtener la URL del enlace y redireccionar al usuario
-                    const url = document.getElementById('ruta').getAttribute('href');
-                    window.location.href = url;
-
-
-                    // Mostrar otra alerta SweetAlert2 después de la redirección
-                    Swal.fire({
-                        title: "¡Postulación enviada con exito!",
-                        text: "En breve se descargará una copia de su postulación",
-                        icon: "success",
-                        iconColor: '#bc955b',
-                        confirmButtonText: 'Aceptar',
-                        customClass: {
-                            confirmButton: 'btn btn-primary'
-                        }
-                    });
-                }
-            });
+        // Mostrar una alerta SweetAlert2
+        Swal.fire({
+            title: "Enviar postulación",
+            text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema",
+            icon: "warning",
+            iconColor: '#bc955b',
+            showCancelButton: true,
+            confirmButtonColor: "#bc955b",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Enviar",
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Obtener la URL del enlace y redireccionar al usuario
+                const url = document.getElementById('ruta').getAttribute('href');
+                window.location.href = url;
 
                 // Mostrar otra alerta SweetAlert2 después de la redirección
                 Swal.fire({
-                    title: "¡Postulación enviada con éxito!",
-                    text: "En breve se descarga una copia de su postulación",
+                    title: "¡Postulación enviada con exito!",
+                    text: "En breve se descargará una copia de su postulación",
                     icon: "success",
                     iconColor: '#bc955b',
                     confirmButtonText: 'Aceptar',
@@ -581,8 +566,9 @@
                 confirmButton: 'btn btn-primary'
             }
                 });
-            })
-
+            }
+        });
+    });
     </script>
 
 </body>
