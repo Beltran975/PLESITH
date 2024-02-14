@@ -84,7 +84,7 @@
                         <br>
                         <div class="row">
                             <div class="col-md-6">
-                                <p>Institución a la que Pertenece :</p>
+                                <p>Institución a la que pertenece :</p>
                             </div>
                             <div class="col-md-6">
                                 <p>{{ Auth::user()->institucion}}</p>
@@ -92,7 +92,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <p>Programa Educativo :</p>
+                                <p>Programa educativo :</p>
                             </div>
                             <div class="col-md-6">
                                 <p>{{ Auth::user()->programa}}</p>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <p>Fotografía del Perfil :</p>
+                                <p>Fotografía del perfil :</p>
                             </div>
                             <div class="col-md-6">
                                 <div class="image-Ipersonal">
@@ -121,7 +121,7 @@
                             @csrf
                             <div class="row form-outline md-4">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="lineaInv">Línea de Investigación</label>
+                                    <label class="form-label" for="lineaInv">Línea de investigación</label>
                                 </div>
                                 <br>
                                 <br>
@@ -137,7 +137,7 @@
                             <!-- Grado Academico -->
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="grado">Grado Académico</label>
+                                    <label class="form-label" for="grado">Grado académico</label>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="text" name="grado" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
@@ -146,7 +146,7 @@
                             <!-- Evidencia Grado Academico -->
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="evidenciaGrado">Evidencia del Grado Académico </label>
+                                    <label class="form-label" for="evidenciaGrado">Evidencia del grado académico </label>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF" />
@@ -181,7 +181,7 @@
                 <!-- Produccion -->
                 <div class="card mb-3">
                     <div class="card-header" data-bs-toggle="collapse" href="#produccion">
-                        Producción
+                        Mis producciones
                     </div>
                     <div class="card-body collapse" id="produccion">
                         <div class="nav-producciones">
@@ -228,7 +228,7 @@
                 <!-- Nodos de colaboración -->
                 <div class="card mb-3">
                     <div class="card-header" data-bs-toggle="collapse" href="#nodos">
-                        Nodos de colaboración
+                        Mis nodos de colaboración
                     </div>
                     <div class="card-body collapse" id="nodos">
                         <div class="nav-producciones">
@@ -421,7 +421,7 @@
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Nodos de Colaboración</h4>
+                        <h4 class="modal-title">Nodo de colaboración</h4>
                     </div>
                     <div class="modal-body">
                         <form action="EnvioNodo" method="post" enctype="multipart/form-data">
@@ -557,8 +557,8 @@
 
                 // Mostrar otra alerta SweetAlert2 después de la redirección
                 Swal.fire({
-                    title: "¡Postulación enviada con exito!",
-                    text: "En breve se descargará una copia de su postulación.",
+                    title: "¡Postulación enviada con éxito!",
+                    text: "En breve se descarga una copia de su postulación.",
                     icon: "success",
                     iconColor: '#bc955b',
                     confirmButtonText: 'Aceptar',
