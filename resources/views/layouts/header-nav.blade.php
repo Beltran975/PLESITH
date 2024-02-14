@@ -22,11 +22,11 @@
                         Perfil
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Editar Información PLESITH</a></li>
+                        <li><a class="dropdown-item" href="#">Editar perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Editar información PLESITH</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><ul class="hidden">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
@@ -34,7 +34,7 @@
                     </ul>
                 </div>
                 </li>
-                <li><a href="/nodos">Nodos de Colaboración</a></li>
+                <li><a href="/nodos">Nodos de colaboración</a></li>
                 
             </ul>
         </div>
