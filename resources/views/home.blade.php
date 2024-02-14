@@ -27,10 +27,26 @@
                     <h3>Datos Generales</h3>
                     <h3>|</h3>
                     <h3>{{ Auth::user()->name }}</h3>
-
                 </div>
+
+                @if(Auth::user()->verificacion == 'en proceso') 
                 <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar Postulación</a>
                 <button class="btn btn-primary" id="botonPostulacion">Enviar Postulación</button>
+                @elseif(Auth::user()->verificacion == 'ninguno')
+                <a href="/verificar-Correo" class="btn btn-secondary">verficar correo</a>
+                @endif
+                @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+                @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+                @endif
+
                 <hr class="hr-gob">
 
                 <!-- Informacion personal -->
@@ -516,41 +532,41 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Asociar un evento de clic al botón
-        document.getElementById('botonPostulacion').addEventListener('click', function (event) {
-        // Prevenir la acción predeterminada del enlace
-        event.preventDefault();
+        document.getElementById('botonPostulacion').addEventListener('click', function(event) {
+            // Prevenir la acción predeterminada del enlace
+            event.preventDefault();
 
-        // Mostrar una alerta SweetAlert2
-        Swal.fire({
-            title: "Enviar postulación",
-            text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema",
-            icon: "warning",
-            iconColor: '#bc955b',
-            showCancelButton: true,
-            confirmButtonColor: "#bc955b",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Enviar",
-            cancelButtonText: "Cancelar"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Obtener la URL del enlace y redireccionar al usuario
-                const url = document.getElementById('ruta').getAttribute('href');
-                window.location.href = url;
+            // Mostrar una alerta SweetAlert2
+            Swal.fire({
+                title: "Enviar postulación",
+                text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema",
+                icon: "warning",
+                iconColor: '#bc955b',
+                showCancelButton: true,
+                confirmButtonColor: "#bc955b",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Enviar",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Obtener la URL del enlace y redireccionar al usuario
+                    const url = document.getElementById('ruta').getAttribute('href');
+                    window.location.href = url;
 
-                // Mostrar otra alerta SweetAlert2 después de la redirección
-                Swal.fire({
-                    title: "¡Postulación enviada con exito!",
-                    text: "En breve se descargará una copia de su postulación",
-                    icon: "success",
-                    iconColor: '#bc955b',
-                    confirmButtonText: 'Aceptar',
-            customClass: {
-                confirmButton: 'btn btn-primary'
-            }
-                });
-            }
+                    // Mostrar otra alerta SweetAlert2 después de la redirección
+                    Swal.fire({
+                        title: "¡Postulación enviada con exito!",
+                        text: "En breve se descargará una copia de su postulación",
+                        icon: "success",
+                        iconColor: '#bc955b',
+                        confirmButtonText: 'Aceptar',
+                        customClass: {
+                            confirmButton: 'btn btn-primary'
+                        }
+                    });
+                }
+            });
         });
-    });
     </script>
 
 </body>

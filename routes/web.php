@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CorreoverController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\tablaController;
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\dictamenController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,13 +46,12 @@ Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
 
-<<<<<<< Updated upstream
+
 Auth::routes();
 
 Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 Route::get('/home-Admin', function () {
     return view('administrador.home-admin');
@@ -57,10 +59,6 @@ Route::get('/home-Admin', function () {
 
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 });
 
 Route::get('administrador/postulaciones', function () {
@@ -124,6 +122,15 @@ Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
 Route::get('administrador/prueba-postulaciones', [tablaController::class, 'mostrarDatos']);
 
-use App\Http\Controllers\EmailController;
+
 
 Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
+
+Route::get('/verificar-Correo', [CorreoverController::class, 'VerificarCorreo'])->name('enviar.correo');
+
+Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class, 'aprobarVerificacionDeCorreo'])->name('aprobarVerificacionDeCorreo');
+
+//rutas para enviar dictamen dictamen de aceptación y negación de postulación 
+Route::post('/postulaciones/{id}/aprobar', [DictamenController::class, 'aprobarPostulacion'])->name('postulaciones.aprobar');
+
+Route::post('/postulaciones/{id}/negar', [DictamenController::class, 'negarPostulacion'])->name('postulaciones.negar');

@@ -53,14 +53,15 @@
                     <form onsubmit="event.preventDefault(); handleFormSubmit();">
                       <div id="example1" class="g-recaptcha" data-sitekey="6LcU_JcoAAAAAMwrNBsFob_Ocf7DHZJnKBF8ls37" data-callback="onCaptchaSubmit"></div>
                       <br>
+                      <button type="submit" class="btn btn-primary">
+                        {{ __('Enviar') }}
+                      </button>
                     </form>
                     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                   </div>
                   <div class="col-md-8 offset-md-4">
                     <a href="/register" class="btn btn-primary ">Regístrate aquí</a>
-                    <button type="submit" class="btn btn-primary">
-                      {{ __('Enviar') }}
-                    </button>
+                   
                   </div>
                 </div>
                 

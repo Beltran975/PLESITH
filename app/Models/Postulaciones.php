@@ -12,6 +12,8 @@ class Postulaciones extends Model
     protected $fillable = [
         'user_id',
         'pdfPostulacion',
+        'estatus',
+        'pdfDictamen',
     ];
 
     public function user()
