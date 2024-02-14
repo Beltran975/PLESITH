@@ -46,7 +46,6 @@ Route::get('/bibliotech', function () {
     return view('bibliotech');
 });
 
-<<<<<<< Updated upstream
 Auth::routes();
 
 Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
