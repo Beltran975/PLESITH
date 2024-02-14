@@ -106,7 +106,7 @@
                     <label for="institucion" class="control-label">{{ __('Institución a la que Pertenece *')}}</label>
                   </div>
                   <div class="col-md-6">
-                  <select class="form-control" name="institucion" id="institucion" required>
+                    <select class="form-control" name="institucion" id="institucion" required>
                       <option name="institucion" value="" disabled selected>Seleccionar</option>
                       <option name="institucion" value="INSTITUTO TECNOLOGICO DE HUEJUTLA">INSTITUTO TECNOLOGICO DE HUEJUTLA</option>
                       <option name="institucion" value="INSTITUTO TECNOLOGICO DE ATITALAQUIA">INSTITUTO TECNOLOGICO DE ATITALAQUIA</option>
@@ -289,7 +289,7 @@
                     <label for="foto" class="control-label">{{ __('Fotografía de Perfil *')}}</label>
                   </div>  
                   <div class="col-md-6">
-                    <input class="form-control" id="image" type="file"  name="image" required>
+                    <input class="form-control" id="image" type="file"  name="image" accept="image/jpeg, image/png, image/gif" required>
                   </div>
                 </div>
                 
