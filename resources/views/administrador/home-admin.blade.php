@@ -1,19 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Administrador</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="asset/adminHome.css">
 </head>
 <body>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
-        </a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-        </form>
+
+  <section class="container">
+    <div class="sidebar">
+      <div class="side-hide">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+      <div class="profile-info">
+        <div class="avatar-circle">
+          <i class="fa fa-user fa-2x"></i>
+        </div>
+        <span>{{ Auth::user()->name }}</span>
+      </div>
+      
+      <ul>
+        <li><a href="#"><i class="bi bi-person-fill"></i> Postulaciones</a></li>
+        <li><a href="#"><i class="bi bi-file-text-fill"></i> Producciones</a></li>
+        <li><a href="#"><i class="bi bi-folder2"></i> Nodos de colaboración</a></li>
+        <li><a href="#"><i class="bi bi-file-earmark-check-fill"></i>Bibliotech</a></li>
+        <li><a href="#"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
+      </ul>
+      
+      
+      <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        Cerrar Sesión
+      </button>
     </div>
-    <h3>{{ Auth::user()->name }}</h3>
+    <div class="trigger-area" style="height: 100%; width: 20px; position: fixed; top: 0; left: 0;"></div>
+  </section>
+
+  <!-- Menú desplegable para el usuario -->
+  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"></a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+      @csrf
+    </form>
+</div>
+
+<!-- JS Script -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script>
+  // Mostrar Sidebar cuando el cursor entra en el área de activación
+  $(".trigger-area").on('mouseenter', function() {
+    $(".container").addClass('show');
+  });
+
+  // Ocultar Sidebar cuando el cursor sale del área de activación
+  $('.side-hide').on('click', function() {
+    $(".container").toggleClass('show');
+  }); 
+</script>
+
 </body>
 </html>

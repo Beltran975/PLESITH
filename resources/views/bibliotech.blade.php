@@ -64,7 +64,7 @@
                                 <label for="cbox2">Revista</label>
                                 <br><br>
                                 <input type="checkbox" id="cbox2" value="second_checkbox"/>
-                                <label for="cbox2">Capitulos</label>
+                                <label for="cbox2">Capítulos</label>
                                 <br><br>
                                 <input type="checkbox" id="cbox2" value="second_checkbox"/>
                                 <label for="cbox2">Tesis</label>

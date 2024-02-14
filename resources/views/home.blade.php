@@ -541,8 +541,8 @@
 
                 // Mostrar otra alerta SweetAlert2 después de la redirección
                 Swal.fire({
-                    title: "¡Postulación enviada con exito!",
-                    text: "En breve se descargará una copia de su postulación",
+                    title: "¡Postulación enviada con éxito!",
+                    text: "En breve se descarga una copia de su postulación",
                     icon: "success",
                     iconColor: '#bc955b',
                     confirmButtonText: 'Aceptar',
