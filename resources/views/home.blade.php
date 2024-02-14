@@ -522,8 +522,8 @@
 
         // Mostrar una alerta SweetAlert2
         Swal.fire({
-            title: "Enviar postulación",
-            text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema",
+            title: "Enviar Postulación",
+            text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema.",
             icon: "warning",
             iconColor: '#bc955b',
             showCancelButton: true,
@@ -540,7 +540,7 @@
                 // Mostrar otra alerta SweetAlert2 después de la redirección
                 Swal.fire({
                     title: "¡Postulación enviada con exito!",
-                    text: "En breve se descargará una copia de su postulación",
+                    text: "En breve se descargará una copia de su postulación.",
                     icon: "success",
                     iconColor: '#bc955b',
                     confirmButtonText: 'Aceptar',
