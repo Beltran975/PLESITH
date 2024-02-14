@@ -581,7 +581,7 @@
                 confirmButton: 'btn btn-primary'
             }
                 });
-            }
+            })
 
     </script>
 
