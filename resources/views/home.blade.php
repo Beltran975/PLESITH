@@ -149,7 +149,7 @@
                                     <label class="form-label" for="evidenciaGrado">Evidencia del Grado Académico </label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF" />
+                                    <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF" required/>
                                 </div>
                             </div>
                             <!-- Pertenece al SNI -->
@@ -170,7 +170,7 @@
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" />
+                                    <input type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required/>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Guardar</button>
