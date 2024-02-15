@@ -153,7 +153,7 @@
                                 <div>
                                     <img src="https://images.pexels.com/photos/3182792/pexels-photo-3182792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagen de nodos">
                                     <div class="modal-des">
-                                        <h1>Nodos de colaboración</h1>
+                                        <h1>Nodos de Colaboración</h1>
                                         <p>En esta sección, los investigadores se unen para abordar desafíos complejos y desarrollar soluciones innovadoras. Cada nodo representa un punto de encuentro donde las ideas convergen y florecen, generando investigaciones y creaciones únicas que trascienden los límites individuales.</p>
                                         <a href="register" class="btn btn-primary">
                                             Formar parte
