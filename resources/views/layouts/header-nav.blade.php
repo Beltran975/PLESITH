@@ -35,8 +35,6 @@
                 </div>
                 </li>
                 <li><a href="NodosComunidad">Nodos de Colaboración</a></li>
-                <li><a href="/nodos">Nodos de colaboración</a></li>
-                
             </ul>
         </div>
     </header>
