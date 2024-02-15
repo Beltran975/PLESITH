@@ -11,7 +11,7 @@
         {{ $profile->name }}
     </p>
     <p>
-    <strong>Email:</strong>
+    <strong>E-mail:</strong>
         {{ $profile->email }}
     </p>
     <p>
