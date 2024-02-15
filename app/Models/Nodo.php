@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Nodo extends Model
 {
     //use HasFactory;
-    protected $table = 'nodos';
-    protected $primaryKey = 'id_nod';
+    protected $table = 'nodo';
+    protected $primaryKey = 'id';
 
     public $timestamps = false;
 

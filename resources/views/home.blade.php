@@ -126,7 +126,7 @@
                                 <br>
                                 <br>
                                 <div class="col-md-8">
-                                    <select class="form-select" name="lineaInv">
+                                    <select class="form-select" name="lineaInv" required>
                                         <option name="lineaInv" value="" disabled selected>Tipo de línea de investigación</option>
                                         <option name="lineaInv" value="Tecnología">Tecnología</option>
                                         <option name="lineaInv" value="Ciencia">Ciencia</option>
@@ -158,9 +158,9 @@
                                     <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="si">
+                                    <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="si" required>
                                     <label class="btn" for="pertenece">Sí</label>
-                                    <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="no">
+                                    <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="no" required>
                                     <label class="btn" for="pertenece">No</label>
                                 </div>
                             </div>
@@ -344,8 +344,22 @@
                                     <label class="form-label" for="evidencia">{{ __('Evidencia *')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="file" name="evidencia" required>
+                                    <input class="form-control" type="file" name="evidencia" onchange="validarDocumento(event)" required>
                                 </div>
+                                <script>
+                                    function validarDocumento(event)
+                                    {
+                                        const input = event.target;
+                                        const file = input.files[0];
+                                        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+                                        
+                                        if (!allowedTypes.includes(file.type))
+                                        {
+                                            alert('Solo se permiten archivos de documentos (PDF, DOC, DOCX, XLS, XLSX).');
+                                            input.value = '';
+                                        }
+                                    }
+                                </script>
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
@@ -451,7 +465,7 @@
                                     <label class="form-label" for="linea">{{ __('Línea de investigación*')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" name="linea_inv" id="linea_inv">
+                                    <input class="form-control" type="text" name="linea_inv" id="linea_inv" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
@@ -479,8 +493,22 @@
                                     <label class="form-label" for="documento">{{ __('Documentación:')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="file" name="documento" id="documento">
+                                    <input class="form-control" type="file" name="documento" id="documento"  onchange="validarDocumento(event)" required>
                                 </div>
+                                <script>
+                                    function validarDocumento(event) 
+                                    {
+                                        const input = event.target;
+                                        const file = input.files[0];
+                                        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+                                        
+                                        if (!allowedTypes.includes(file.type)) 
+                                        {
+                                            alert('Solo se permiten archivos de documentos (PDF, DOC, DOCX, XLS, XLSX).');
+                                            input.value = '';
+                                        }
+                                    }
+                                </script>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

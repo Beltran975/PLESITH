@@ -32,8 +32,8 @@ Route::get('/la', function () {
     return view('prueba-layouts');
 });
 
-Route::get('/nodos', function () {
-    return view('nodos');
+Route::get('/nodo', function () {
+    return view('nodo');
 });
 Route::get('/edit-perfil', function () {
     return view('auth/edit-perfil');
@@ -136,4 +136,5 @@ Route::post('/postulaciones/{id}/aprobar', [DictamenController::class, 'aprobarP
 Route::post('/postulaciones/{id}/negar', [DictamenController::class, 'negarPostulacion'])->name('postulaciones.negar');
 //ruta nodos
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
+Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
 
