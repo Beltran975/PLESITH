@@ -4,6 +4,9 @@
     box-sizing: border-box;
   }
   
+  body{
+    background-color: #9f9a9b;
+  }
   .container {
   margin-left: 250px;
   }

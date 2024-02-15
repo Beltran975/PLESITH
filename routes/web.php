@@ -122,13 +122,14 @@ Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 Route::get('administrador/prueba-postulaciones', [tablaController::class, 'mostrarDatos']);
 
 
-
+//Rutas para enviar correos 
 Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
 
+//verificar direccion de correo
 Route::get('/verificar-Correo', [CorreoverController::class, 'VerificarCorreo'])->name('enviar.correo');
 
 Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class, 'aprobarVerificacionDeCorreo'])->name('aprobarVerificacionDeCorreo');
-
+//verficar usuario 
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
 Route::post('/postulaciones/{id}/aprobar', [DictamenController::class, 'aprobarPostulacion'])->name('postulaciones.aprobar');
 

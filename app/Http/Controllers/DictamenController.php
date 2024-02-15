@@ -25,7 +25,7 @@ class DictamenController extends Controller
 
         // Actualizar el estatus y el atributo del PDF en la base de datos
         $postulacion = Postulaciones::findOrFail($id);
-        $postulacion->estatus = 'Revisado';
+        $postulacion->estatus = 'Aprobado';
         $postulacion->pdfdictamen = $nombreArchivo; // Guardar el nombre del archivo en el atributo pdfdictamen
         $postulacion->save();
 
@@ -33,6 +33,7 @@ class DictamenController extends Controller
         return redirect()->back()->with('success', 'La postulación ha sido aprobada correctamente.');
     }
 
+///-------------------------------------
     //Funcion para negar postulación
     public function negarPostulacion(Request $request, $id) 
     {
@@ -48,7 +49,7 @@ class DictamenController extends Controller
 
         // Actualizar el estatus y el atributo del PDF en la base de datos
         $postulacion = Postulaciones::findOrFail($id);
-        $postulacion->estatus = 'Revisado';
+        $postulacion->estatus = 'Negado';
         $postulacion->pdfdictamen = $nombreArchivo; // Guardar el nombre del archivo en el atributo pdfdictamen
         $postulacion->save();
 

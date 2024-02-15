@@ -18,7 +18,6 @@
         <div class="title">
             <div class="row ml-5">
                 <h3>{{ __('Postulaciones') }}</h3>
-                <a href="/enviar-correo" class="btn btn-primary">Enviar Correos</a>
             </div>
             <hr class="hr-gob">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -81,16 +80,18 @@
                             <tr>
                                 <th>Postulante</th>
                                 <th>Área de Conocimiento</th>
+                                <th>Estatus</th>
                                 <th>Fecha de Postulación</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
                             @foreach ($user->postulaciones as $postulacion)
-                            @if($user->postulaciones->count() > 0 && $postulacion->estatus == 'Revisado' )
+                            @if($user->postulaciones->count() > 0 && $postulacion->estatus == 'Aprobado' || $postulacion->estatus == 'Negado' )
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user-> programa}}</td>
+                                <td>{{ $postulacion->estatus}}</td>
                                 <td>{{ $postulacion->created_at->format('H:i d/m/Y') }}</td>
                                 <td>
                                     <div class="btn-group">
