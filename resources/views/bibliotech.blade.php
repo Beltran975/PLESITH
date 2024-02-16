@@ -14,7 +14,9 @@
     @include('layouts/header')
 
     <main class="main">
+        <div class="imagen">
         <img src="https://lh3.googleusercontent.com/p/AF1QipPwUIuMrYWVcHIotaxS9tnellvuu3J3Yb2RsCAf=s1360-w1360-h1020" alt="img">
+        </div>
         <div class="title">
             <h1>Bibliotech</h1>
         </div>
@@ -39,7 +41,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h3>Área del conocimiento</h3>
+                            <h3>Área de conocimiento</h3>
                             <div class="linea">
                                 <select class="form-select" aria-label="Default select example">
                                 <option selected>Seleccionar</option>
@@ -86,59 +88,33 @@
                     </div>
                 </div>
 <!-- Resultados de busqueda -->
-                <div class="col">
+                <div class="col-9">
                     <div class="resultados">
                         <div class="row justify-content-around">
-                            <div class="col">
-                                <div class="resultado">
-                                    
+                                <div class="resultado">   
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="resultado">
-                                    
+                                <div class="resultado">   
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="resultado">
-                                    
+                                <div class="resultado">   
                                 </div>
-                            </div>
                         </div>
 <br><br>
                         <div class="row justify-content-around">
-                            <div class="col">
-                                <div class="resultado">
-                                    
+                                <div class="resultado">   
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="resultado">
-                                    
+                                <div class="resultado">   
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="resultado">
-                                    
+                                <div class="resultado">   
                                 </div>
-                            </div>
                         </div>
 <br><br>
-                        <div class="row">
-                            <div class="col">
-                                <div class="resultado">  
+                        <div class="row justify-content-around">
+                                <div class="resultado">   
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="resultado">
-                                    
+                                <div class="resultado">   
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="resultado">
-                                    
+                                <div class="resultado">   
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>

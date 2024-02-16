@@ -7,7 +7,7 @@
   <title>Administrador</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="asset/adminHome.css">
+  <link rel="stylesheet" href="../asset/adminHome.css">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
       
       
       <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        Cerrar sesión
+        Cerrar Sesión
       </button>
     </div>
     <div class="trigger-area" style="height: 100%; width: 20px; position: fixed; top: 0; left: 0;"></div>

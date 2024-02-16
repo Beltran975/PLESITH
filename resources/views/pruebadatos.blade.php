@@ -1,16 +1,16 @@
 <html>
 
 <head>
-    <title>Tu Vista</title>
+    <title>Tu vista</title>
 </head>
 
 <body>
     <table border="1">
         <thead>
             <tr>
-                <th>Nombre de Usuario</th>
-                <th>Email</th>
-                <th>Postulaciones</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Mis postulaciones</th>
             </tr>
         </thead>
         <tbody>

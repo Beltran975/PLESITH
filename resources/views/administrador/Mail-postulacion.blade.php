@@ -7,7 +7,7 @@
     
 </head>
 <body>
-    <h1>Correo de Ejemplo</h1>
+    <h1>Correo de ejemplo</h1>
     <table class="table">
   <thead>
     <tr>

@@ -60,7 +60,7 @@
 
 <body>
     <div class="title">
-        <p>Datos de Postulación</p>
+        <p>Datos de postulación</p>
     </div>
     <table class="table">
         <tbody>
@@ -69,7 +69,7 @@
                 <td>{{ $user->name }}</td>
             </tr>
             <tr>
-                <th class="rotated-header">E-mail</th>
+                <th class="rotated-header">Correo</th>
                 <td>{{ $user->email }}</td>
             </tr>
             <tr>
@@ -77,11 +77,11 @@
                 <td>{{ $user->curp }}</td>
             </tr>
             <tr>
-                <th class="rotated-header">Institución a la que Pertenece</th>
+                <th class="rotated-header">Institución a la que pertenece</th>
                 <td>{{ $user-> institucion}}</td>
             </tr>
             <tr>
-                <th class="rotated-header">Programa Educativo</th>
+                <th class="rotated-header">Programa educativo</th>
                 <td>{{ $user-> programa}}</td>
             </tr>
         </tbody>
@@ -92,11 +92,11 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Área de Conocimiento</th>
-                <td>Físico-Matemático y Ciencias de la Tierra</td>
+                <th>Área de conocimiento</th>
+                <td>ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</td>
             </tr>
             <tr>
-                <th class="rotated-header">Grado Académico</th>
+                <th class="rotated-header">Grado académico</th>
                 <td>Ingeniería</td>
             </tr>
             <tr>
@@ -110,14 +110,14 @@
         </tbody>
     </table>
     <div class="title">
-        <p>Producciones </p>
+        <p>Mis producciones</p>
     </div>
     <div>
     </div>
     <table class="table contenido-produccion">
         <tbody>
             <tr>
-                <th class="rotated-header">Tema de la Investigación:</th>
+                <th class="rotated-header">Tema de la investigación:</th>
                 <td class="contenido-produccion">Bases de Datos</td>
             </tr>
             <tr>
@@ -146,7 +146,7 @@
     <table class="table contenido-produccion">
         <tbody>
             <tr>
-                <th class="rotated-header">Tema de la Investigación:</th>
+                <th class="rotated-header">Tema de la investigación:</th>
                 <td class="contenido-produccion">Bases de Datos</td>
             </tr>
             <tr>

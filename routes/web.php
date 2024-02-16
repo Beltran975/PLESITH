@@ -52,9 +52,7 @@ Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser']
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home-Admin', function () {
-    return view('administrador.home-admin');
-});
+
 
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
@@ -100,7 +98,6 @@ Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'
 //ruta para ver postulantes 
 
 
-Route::get('/administrador/tabla', [App\Http\Controllers\pstulacionesController::class, 'verPostulaciones']);
 
 
 
@@ -119,7 +116,7 @@ Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
 
 
-Route::get('administrador/prueba-postulaciones', [tablaController::class, 'mostrarDatos']);
+Route::get('administrador/tabla', [tablaController::class, 'mostrarDatos']);
 
 
 //Rutas para enviar correos 
