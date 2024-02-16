@@ -31,7 +31,7 @@
       
       
       <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        Cerrar Sesión
+        Cerrar sesión
       </button>
     </div>
     <div class="trigger-area" style="height: 100%; width: 20px; position: fixed; top: 0; left: 0;"></div>

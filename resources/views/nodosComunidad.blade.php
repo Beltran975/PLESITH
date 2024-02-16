@@ -39,15 +39,15 @@
                 </div>
                 <hr class="hr-gob" >
                 <div class="seccion">
-                    <h3>Nodos de la Comunidad</h3>
-                    <h5>Resultados Encontrados:</h5>
+                    <h3>Nodos de la comunidad</h3>
+                    <h5>Resultados encontrados:</h5>
                 </div>
                 <table class="tabla-nodos">
                     <thead>
                         <th class="rotated-header">Título:</th>
                         <th class="rotated-header">Líder:</th>
                         <th class="rotated-header">Línea de investigación: </th>
-                        <th class="rotated-header">Institución Ligada: </th>
+                        <th class="rotated-header">Institución ligada: </th>
                     </thead>
                     <tbody>
                         @foreach ($datos as $d)
@@ -76,14 +76,14 @@
                     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Investigación en Criptomonedas</h4>
+                                <h4 class="modal-title">Investigación en criptomonedas</h4>
                             </div>
                             <div class="modal-body">
                                 <table class="tabla-modal table table-borderless" >
                                     <tbody>
                                         @foreach ($datos as $d)
                                         <tr>
-                                            <th class="rotated-header">Línea de Investigación: </th>
+                                            <th class="rotated-header">Línea de investigación: </th>
                                             <td class="contenido-produccion">{{ $d->linea_inv}}</td>
                                         </tr>
                                         <tr>

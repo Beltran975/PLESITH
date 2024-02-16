@@ -13,7 +13,7 @@
 @include('layouts/header')
         <nav>
             <div class="title">
-                <h1>Gestión de Datos PLESITH</h1>
+                <h1>Gestión de datos PLESITH</h1>
             </div>
             <ul class="nav-right-section">
                 <li><a class="nav-link" href="#">Nodos</a></li>
@@ -48,10 +48,10 @@
                                 </select>
                 </div>
                 <div class="col-3">
-                    <h5>Área del conocimiento</h5>
+                    <h5>Área de conocimiento</h5>
                     <select class="form-select" aria-label="Default select example">
                                 <option name="area del conocimiento" disabled selected>Seleccionar</option>
-                                <option name="area del conocimiento" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la TierraÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
+                                <option name="area del conocimiento" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
                                 <option name="area del conocimiento" value="ÁREA II. Biología y Química">ÁREA II. Biología y Química</option>
                                 <option name="area del conocimiento" value="ÁREA III. Medicina y Ciencias de la Salud">ÁREA III. Medicina y Ciencias de la Salud </option>
                                 <option name="area del conocimiento" value="ÁREA IV. Ciencias de la Conducta y la Educación">ÁREA IV. Ciencias de la Conducta y la Educación</option>
@@ -244,7 +244,7 @@
                 </div>
             </div>
         </div>
-        <h6>Resultados encontrados</h6>
+        <h6>Resultados encontrados:</h6>
         <div class="resultados">
             <div class="row justify-content-center">
             <div class="card" style="width: 18rem;">

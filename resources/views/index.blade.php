@@ -113,7 +113,7 @@
                                     <img src="https://images.pexels.com/photos/1181307/pexels-photo-1181307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagen de producción">
                                     <div class="modal-des">
                                         <h1>Producciones</h1>
-                                        <p>En esta sección, los investigadores comparten sus descubrimientos más recientes, investigaciones destacadas y patentes revolucionarias. </p>
+                                        <p>En esta sección, los investigadores comparten sus descubrimientos más recientes, investigaciones destacadas y patentes revolucionarias.</p>
                                         <a href="/register" class="btn btn-primary">
                                             Formar parte
                                             <i class="bi bi-arrow-right"></i>
@@ -183,7 +183,7 @@
                                 <h1>Bibliotech</h1>
                             </div>
                             <div class="tarjeta-info-des">
-                                <p>Esta biblioteca digital proporciona acceso a investigaciones publicadas en revistas especializadas, contribuyendo al avance del conocimiento en múltiples áreas. </p>
+                                <p>Esta biblioteca digital proporciona acceso a investigaciones publicadas en revistas especializadas, contribuyendo al avance del conocimiento en múltiples áreas.</p>
                                 <a href="/bibliotech" class="btn btn-info">Explorar</a>
                             </div>
                         </div>

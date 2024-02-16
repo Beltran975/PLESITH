@@ -23,7 +23,7 @@
                     </div>
                     <hr class="hr-gob" >
                     <div class="titulo row d-flex mb-3">
-                        <h4>Documentos de Investigación</h4>
+                        <h4>Documentos de investigación</h4>
                     </div>
                     
                     <!-- Produccion -->
