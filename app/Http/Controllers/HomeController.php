@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use App\Models\Postulaciones;
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -29,7 +31,12 @@ class HomeController extends Controller
     
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+
+    // Obtener las postulaciones del usuario autenticado
+    $postulaciones = $user->postulaciones;
+
+        return view('home', ['postulaciones' => $postulaciones]);
     }
 
 }

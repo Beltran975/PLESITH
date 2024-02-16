@@ -27,13 +27,17 @@
                     <h3>Datos Generales</h3>
                     <h3>|</h3>
                     <h3>{{ Auth::user()->name }}</h3>
+                    
                 </div>
-
+                @foreach ($postulaciones as $postulacion)
                 @if(Auth::user()->verificacion == 'en proceso') 
-                <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar Postulación</a>
-                <button class="btn btn-primary" id="botonPostulacion">Enviar Postulación</button>
+                <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
+                <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
+                
+                        <!-- Otros campos de la postulación si es necesario -->
                 @elseif(Auth::user()->verificacion == 'ninguno')
-                <a href="/verificar-Correo" class="btn btn-secondary">verficar correo</a>
+                <a href="/verificar-Correo" class="btn btn-secondary">Verificar correo</a>
+                
                 @endif
                 @if(session('success'))
                 <div class="alert alert-success">
@@ -519,6 +523,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </main>
     @include('layouts/footer')
 

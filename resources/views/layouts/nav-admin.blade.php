@@ -7,7 +7,7 @@
   <title>Administrador</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="asset/adminHome.css">
+  <link rel="stylesheet" href="../asset/adminHome.css">
 </head>
 <body>
 

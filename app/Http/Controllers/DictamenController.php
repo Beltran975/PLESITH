@@ -8,6 +8,7 @@ use App\Models\Postulaciones;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\emailDictamen;
+use App\Mail\emailDictamenAprobacion;
 
 class DictamenController extends Controller
 {
@@ -29,6 +30,9 @@ class DictamenController extends Controller
         $postulacion->pdfdictamen = $nombreArchivo; // Guardar el nombre del archivo en el atributo pdfdictamen
         $postulacion->save();
 
+        $usuario = User::findorFail($postulacion->user_id);
+        //Enviar correo electronico al usuario
+        Mail::to($usuario->email)->send(new emailDictamenAprobacion($postulacion));
         // Redirigir con un mensaje de éxito
         return redirect()->back()->with('success', 'La postulación ha sido aprobada correctamente.');
     }
