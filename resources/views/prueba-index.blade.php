@@ -30,7 +30,7 @@
                 <div class="container">
                   <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subenlaces">
-                      <span class="sr-only">Interruptor de Navegación</span>
+                      <span class="sr-only">Interruptor de navegación</span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>

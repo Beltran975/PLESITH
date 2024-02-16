@@ -113,7 +113,7 @@
                                     <img src="https://images.pexels.com/photos/1181307/pexels-photo-1181307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagen de producción">
                                     <div class="modal-des">
                                         <h1>Producciones</h1>
-                                        <p>En esta sección los investigadores comparten sus descubrimientos más recientes, investigaciones destacadas y patentes revolucionarias. </p>
+                                        <p>En esta sección, los investigadores comparten sus descubrimientos más recientes, investigaciones destacadas y patentes revolucionarias.</p>
                                         <a href="/register" class="btn btn-primary">
                                             Formar parte
                                             <i class="bi bi-arrow-right"></i>
@@ -153,8 +153,8 @@
                                 <div>
                                     <img src="https://images.pexels.com/photos/3182792/pexels-photo-3182792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="imagen de nodos">
                                     <div class="modal-des">
-                                        <h1>Nodos de colaboración</h1>
-                                        <p>En esta sección los investigadores se unen para abordar desafíos complejos y desarrollar soluciones innovadoras. Cada nodo representa un punto de encuentro donde las ideas convergen y florecen, generando investigaciones y creaciones únicas que trascienden los límites individuales.</p>
+                                        <h1>Nodos de Colaboración</h1>
+                                        <p>En esta sección, los investigadores se unen para abordar desafíos complejos y desarrollar soluciones innovadoras. Cada nodo representa un punto de encuentro donde las ideas convergen y florecen, generando investigaciones y creaciones únicas que trascienden los límites individuales.</p>
                                         <a href="register" class="btn btn-primary">
                                             Formar parte
                                             <i class="bi bi-arrow-right"></i>
@@ -183,7 +183,7 @@
                                 <h1>Bibliotech</h1>
                             </div>
                             <div class="tarjeta-info-des">
-                                <p>Esta biblioteca digital proporciona acceso a investigaciones publicadas en revistas especializadas, contribuyendo al avance del conocimiento en múltiples áreas. </p>
+                                <p>Esta biblioteca digital proporciona acceso a investigaciones publicadas en revistas especializadas, contribuyendo al avance del conocimiento en múltiples áreas.</p>
                                 <a href="/bibliotech" class="btn btn-info">Explorar</a>
                             </div>
                         </div>
@@ -219,7 +219,12 @@
                     </div>
                     <div class="descripcion-ple">
                         <h1>¿Qué es PLESITH?</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil nesciunt placeat quo vitae vel? Voluptates eveniet expedita repudiandae tempore, corporis velit commodi temporibus consectetur animi provident inventore. Enim, repudiandae necessitatibus.</p>
+                        <p>La Plataforma Estatal de Investigadores y Tecnólogos de Hidalgo (PLESITH) se erige como un instrumento gubernamental para la administración eficiente y rigurosa de las aportaciones de los investigadores en el estado. Concebida como una entidad institucional, PLESITH facilita la solicitud y evaluación de patentes, así como la promoción de colaboraciones interdisciplinarias entre profesionales del ámbito científico y tecnológico.
+
+                        En su esencia, PLESITH representa una herramienta de gestión estratégica que permite el monitoreo y seguimiento detallado de las contribuciones en curso y potenciales. Mediante un catálogo exhaustivo, los miembros del departamento pueden acceder a información actualizada sobre las colaboraciones establecidas y los proyectos en desarrollo, brindando así un panorama completo de las actividades en desarrollo.
+
+                        A través de procesos definidos y protocolos establecidos, PLESITH se posiciona como un catalizador para la promoción de la investigación innovadora y la generación de soluciones tecnológicas. Con un enfoque riguroso y orientado a resultados, esta plataforma gubernamental se compromete a impulsar el progreso científico y tecnológico en el estado de Hidalgo, contribuyendo al desarrollo y fortalecimiento de la región en estos ámbitos críticos.
+                        </p>
                     </div>
                 </div>
                 

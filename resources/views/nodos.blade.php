@@ -43,15 +43,15 @@
             <hr class="hr-gob" >
             <div class="seccion">
             
-                    <h3>Nodos de la Comunidad</h3>
-                    <h5>Resultados Encontrados:</h5>
+                    <h3>Nodos de la comunidad</h3>
+                    <h5>Resultados encontrados:</h5>
                 
             </div>
             <table class="tabla-nodos">
                 <tbody>
                     <tr>
                         <th class="rotated-header">Título:</th>
-                        <td class="contenido-produccion">Investigación en Criptomonedas</td>
+                        <td class="contenido-produccion">Investigación en criptomonedas</td>
                         
                     </tr>
                     
@@ -66,7 +66,7 @@
                     </tr>
                     <tr>
                         <th class="rotated-header">Línea de investigación: </th>
-                        <td class="contenido-produccion">Inteligencia Artificial</td>
+                        <td class="contenido-produccion">Inteligencia artificial</td>
                         <td>
                             <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
                                 Leer más
@@ -75,8 +75,8 @@
                     </tr>
                     
                     <tr>
-                        <th class="rotated-header">Institución Ligada: </th>
-                        <td class="contenido-produccion">Universidad Tecnológica del Valle del Mezquital</td>
+                        <th class="rotated-header">Institución ligada: </th>
+                        <td class="contenido-produccion">UNIVERSIDAD TECNOLÓGICA DEL VALLE DEL MEZQUITAL</td>
                       
                     </tr>
                 </tbody>
@@ -86,14 +86,14 @@
                         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Investigación en Criptomonedas</h4>
+                                    <h4 class="modal-title">Investigación en criptomonedas</h4>
                                 </div>
                                 <div class="modal-body">
                                 <table class="tabla-modal table table-borderless" >
                 <tbody>
                     <tr>
-                        <th class="rotated-header">Línea de Investigación: </th>
-                        <td class="contenido-produccion">Inteligencia Artificial</td>
+                        <th class="rotated-header">Línea de investigación: </th>
+                        <td class="contenido-produccion">Inteligencia artificial</td>
                     </tr>
                     <tr>
                         <th class="rotated-header">Categoría: </th>
@@ -111,7 +111,7 @@
                     </tr>
                     <tr>
                         <th class="rotated-header">Institución ligada: </th>
-                        <td class="contenido-produccion">Univers|idad Tecnológica del Valle del Mezquital</td>
+                        <td class="contenido-produccion">UNIVERSIDAD TECNOLÓGICA DEL VALLE DEL MEZQUITAL</td>
                       
                     </tr>
                     <tr>

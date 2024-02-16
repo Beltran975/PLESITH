@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('asset/tabla.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>postulantes | PLESITH</title>
+    <title>Postulantes | PLESITH</title>
 </head>
 
 <body class="body">
@@ -38,8 +38,8 @@
                         <thead>
                             <tr>
                                 <th>Postulante</th>
-                                <th>Area de Conocimiento</th>
-                                <th>Fecha de Postulación</th>
+                                <th>Área de conocimiento</th>
+                                <th>Fecha de postulación</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -79,9 +79,9 @@
                         <thead>
                             <tr>
                                 <th>Postulante</th>
-                                <th>Área de Conocimiento</th>
+                                <th>Área de conocimiento</th>
                                 <th>Estatus</th>
-                                <th>Fecha de Postulación</th>
+                                <th>Fecha de postulación</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -122,14 +122,14 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de Aprobación</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de aprobación</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form action="{{ route('postulaciones.aprobar', ['id' => $postulacion->id]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
-                            <p>El postulado <span id="modalTituloAprobacion"></span> Cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
-                            <label for="dictamenAprobar">Dictamen de Aceptación:</label>
+                            <p>El postulado <span id="modalTituloAprobacion"></span> cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO.</p>
+                            <label for="dictamenAprobar">Dictamen de aceptación:</label>
                             <input type="file" id="dictamenAprobar" name="dictamenAprobar">
                         </div>
                         <div class="modal-footer">
@@ -145,14 +145,14 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de Negación</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de negación</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form action="{{ route('postulaciones.negar', ['id' => $postulacion->id]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
-                            <p>El postulado <span id="modalUsuarioNegar"></span> No cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
-                            <label for="dictamenNegar">Dictamen de Negación:</label>
+                            <p>El postulado <span id="modalUsuarioNegar"></span> no cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO.</p>
+                            <label for="dictamenNegar">Dictamen de negación:</label>
                             <input type="file" id="dictamenNegar" name="dictamenNegar">
                         </div>
                         <div class="modal-footer">

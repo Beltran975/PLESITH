@@ -11,7 +11,7 @@
         {{ $profile->name }}
     </p>
     <p>
-    <strong>E-mail:</strong>
+    <strong>Correo:</strong>
         {{ $profile->email }}
     </p>
     <p>
@@ -23,7 +23,7 @@
         <a href="{{ asset('storage/' . $profile->archivoCurp) }}" target="_blank">CURP</a>
     </p>
     <p>
-        <strong>Imagen de Perfil:</strong>
+        <strong>Imagen de perfil:</strong>
         <img src="{{ asset('storage/' . $profile->image_path) }}" alt="Imagen de Perfil" style="max-width: 200px; max-height: 200px;">
     </p>
 </body>
