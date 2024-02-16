@@ -35,7 +35,7 @@
                     <label class="control-label" for="name" >{{ __('Nombre completo *') }}</label>
                   </div>
                   <div class="col-md-6">
-                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                  <input id="name" type="text" onkeypress="return check(event)" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                       <div class="alert alert-danger alert-dismissible">
@@ -280,7 +280,7 @@
                     <label class="control-label" for="programa" class="">{{ __('Programa educativo *')}}</label>
                   </div>
                   <div class="col-md-6">
-                    <input class="form-control" id="programa" type="text"  name="programa" required>
+                    <input class="form-control" onkeypress="return check(event)" id="programa" type="text"  name="programa" required>
                   </div>
                 </div>
                 
@@ -306,5 +306,21 @@
     </main>
     @include('layouts/footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8N+1lUE3+XjwIXqityaM2UwEJrHjeZX/nezF8+Ad5A0tjFkA5Vx7Js1KrI95" crossorigin="anonymous"></script>
+    <script>
+      function check(e)
+      {
+        tecla = (document.all) ? e.keyCode : e.which;
+        
+        //Tecla de retroceso para borrar, siempre la permite
+        if (tecla == 8) {
+          return true;
+        }
+        
+        // Patrón de entrada, en este caso solo acepta numeros y letras
+        patron = /[A-Za-z]/;
+        tecla_final = String.fromCharCode(tecla);
+        return patron.test(tecla_final);
+      }
+    </script>
   </body>
   </html>
