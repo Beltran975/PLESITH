@@ -398,7 +398,7 @@
                                     <div class="col-md-3">
                                         <label class="form-label" for="pais">{{ __('País *')}}</label>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6 mb-3">
                                         <input class="form-control" name="pais" type="text" required>
                                     </div>
                                 </div>
@@ -406,8 +406,8 @@
                                     <div class="col-md-3">
                                         <label class="form-label" for="year">{{ __('Año *')}}</label>
                                     </div>
-                                    <div class="col-md-4">
-                                        <input class="form-control" name="year" type="text" min="1900" max="2099" step="1" required />
+                                    <div class="col-md-9 mb-3">
+                                        <input class="form-control" name="year" type="month" min="1900" max="2099" step="1" required />
                                     </div>
                                 </div>
                             </div>
