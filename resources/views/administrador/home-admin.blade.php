@@ -1,51 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Administrador</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="asset/adminHome.css">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('asset/tabla.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Administrador | PLESITH</title>
 </head>
-<body>
 
-  <section class="container">
-    <div class="sidebar">
-      
-      <div class="profile-info">
-        <div class="avatar-circle">
-          <i class="fa fa-user fa-2x"></i>
-        </div>
-        <span>{{ Auth::user()->name }}</span>
-      </div>
-      
-      <ul>
-        <li><a href="#"><i class="bi bi-person-fill"></i> Postulaciones</a></li>
-        <li><a href="#"><i class="bi bi-file-text-fill"></i> Producciones</a></li>
-        <li><a href="#"><i class="bi bi-folder2"></i> Nodos de colaboración</a></li>
-        <li><a href="#"><i class="bi bi-file-earmark-check-fill"></i>Bibliotech</a></li>
-        <li><a href="#"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
-      </ul>
-      
-      
-      <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        Cerrar sesión
-      </button>
-    </div>
-    <div class="trigger-area" style="height: 100%; width: 20px; position: fixed; top: 0; left: 0;"></div>
-  </section>
-
-  <!-- Menú desplegable para el usuario -->
-  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"></a>
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-      @csrf
-    </form>
+<body class="body">
+    @include('layouts/datos-gob')
+ 
+    <main class="main">
+        <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
+        @include('layouts.nav-admin')
+        <div class="title">
+            <div class="row ml-5">
+                <h3>{{ __('Bienvenido administrador') }}</h3>
+            </div>
+            <hr class="hr-gob">
+        
+    </main>
     
-</div>
-@include('administrador.tabla')
-
+   
 </body>
+
 </html>

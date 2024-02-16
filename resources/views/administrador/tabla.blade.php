@@ -15,6 +15,7 @@
  
     <main class="main">
         <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
+        @include('layouts.nav-admin')
         <div class="title">
             <div class="row ml-5">
                 <h3>{{ __('Postulaciones') }}</h3>
@@ -49,7 +50,7 @@
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user-> programa}}</td>
-                                <td>{{ $postulacion->created_at->format('H:i d/m/Y') }}</td>
+                                <td>{{ $postulacion->created_at->format(' d/m/Y') }}</td>
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
@@ -92,9 +93,9 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user-> programa}}</td>
                                 <td>{{ $postulacion->estatus}}</td>
-                                <td>{{ $postulacion->created_at->format('H:i d/m/Y') }}</td>
+                                <td>{{ $postulacion->created_at->format('d/m/Y') }}</td>
                                 <td>
-                                    <div class="btn-group">
+                                    <div class="    btn-group">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                         <ul class="dropdown-menu">
                                             <li>
