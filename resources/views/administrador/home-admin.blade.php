@@ -45,6 +45,7 @@
     </form>
     
 </div>
+@include('administrador.tabla')
 
 </body>
 </html>
