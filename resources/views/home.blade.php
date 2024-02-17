@@ -24,8 +24,8 @@
             <div class="green-box">
 
                 <div class="titulo row d-flex  mb-3">
-                    <h3>Datos generales</h3><!-- espacio en blanco -->
-                    <h3>|</h3>
+                    <h3>Datos generales</h3>&nbsp<!-- espacio en blanco -->
+                    <h3>|</h3>&nbsp
                     <h3>{{ Auth::user()->name }}</h3>
                     
                 </div>
