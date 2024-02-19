@@ -28,29 +28,27 @@
                     
                     <!-- Produccion -->
                     <div class="card mb-3">
-                        <div class="card-header" data-bs-toggle="collapse" href="#produccion">
-                            <table>
-                                <thead>
-                                    <th>
-                                        Bibliotech
-                                    </th>
-                                    <th>
-                                        |
-                                    </th>
-                                    <th>
-                                        Infotech
-                                    </th>
-                                </thead>
-                            </table>
+                        <div class="card-header">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="bibliotech-tab" data-bs-toggle="tab" href="#produccion" data-bs-target="#bibliotech" type="button" role="tab" aria-controls="bibliotech" aria-selected="true">Bibliotech</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="infotech-tab" data-bs-toggle="tab" data-bs-target="#infotech" type="button" role="tab" aria-controls="infotech" aria-selected="false">Infotech</button>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="card-body collapse" id="produccion">
-                            <div class="nav-producciones">
-                                <ul class="nav">
-                                    <li class="nav-link" onclick="showTab('1')"><a href="#">1</a></li>
-                                    <li class="nav-link" onclick="showTab('2')"><a href="#">2</a></li>
-                                    <li class="nav-link" onclick="showTab('3')"><a href="#">3</a></li>
-                                    <li class="nav-link" onclick="showTab('4')"><a href="#">4</a></li>
-                                </ul>
+
+                        <div class="tab-content" id="myTabContent">
+                            <!-- bibliotech -->
+                            <div class="tab-pane fade show active" id="bibliotech" role="tabpanel" aria-labelledby="bibliotech-tab">
+                                <div class="nav-producciones">
+                                    <ul class="nav">
+                                        <li class="nav-link" onclick="showTab('1')"><a href="#">1</a></li>
+                                        <li class="nav-link" onclick="showTab('2')"><a href="#">2</a></li>
+                                        <li class="nav-link" onclick="showTab('3')"><a href="#">3</a></li>
+                                        <li class="nav-link" onclick="showTab('4')"><a href="#">4</a></li>
+                                    </ul>
                                 <!--Botones de CRUD-->
                                 <div class="nav-crud">
                                     <!--Boton crear produccion-->
@@ -103,7 +101,71 @@
                                 <!-- Contenido del tab 4 -->
                                 <p>Contenido del Tab 4</p>
                             </div>
-                        </div>
+                            </div>
+
+                            <!-- infotech -->
+                            <div class="tab-pane fade" id="infotech" role="tabpanel" aria-labelledby="infotech-tab">
+                            <div class="nav-producciones">
+                                    <ul class="nav">
+                                        <li class="nav-link" onclick="showTab('1')"><a href="#">1</a></li>
+                                        <li class="nav-link" onclick="showTab('2')"><a href="#">2</a></li>
+                                        <li class="nav-link" onclick="showTab('3')"><a href="#">3</a></li>
+                                        <li class="nav-link" onclick="showTab('4')"><a href="#">4</a></li>
+                                    </ul>
+                                <!--Botones de CRUD-->
+                                <div class="nav-crud">
+                                    <!--Boton crear produccion-->
+                                    <a href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
+                                        <i class="bi bi-plus-circle-fill"></i>
+                                    </a>
+                                    <!--Boton edit-->
+                                    <a href="#" class="btn btn-secondary">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <!--Boton delete-->
+                                    <a href="#" class="btn btn-danger">
+                                        <i class="bi bi-trash3-fill"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="tab1" class="tabs-producciones active">
+                                <div id="tab1" class="tabs-producciones active">
+                                    <table class="table contenido produccion">
+                                        <tbody>
+                                            <tr>
+                                                <th class="rotated-header">Título2 :</th>
+                                                <td class="contenido-produccion">Título2</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Año2 :</th>
+                                                <td class="contenido-produccion">Año2</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Documento2 :</th>
+                                                <td class="contenido-produccion">Documento2</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Descripción2:</th>
+                                                <td class="contenido-produccion">Descripción2</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tabs-producciones">
+                                <!-- Contenido del tab 2 -->
+                                <p>Contenido del Tab 2</p>
+                            </div>
+                            <div id="tab3" class="tabs-producciones">
+                                <!-- Contenido del tab 3 -->
+                                <p>Contenido del Tab 3</p>
+                            </div>
+                            <div id="tab4" class="tabs-producciones">
+                                <!-- Contenido del tab 4 -->
+                                <p>Contenido del Tab 4</p>
+                            </div>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>
