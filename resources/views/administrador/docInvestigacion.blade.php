@@ -41,7 +41,7 @@
 
                         <div class="tab-content" id="myTabContent">
                             <!-- bibliotech -->
-                            <div class="tab-pane fade show active" id="bibliotech" role="tabpanel" aria-labelledby="bibliotech-tab">
+                            <div class="tab-pane fade show card-body active" id="bibliotech" role="tabpanel" aria-labelledby="bibliotech-tab">
                                 <div class="nav-producciones">
                                     <ul class="nav">
                                         <li class="nav-link" onclick="showTab('1')"><a href="#">1</a></li>
@@ -104,7 +104,7 @@
                             </div>
 
                             <!-- infotech -->
-                            <div class="tab-pane fade" id="infotech" role="tabpanel" aria-labelledby="infotech-tab">
+                            <div class="tab-pane fade card-body" id="infotech" role="tabpanel" aria-labelledby="infotech-tab">
                             <div class="nav-producciones">
                                     <ul class="nav">
                                         <li class="nav-link" onclick="showTab('1')"><a href="#">1</a></li>
