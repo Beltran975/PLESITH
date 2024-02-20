@@ -35,7 +35,7 @@
                     <label class="control-label" for="name" >{{ __('Nombre completo *') }}</label>
                   </div>
                   <div class="col-md-6">
-                  <input id="name" type="text" onkeypress="return check(event)" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                       <div class="alert alert-danger alert-dismissible">
