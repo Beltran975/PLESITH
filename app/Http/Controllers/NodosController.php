@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Nodo;
+use Illuminate\Support\Facades\Auth;
 
 class NodosController extends Controller
 {
@@ -16,6 +17,7 @@ class NodosController extends Controller
             $reg = new Nodo;
             $reg->tema_inv = $request->get('tema_inv');
             $reg->categoria = $request->get('categoria');
+            $reg->id_user = Auth::id();
             $reg->linea_inv = $request->get('linea_inv');
             $reg->institucion_ligada = $request->get('institucion_ligada');
             $reg->descripcion = $request->get('descripcion');

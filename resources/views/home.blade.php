@@ -456,7 +456,7 @@
                             @csrf
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="tema">{{ __('Tema de investigación*')}}</label>
+                                    <label class="form-label" for="tema_inv">{{ __('Tema de investigación*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" id="tema_inv" name="tema_inv" type="text" required>
@@ -476,20 +476,20 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="linea">{{ __('Área de conocimiento*')}}</label>
+                                    <label class="form-label" for="linea_inv">{{ __('Área de conocimiento*')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="lineaInv" required>
-                                        <option name="area del conocimiento" disabled selected>Seleccionar</option>
-                                        <option name="area del conocimiento" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
-                                        <option name="area del conocimiento" value="ÁREA II. Biología y Química">ÁREA II. Biología y Química</option>
-                                        <option name="area del conocimiento" value="ÁREA III. Medicina y Ciencias de la Salud">ÁREA III. Medicina y Ciencias de la Salud </option>
-                                        <option name="area del conocimiento" value="ÁREA IV. Ciencias de la Conducta y la Educación">ÁREA IV. Ciencias de la Conducta y la Educación</option>
-                                        <option name="area del conocimiento" value="ÁREA V. Humanidades">ÁREA V. Humanidades</option>
-                                        <option name="area del conocimiento" value="ÁREA VI. Ciencias Sociales">ÁREA VI. Ciencias Sociales</option>
-                                        <option name="area del conocimiento" value="ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas">ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas</option>
-                                        <option name="area del conocimiento" value="ÁREA VIII. Ingenierías y Desarrollo Tecnológico">ÁREA VIII. Ingenierías y Desarrollo Tecnológico</option>
-                                        <option name="area del conocimiento" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
+                                    <select class="form-control" name="linea_inv" required>
+                                        <option name="linea_inv" disabled selected>Seleccionar</option>
+                                        <option name="linea_inv" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
+                                        <option name="linea_inv" value="ÁREA II. Biología y Química">ÁREA II. Biología y Química</option>
+                                        <option name="linea_inv" value="ÁREA III. Medicina y Ciencias de la Salud">ÁREA III. Medicina y Ciencias de la Salud </option>
+                                        <option name="linea_inv" value="ÁREA IV. Ciencias de la Conducta y la Educación">ÁREA IV. Ciencias de la Conducta y la Educación</option>
+                                        <option name="linea_inv" value="ÁREA V. Humanidades">ÁREA V. Humanidades</option>
+                                        <option name="linea_inv" value="ÁREA VI. Ciencias Sociales">ÁREA VI. Ciencias Sociales</option>
+                                        <option name="linea_inv" value="ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas">ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas</option>
+                                        <option name="linea_inv" value="ÁREA VIII. Ingenierías y Desarrollo Tecnológico">ÁREA VIII. Ingenierías y Desarrollo Tecnológico</option>
+                                        <option name="linea_inv" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
                                     </select>
                                 </div>
                             </div>

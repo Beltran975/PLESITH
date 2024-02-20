@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Producciones;
+use Illuminate\Support\Facades\Auth;
 
 class ProduccionesController extends Controller
 {
@@ -16,6 +17,7 @@ class ProduccionesController extends Controller
             DB::beginTransaction();
             $reg = new Producciones;
             $reg->tipo = $request->get('tipo');
+            $reg->id_user = Auth::id();
             if ($request->hasFile('evidencia')) {
                 $produccion=$request->file('evidencia');
                 $produccion->move(public_path().'/produccion/',$produccion->getClientOriginalName());

@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Informacion;
-
-
 use Illuminate\Support\Facades\Auth;
 
 class InformacionController extends Controller
@@ -18,7 +16,6 @@ class InformacionController extends Controller
         try {
             DB::beginTransaction();
             $reg=new Informacion;
-            
             $reg->lineaInv = $request->get('lineaInv');
             $reg->grado = $request->get('grado');
             $reg->id_user = Auth::id();
