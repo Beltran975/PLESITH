@@ -107,7 +107,8 @@ Route::get('/documentoInvestigacion', function(){
 });
 //ruta para guardar datos de form docInvestigacion
 Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
-Route::get('ListaDocInvestigacion', [App\Http\Controllers\docInvestigacionController::class, 'index']);
+Route::get('/bibliotech', [App\Http\Controllers\docInvestigacionController::class, 'index']);
+
 
 
 
@@ -134,4 +135,8 @@ Route::post('/postulaciones/{id}/negar', [DictamenController::class, 'negarPostu
 //ruta nodos
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
+
+
+//Route::get('/bibliotech', 'docInvestigacionController@index');
+//Route::get('/bibliotech', [App\Http\Controllers\docInvestigacionController::class, 'index']);
 

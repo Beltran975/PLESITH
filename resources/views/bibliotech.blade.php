@@ -87,7 +87,32 @@
                     </form>
                     </div>
                 </div>
-<!-- Resultados de busqueda -->
+  
+<!-- Resultados de búsqueda -->
+<div class="col-9">
+    <div class="resultados">
+        @foreach($datos as $item)
+        <div class="row justify-content-around">
+            <div class="resultado">  
+                <center>
+                <thead>
+                <th>{{ $item->titulo }}</th>
+                <br>
+                <th>{{ $item->year }}</th>
+                <br>
+                <th> <a href="docInvestigacion/{{ $item->documento }}" target="blank_">{{ $item->documento }}</a></th>
+                <br>
+                <th>{{ $item->descripcion }}</th>
+                <!--<p>titulo: {{ $item->titulo }}</p>-->
+                </thead>
+                </center> 
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+
+<!-- Resultados de busqueda 
                 <div class="col-9">
                     <div class="resultados">
                         <div class="row justify-content-around">
@@ -119,9 +144,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         </section>
     </main>
-@include('layouts/footer')
+@include('layouts/footer') 
 </body>
 </html>
