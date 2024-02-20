@@ -13,8 +13,8 @@
         <title>Documentos de investigación</title>
     </head>
     <body>
-    @include('layouts/headregob')
-    @include('layouts/header')
+        @include('layouts/headregob')
+        @include('layouts/header')
         <main class="page">
             <div class="content">
                 <div class="green-box">
@@ -26,8 +26,8 @@
                         <h4>Documentos de investigación</h4>
                     </div>
                     
-                    <!-- Produccion -->
                     <div class="card mb-3">
+                        
                         <div class="card-header">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -38,7 +38,7 @@
                                 </li>
                             </ul>
                         </div>
-
+                        
                         <div class="tab-content" id="myTabContent">
                             <!-- bibliotech -->
                             <div class="tab-pane fade show card-body active" id="bibliotech" role="tabpanel" aria-labelledby="bibliotech-tab">

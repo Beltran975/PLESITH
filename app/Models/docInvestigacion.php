@@ -9,10 +9,8 @@ class docInvestigacion extends Model
 {
     //use HasFactory;
 
-    protected $table = 'dovInves';
-    protected $primaryKey = 'id_docInv';
-
-    public $timestamps = false;
+    protected $table = 'bibliotech_admin';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'titulo',
