@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Models\docInvestigacion;
+use App\Models\docInvestigacion;    
 
 class docInvestigacionController extends Controller
 {
@@ -32,7 +32,9 @@ class docInvestigacionController extends Controller
 
     public function index()
     {
-        $query = DB::table('dovInves')->get();
-        return view('administrador.docInvestigacion', ['datos'=>$query]);
+        $datos = docInvestigacion::all();
+        // $query = DB::table('dovInves')->get();
+         return view('bibliotech', compact('datos'));
+       // return view('administrador.docInvestigacion', ['datos'=>$query]);
     }
 }
