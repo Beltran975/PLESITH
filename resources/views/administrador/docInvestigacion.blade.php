@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ asset('asset/home.css') }}">        
+        <link rel="stylesheet" href="{{ asset('asset/documentosinfo.css') }}">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -13,18 +13,22 @@
         <title>Documentos de investigación</title>
     </head>
     <body>
-        @include('layouts/headregob')
-        @include('layouts/header')
+
+        @include('layouts/datos-gob')
+
         <main class="page">
+        <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
+
+        @include('layouts.nav-admin')
+
             <div class="content">
                 <div class="green-box">
-                    <div class="titulo row d-flex  mb-3">
+                
                         <h3>Gestión de datos PLESITH</h3>
-                    </div>
                     <hr class="hr-gob" >
-                    <div class="titulo row d-flex mb-3">
+                    
                         <h4>Documentos de investigación</h4>
-                    </div>
+                   
                     
                     <div class="card mb-3">
                         
@@ -223,7 +227,7 @@
                 </div>
             </div>
         </main>
-        @include('layouts/footer')
+    
         
         <!-- Include Bootstrap JS and Popper.js before closing body tag -->
         <!-- Asegúrate de incluir estas versiones específicas de Popper.js y jQuery para Bootstrap 5 -->

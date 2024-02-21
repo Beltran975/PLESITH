@@ -22,11 +22,11 @@
       </div>
       
       <ul>
-        <li><a href="#"><i class="bi bi-person-fill"></i> Postulaciones</a></li>
+        <li><a href="/administrador/tabla"><i class="bi bi-person-fill"></i> Postulaciones</a></li>
         <li><a href="#"><i class="bi bi-file-text-fill"></i> Producciones</a></li>
         <li><a href="#"><i class="bi bi-folder2"></i> Nodos de colaboración</a></li>
-        <li><a href="#"><i class="bi bi-file-earmark-check-fill"></i>Bibliotech</a></li>
-        <li><a href="#"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
+        <li><a href="/documentoInvestigacion"><i class="bi bi-file-earmark-check-fill"></i>Bibliotech</a></li>
+        <li><a href="/documentoInvestigacion"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
       </ul>
       
       
