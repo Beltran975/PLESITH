@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('asset/tabla.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png" />
@@ -12,7 +12,7 @@
 
 <body class="body">
     @include('layouts/datos-gob')
- 
+
     <main class="main">
         <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
         @include('layouts.nav-admin')
@@ -21,10 +21,63 @@
                 <h3>{{ __('Bienvenido administrador') }}</h3>
             </div>
             <hr class="hr-gob">
-        
+            <!--cards de acciones-->
+            <section class="card-group">
+                <div class="card">
+                    <div class="card-header">
+                    <h5 class="card-title">Postulaciones PLESITH</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Numero de usuarios:
+                            <span>185</span>
+                            </li>
+                            <li class="list-group-item">Numero de postulaciones:
+                            <span>119</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                    <h5 class="card-title">Producciones y Nodos de colaboración</h5>
+                    </div>
+                    <div class="card-body">
+                        
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Numero de producciones:
+                            <span>76</span>
+                            </li>
+                            <li class="list-group-item">numero de nodos:
+                            <span>91</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                <div class="card-header">
+                        <h5 class="card-title">Gestión Bibliotech e Infotech</h5>
+
+                        </div>
+                    <div class="card-body">
+                        
+                        
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Numero de convocatorias:
+                            <span>19</span>
+                            </li>
+                            <li class="list-group-item">Numero de publicaciones:
+                            <span>21</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
     </main>
-    
-   
+
+
 </body>
 
 </html>
