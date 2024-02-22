@@ -136,7 +136,13 @@ Route::post('/postulaciones/{id}/negar', [DictamenController::class, 'negarPostu
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
 
-
+//rutas gestion
+Route::get('/administrador/gestion-infotech', function(){
+    return view('administrador/gestion-infotech');
+});
+Route::get('/administrador/gestion-bibliotech', function(){
+    return view('administrador/gestion-bibliotech');
+});
 //Route::get('/bibliotech', 'docInvestigacionController@index');
 //Route::get('/bibliotech', [App\Http\Controllers\docInvestigacionController::class, 'index']);
 
