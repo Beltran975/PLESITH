@@ -35,9 +35,9 @@ Route::get('/la', function () {
 Route::get('/nodo', function () {
     return view('nodo');
 });
-Route::get('/edit-perfil', function () {
-    return view('auth/edit-perfil');
-});
+
+//rutas para actulizar datos de usuario
+Route::resource('/home', RegisterController::class);
 
 Route::get('/infotech', function () {
     return view('infotech');

@@ -103,5 +103,24 @@ class RegisterController extends Controller
     {
         Mail::to($user->email)->send(new ConfirmacionCorreo($user));
     }
+
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('auth.edit',compact('user'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->input('name');
+        $user->curp = $request->input('curp');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->institucion = $request->input('institucion');
+        $user->programa = $request->input('programa');
+        $user->save();
+        return view('index');
+    }
     
 }
