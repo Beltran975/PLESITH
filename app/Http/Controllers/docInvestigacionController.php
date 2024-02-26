@@ -35,6 +35,6 @@ class docInvestigacionController extends Controller
         $datos = docInvestigacion::all();
         // $query = DB::table('dovInves')->get();
          return view('bibliotech', compact('datos'));
-       // return view('administrador.docInvestigacion', ['datos'=>$query]);
+     return view('administrador.docInvestigacion', ['datos'=>$query]);
     }
 }

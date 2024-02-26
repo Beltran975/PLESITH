@@ -26,14 +26,13 @@
                         <div class="col-2 barra-nodo">
                             <a class="btn " href="/home"   data-bs-target="#Modal-crear-produccion">Crear nodo</a>
                         </div>
-                        <div class="col-3 barra-nodo">
-                            <input type="search" class="form-control rounded" aria-label="Search" aria-describedby="search-addon" />
+
+                        <div class="col-3 buscar-nodo">
+                        <form class="form-inline" action="{{route('buscar.index')}}" method="get">
+                        <input name="buscar" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
                         </div>
                         <div class="col-2">
-                            <button class="btn btn-primary" type="button">
-                                <i class="bi bi-search"></i>
-                                Buscar
-                            </button>
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i>Buscar</button>
                         </div>
                     </div>
                 </div>
