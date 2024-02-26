@@ -24,7 +24,7 @@
           <li><a href="#"><i class="bi bi-file-text-fill"></i> Producciones</a></li>
           <li><a href="#"><i class="bi bi-folder2"></i> Nodos de colaboración</a></li>
           <li><a href="/gestion-bibliotech"><i class="bi bi-file-earmark-check-fill"></i>Bibliotech</a></li>
-          <li><a href="/administrador/gestion-infotech"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
+          <li><a href="/gestion-infotech"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
         </ul>
         <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           Cerrar Sesión

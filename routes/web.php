@@ -137,9 +137,11 @@ Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
 
 //rutas gestion
-Route::get('/administrador/gestion-infotech', function(){
+Route::get('/gestion-infotech', function(){
     return view('administrador.gestion-infotech');
 });
+Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'insertar']);
+
 Route::get('/gestion-bibliotech', function(){
     return view('administrador.gestion-bibliotech');
 });
