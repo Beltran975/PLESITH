@@ -198,7 +198,7 @@
                             </div>
                             <div class="tarjeta-info-des">
                                 <p>Infotech se presenta como un faro informativo, brindando a los investigadores un acceso centralizado a convocatorias de becas, programas de financiamiento, oportunidades de colaboración y eventos científicos relevantes.</p>
-                                <a href="/infotech" class="btn btn-info">Explorar</a>
+                                <a href="/infotechComunidad" class="btn btn-info">Explorar</a>
                             </div>
                         </div>
                     </div>

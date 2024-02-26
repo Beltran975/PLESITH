@@ -39,8 +39,8 @@ Route::get('/nodo', function () {
 //rutas para actulizar datos de usuario
 Route::resource('/home', RegisterController::class);
 
-Route::get('/infotech', function () {
-    return view('infotech');
+Route::get('/infotechComunidad', function () {
+    return view('infotechComunidad');
 });
 Route::get('/bibliotechComunidad', function () {
     return view('bibliotechComunidad');
