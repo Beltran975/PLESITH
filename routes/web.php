@@ -7,6 +7,8 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\tablaController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\dictamenController;
+
+use App\Http\Controllers\NodosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -146,4 +148,8 @@ Route::get('/gestion-bibliotech', function(){
 Route::post('EnvioBiliotech', [App\Http\Controllers\BibliotechController::class, 'insertar']);
 //Route::get('/bibliotech', 'docInvestigacionController@index');
 //Route::get('/bibliotech', [App\Http\Controllers\docInvestigacionController::class, 'index']);
+
+//Route::get('/nodos', [NodosController::class, 'index']);
+
+ Route::resource('/buscar', NodosController::class,);
 
