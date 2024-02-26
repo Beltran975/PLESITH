@@ -184,7 +184,7 @@
                             </div>
                             <div class="tarjeta-info-des">
                                 <p>Esta biblioteca digital proporciona acceso a investigaciones publicadas en revistas especializadas, contribuyendo al avance del conocimiento en múltiples áreas.</p>
-                                <a href="/bibliotech" class="btn btn-info">Explorar</a>
+                                <a href="/bibliotechComunidad" class="btn btn-info">Explorar</a>
                             </div>
                         </div>
                     </div>

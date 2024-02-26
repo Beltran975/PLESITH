@@ -27,6 +27,14 @@ class BibliotechController extends Controller
         } catch (Exception $e) {
             DB::rollback();
         }
-        
+        return view('administrador.home-admin');
+    }
+    
+    public function index()
+    {
+        $datos = Bibliotech::all();
+        // $query = DB::table('dovInves')->get();
+        return view('bibliotech', compact('datos'));
+        return view('administrador.docInvestigacion', ['datos'=>$query]);
     }
 }

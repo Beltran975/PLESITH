@@ -90,10 +90,7 @@
                 @foreach($datos as $item)
 
                 <div class="card-biblio">
-                    <div class="image">
-                        <img src="docInvestigacion/{{ $item->documento }}" alt="...">
-
-                    </div>
+                    
                     <div class="card-body-biblio">
                         <th>{{ $item->titulo }}</th>
                         <br>
