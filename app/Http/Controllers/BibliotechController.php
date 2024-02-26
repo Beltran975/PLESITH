@@ -34,7 +34,7 @@ class BibliotechController extends Controller
     {
         $datos = Bibliotech::all();
         // $query = DB::table('dovInves')->get();
-        return view('bibliotech', compact('datos'));
+        return view('bibliotechComunidad', compact('datos'));
         return view('administrador.docInvestigacion', ['datos'=>$query]);
     }
 }
