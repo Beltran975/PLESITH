@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bibliotech_admin', function (Blueprint $table) {
+        Schema::create('bibliotech', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
             $table->string('year');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bibliotech_admin');
+        Schema::dropIfExists('bibliotech');
     }
 };

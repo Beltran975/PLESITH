@@ -138,11 +138,12 @@ Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 
 
 //rutas gestion
 Route::get('/administrador/gestion-infotech', function(){
-    return view('administrador/gestion-infotech');
+    return view('administrador.gestion-infotech');
 });
-Route::get('/administrador/gestion-bibliotech', function(){
-    return view('administrador/gestion-bibliotech');
+Route::get('/gestion-bibliotech', function(){
+    return view('administrador.gestion-bibliotech');
 });
+Route::post('EnvioBiliotech', [App\Http\Controllers\BibliotechController::class, 'insertar']);
 //Route::get('/bibliotech', 'docInvestigacionController@index');
 //Route::get('/bibliotech', [App\Http\Controllers\docInvestigacionController::class, 'index']);
 
