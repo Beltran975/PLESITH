@@ -6,17 +6,29 @@
     transform: translate(-50%, -50%);
     color: #ffffff;
 }
-div.carousel-item.active{
-    width: 100%;
-    height: 240px;
-    top: 40px;
+.container-lx {
+    width: 100%; 
+    max-width: 1349px; 
+    margin: 0 auto; 
 }
-img.d-block.w-100{
-    height: 200px;
-    width: max-content;
+
+.carousel-inner {
+    width: 100%;
+    height: 400px; 
+}
+
+.carousel-item {
+    width: 100%; 
+    height: 100%; 
+}
+
+.carousel-item img {
+    width: 100%; 
+    height: 100%; 
     object-fit: cover;
     filter: brightness(0.5);
 }
+
 /*hr de gobierno*/
 .hr-gob{
     margin: 10px 10px 10px 10px;
@@ -53,15 +65,32 @@ table, td {
     cursor: pointer;
 }
 table.months{
+    background-color: #691b32;
+    color: #ffffff;
     width: 100%;
     margin-bottom: 10px;
     cursor: pointer;
 }
-table.resultados{
+table.resultados {
     width: 70%;
     margin-top: 20px;
     cursor: pointer;
 }
+
+
+table.resultados tr:first-child {
+    background-color: #691b32; 
+    color: #ffffff;
+}
+
+table.resultados th {
+    width: 200px; 
+}
+
+table.resultados th:nth-child(1) {
+    width: 200px; 
+}
+
 select.año{
     margin: 0px 0px 0px 90%;
     width: 100%;
