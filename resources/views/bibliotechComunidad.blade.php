@@ -90,9 +90,8 @@
                 @foreach($datos as $item)
 
                 <div class="card-biblio">
-                    <div class="image">
-                        <img src="docInvestigacion/{{ $item->documento }}" alt="...">
-
+                <div class="image">
+                        <iframe src="/bibliotech/{{ $item->documento }}" type="application/pdf" width="100%" height="100%"></iframe>
                     </div>
                     <div class="card-body-biblio">
                         <th>{{ $item->titulo }}</th>

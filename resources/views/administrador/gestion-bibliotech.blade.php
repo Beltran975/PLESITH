@@ -96,7 +96,7 @@
                         
                         <div class="modal-body">
                             <form action="EnvioBiliotech" method="POST" enctype="multipart/form-data" >
-                               @csrf
+                                @csrf
                                 <div class="row justify-content-center mb-2">
                                     <div class="col-md-4">
                                         <label class="form-label" for="titulo">{{ __('Título *') }}</label>
@@ -110,7 +110,7 @@
                                         <label class="form-label" for="year">{{ __('Año *')}}</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input class="form-control" name="year" type="month" min="1900" max="2099" step="1" required />
+                                        <input class="form-control" name="year" type="date" min="1900" max="2099" step="1" required />
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mb-2">

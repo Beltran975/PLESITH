@@ -4,21 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Models\Bibliotech;
+use App\Models\Infotech;
 
-class BibliotechController extends Controller
+class InfotechController extends Controller
 {
     public function insertar(Request $request)
     {
         //dd($request);
         try {
             DB::beginTransaction();
-            $reg = new Bibliotech;
+            $reg = new Infotech;
             $reg->titulo = $request->get('titulo');
             $reg->year = $request->get('year');
             if ($request->hasFile('documento')) {
                 $documento = $request->file('documento');
-                $documento->move(public_path().'/bibliotech/',$documento->getClientOriginalName());
+                $documento->move(public_path().'/infotech/', $documento->getClientOriginalName());
                 $reg->documento = $documento->getClientOriginalName();
             }
             $reg->descripcion = $request->get('descripcion');
@@ -28,13 +28,5 @@ class BibliotechController extends Controller
             DB::rollback();
         }
         return view('administrador.home-admin');
-    }
-    
-    public function index()
-    {
-        $datos = Bibliotech::all();
-        // $query = DB::table('dovInves')->get();
-        return view('bibliotechComunidad', compact('datos'));
-        return view('administrador.docInvestigacion', ['datos'=>$query]);
     }
 }
