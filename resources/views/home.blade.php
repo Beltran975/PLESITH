@@ -199,43 +199,49 @@
                     </div>
                     <div class="card-body collapse" id="produccion">
                         <div class="nav-producciones">
-                            <ul class="nav">
-                                <li class="nav-link" onclick="showTab('1')"><a href="#">1</a></li>
-                                <li class="nav-link" onclick="showTab('2')"><a href="#">2</a></li>
-                                <li class="nav-link" onclick="showTab('3')"><a href="#">3</a></li>
-                                <li class="nav-link" onclick="showTab('4')"><a href="#">4</a></li>
-                            </ul>
-                            <!--Botones de CRUD-->
-                            <div class="nav-crud">
-                                <!--Boton crear produccion-->
-                                <a href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
-                                    <i class="bi bi-plus-circle-fill"></i>
-                                </a>
-                                <!--Boton edit-->
-                                <a href="#" class="btn btn-secondary">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
-                                <!--Boton delete-->
-                                <a href="#" class="btn btn-danger">
-                                    <i class="bi bi-trash3-fill"></i>
-                                </a>
-                            </div>
+                            <p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear:</p>
+                            
                         </div>
-                        <div id="tab1" class="tabs-producciones active">
-                            include('layouts.listaProducciones')
+                        <div id="tab5" class="tabs-producciones active">
+                            <table class="table contenido produccion">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo:</th>
+                                        <th>Evidencia:</th>
+                                        <th>Autores:</th>
+                                        <th>Titulo:</th>
+                                        <th>Descripción:</th>
+                                        <th>Pais:</th>
+                                        <th>Año:</th>
+                                        <th>Proposito:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bases de Datos</td>
+                                        <td>Nacional</td>
+                                        <td>Dr. Ana García</td>
+                                        <td>Ing. Carlos Martínez</td>
+                                        <td>Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, al combinar los principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
+                                        <td>Mexico</td>
+                                        <td>2024</td>
+                                        <td>Creacion</td>
+                                        <td>
+                                            <a href="#" class="btn btn-secondary">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-danger">
+                                                <i class="bi bi-trash3-fill"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
                         </div>
-                        <div id="tab2" class="tabs-producciones">
-                            <!-- Contenido del tab 2 -->
-                            <p>Contenido del Tab 2</p>
-                        </div>
-                        <div id="tab3" class="tabs-producciones">
-                            <!-- Contenido del tab 3 -->
-                            <p>Contenido del Tab 3</p>
-                        </div>
-                        <div id="tab4" class="tabs-producciones">
-                            <!-- Contenido del tab 4 -->
-                            <p>Contenido del Tab 4</p>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -246,69 +252,43 @@
                     </div>
                     <div class="card-body collapse" id="nodos">
                         <div class="nav-producciones">
-                            <ul class="nav">
-                                <li class="nav-link" onclick="showTab('5')"><a href="#">1</a></li>
-                                <li class="nav-link" onclick="showTab('6')"><a href="#">2</a></li>
-                                <li class="nav-link" onclick="showTab('7')"><a href="#">3</a></li>
-                                <li class="nav-link" onclick="showTab('8')"><a href="#">4</a></li>
-                            </ul>
-                            <!--Botones de CRUD-->
-                            <div class="nav-crud">
-                                <!--Boton crear nodo-->
-                                <a href="#Modal-crear-nodo" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo">
-                                    <i class="bi bi-plus-circle-fill"></i>
-                                </a>
-                                <!--Boton edit-->
-                                <a href="#" class="btn btn-secondary">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
-                                <!---->
-                                <a href="#" class="btn btn-danger">
-                                    <i class="bi bi-trash3-fill"></i>
-                                </a>
-                            </div>
+                        <p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear:</p>
+                            
                         </div>
                         <div id="tab5" class="tabs-producciones active">
                             <table class="table contenido produccion">
+                                <thead>
+                                    <tr>
+                                        <th>Tema de investigación:</th>
+                                        <th>Categoría:</th>
+                                        <th>Líder:</th>
+                                        <th>Colaboradores:</th>
+                                        <th>Descripción:</th>
+                                        <th>Documentación:</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     <tr>
-                                        <th class="rotated-header">Tema de investigación:</th>
-                                        <td class="contenido-produccion">Bases de Datos</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="rotated-header">Categoría:</th>
-                                        <td class="contenido-produccion">Nacional</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="rotated-header">Líder:</th>
-                                        <td class="contenido-produccion">Dr. Ana García</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="rotated-header">Colaboradores:</th>
-                                        <td class="contenido-produccion">Ing. Carlos Martínez</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="rotated-header">Descripción:</th>
-                                        <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, al combinar los principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="rotated-header">Documentación:</th>
-                                        <td class="contenido-produccion"><a href="#">Ejemplo.pdf</a></td>
+                                        <td>Bases de Datos</td>
+                                        <td>Nacional</td>
+                                        <td>Dr. Ana García</td>
+                                        <td>Ing. Carlos Martínez</td>
+                                        <td>Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, al combinar los principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
+                                        <td>Ejemplo.pdf</td>
+                                        <td>
+                                            <a href="#" class="btn btn-secondary">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-danger">
+                                                <i class="bi bi-trash3-fill"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div id="tab6" class="tabs-producciones">
-                            <!-- Contenido del tab 2 -->
-                            <p>Contenido del Tab 2</p>
-                        </div>
-                        <div id="tab7" class="tabs-producciones">
-                            <!-- Contenido del tab 3 -->
-                            <p>Contenido del Tab 3</p>
-                        </div>
-                        <div id="tab8" class="tabs-producciones">
-                            <!-- Contenido del tab 4 -->
-                            <p>Contenido del Tab 4</p>
+                            
                         </div>
                     </div>
                 </div>

@@ -82,7 +82,7 @@
                                     <tbody>
                                         @foreach ($datos as $d)
                                         <tr>
-                                            <th class="rotated-header">Línea de investigación: </th>
+                                            <th class="rotated-header">Área de conocimiento: </th>
                                             <td class="contenido-produccion">{{ $d->linea_inv}}</td>
                                         </tr>
                                         <tr>
