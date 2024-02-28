@@ -35,17 +35,16 @@ class NodosController extends Controller
         }
         return view('home');
 
-       
     }
-
+    
     public function index(Request $request)
     {
-    $tema_inv = $request->get('buscar');
-
-    $datos = Nodo::where('linea_inv', 'like', "%$tema_inv%")
-                 ->paginate(5);
-
-    return view('nodosComunidad', compact('datos'));
-}
+        $tema_inv = $request->get('buscar');
+        
+        $datos = Nodo::where('linea_inv', 'like', "%$tema_inv%")
+            ->paginate(5);
+            
+            return view('nodosComunidad', compact('datos'));
+    }
 
 }
