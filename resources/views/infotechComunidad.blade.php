@@ -63,7 +63,7 @@
                 </tr>
             </table>
     <!-- Menú desplegable con años -->
-            <select class="año" onchange="showConvocationsByYear(this.value)">
+            <select class="fecha" onchange="showConvocationsByYear(this.value)">
                 <option value="2024">2024</option>
                 <option value="2023">2023</option>
                 <option value="2023">2022</option>
