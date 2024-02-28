@@ -16,6 +16,8 @@ class Nodo extends Model
     protected $fillable = [
         'tema_inv',
         'categoria',
+        'lider',
+        'colaboradores',
         'linea_inv',
         'institucion_ligada',
         'descripcion',

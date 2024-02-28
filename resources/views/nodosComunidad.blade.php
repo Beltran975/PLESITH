@@ -45,14 +45,14 @@
                     <thead>
                         <th class="rotated-header">Título:</th>
                         <th class="rotated-header">Líder:</th>
-                        <th class="rotated-header">Línea de investigación: </th>
+                        <th class="rotated-header">Área de conocimiento: </th>
                         <th class="rotated-header">Institución ligada: </th>
                     </thead>
                     <tbody>
                         @foreach ($datos as $d)
                         <tr>
                             <td class="contenido-produccion">{{ $d->tema_inv}}</td>
-                            <td class="contenido-produccion">Dr. Ana García, Ing. Carlos Martínez</td>
+                            <td class="contenido-produccion">{{ $d->lider}}</td>
                             <td class="contenido-produccion">{{ $d->linea_inv}}</td>
                             <td class="contenido-produccion">{{ $d->institucion_ligada}}</td>
                             <td>
@@ -91,11 +91,11 @@
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Líder:</th>
-                                            <td class="contenido-produccion">Dr. Ana García</td>
+                                            <td class="contenido-produccion">{{ $d->lider}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Colaboradores: </th>
-                                            <td class="contenido-produccion">Ing. Carlos Martínez</td>
+                                            <td class="contenido-produccion">{{ $d->colaboradores}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Institución ligada: </th>

@@ -474,6 +474,25 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="row justify-content-center mb-2">
+                                <div class="col-md-4">
+                                    <label class="form-label" for="lider">{{ __('Lider*')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" id="lider" name="lider" type="text" required>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mb-2">
+                                <div class="col-md-4">
+                                    <label class="form-label" for="colaboradores">{{ __('Colaboradores*')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" id="colaboradores" name="colaboradores" type="text" required>
+                                </div>
+                            </div>
+
+
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
                                     <label class="form-label" for="linea_inv">{{ __('Área de conocimiento*')}}</label>

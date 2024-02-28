@@ -23,7 +23,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('home.edit', Auth::user()->id)}}" class="dropdown-item">Editar perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Editar información PLESITH</a></li>
+                        <li><a class="dropdown-item" href="">Editar información PLESITH</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><ul class="hidden">
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>

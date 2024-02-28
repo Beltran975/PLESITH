@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('tema_inv');
             $table->string('categoria');
+            $table->string('lider');
+            $table->string('colaboradores');
             $table->string('linea_inv');
             $table->string('institucion_ligada');
             $table->string('descripcion');

@@ -18,6 +18,8 @@ class NodosController extends Controller
             $reg->tema_inv = $request->get('tema_inv');
             $reg->categoria = $request->get('categoria');
             $reg->id_user = Auth::id();
+            $reg->lider = $request->get('lider');
+            $reg->colaboradores = $request->get('colaboradores');
             $reg->linea_inv = $request->get('linea_inv');
             $reg->institucion_ligada = $request->get('institucion_ligada');
             $reg->descripcion = $request->get('descripcion');
