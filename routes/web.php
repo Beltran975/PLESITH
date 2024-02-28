@@ -137,6 +137,14 @@ Route::post('/postulaciones/{id}/negar', [DictamenController::class, 'negarPostu
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
 
+Route::get('/administrador/gestionnodos', function () {
+    return view('/administrador/gestionnodos'); 
+});
+
+Route::get('/administrador/gestionproducciones', function () {
+    return view('/administrador/gestionproducciones'); 
+});
+
 //rutas gestion
 Route::get('/gestion-infotech', function(){
     return view('administrador.gestion-infotech');
