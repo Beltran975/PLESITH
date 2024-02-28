@@ -60,15 +60,6 @@
                             
                             <div class="row justify-content-center mb-3">
                                 <div class="col-md-4">
-                                    <label class="control-label" for="password" >{{ __('Contraseña *') }}</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <input class="form-control @error('password') is-invalid @enderror" id="password" type="password" name="password" value="{{Auth::user()->password}}" required autocomplete="new-password">
-                                </div>
-                            </div>
-                            
-                            <div class="row justify-content-center mb-3">
-                                <div class="col-md-4">
                                     <label for="institucion" class="control-label">{{ __('Institución a la que pertenece *')}}</label>
                                 </div>
                                 <div class="col-md-6">

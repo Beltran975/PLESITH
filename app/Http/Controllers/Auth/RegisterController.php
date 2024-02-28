@@ -116,7 +116,6 @@ class RegisterController extends Controller
         $user->name = $request->input('name');
         $user->curp = $request->input('curp');
         $user->email = $request->input('email');
-        $user->password = $request->input('password');
         $user->institucion = $request->input('institucion');
         $user->programa = $request->input('programa');
         $user->save();
