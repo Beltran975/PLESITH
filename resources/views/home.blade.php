@@ -199,7 +199,7 @@
                     </div>
                     <div class="card-body collapse" id="produccion">
                         <div class="nav-producciones">
-                            <p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear:</p>
+                            <p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear</p>
                             
                         </div>
                         <div id="tab5" class="tabs-producciones active">
@@ -252,7 +252,7 @@
                     </div>
                     <div class="card-body collapse" id="nodos">
                         <div class="nav-producciones">
-                        <p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear:</p>
+                        <p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</p>
                             
                         </div>
                         <div id="tab5" class="tabs-producciones active">
