@@ -158,3 +158,10 @@ Route::post('EnvioBiliotech', [App\Http\Controllers\BibliotechController::class,
 //Route::get('/bibliotech', 'docInvestigacionController@index');
 //Route::get('/bibliotech', [App\Http\Controllers\docInvestigacionController::class, 'index']);
 Route::resource('/buscar', NodosController::class);
+
+
+
+Route::get('/listaNodos', function () {
+    return view('listaNodos');
+});
+Route::get('listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);

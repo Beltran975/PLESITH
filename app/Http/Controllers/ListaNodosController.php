@@ -12,4 +12,10 @@ class ListaNodosController extends Controller
         $query = DB::table('nodo')->get();
         return view('nodosComunidad',['datos'=>$query]);
     }
+
+    public function lista()
+    {
+        $query = DB::table('nodo')->get();
+        return view('listaNodos', ['datos'=>$query]);
+    }
 }

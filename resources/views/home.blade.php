@@ -253,6 +253,7 @@
                     <div class="card-body collapse" id="nodos">
                         <div class="nav-producciones">
                         <p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</p>
+                        <a href="listaNodos">Mis nodos creados</a>
                             
                         </div>
                         <div id="tab5" class="tabs-producciones active">
@@ -449,8 +450,8 @@
                                 <div class="col-md-6">
                                     <select class="form-control" name="categoria" id="categoria" required>
                                         <option name="categoria" value="" disabled selected>Seleccionar</option>
-                                        <option name="categoria" value="opcion1">Nacional</option>
-                                        <option name="categoria" value="opcion2">Internacional</option>
+                                        <option name="categoria" value="Nacional">Nacional</option>
+                                        <option name="categoria" value="Internacional">Internacional</option>
                                     </select>
                                 </div>
                             </div>
