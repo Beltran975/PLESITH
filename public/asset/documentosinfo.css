@@ -34,11 +34,32 @@
   /*-----*/
 .title {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 300px;
+    left: 40%;
     transform: translate(-50%, -50%);
     width: 800px;
     color: #ffffff;
+}
+/*estilos de contenido*/ 
+ .grupo1 {
+            display: inline-block;
+            width: 45%;
+            margin-right: 5%;
+        }
+
+        .grupo2 {
+            display: inline-block;
+            width: 45%;
+        }
+
+/*estilos tabla*/
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
 }
 
 /*estilos de tabs y nav del card*/
