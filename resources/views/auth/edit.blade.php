@@ -76,13 +76,10 @@
                                     <input class="form-control" onkeypress="return check(event)" id="programa" value="{{Auth::user()->programa}}"  type="text"  name="programa" required>
                                 </div>
                             </div>
-                            
-                            <div class="row d-flex justify-content-center mb-3">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Actualizar') }}
-                                </button>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">{{ __('Actualizar') }}</button>
+                                <button class="btn btn-secondary" type="button" onclick="history.back()" name="volver atrás">Cancelar</button>
                             </div>
-                        
                         </form>
                     </div>
                 </div>

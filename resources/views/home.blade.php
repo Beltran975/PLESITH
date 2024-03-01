@@ -253,7 +253,7 @@
                     <div class="card-body collapse" id="nodos">
                         <div class="nav-producciones">
                         <p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</p>
-                        <a href="listaNodos">Mis nodos creados</a>
+                        <a href="/nodo/listaNodos">Mis nodos creados</a>
                             
                         </div>
                         <div id="tab5" class="tabs-producciones active">

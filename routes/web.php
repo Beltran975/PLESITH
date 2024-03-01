@@ -161,7 +161,7 @@ Route::resource('/buscar', NodosController::class);
 
 
 
-Route::get('/listaNodos', function () {
+Route::get('/nodo/listaNodos', function () {
     return view('listaNodos');
 });
-Route::get('listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
