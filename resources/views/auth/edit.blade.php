@@ -27,7 +27,7 @@
                         <h3>Datos generales</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('home.update', Auth::user()->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('datos.update', Auth::user()->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method ('PUT')
                             

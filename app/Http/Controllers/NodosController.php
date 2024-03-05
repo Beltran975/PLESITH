@@ -33,7 +33,7 @@ class NodosController extends Controller
         } catch (Exception $e) {
             DB::rollback();
         }
-        return view('home');
+        return redirect()->route('home.index');
 
     }
     
@@ -48,7 +48,7 @@ class NodosController extends Controller
     }
     public function edit($id){
         $datos=Nodo::findOrFail($id);
-        return view('editMinodo', compact('datos'));
+        return view('nodo.editMinodo', compact('datos'));
     }
     public function update(Request $request, $id){
         

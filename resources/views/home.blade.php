@@ -253,48 +253,14 @@
                     </div>
                     <div class="card-body collapse" id="nodos">
                         <div class="nav-producciones">
-                        <p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</p>
-                        <a href="/nodo/listaNodos">Mis nodos creados</a>
-                            
-                        </div>
-                        <div id="tab5" class="tabs-producciones active">
-                            <table class="table contenido produccion">
+                            <table>
                                 <thead>
                                     <tr>
-                                        <th>Tema de investigación:</th>
-                                        <th>Categoría:</th>
-                                        <th>Líder:</th>
-                                        <th>Colaboradores:</th>
-                                        <th>Área de conocimiento:</th>
-                                        <th>Institución ligada:</th>
-                                        <th>Descripción:</th>
-                                        <th>Documentación:</th>
+                                        <th><p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</p></th>
+                                        <th><a class="btn btn-primary" href="/nodo/listaNodos">Mis nodos creados</a></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Bases de Datos</td>
-                                        <td>Nacional</td>
-                                        <td>Dr. Ana García</td>
-                                        <td>Ing. Carlos Martínez</td>
-                                        <td>ÁREA V. Humanidades</td>
-                                        <td>CENTRO DE ESTUDIOS SUPERIORES ANTARES</td>
-                                        <td>Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, al combinar los principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
-                                        <td>Ejemplo.pdf</td>
-                                        <td>
-                                            <a href="#" class="btn btn-secondary">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger">
-                                                <i class="bi bi-trash3-fill"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
                             </table>
-                            
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,6 @@ use App\Http\Controllers\tablaController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\dictamenController;
 use App\Http\Controllers\NodosController;
-
 use App\Http\Controllers\ProduccionesController;
 use App\Http\Controllers\VistaController;
 use App\Http\Controllers\ListaNodosController;
@@ -42,7 +41,7 @@ Route::get('/nodo', function () {
 });
 
 //rutas para actulizar datos de usuario
-Route::resource('/home', RegisterController::class);
+Route::resource('/datos', RegisterController::class);
 
 Route::get('/infotechComunidad', function () {
     return view('infotechComunidad');
