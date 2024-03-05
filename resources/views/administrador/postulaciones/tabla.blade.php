@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('asset/tabla.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Administrador | PLESITH</title>
 </head>
 
 <body class="body">
     @include('layouts/datos-gob')
- 
+
     <main class="main">
         <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
         @include('layouts.nav-admin')
@@ -59,8 +58,8 @@
                                                 <a class="dropdown-item" href="../storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
 
                                             </li>
-                                            <li><button class="dropdown-item" href="#" onclick="abrirModalAprobacion('{{ $user->name }}')">Aprobar postulación</button></li>
-                                            <li><button class="dropdown-item" href="#" onclick="abrirModalNegacion('{{ $user->name }}')">Negar postulación</button></li>
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobacion">Aprobar postulación</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#negacion">Negar postulación</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -118,7 +117,6 @@
         </div>
         <!--Modales de postulacion-->
 
-        <!--Formulario de aprobación-->
         <div class="modal fade" id="aprobacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -126,12 +124,34 @@
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de aprobación</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('postulaciones.aprobar', ['id' => $postulacion->id]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('dictamen.pdf') }}" method="post">
                         @csrf
+                        <input type="hidden" name="postulacion_id" value="{{ $postulacion->id }}">
                         <div class="modal-body">
-                            <p>El postulado <span id="modalTituloAprobacion"></span> cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO.</p>
-                            <label for="dictamenAprobar">Dictamen de aceptación:</label>
-                            <input type="file" id="dictamenAprobar" name="dictamenAprobar">
+                            <div class="mb-3">
+                                <blockquote>
+                                    <p>Para aprobar al usuario <span>{{ $user->name }}</span> favor de llenar el siguiente formulario</p>
+                                </blockquote>
+                            </div>
+                            <div class="md-3">
+                                <label for="dictamenAprobar" class="form-label">Descripción general</label>
+                                <textarea class="form-control" id="descripcion-apro" name="descripcion-apro" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="razonAprobacion" class="form-label">Razón de la aprobación:</label>
+                                <select class="form-control" id="razonAprobacion" name="razonAprobacion" onchange="mostrarTextArea()">
+                                    <option name="razon" value="" disabled selected>Seleccionar</option>
+                                    <option value="Calificación Excelente">Calificación Excelente</option>
+                                    <option value="Cumplimiento de requisitos">Cumplimiento de requisitos</option>
+                                    <option value="Otros">Otros</option>
+                                </select>
+                            </div>
+                            <div id="otraRazon" style="display: none;">
+                                <div class="mb-3">
+                                    <label for="razonTextArea" class="form-label">Ingrese la razón:</label>
+                                    <textarea class="form-control" id="razonTextArea" name="razonTextArea" rows="3"></textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" type="submit">Enviar</button>
@@ -149,12 +169,33 @@
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de negación</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('postulaciones.negar', ['id' => $postulacion->id]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('dictamenNegado.pdf') }}" method="post">
                         @csrf
                         <div class="modal-body">
-                            <p>El postulado <span id="modalUsuarioNegar"></span> no cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO.</p>
-                            <label for="dictamenNegar">Dictamen de negación:</label>
-                            <input type="file" id="dictamenNegar" name="dictamenNegar">
+                            <div class="mb-3">
+                                <blockquote>
+                                    <p>Para aprobar al usuario favor de llenar el siguiente formulario</p>
+                                </blockquote>
+                            </div>
+                            <div class="md-3">
+                                <label for="dictamenAprobar" class="form-label">Descripción general</label>
+                                <textarea class="form-control" id="descripcion-nega" name="descripcion-nega" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="razon-negada" class="form-label">Razón de la negación:</label>
+                                <select class="form-control" id="razon-negada" name="razon-negada" onchange="mostrarTextAreaNegada()">
+                                    <option name="razon" value="" disabled selected>Seleccionar</option>
+                                    <option value="Calificación insuficiente">Calificación insuficiente</option>
+                                    <option value="Falta de requisitos">Falta de requisitos</option>
+                                    <option value="Otros">Otros</option>
+                                </select>
+                            </div>
+                            <div id="otraRazonNegada" style="display: none;">
+                                <div class="mb-3">
+                                    <label for="razonTextArea-negada" class="form-label">Ingrese la razón:</label>
+                                    <textarea class="form-control" id="razonTextArea-negada" name="razonTextArea-negada" rows="3"></textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" type="submit">Enviar</button>
@@ -163,28 +204,37 @@
                 </div>
             </div>
         </div>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- Script para manejar modales con jQuery -->
+
     <script>
-        // Función para abrir el modal de aprobación
-        function abrirModalAprobacion(nombre) {
-            // Actualizar el contenido del modal con el nombre del postulante
-            $('#modalTituloAprobacion').text(nombre);
-            // Mostrar el modal de aprobación
-            $('#aprobacion').modal('show');
+        function mostrarTextArea() {
+            var select = document.getElementById("razonAprobacion");
+            var otroRazonDiv = document.getElementById("otraRazon");
+            var selectedOption = select.options[select.selectedIndex].value;
+
+            if (selectedOption === "Otros") {
+                otroRazonDiv.style.display = "block";
+            } else {
+                otroRazonDiv.style.display = "none";
+            }
         }
 
-        // Función para abrir el modal de negación
-        function abrirModalNegacion(nombre) {
-            // Actualizar el contenido del modal con el nombre del postulante
-            $('#modalUsuarioNegar').text(nombre);
-            // Mostrar el modal de negación
-            $('#negacion').modal('show');
+        function mostrarTextAreaNegada() {
+            var select = document.getElementById("razon-negada");
+            var otroRazonDiv = document.getElementById("otraRazonNegada");
+            var selectedOption = select.options[select.selectedIndex].value;
+
+            if (selectedOption === "Otros") {
+                otroRazonDiv.style.display = "block";
+            } else {
+                otroRazonDiv.style.display = "none";
+            }
         }
     </script>
 
-   
 </body>
 
 </html>
