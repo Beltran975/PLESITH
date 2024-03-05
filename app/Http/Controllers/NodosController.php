@@ -44,7 +44,7 @@ class NodosController extends Controller
         $datos = Nodo::where('linea_inv', 'like', "%$tema_inv%")
             ->paginate(5);
             
-            return view('nodosComunidad', compact('datos'));
+            return view('nodo.nodosComunidad', compact('datos'));
     }
 
 }

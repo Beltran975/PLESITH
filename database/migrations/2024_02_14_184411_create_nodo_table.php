@@ -21,19 +21,10 @@ return new class extends Migration
             $table->string('institucion_ligada');
             $table->string('descripcion');
             $table->string('documento');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
-            //$table->foreign('id_user')->references('id')->on('users');
-            $table->foreignId('id_user')
-                ->nullable()
-                ->constrained('users')
-                ->cascadeOnUpdate()
-                ->nullOnDelete();
-
-                $table->foreignId('id_institucion')
-                ->nullable()
-                ->constrained('instituciones')
-                ->cascadeOnUpdate()
-                ->nullOnDelete();
+            
         });
     }
 

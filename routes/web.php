@@ -8,11 +8,15 @@ use App\Http\Controllers\tablaController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\dictamenController;
 use App\Http\Controllers\NodosController;
+<<<<<<< HEAD
 use App\Http\Controllers\ProduccionesController;
 use App\Http\Controllers\VistaController;
 
 /*
 /*
+=======
+use App\Http\Controllers\ListaNodosController;
+>>>>>>> 7d11628a8b7d7f807d0a7e3c0457afc9aa339286
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -165,12 +169,18 @@ Route::resource('/buscar', NodosController::class);
 
 
 Route::get('/nodo/listaNodos', function () {
-    return view('listaNodos');
+    return view('nodo.listaNodos');
 });
 
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+<<<<<<< HEAD
 
 Route::get('/produc/listaproducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
 Route::resource('/listaproducciones', ProduccionesController::class);
 Route::resource('/editProduc', ProduccionesController::class,);
 Route::resource('/home', VistaController::class);
+=======
+Route::resource('/nodo', ListaNodosController::class);
+
+Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+>>>>>>> 7d11628a8b7d7f807d0a7e3c0457afc9aa339286
