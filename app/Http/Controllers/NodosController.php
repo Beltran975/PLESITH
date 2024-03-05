@@ -46,5 +46,38 @@ class NodosController extends Controller
             
             return view('nodo.nodosComunidad', compact('datos'));
     }
+    public function edit($id){
+        $datos=Nodo::findOrFail($id);
+        return view('editMinodo', compact('datos'));
+    }
+    public function update(Request $request, $id){
+        
+        $dato=Nodo::findOrFail($id);
+        $dato->tema_inv=$request->input('tema_inv');
+        if ($request->has('categoria')) {
+            $dato->categoria = $request->input('categoria');}
+        $dato->lider=$request->input('lider');
+        $dato->colaboradores=$request->input('colaboradores');
+        if ($request->has('linea_inv')) {
+            $dato->linea_inv = $request->input('linea_inv');}
+        if ($request->has('institucion_ligada')) {
+            $dato->institucion_ligada = $request->input('institucion_ligada');}
+        $dato->descripcion=$request->input('descripcion');
+        // $dato->documento=$request->input('documento');
 
+        $request->validate([
+            'tema_inv' => 'required',
+            'lider' => 'required',
+            'colaboradores' => 'required',
+            'descripcion' => 'required',
+            ],[
+                'tema_inv.required' => 'El campo no puede estar vacio',
+                'lider.required' => 'El campo no puede estar vacio',
+                'colaboradores.required' => 'El campo no puede estar vacio',
+                'descripcion.required' => 'El campo no puede estar vacio',
+            ]);
+
+        $dato->save();
+        return redirect()->route('listaNodos');
+    }
 }
