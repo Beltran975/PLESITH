@@ -28,6 +28,8 @@
                         <th>Categoría:</th>
                         <th>Líder:</th>
                         <th>Colaboradores:</th>
+                        <th>Área de conocimiento:</th>
+                        <th>Institución ligada:</th>
                         <th>Descripción:</th>
                         <th>Documentación:</th>
                     </tr>
@@ -39,10 +41,12 @@
                         <td>{{$dato->categoria}}</td>
                         <td>{{$dato->lider}}</td>
                         <td>{{$dato->colaboradores}}</td>
+                        <td>{{$dato->linea_inv}}</td>
+                        <td>{{$dato->institucion_ligada}}</td>
                         <td>{{$dato->descripcion}}</td>
                         <td><a href="nodos/{{ $dato->documento}}" target="blanck_">{{ $dato->documento }}</a></td>
                         <td>
-                            <a href="#" class="btn btn-secondary">
+                            <a href="{{route('nodos.edit', $dato->id)}}" class="btn btn-secondary">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                         </td>

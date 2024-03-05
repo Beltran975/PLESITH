@@ -265,6 +265,8 @@
                                         <th>Categoría:</th>
                                         <th>Líder:</th>
                                         <th>Colaboradores:</th>
+                                        <th>Área de conocimiento:</th>
+                                        <th>Institución ligada:</th>
                                         <th>Descripción:</th>
                                         <th>Documentación:</th>
                                     </tr>
@@ -275,6 +277,8 @@
                                         <td>Nacional</td>
                                         <td>Dr. Ana García</td>
                                         <td>Ing. Carlos Martínez</td>
+                                        <td>ÁREA V. Humanidades</td>
+                                        <td>CENTRO DE ESTUDIOS SUPERIORES ANTARES</td>
                                         <td>Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, al combinar los principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
                                         <td>Ejemplo.pdf</td>
                                         <td>
