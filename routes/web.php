@@ -8,6 +8,7 @@ use App\Http\Controllers\tablaController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\dictamenController;
 use App\Http\Controllers\NodosController;
+use App\Http\Controllers\ListaNodosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -162,6 +163,7 @@ Route::resource('/buscar', NodosController::class);
 
 
 Route::get('/nodo/listaNodos', function () {
-    return view('listaNodos');
+    return view('nodo.listaNodos');
 });
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+Route::resource('/nodo', ListaNodosController::class);

@@ -47,11 +47,13 @@
                             </a>
                         </td>
                         <td>
-                            <a href="#" class="btn btn-danger">
-                                <i class="bi bi-trash3-fill"></i>
-                            </a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$dato->id}}">
+                                Eliminar
+                            </button>
                         </td>
                     </tr>
+                    @include('nodo.delete')
                     @endforeach
                 </tbody>
             </table>
