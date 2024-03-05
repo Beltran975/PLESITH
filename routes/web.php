@@ -173,9 +173,9 @@ Route::get('/nodo/listaNodos', function () {
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
 
 
-Route::get('/produc/listaproducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
-Route::resource('/listaproducciones', ProduccionesController::class);
-Route::resource('/editProduc', ProduccionesController::class,);
+Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
+//Route::resource('/listaProducciones', ProduccionesController::class);
+Route::resource('/Producciones/editProduc', ProduccionesController::class,);
 Route::resource('/home', VistaController::class);
 
 Route::resource('/nodo', ListaNodosController::class);

@@ -41,7 +41,7 @@ class ProduccionesController extends Controller
     public function lista()
 {
     $producciones = Producciones::where('id_user', Auth::id())->get();
-    return view('listaproducciones', compact('producciones'));
+    return view('Producciones.listaproducciones', compact('producciones'));
 }
 
     public function index()
@@ -53,7 +53,7 @@ class ProduccionesController extends Controller
 public function edit($id_pro)
 {
     $produccion = Producciones::findOrFail($id_pro);
-    return view('editproduc', compact('produccion'));
+    return view('Producciones.editproduc', compact('produccion'));
 }
 
 public function update(Request $request, $id_pro)

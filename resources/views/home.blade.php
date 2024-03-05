@@ -200,7 +200,7 @@
                     <div class="card-body collapse" id="produccion">
                         <div class="nav-producciones">
                             <p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear</p>
-                            <a href="/produc/listaproducciones">Mis Producciones</a>
+                            <a href="/Producciones/produc/listaProducciones">Mis Producciones</a>
 
                         </div>
                         <div id="tab5" class="tabs-producciones active">
