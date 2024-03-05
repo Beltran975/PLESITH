@@ -119,7 +119,7 @@ Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
 
 
-Route::get('administrador/tabla', [tablaController::class, 'mostrarDatos']);
+Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos']);
 
 
 //Rutas para enviar correos 
@@ -131,9 +131,7 @@ Route::get('/verificar-Correo', [CorreoverController::class, 'VerificarCorreo'])
 Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class, 'aprobarVerificacionDeCorreo'])->name('aprobarVerificacionDeCorreo');
 //verficar usuario 
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
-Route::post('/postulaciones/{id}/aprobar', [DictamenController::class, 'aprobarPostulacion'])->name('postulaciones.aprobar');
-
-Route::post('/postulaciones/{id}/negar', [DictamenController::class, 'negarPostulacion'])->name('postulaciones.negar');
+Route::get('/administrador/postulaciones/form-aprobacion',[tablaController::class,'FormAprobar']);
 //ruta nodos
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
@@ -165,5 +163,8 @@ Route::resource('/buscar', NodosController::class);
 Route::get('/nodo/listaNodos', function () {
     return view('nodo.listaNodos');
 });
+
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
 Route::resource('/nodo', ListaNodosController::class);
+
+Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);

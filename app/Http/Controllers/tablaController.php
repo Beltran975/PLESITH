@@ -13,6 +13,10 @@ class tablaController extends Controller
     {
         $users = User::with('postulaciones')->get();
 
-        return view('administrador.tabla', compact('users'));
+        return view('administrador.postulaciones.tabla', compact('users'));
+    }
+
+    public function FormAprobar(){
+        return view('administrador.postulaciones.form-aprobar');
     }
 }

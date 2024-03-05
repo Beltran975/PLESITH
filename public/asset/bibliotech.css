@@ -22,13 +22,11 @@
 }
 
 .card-biblio {
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 400px;
     margin: 6px; /* Este margen controla el espacio entre las tarjetas */
     text-align: center;
-    border-radius: 5%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid transparent;
+    
     overflow: hidden;
 }
 
