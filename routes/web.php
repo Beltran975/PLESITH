@@ -8,6 +8,7 @@ use App\Http\Controllers\tablaController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\dictamenController;
 use App\Http\Controllers\NodosController;
+use App\Http\Controllers\PDFDictamenController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -118,7 +119,7 @@ Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
 
 
-Route::get('administrador/tabla', [tablaController::class, 'mostrarDatos']);
+Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos']);
 
 
 //Rutas para enviar correos 
@@ -130,9 +131,7 @@ Route::get('/verificar-Correo', [CorreoverController::class, 'VerificarCorreo'])
 Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class, 'aprobarVerificacionDeCorreo'])->name('aprobarVerificacionDeCorreo');
 //verficar usuario 
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
-Route::post('/postulaciones/{id}/aprobar', [DictamenController::class, 'aprobarPostulacion'])->name('postulaciones.aprobar');
-
-Route::post('/postulaciones/{id}/negar', [DictamenController::class, 'negarPostulacion'])->name('postulaciones.negar');
+Route::get('/administrador/postulaciones/form-aprobacion',[tablaController::class,'FormAprobar']);
 //ruta nodos
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
@@ -164,4 +163,13 @@ Route::resource('/buscar', NodosController::class);
 Route::get('/nodo/listaNodos', function () {
     return view('listaNodos');
 });
+
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+
+Route::get('listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+
+//pdf dictamen
+Route::post('/dictamen-pdf', 'App\Http\Controllers\PDFDictamenController@generarPDF')->name('dictamen.pdf');
+
+Route::post('/dictamen-negado-pdf', 'App\Http\Controllers\PDFDictamenController@generarPDFnegado')->name('dictamenNegado.pdf');
+
