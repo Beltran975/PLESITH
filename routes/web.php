@@ -8,6 +8,11 @@ use App\Http\Controllers\tablaController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\dictamenController;
 use App\Http\Controllers\NodosController;
+use App\Http\Controllers\ProduccionesController;
+use App\Http\Controllers\VistaController;
+
+/*
+/*
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -164,3 +169,8 @@ Route::get('/nodo/listaNodos', function () {
 });
 
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+
+Route::get('/produc/listaproducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
+Route::resource('/listaproducciones', ProduccionesController::class);
+Route::resource('/editProduc', ProduccionesController::class,);
+Route::resource('/home', VistaController::class);
