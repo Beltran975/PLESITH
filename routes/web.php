@@ -137,10 +137,6 @@ Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class
 Route::get('/administrador/postulaciones/form-aprobacion',[tablaController::class,'FormAprobar']);
 //ruta nodos
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
-Route::get('/nodo/{id}/edit', [NodosController::class, 'edit'])->name('nodos.edit');;
-Route::get('/nodo/{id}/update', [NodosController::class, 'update'])->name('nodos.update');;
-Route::put('/nodo/{id}/update', [NodosController::class, 'update'])->name('nodos.update');;
-
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
 
 Route::get('/administrador/gestion-nodos', function () {
@@ -173,11 +169,10 @@ Route::get('/nodo/listaNodos', function () {
 
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
 
-
+//rutas producciones
 Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
-//Route::resource('/listaProducciones', ProduccionesController::class);
-Route::resource('/Producciones/editProduc', ProduccionesController::class,);
+Route::resource('/editProduc', ProduccionesController::class,);
 Route::resource('/home', VistaController::class);
 
 Route::resource('/nodo', ListaNodosController::class);
-Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista'])->name('listaNodos');
+Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);

@@ -70,5 +70,13 @@ public function update(Request $request, $id_pro)
     return redirect()->route('home.index');
 }
 
+public function destroy($id_pro)
+    { 
+        
+    $produccion = Producciones::findOrFail($id_pro);
+    $produccion->delete();
+    return redirect()->route('home.index');
+
+    }
 
 }
