@@ -19,7 +19,7 @@
     @include('layouts/header')
     <br>
     <main class="page">
-        <input class="btn btn-primary" type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
+        <a href="/home" class="btn btn-primary">Volver atras</a>
         <div id="tab5" class="tabs-producciones active">
             <table class="table contenido produccion">
                 <thead>
