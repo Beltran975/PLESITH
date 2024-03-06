@@ -280,7 +280,7 @@
                     <label class="control-label" for="programa" class="">{{ __('Programa educativo *')}}</label>
                   </div>
                   <div class="col-md-6">
-                    <input class="form-control" onkeypress="return check(event)" id="programa" type="text"  name="programa" required>
+                    <input class="form-control" id="programa" type="text"  name="programa" required>
                   </div>
                 </div>
                 

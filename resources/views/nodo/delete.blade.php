@@ -13,7 +13,7 @@
                     Deseas eliminar información de el nodo con tema de investigación: {{$dato->tema_inv}}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <input type="submit" class="btn btn-danger bi bi-trash3-fill" value="Eliminar">
                 </div>
             </div>

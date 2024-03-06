@@ -119,7 +119,7 @@ class RegisterController extends Controller
         $user->institucion = $request->input('institucion');
         $user->programa = $request->input('programa');
         $user->save();
-        return view('index');
+        return redirect()->route('home.index');
     }
     
 }

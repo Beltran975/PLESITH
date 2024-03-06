@@ -35,6 +35,6 @@ class InformacionController extends Controller
         } catch (Exception $e) {
             DB::rollback();
         }
-        return view('home');
+        return redirect()->route('home.index');
     }
 }

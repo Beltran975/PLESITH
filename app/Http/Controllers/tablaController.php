@@ -19,4 +19,8 @@ class tablaController extends Controller
     public function FormAprobar(){
         return view('administrador.postulaciones.form-aprobar');
     }
+
+    public function FormNegar(){
+        return view('administrador.postulaciones.form-negar');
+    }
 }

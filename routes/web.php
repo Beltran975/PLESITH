@@ -8,7 +8,6 @@ use App\Http\Controllers\tablaController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\dictamenController;
 use App\Http\Controllers\NodosController;
-
 use App\Http\Controllers\ProduccionesController;
 use App\Http\Controllers\VistaController;
 use App\Http\Controllers\ListaNodosController;
@@ -42,7 +41,7 @@ Route::get('/nodo', function () {
 });
 
 //rutas para actulizar datos de usuario
-Route::resource('/home', RegisterController::class);
+Route::resource('/datos', RegisterController::class);
 
 Route::get('/infotechComunidad', function () {
     return view('infotechComunidad');
@@ -55,9 +54,7 @@ Auth::routes();
 
 Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
@@ -88,8 +85,6 @@ Route::get('footer', function(){
 });
 
 // En routes/web.php
-
-
 Route::get('/register', [RegisterController::class, 'create'])->name('auth.create');
 Route::post('/store', [RegisterController::class, 'store'])->name('auth.store');
 Route::get('/showFilesById/{id}/files', [RegisterController::class, 'showFilesById'])->name('auth.showFilesById');
@@ -102,10 +97,6 @@ Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'
 
 //ruta para ver postulantes 
 
-
-
-
-
 //ruta para documento de investigación 
 Route::get('/documentoInvestigacion', function(){
     return view('administrador.docInvestigacion');
@@ -114,16 +105,9 @@ Route::get('/documentoInvestigacion', function(){
 Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
 Route::get('/bibliotechComunidad', [App\Http\Controllers\BibliotechController::class, 'index']);
 
-
-
-
-
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
-
-
 Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos']);
-
 
 //Rutas para enviar correos 
 Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
@@ -133,8 +117,13 @@ Route::get('/verificar-Correo', [CorreoverController::class, 'VerificarCorreo'])
 
 Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class, 'aprobarVerificacionDeCorreo'])->name('aprobarVerificacionDeCorreo');
 //verficar usuario 
+
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
 Route::get('/administrador/postulaciones/form-aprobacion',[tablaController::class,'FormAprobar']);
+
+Route::get('/administrador/postulaciones/form-negar',[tablaController::class,'FormNegar']);
+
+
 //ruta nodos
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
@@ -161,13 +150,12 @@ Route::post('EnvioBiliotech', [App\Http\Controllers\BibliotechController::class,
 //Route::get('/bibliotech', [App\Http\Controllers\docInvestigacionController::class, 'index']);
 Route::resource('/buscar', NodosController::class);
 
-
-
 Route::get('/nodo/listaNodos', function () {
     return view('nodo.listaNodos');
 });
 
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+
 
 //rutas producciones
 Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
@@ -176,3 +164,12 @@ Route::resource('/home', VistaController::class);
 
 Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
+
+Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
+//Route::resource('/listaProducciones', ProduccionesController::class);
+Route::resource('/Producciones/editProduc', ProduccionesController::class,);
+Route::resource('/home', VistaController::class)->middleware('auth');
+
+Route::resource('/nodo', ListaNodosController::class);
+Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista'])->name('listaNodos');
+
