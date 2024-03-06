@@ -116,7 +116,10 @@ class RegisterController extends Controller
         $user->name = $request->input('name');
         $user->curp = $request->input('curp');
         $user->email = $request->input('email');
-        $user->institucion = $request->input('institucion');
+        if ($request->has('institucion')) {
+            $user->institucion = $request->input('institucion');
+        }
+        //$user->institucion = $request->input('institucion');
         $user->programa = $request->input('programa');
         $user->save();
         return redirect()->route('home.index');

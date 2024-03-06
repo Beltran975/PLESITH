@@ -30,7 +30,7 @@
                                         <th>Titulo:</th>
                                         <th>Descripción:</th>
                                         <th>Pais:</th>
-                                        <th>Año:</th>
+                                        <th>Fecha:</th>
                                         <th>Proposito:</th>
                                     </tr>
                                 </thead>
