@@ -22,26 +22,21 @@
     <main class="page">
         <div class="content">
             <div class="green-box">
-
+                
                 <div class="titulo row d-flex  mb-3">
                     <h3>Datos generales</h3>&nbsp<!-- espacio en blanco -->
                     <h3>|</h3>&nbsp
                     <h3>{{ Auth::user()->name }}</h3>
-                    
                 </div>
                 
                 @if(Auth::user()->verificacion == 'en proceso') 
                 <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
                 <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
-
                 
-                        <!-- Otros campos de la postulación si es necesario -->
+                <!-- Otros campos de la postulación si es necesario -->
                 @elseif(Auth::user()->verificacion == 'ninguno')
                 <a href="/verificar-Correo" class="btn btn-secondary">Verificar correo</a>
                 
-
-             
-
                 @endif
                 @if(session('success'))
                 <div class="alert alert-success">
@@ -135,16 +130,16 @@
                                 <br>
                                 <div class="col-md-8">
                                     <select class="form-control" name="lineaInv" required>
-                                        <option name="area del conocimiento" disabled selected>Seleccionar</option>
-                                        <option name="area del conocimiento" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
-                                        <option name="area del conocimiento" value="ÁREA II. Biología y Química">ÁREA II. Biología y Química</option>
-                                        <option name="area del conocimiento" value="ÁREA III. Medicina y Ciencias de la Salud">ÁREA III. Medicina y Ciencias de la Salud </option>
-                                        <option name="area del conocimiento" value="ÁREA IV. Ciencias de la Conducta y la Educación">ÁREA IV. Ciencias de la Conducta y la Educación</option>
-                                        <option name="area del conocimiento" value="ÁREA V. Humanidades">ÁREA V. Humanidades</option>
-                                        <option name="area del conocimiento" value="ÁREA VI. Ciencias Sociales">ÁREA VI. Ciencias Sociales</option>
-                                        <option name="area del conocimiento" value="ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas">ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas</option>
-                                        <option name="area del conocimiento" value="ÁREA VIII. Ingenierías y Desarrollo Tecnológico">ÁREA VIII. Ingenierías y Desarrollo Tecnológico</option>
-                                        <option name="area del conocimiento" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
+                                        <option name="lineaInv" value="" disabled selected>Seleccionar</option>
+                                        <option name="lineaInv" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
+                                        <option name="lineaInv" value="ÁREA II. Biología y Química">ÁREA II. Biología y Química</option>
+                                        <option name="lineaInv" value="ÁREA III. Medicina y Ciencias de la Salud">ÁREA III. Medicina y Ciencias de la Salud </option>
+                                        <option name="lineaInv" value="ÁREA IV. Ciencias de la Conducta y la Educación">ÁREA IV. Ciencias de la Conducta y la Educación</option>
+                                        <option name="lineaInv" value="ÁREA V. Humanidades">ÁREA V. Humanidades</option>
+                                        <option name="lineaInv" value="ÁREA VI. Ciencias Sociales">ÁREA VI. Ciencias Sociales</option>
+                                        <option name="lineaInv" value="ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas">ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas</option>
+                                        <option name="lineaInv" value="ÁREA VIII. Ingenierías y Desarrollo Tecnológico">ÁREA VIII. Ingenierías y Desarrollo Tecnológico</option>
+                                        <option name="lineaInv" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
                                     </select>
                                 </div>
                             </div>
@@ -172,9 +167,9 @@
                                     <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="si" required>
+                                    <input type="radio"  name="pertenece" autocomplete="off" value="si" required>
                                     <label class="btn" for="pertenece">Sí</label>
-                                    <input type="radio" class="btn-check" name="pertenece" autocomplete="off" value="no" required>
+                                    <input type="radio"  name="pertenece" autocomplete="off" value="no" required>
                                     <label class="btn" for="pertenece">No</label>
                                 </div>
                             </div>
@@ -362,7 +357,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label class="form-label" for="year">{{ __('Año *')}}</label>
+                                        <label class="form-label" for="year">{{ __('Fecha *')}}</label>
                                     </div>
                                     <div class="col-md-9 mb-3">
                                         <input class="form-control" name="year" type="month" min="1900" max="2099" step="1" required />
