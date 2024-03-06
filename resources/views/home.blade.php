@@ -194,10 +194,18 @@
                     </div>
                     <div class="card-body collapse" id="produccion">
                         <div class="nav-producciones">
-                            <p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear</p>
-                            <a href="/Producciones/produc/listaProducciones">Mis Producciones</a>
-
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear</p></th>
+                                        <th><a class="btn btn-primary" href="/Producciones/produc/listaProducciones">Mis Producciones</a></th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
+                    </div>
+
+                    <!--<div class="card-body collapse" id="produccion">
                         <div id="tab5" class="tabs-producciones active">
                             <table class="table contenido produccion">
                                 <thead>
@@ -235,10 +243,9 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            
                         </div>
-                        
-                    </div>
+                    </div>-->
+                    
                 </div>
 
                 <!-- Nodos de colaboración -->
