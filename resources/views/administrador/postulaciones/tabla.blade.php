@@ -59,7 +59,7 @@
 
                                             </li>
                                             <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobacion">Aprobar postulación</a></li>
-                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#negacion">Negar postulación</a></li>
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar">Negar postulación</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -100,8 +100,8 @@
                                             <li>
                                                 <a class="dropdown-item" href="../storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aprobacion" onclick="abrirModalAprobacion('{{$user->name }}')">Aprobar postulación</a></li>
-                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#negacion">Negar postulación</a></li>
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobacion">Aprobar postulación</a></li>
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar">Negar postulación</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -115,125 +115,10 @@
 
             </div>
         </div>
-        <!--Modales de postulacion-->
-
-        <div class="modal fade" id="aprobacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de aprobación</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="{{ route('dictamen.pdf') }}" method="post">
-                        @csrf
-                        <input type="hidden" name="postulacion_id" value="{{ $postulacion->id }}">
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <blockquote>
-                                    <p>Para aprobar al usuario <span>{{ $user->name }}</span> favor de llenar el siguiente formulario</p>
-                                </blockquote>
-                            </div>
-                            <div class="md-3">
-                                <label for="dictamenAprobar" class="form-label">Descripción general</label>
-                                <textarea class="form-control" id="descripcion-apro" name="descripcion-apro" rows="3"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="razonAprobacion" class="form-label">Razón de la aprobación:</label>
-                                <select class="form-control" id="razonAprobacion" name="razonAprobacion" onchange="mostrarTextArea()">
-                                    <option name="razon" value="" disabled selected>Seleccionar</option>
-                                    <option value="Calificación Excelente">Calificación Excelente</option>
-                                    <option value="Cumplimiento de requisitos">Cumplimiento de requisitos</option>
-                                    <option value="Otros">Otros</option>
-                                </select>
-                            </div>
-                            <div id="otraRazon" style="display: none;">
-                                <div class="mb-3">
-                                    <label for="razonTextArea" class="form-label">Ingrese la razón:</label>
-                                    <textarea class="form-control" id="razonTextArea" name="razonTextArea" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Enviar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!--Formulario de negación-->
-        <div class="modal fade" id="negacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Formulario de negación</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="{{ route('dictamenNegado.pdf') }}" method="post">
-                        @csrf
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <blockquote>
-                                    <p>Para aprobar al usuario favor de llenar el siguiente formulario</p>
-                                </blockquote>
-                            </div>
-                            <div class="md-3">
-                                <label for="dictamenAprobar" class="form-label">Descripción general</label>
-                                <textarea class="form-control" id="descripcion-nega" name="descripcion-nega" rows="3"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="razon-negada" class="form-label">Razón de la negación:</label>
-                                <select class="form-control" id="razon-negada" name="razon-negada" onchange="mostrarTextAreaNegada()">
-                                    <option name="razon" value="" disabled selected>Seleccionar</option>
-                                    <option value="Calificación insuficiente">Calificación insuficiente</option>
-                                    <option value="Falta de requisitos">Falta de requisitos</option>
-                                    <option value="Otros">Otros</option>
-                                </select>
-                            </div>
-                            <div id="otraRazonNegada" style="display: none;">
-                                <div class="mb-3">
-                                    <label for="razonTextArea-negada" class="form-label">Ingrese la razón:</label>
-                                    <textarea class="form-control" id="razonTextArea-negada" name="razonTextArea-negada" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Enviar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- Script para manejar modales con jQuery -->
-
-    <script>
-        function mostrarTextArea() {
-            var select = document.getElementById("razonAprobacion");
-            var otroRazonDiv = document.getElementById("otraRazon");
-            var selectedOption = select.options[select.selectedIndex].value;
-
-            if (selectedOption === "Otros") {
-                otroRazonDiv.style.display = "block";
-            } else {
-                otroRazonDiv.style.display = "none";
-            }
-        }
-
-        function mostrarTextAreaNegada() {
-            var select = document.getElementById("razon-negada");
-            var otroRazonDiv = document.getElementById("otraRazonNegada");
-            var selectedOption = select.options[select.selectedIndex].value;
-
-            if (selectedOption === "Otros") {
-                otroRazonDiv.style.display = "block";
-            } else {
-                otroRazonDiv.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 

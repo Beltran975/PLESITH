@@ -117,8 +117,13 @@ Route::get('/verificar-Correo', [CorreoverController::class, 'VerificarCorreo'])
 
 Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class, 'aprobarVerificacionDeCorreo'])->name('aprobarVerificacionDeCorreo');
 //verficar usuario 
+
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
 Route::get('/administrador/postulaciones/form-aprobacion',[tablaController::class,'FormAprobar']);
+
+Route::get('/administrador/postulaciones/form-negar',[tablaController::class,'FormNegar']);
+
+
 //ruta nodos
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
 Route::get('/nodo/{id}/edit', [NodosController::class, 'edit'])->name('nodos.edit');;
