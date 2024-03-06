@@ -126,6 +126,9 @@ Route::get('/administrador/postulaciones/form-negar',[tablaController::class,'Fo
 
 //ruta nodos
 Route::post('EnvioNodo', [App\Http\Controllers\NodosController::class, 'Insertar']);
+Route::get('/nodo/{id}/edit', [NodosController::class, 'edit'])->name('nodos.edit');;
+Route::get('/nodo/{id}/update', [NodosController::class, 'update'])->name('nodos.update');;
+Route::put('/nodo/{id}/update', [NodosController::class, 'update'])->name('nodos.update');;
 Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 'index']);
 
 Route::get('/administrador/gestion-nodos', function () {
@@ -172,4 +175,3 @@ Route::resource('/home', VistaController::class)->middleware('auth');
 
 Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista'])->name('listaNodos');
-
