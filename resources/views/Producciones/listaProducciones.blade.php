@@ -19,7 +19,7 @@
         @include('layouts/header')
         <br>
         <main class="page">
-            <a href="/home" class="btn btn-primary">Volver atras</a>
+            <a href="/home" class="btn btn-primary">Volver atrás</a>
             <div id="tab5" class="tabs-producciones active">
                 <table class="table table-bordered">
                     <thead>
@@ -27,11 +27,11 @@
                             <th scope="col">Tipo:</th>
                             <th scope="col">Evidencia:</th>
                             <th scope="col">Autores:</th>
-                            <th scope="col">Titulo:</th>
+                            <th scope="col">Título:</th>
                             <th scope="col">Descripción:</th>
-                            <th scope="col">Pais:</th>
+                            <th scope="col">País:</th>
                             <th scope="col">Fecha:</th>
-                            <th scope="col">Proposito:</th>
+                            <th scope="col">Propósito:</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
