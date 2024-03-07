@@ -11,6 +11,8 @@ use App\Http\Controllers\NodosController;
 use App\Http\Controllers\ProduccionesController;
 use App\Http\Controllers\VistaController;
 use App\Http\Controllers\ListaNodosController;
+use App\Http\Controllers\BibliotechController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -101,9 +103,14 @@ Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'
 Route::get('/documentoInvestigacion', function(){
     return view('administrador.docInvestigacion');
 });
+Route::get('/tablaBibliotech', function () {
+    return view('administrador.bibliotech.index');
+});
 //ruta para guardar datos de form docInvestigacion
 Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
 Route::get('/bibliotechComunidad', [App\Http\Controllers\BibliotechController::class, 'index']);
+Route::resource('/bibliotech', BibliotechController::class);
+Route::get('/registros', [App\Http\Controllers\BibliotechController::class, 'lista']);
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
@@ -146,7 +153,7 @@ Route::get('/gestion-infotech', function(){
 Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'insertar']);
 
 Route::get('/gestion-bibliotech', function(){
-    return view('administrador.gestion-bibliotech');
+    return view('administrador.bibliotech.gestion-bibliotech');
 });
 Route::post('EnvioBiliotech', [App\Http\Controllers\BibliotechController::class, 'insertar']);
 //Route::get('/bibliotech', 'docInvestigacionController@index');

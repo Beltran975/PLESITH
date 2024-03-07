@@ -37,4 +37,10 @@ class BibliotechController extends Controller
         return view('bibliotechComunidad', compact('datos'));
         return view('administrador.docInvestigacion', ['datos'=>$query]);
     }
+
+    public function lista()
+    {
+        $datos = Bibliotech::all();
+        return view('administrador.bibliotech.index', compact('datos'));
+    }
 }
