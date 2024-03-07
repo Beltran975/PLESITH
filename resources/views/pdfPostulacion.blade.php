@@ -86,6 +86,8 @@
             </tr>
         </tbody>
     </table>
+
+    <!--Sección información PLESITH-->
     <div class="title">
         <p>Información PLESITH</p>
     </div>
@@ -109,6 +111,8 @@
             </tr>
         </tbody>
     </table>
+
+    <!--Sección de producciones-->
     <div class="title">
         <p>Mis producciones</p>
     </div>
