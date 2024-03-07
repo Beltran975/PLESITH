@@ -29,10 +29,10 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Numero de usuarios:
+                            <li class="list-group-item">Número de usuarios:
                             <span>185</span>
                             </li>
-                            <li class="list-group-item">Numero de postulaciones:
+                            <li class="list-group-item">Número de postulaciones:
                             <span>119</span>
                             </li>
                         </ul>
@@ -45,10 +45,10 @@
                     <div class="card-body">
                         
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Numero de producciones:
+                            <li class="list-group-item">Número de producciones:
                             <span>76</span>
                             </li>
-                            <li class="list-group-item">numero de nodos:
+                            <li class="list-group-item">Número de nodos:
                             <span>91</span>
                             </li>
                         </ul>
@@ -64,10 +64,10 @@
                         
                         
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Numero de convocatorias:
+                            <li class="list-group-item">Número de convocatorias:
                             <span>19</span>
                             </li>
-                            <li class="list-group-item">Numero de publicaciones:
+                            <li class="list-group-item">Número de publicaciones:
                             <span>21</span>
                             </li>
                         </ul>
