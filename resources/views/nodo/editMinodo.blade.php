@@ -290,30 +290,6 @@
                             @enderror
                         </div>
                         
-                        <div class="row justify-content-center mb-3">
-                            <div class="col-md-4">
-                                <label class="form-label" for="documento">{{ __('Documentación:')}}</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input class="form-control" type="file" name="documento" id="documento"  onchange="validarDocumento(event)" value="{{$datos->documento}}">
-                            </div>
-
-                            <script>
-                                function validarDocumento(event) 
-                                {
-                                    const input = event.target;
-                                    const file = input.files[0];
-                                    const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-                                
-                                    if (!allowedTypes.includes(file.type)) 
-                                    {
-                                        alert('Solo se permiten archivos de documentos (PDF, DOC, DOCX, XLS, XLSX).');
-                                        input.value = '';
-                                    }
-                                }
-                            </script>
-                        </div>
-
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" onclick="history.back()" name="volver atrás">Cancelar</button>
                             <button type="submit" class="btn btn-primary">Actualizar</button>

@@ -63,7 +63,7 @@
                                     <label class="form-label" for="institucion">{{ __('Institución ligada* ')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="institucion" id="institucion_ligada" required>
+                                    <select class="form-control" name="institucion" id="institucion" required>
                                         <option disabled selected>{{Auth::user()->institucion}}</option>
                                         <option name="institucion" value="CENTRO DE ESTUDIO VALORES CON LIBERTAD">CENTRO DE ESTUDIO VALORES CON LIBERTAD, "CEVAL"</option>
                                         <option name="institucion" value="CENTRO CULTURAL EUROPEO DE ESTUDIOS UNIVERSITARIOS DE HIDALGO">CENTRO CULTURAL EUROPEO DE ESTUDIOS UNIVERSITARIOS DE HIDALGO</option>
@@ -236,7 +236,7 @@
                                     <label class="control-label" for="programa" class="">{{ __('Programa educativo *')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" onkeypress="return check(event)" id="programa" value="{{Auth::user()->programa}}"  type="text"  name="programa" required>
+                                    <input class="form-control" id="programa" value="{{Auth::user()->programa}}"  type="text"  name="programa" required>
                                 </div>
                             </div>
                             <div class="modal-footer">

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('colaboradores');
             $table->string('linea_inv');
             $table->string('institucion_ligada');
-            $table->string('descripcion');
+            $table->longText('descripcion');
             $table->string('documento');
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');

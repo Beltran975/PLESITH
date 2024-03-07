@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('evidencia');
             $table->string('autores');
             $table->string('titulo');
-            $table->string('descripcion');
+            $table->longText('descripcion');
             $table->string('pais');
             $table->string('year');
             $table->string('proposito');

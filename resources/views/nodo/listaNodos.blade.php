@@ -21,36 +21,36 @@
     <main class="page">
         <a href="/home" class="btn btn-primary">Volver atras</a>
         <div id="tab5" class="tabs-producciones active">
-            <table class="table contenido produccion">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Tema de investigación:</th>
-                        <th>Categoría:</th>
-                        <th>Líder:</th>
-                        <th>Colaboradores:</th>
-                        <th>Área de conocimiento:</th>
-                        <th>Institución ligada:</th>
-                        <th>Descripción:</th>
-                        <th>Documentación:</th>
+                        <th scope="col">Tema de investigación:</th>
+                        <th scope="col">Categoría:</th>
+                        <th scope="col">Líder:</th>
+                        <th scope="col">Colaboradores:</th>
+                        <th scope="col">Área de conocimiento:</th>
+                        <th scope="col">Institución ligada:</th>
+                        <th scope="col">Descripción:</th>
+                        <th scope="col">Documentación:</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                     @foreach ($datos as $dato)
                     <tr>
-                        <td>{{$dato->tema_inv}}</td>
-                        <td>{{$dato->categoria}}</td>
-                        <td>{{$dato->lider}}</td>
-                        <td>{{$dato->colaboradores}}</td>
-                        <td>{{$dato->linea_inv}}</td>
-                        <td>{{$dato->institucion_ligada}}</td>
-                        <td>{{$dato->descripcion}}</td>
-                        <td><a href="nodos/{{ $dato->documento}}" target="blanck_">{{ $dato->documento }}</a></td>
-                        <td>
+                        <td scope="row">{{$dato->tema_inv}}</td>
+                        <td scope="row">{{$dato->categoria}}</td>
+                        <td scope="row">{{$dato->lider}}</td>
+                        <td scope="row">{{$dato->colaboradores}}</td>
+                        <td scope="row">{{$dato->linea_inv}}</td>
+                        <td scope="row">{{$dato->institucion_ligada}}</td>
+                        <td scope="row">{{$dato->descripcion}}</td>
+                        <td scope="row"><a href="nodos/{{ $dato->documento}}" target="blanck_">{{ $dato->documento }}</a></td>
+                        <td scope="row">
                             <a href="{{route('nodos.edit', $dato->id)}}" class="btn btn-secondary">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                         </td>
-                        <td>
+                        <td scope="row">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$dato->id}}">
                                 Eliminar

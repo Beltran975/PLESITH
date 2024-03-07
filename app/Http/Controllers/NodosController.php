@@ -46,10 +46,12 @@ class NodosController extends Controller
             
             return view('nodo.nodosComunidad', compact('datos'));
     }
+    
     public function edit($id){
         $datos=Nodo::findOrFail($id);
         return view('nodo.editMinodo', compact('datos'));
     }
+    
     public function update(Request $request, $id){
         
         $dato=Nodo::findOrFail($id);
