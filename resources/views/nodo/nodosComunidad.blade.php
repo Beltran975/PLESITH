@@ -41,7 +41,7 @@
                     <h3>Nodos de la comunidad</h3>
                     <h5>Resultados encontrados:</h5>
                 </div>
-                <table class="tabla-nodos">
+                <table class="table table-striped table-hover">
                     <thead>
                         <th class="rotated-header">Título:</th>
                         <th class="rotated-header">Líder:</th>
@@ -75,7 +75,7 @@
                     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Investigación en criptomonedas</h4>
+                                <h4 class="modal-title">{{ $d->tema_inv}}</h4>
                             </div>
                             <div class="modal-body">
                                 <table class="tabla-modal table table-borderless" >
