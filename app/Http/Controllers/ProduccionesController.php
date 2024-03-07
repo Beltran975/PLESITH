@@ -59,13 +59,19 @@ public function edit($id_pro)
 public function update(Request $request, $id_pro)
 {
     $produccion = Producciones::findOrFail($id_pro);
-    $produccion->tipo = $request->input('tipo');
+    if ($request->has('tipo')) {
+        $produccion->tipo = $request->input('tipo');
+    }
+    //$produccion->tipo = $request->input('tipo');
     $produccion->autores = $request->input('autores');
     $produccion->titulo = $request->input('titulo');
     $produccion->descripcion = $request->input('descripcion');
     $produccion->pais = $request->input('pais');
     $produccion->year = $request->input('year');
-    $produccion->proposito = $request->input('proposito');
+    if ($request->has('proposito')) {
+        $produccion->proposito = $request->input('proposito');
+    }
+    //$produccion->proposito = $request->input('proposito');
     $produccion->save();
     return redirect()->route('home.index');
 }

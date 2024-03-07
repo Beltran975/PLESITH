@@ -30,7 +30,21 @@
                                     <label class="form-label" for="tipo">{{ __('Tipo *') }}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input id="tipo" type="text" class="form-control" name="tipo" value="{{ $produccion->tipo }}" required autocomplete="tipo" autofocus>
+                                    <select class="form-control" name="tipo" required>
+                                        <option name="tipo" disabled selected>{{ $produccion->tipo }}</option>
+                                        <option name="tipo" value="Libros o capitulos de libro">Libros o capítulos de libro</option>
+                                        <option name="tipo" value="Articulos arbitrados y articulos indexados">Artículos arbitrados y artículos indexados</option>
+                                        <option name="tipo" value="Propiedad intelectual">Propiedad intelectual</option>
+                                        <option name="tipo" value="Modelos de utilidad">Modelos de utilidad</option>
+                                        <option name="tipo" value="Patentes">Patentes</option>
+                                        <option name="tipo" value="Prototipos">Prototipos</option>
+                                        <option name="tipo" value="Transferencia de tecnología">Transferencia de tecnología</option>
+                                        <option name="tipo" value="Desarrollo de infraestructura">Desarrollo de infraestructura</option>
+                                        <option name="tipo" value="Informes técnicos">Informes técnicos</option>
+                                        <option name="tipo" value="Obras artísticas">Obras artísticas</option>
+                                        <option name="tipo" value="Otro">Otro</option>
+                                    </select>
+                                    
                                 </div>
                             </div>
                             
@@ -84,7 +98,16 @@
                                     <label class="form-label" for="proposito">{{ __('Propósito *')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input id="proposito" type="text" class="form-control" name="proposito" value="{{ $produccion->proposito }}" required autocomplete="proposito" autofocus>
+                                    <select class="form-control" name="proposito" required>
+                                        <option name="proposito" disabled selected>{{ $produccion->proposito }}</option>
+                                        <option name="proposito" value="Asimilacion de tecnologia">Asimilación de tecnología</option>
+                                        <option name="proposito" value="Creación">Creación</option>
+                                        <option name="proposito" value="Desarrollo tecnológico">Desarrollo tecnológico</option>
+                                        <option name="proposito" value="Difusión">Difusión</option>
+                                        <option name="proposito" value="Generación de conocimiento">Generación de conocimiento</option>
+                                        <option name="proposito" value="Investigación aplicada">Investigación aplicada</option>
+                                        <option name="proposito" value="Transferencia tecnologica">Transferencia tecnológica</option>
+                                    </select>
                                 </div>
                             </div>
                             

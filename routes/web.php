@@ -168,7 +168,7 @@ Route::resource('/home', VistaController::class);
 Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
 
-Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
+Route::get('/Producciones/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
 //Route::resource('/listaProducciones', ProduccionesController::class);
 Route::resource('/Producciones/editProduc', ProduccionesController::class,);
 Route::resource('/home', VistaController::class)->middleware('auth');

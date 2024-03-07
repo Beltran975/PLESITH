@@ -198,7 +198,7 @@
                                 <thead>
                                     <tr>
                                         <th><p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear</p></th>
-                                        <th><a class="btn btn-primary" href="/Producciones/produc/listaProducciones">Mis Producciones</a></th>
+                                        <th><a class="btn btn-primary" href="/Producciones/listaProducciones">Mis Producciones</a></th>
                                     </tr>
                                 </thead>
                             </table>
@@ -334,7 +334,7 @@
                                     <label class="form-label" for="autores">{{ __('Autor (es) *')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" name="autores" type="text" required>
+                                    <input class="form-control" name="autores" type="text" required value="{{ Auth::user()->name}}">
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
