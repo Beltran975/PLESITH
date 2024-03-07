@@ -1,42 +1,32 @@
-
-
-    .main{
-        margin-top: 15%;
-        display: flex;
-        
-
-    }
+.main {
+    margin-top: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .cards {
-   
     display: flex;
-   
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
 .busquedas {
-    
     height: auto;
 }
 
 .card-biblio {
-    width: 350px;
-    height: 400px;
-    margin: 6px; /* Este margen controla el espacio entre las tarjetas */
+    width: 200px;
+    height: 200px;
+    margin: 6px; 
     text-align: center;
-    
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
     overflow: hidden;
 }
 
-.card a {
-    text-decoration: none
-}
-
-
-
-.image {
+.card-biblio .image {
     width: 100%;
     height: auto;
     display: flex;
@@ -44,24 +34,25 @@
     justify-content: center;
 }
 
-.image img {
-    width: 500px;
-    /* Ajusta el ancho máximo de la imagen */
-    height: 200px;
-    ;
+.card-biblio .image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-
-
-
-
 /* Estilos para pantallas más pequeñas (ajusta los márgenes para dispositivos pequeños) */
 @media (max-width: 768px) {
-    .card-biblio {
-        width: calc(50% - 12px); /* Cambia el ancho de las tarjetas para ocupar el 50% del contenedor */
-        margin: 6px; /* Ajusta el margen nuevamente */
+    .main {
+        flex-direction: column;
+        align-items: center;
     }
+
+    .col-3 {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    
 }
 
 div.filtros {
@@ -70,7 +61,7 @@ div.filtros {
     height: 900px;
     width: 250px;
     color: #ffffff;
-    background-color: #691b32;
+    background-color: #691b32; 
     border-radius: 2%;
 }
 
@@ -81,15 +72,13 @@ div.busqueda {
     margin-bottom: 2%;
     margin-left: none;
     border-bottom: 1px solid black;
-
     text-align: center;
 }
+
 
 input.search {
     width: 70%;
     border: 1px solid black;
-
-
 }
 
 button.button {
@@ -124,8 +113,6 @@ div.tipo {
     height: 250px;
     border-bottom: 1px solid black;
     margin-bottom: 2%;
-
-
     padding: 25px;
 }
 
