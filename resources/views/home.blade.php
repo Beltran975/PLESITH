@@ -431,7 +431,7 @@
 
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="lider">{{ __('Lider*')}}</label>
+                                    <label class="form-label" for="lider">{{ __('Líder*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" id="lider" name="lider" type="text" required>

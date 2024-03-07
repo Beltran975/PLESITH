@@ -19,7 +19,7 @@
     @include('layouts/header')
     <br>
     <main class="page">
-        <a href="/home" class="btn btn-primary">Volver atras</a>
+        <a href="/home" class="btn btn-primary">Volver atrás</a>
         <div id="tab5" class="tabs-producciones active">
             <table class="table table-bordered">
                 <thead>
