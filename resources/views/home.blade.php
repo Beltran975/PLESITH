@@ -434,7 +434,7 @@
                                     <label class="form-label" for="lider">{{ __('Líder*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" id="lider" name="lider" type="text" required>
+                                    <input class="form-control" id="lider" name="lider" type="text" value="{{ Auth::user()->name}}" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">

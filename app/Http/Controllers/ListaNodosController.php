@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Nodo;
+use Illuminate\Support\Facades\Auth;
 
 class ListaNodosController extends Controller
 {
@@ -16,7 +17,7 @@ class ListaNodosController extends Controller
 
     public function lista()
     {
-        $query = DB::table('nodo')->get();
+        $query = Nodo::where('id_user', Auth::id())->get();
         return view('nodo.listaNodos', ['datos'=>$query]);
     }
 
