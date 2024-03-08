@@ -25,10 +25,10 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Titulo:</th>
+                                <th>Título:</th>
                                 <th>Fecha:</th>
                                 <th>Documento:</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -44,7 +44,7 @@
                                 <td>{{ $d->year}}</td>
                                 <td>{{ $d->documento}}</td>
                                 <td>{{ $d->descripcion}}</td>
-                                <td>Editar | Eliminar</td>
+                                <td><a href="{{route('bibliotech.edit', $d->id)}}" class="btn btn-sm">Editar</a>| Eliminar</td>
                             </tr>
                             @endforeach
                             @endif
