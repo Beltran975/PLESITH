@@ -758,5 +758,21 @@
     });
     </script>
 
+<script>
+    let pertenece = document.querySelectorAll('input[name="pertenece"]');
+    let evidenciaSni = document.querySelector('input[name="evidenciaSni"]');
+    
+    pertenece.forEach((input) => {
+        input.addEventListener("change", () => {
+            if (input.value === "no") {
+                evidenciaSni.disabled = true;
+            } else {
+                evidenciaSni.disabled = false;
+            }
+        });
+    });
+</script>
+
+
 </body>
 </html>

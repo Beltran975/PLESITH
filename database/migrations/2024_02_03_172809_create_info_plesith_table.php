@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('grado');
             $table->string('evidenciaGrado');
             $table->string('pertenece');
-            $table->string('evidenciaSni');
+            $table->string('evidenciaSni')->nullable();
 
             //table->foreign('id_user')->references('id')->on('users');
             $table->foreignId('id_user')
