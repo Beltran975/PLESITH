@@ -30,6 +30,7 @@ class InfotechController extends Controller
         return view('administrador.home-admin');
     }
 
+
     public function lista()
     {
         $datos = Infotech::all();
@@ -39,5 +40,12 @@ class InfotechController extends Controller
     public function create()
     {
         return view('administrador.infotech.create');
+    }
+
+    //datos generales (sin filtros)
+    public function indexInfo()
+    {
+        $convocatorias = Infotech::all();
+        return view('infotechComunidad', compact('convocatorias'));
     }
 }

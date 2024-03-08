@@ -160,6 +160,9 @@ Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'i
 Route::get('/tablaInfo', [App\Http\Controllers\InfotechController::class, 'lista']);
 Route::resource('/nuevo', InfotechController::class);
 
+Route::get('/infotechComunidad', [App\Http\Controllers\InfotechController::class, 'indexInfo']);
+
+
 Route::get('/gestion-bibliotech', function(){
     return view('administrador.bibliotech.gestion-bibliotech');
 });
