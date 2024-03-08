@@ -12,6 +12,7 @@ use App\Http\Controllers\ProduccionesController;
 use App\Http\Controllers\VistaController;
 use App\Http\Controllers\ListaNodosController;
 use App\Http\Controllers\BibliotechController;
+use App\Http\Controllers\InfotechController;
 
 /*
 |--------------------------------------------------------------------------
@@ -150,9 +151,14 @@ Route::get('/administrador/gestion-producciones', function () {
 
 //rutas gestion
 Route::get('/gestion-infotech', function(){
-    return view('administrador.gestion-infotech');
+    return view('administrador.infotech.gestion-infotech');
+});
+Route::get('/tablaInfotech', function(){
+    return view('administrador.infotech.index');
 });
 Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'insertar']);
+Route::get('/tablaInfo', [App\Http\Controllers\InfotechController::class, 'lista']);
+Route::resource('/nuevo', InfotechController::class);
 
 Route::get('/gestion-bibliotech', function(){
     return view('administrador.bibliotech.gestion-bibliotech');

@@ -8,7 +8,7 @@ use App\Models\Infotech;
 
 class InfotechController extends Controller
 {
-    public function insertar(Request $request)
+    public function store(Request $request)
     {
         //dd($request);
         try {
@@ -28,5 +28,16 @@ class InfotechController extends Controller
             DB::rollback();
         }
         return view('administrador.home-admin');
+    }
+
+    public function lista()
+    {
+        $datos = Infotech::all();
+        return view('administrador.infotech.index', compact('datos'));
+    }
+
+    public function create()
+    {
+        return view('administrador.infotech.create');
     }
 }

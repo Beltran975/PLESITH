@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="col-sm-4 my1">
-                    <a href="/gestion-bibliotech" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
+                    <a href="{{ route('nuevo.create')}}" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
                         <i class="bi bi-plus-circle-fill"></i> Crear
                     </a>
                 </div>
@@ -44,7 +44,7 @@
                                 <td>{{ $d->year}}</td>
                                 <td>{{ $d->documento}}</td>
                                 <td>{{ $d->descripcion}}</td>
-                                <td>Editar | Eliminar</td>
+                                <td>Editar | Eliminacion </td>
                             </tr>
                             @endforeach
                             @endif
