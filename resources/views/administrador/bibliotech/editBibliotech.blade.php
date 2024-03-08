@@ -44,14 +44,7 @@
                                 <input class="form-control @error('titulo') is-invalid @enderror" name="year" type="date" min="1900" max="2099" step="1" value="{{$datos->year}}" required />
                             </div>
                         </div>
-                        <!-- <div class="row justify-content-center mb-2">
-                            <div class="col-md-4">
-                                <label class="form-label" for="documento">{{ __('Documento *')}}</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input class="form-control" type="file" name="documento" required>
-                            </div>                                                
-                        </div> -->
+                
                         <div class="row justify-content-center mb-2">
                             <div class="col-md-4">
                                 <label class="control-label" for="descripcion">{{ __('Descripción *')}}</label>

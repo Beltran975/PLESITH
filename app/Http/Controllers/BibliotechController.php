@@ -27,7 +27,7 @@ class BibliotechController extends Controller
         } catch (Exception $e) {
             DB::rollback();
         }
-        return view('administrador.home-admin');
+        return redirect()->route('listaBibliotech');
     }
     
     public function index()

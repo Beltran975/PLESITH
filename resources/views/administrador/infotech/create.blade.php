@@ -14,41 +14,25 @@
     <br>
     <div class="container">
         <h4>Crear</h4>
-        <div class="row">
-            <div class="col-xl-12">
-                <form action="{{route('nuevo.store')}}" method="post" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-body">
+                <form action="{{ route('nuevo.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label" for="titulo">{{ __('Título *') }}</label>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control" type="text" name="titulo" required>
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="titulo">{{ __('Título *') }}</label>
+                        <input class="form-control" type="text" name="titulo" required>
                     </div>
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label" for="year">{{ __('Año *')}}</label>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control" name="year" type="date" min="1900" max="2099" step="1" required />
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="year">{{ __('Fecha *')}}</label>
+                        <input class="form-control" name="year" type="date" min="1900" max="2099" step="1" required />
                     </div>
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label" for="documento">{{ __('Documento *')}}</label>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control" type="file" name="documento" required>
-                        </div>                                                
+                    <div class="mb-3">
+                        <label class="form-label" for="documento">{{ __('Documento *')}}</label>
+                        <input class="form-control" type="file" name="documento" required>
                     </div>
-                    <div class="row justify-content-center mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label" for="descripcion">{{ __('Descripción *')}}</label>
-                        </div>
-                        <div class="col-md-6">
-                            <textarea class="form-control" name="descripcion" required></textarea>
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="descripcion">{{ __('Descripción *')}}</label>
+                        <textarea class="form-control" name="descripcion" required></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Guardar</button>

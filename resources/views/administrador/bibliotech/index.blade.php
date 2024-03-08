@@ -42,9 +42,9 @@
                             <tr>
                                 <td>{{ $d->titulo}}</td>
                                 <td>{{ $d->year}}</td>
-                                <td>{{ $d->documento}}</td>
+                                <td><a href="bibliotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                 <td>{{ $d->descripcion}}</td>
-                                <td><a href="{{route('bibliotech.edit', $d->id)}}" class="btn btn-sm">Editar</a>| Eliminar</td>
+                                <td><a href="{{route('bibliotech.edit', $d->id)}}" class="btn btn-warning">Editar</a>| Eliminar</td>
                             </tr>
                             @endforeach
                             @endif
