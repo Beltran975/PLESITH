@@ -126,8 +126,10 @@ Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class
 //verficar usuario 
 
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
-Route::get('/administrador/postulaciones/form-aprobacion',[tablaController::class,'FormAprobar']);
-
+Route::get('/administrador/postulaciones/form-aprobar/{PosId}',[tablaController::class,'FormAprobar'])->name('postulaciones.form-aprobar');
+Route::get('/administrador/postulaciones/generar-pdf-aprobado', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.get');
+Route::post('/administrador/postulaciones/generar-pdf-aprobado', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.post');
+//postulacion negada
 Route::get('/administrador/postulaciones/form-negar',[tablaController::class,'FormNegar']);
 
 

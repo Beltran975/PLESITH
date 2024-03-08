@@ -55,10 +55,10 @@
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a class="dropdown-item" href="../storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
+                                                <a class="dropdown-item" href="/storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
 
                                             </li>
-                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobacion">Aprobar postulación</a></li>
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
                                             <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar">Negar postulación</a></li>
                                         </ul>
                                     </div>
@@ -100,7 +100,7 @@
                                             <li>
                                                 <a class="dropdown-item" href="../storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobacion">Aprobar postulación</a></li>
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobacion/{{ $postulacion->id }}">Aprobar postulación</a></li>
                                             <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar">Negar postulación</a></li>
                                         </ul>
                                     </div>
