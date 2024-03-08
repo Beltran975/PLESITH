@@ -29,4 +29,12 @@ class InfotechController extends Controller
         }
         return view('administrador.home-admin');
     }
+
+    //datos generales (sin filtros)
+    public function indexInfo()
+    {
+        $convocatorias = Infotech::all();
+        return view('infotechComunidad', compact('convocatorias'));
+    }
+
 }

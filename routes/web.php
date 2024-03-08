@@ -154,6 +154,9 @@ Route::get('/gestion-infotech', function(){
 });
 Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'insertar']);
 
+Route::get('/infotechComunidad', [App\Http\Controllers\InfotechController::class, 'indexInfo']);
+
+
 Route::get('/gestion-bibliotech', function(){
     return view('administrador.bibliotech.gestion-bibliotech');
 });
