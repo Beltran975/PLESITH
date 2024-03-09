@@ -1,8 +1,6 @@
-.main {
+.main{
     margin-top: 15%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .cards {
@@ -13,20 +11,26 @@
 
 .busquedas {
     height: auto;
+    display: none; /* Inicialmente oculto */
+}
+
+.busquedas.active {
+    display: block; /* Mostrar cuando el menú está activo */
 }
 
 .card-biblio {
-    width: 200px;
-    height: 200px;
-    margin: 6px; 
+    width: 330px;
+    height: 400px;
+    margin: 6px; /* Este margen controla el espacio entre las tarjetas */
     text-align: center;
-    border-radius: 5%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid transparent;
     overflow: hidden;
 }
 
-.card-biblio .image {
+.card a {
+    text-decoration: none
+}
+
+.image {
     width: 100%;
     height: auto;
     display: flex;
@@ -34,116 +38,53 @@
     justify-content: center;
 }
 
-.card-biblio .image img {
-    width: 100%;
-    height: 100%;
+.image img {
+    width: 500px;
+    /* Ajusta el ancho máximo de la imagen */
+    height: 200px;
+    ;
     object-fit: cover;
 }
 
-/* Estilos para pantallas más pequeñas (ajusta los márgenes para dispositivos pequeños) */
+/* Estilos para pantallas más grandes (inicialmente visible) */
+@media (min-width: 769px) {
+    .busquedas {
+        display: block; /* Mostrar el menú en pantallas más grandes */
+        color: #ffffff; /* Color del texto */
+        background-color: #691b32; /* Color de fondo */
+        padding: 15px; /* Añadir espacio interno */
+        position: static; /* Restablecer la posición estática */
+        width: 250px; /* Ancho del menú */
+    }
+
+    .content-biblio {
+        margin-left: -20px; /* Ajustar margen para dar espacio al menú */
+    }
+}
+
+/* Estilos para pantallas más pequeñas (oculto por defecto) */
 @media (max-width: 768px) {
+    .busquedas {
+        display: none; /* Ocultar el menú en pantallas más pequeñas */
+    }
+
     .main {
-        flex-direction: column;
-        align-items: center;
+        position: relative; /* Ajustar posición relativa para que el menú se sobreponga */
     }
 
-    .col-3 {
-        width: 100%;
-        margin-right: 0;
+    .busquedas.active {
+        display: block; /* Mostrar el menú cuando está activo */
+        position: absolute; /* Posición absoluta para sobreponer el menú */
+        top: 100px; /* Espacio desde la parte superior */
+        left: 0; /* Alinear a la izquierda */
+        width: 250px; /* Ancho del menú */
+        color: #ffffff; /* Color del texto */
+        background-color: #691b32; /* Color de fondo */
+        padding: 15px; /* Añadir espacio interno */
     }
 
-    
+    .content-biblio {
+        margin-left: auto; /* Restablecer margen lateral */
+    }
 }
 
-div.filtros {
-    padding: 0%;
-    margin-right: none;
-    height: 900px;
-    width: 250px;
-    color: #ffffff;
-    background-color: #691b32; 
-    border-radius: 2%;
-}
-
-div.busqueda {
-    height: 100px;
-    width: auto;
-    padding-top: 25px;
-    margin-bottom: 2%;
-    margin-left: none;
-    border-bottom: 1px solid black;
-    text-align: center;
-}
-
-
-input.search {
-    width: 70%;
-    border: 1px solid black;
-}
-
-button.button {
-    width: 10%;
-    border: 1px solid black;
-}
-
-select.form-select {
-    width: 100%;
-    height: 25%;
-}
-
-input[type=checkbox] {
-    transform: scale(2);
-    margin-right: 10px;
-}
-
-input.date {
-    width: 100%;
-    height: 8%;
-}
-
-div.linea {
-    height: 150px;
-    margin-bottom: 2%;
-    border-bottom: 1px solid black;
-    text-align: center;
-    padding: 25px;
-}
-
-div.tipo {
-    height: 250px;
-    border-bottom: 1px solid black;
-    margin-bottom: 2%;
-    padding: 25px;
-}
-
-div.fecha {
-    height: 400px;
-    margin-bottom: 2%;
-    text-align: center;
-    padding: 25px;
-}
-
-div.resultados {
-    width: 100%;
-}
-
-div.resultado {
-    background-color: #ffffff;
-    width: 200px;
-    height: 200px;
-    border-radius: 10%;
-    border: 1px solid black;
-}
-
-div.row.justify-content-around {
-    width: 100%;
-}
-
-div.col-9 {
-    width: 100%;
-}
-
-div.col-3 {
-    width: 100%;
-    height: 100%;
-}

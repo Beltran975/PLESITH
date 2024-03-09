@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +7,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png" />
     <title>Bibliotech | PLESITH</title>
 </head>
-<style>
-
-</style>
-
 <body class="body">
 
     @include('layouts/headregob')
     @include('layouts/header')
     
     <main class="main">
-
+        <div class="menu-toggle" onclick="toggleMenu()">Menú</div>
         
-        <section class="busquedas">
+        <section class="busquedas" id="busqueda-menu">
             <div class="col-3">
                 <div class="filtros">
                     <form action="" method="get">
@@ -86,18 +81,21 @@
         </section>
         <div class="content-biblio">
             <section class="cards">
-
                 @foreach($datos as $item)
-
                 <div class="card-biblio">
-                        <iframe src="/bibliotech/{{ $item->documento }}" type="application/pdf" width="100%" height="100%"></iframe>
-                    
+                    <iframe src="/bibliotech/{{ $item->documento }}" type="application/pdf" width="100%" height="100%"></iframe>
                 </div>
                 @endforeach
             </section>
         </div>
     </main>
     @include('layouts/footer')
-</body>
 
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('busqueda-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
 </html>
