@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Barryvdh\DomPDF\Facade\PDF;
 use App\Models\Postulaciones;
 
+
 class PdfController extends Controller
 {
     public function generatePdf()

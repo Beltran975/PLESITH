@@ -25,23 +25,29 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Titulo:</th>
+                                <th>Título:</th>
                                 <th>Fecha:</th>
                                 <th>Documento:</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @if(count($datos)<=0)
+                            <tr>
+                                <td colspan="8"><h4>"No existen registros"</h4></td>
+                            </tr>
+                            @else
                             @foreach ($datos as $d)
                             <tr>
                                 <td>{{ $d->titulo}}</td>
                                 <td>{{ $d->year}}</td>
-                                <td>{{ $d->documento}}</td>
+                                <td><a href="bibliotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                 <td>{{ $d->descripcion}}</td>
-                                <td>Editar | Eliminar</td>
+                                <td><a href="{{route('bibliotech.edit', $d->id)}}" class="btn btn-warning">Editar</a>| Eliminar</td>
                             </tr>
                             @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>

@@ -35,4 +35,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Postulaciones::class, 'user_id');
     }
+
+    public function produccion()
+    {
+        return $this->hasMany(Producciones::class, 'user_id');
+    }
+
+    public function info_plesith()
+    {
+        return $this->hasMany(Informacion::class, 'user_id');
+    }
 }
