@@ -27,7 +27,7 @@ class BibliotechController extends Controller
         } catch (Exception $e) {
             DB::rollback();
         }
-        return view('administrador.home-admin');
+        return redirect()->route('listaBibliotech');
     }
     
     public function index()
@@ -42,5 +42,22 @@ class BibliotechController extends Controller
     {
         $datos = Bibliotech::all();
         return view('administrador.bibliotech.index', compact('datos'));
+    }
+
+    public function edit($id)
+    {
+        $datos= Bibliotech::findOrFail($id);
+        return view('administrador.bibliotech.editBibliotech', compact('datos'));
+    }
+    public function update(Request $request, $id){
+        
+        $datos=Bibliotech::findOrFail($id);
+        $datos->titulo=$request->input('titulo');
+        $datos->year=$request->input('year');
+        // $datos->documento=$request->input('documento');
+        $datos->descripcion=$request->input('descripcion');
+
+        $datos->save();
+        return redirect()->route('listaBibliotech');
     }
 }

@@ -45,44 +45,54 @@
             </div>
             <hr class="hr-gob">
             <div class="row justify-content-center">
-    <!-- Tabla de meses -->
-            <table class="months">
-                <tr>
-                    <td onclick="showConvocations('Enero')">Enero</td>
-                    <td onclick="showConvocations('Febrero')">Febrero</td>
-                    <td onclick="showConvocations('Marzo')">Marzo</td>
-                    <td onclick="showConvocations('Abril')">Abril</td>
-                    <td onclick="showConvocations('Mayo')">Mayo</td>
-                    <td onclick="showConvocations('Junio')">Junio</td>
-                    <td onclick="showConvocations('Julio')">Julio</td>
-                    <td onclick="showConvocations('Agosto')">Agosto</td>
-                    <td onclick="showConvocations('Septiembre')">Septiembre</td>
-                    <td onclick="showConvocations('Octubre')">Octubre</td>
-                    <td onclick="showConvocations('Noviembre')">Noviembre</td>
-                    <td onclick="showConvocations('Diciembre')">Diciembre</td>
-                </tr>
-            </table>
-    <!-- Menú desplegable con años -->
-            <select class="fecha" onchange="showConvocationsByYear(this.value)">
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2023">2022</option>
-                <option value="2023">2021</option>
-                <option value="2023">2020</option>
-                <!-- Agrega los demás años según sea necesario -->
-            </select>
-    <!-- Tabla de convocatorias -->
-            <table class="resultados" id="convocationsTable" style="display: table;">
-                <tr>
-                    <th width="200">Fecha de publicación</th>
-                    <th width="600">Nombre de la convocatoria</th>
-                    <th width="200">Ver convocatoria</th>
-                </tr>
-            </table>
+                <!-- Tabla de meses -->
+                <table class="months">
+                    <tr>
+                        <td onclick="showConvocations('Enero')">Enero</td>
+                        <td onclick="showConvocations('Febrero')">Febrero</td>
+                        <td onclick="showConvocations('Marzo')">Marzo</td>
+                        <td onclick="showConvocations('Abril')">Abril</td>
+                        <td onclick="showConvocations('Mayo')">Mayo</td>
+                        <td onclick="showConvocations('Junio')">Junio</td>
+                        <td onclick="showConvocations('Julio')">Julio</td>
+                        <td onclick="showConvocations('Agosto')">Agosto</td>
+                        <td onclick="showConvocations('Septiembre')">Septiembre</td>
+                        <td onclick="showConvocations('Octubre')">Octubre</td>
+                        <td onclick="showConvocations('Noviembre')">Noviembre</td>
+                        <td onclick="showConvocations('Diciembre')">Diciembre</td>
+                    </tr>
+                </table>
+        <!-- Menú desplegable con años -->
+                <select class="fecha" onchange="showConvocationsByYear(this.value)">
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2023">2022</option>
+                    <option value="2023">2021</option>
+                    <option value="2023">2020</option>
+                    <!-- Agrega los demás años según sea necesario -->
+                </select>
+                <!-- Tabla de convocatorias -->
+                <table class="resultados table table-responsive" id="convocationsTable" style="display: table;">
+                    <tr>
+                        <th width="200">Nombre de la convocatoria</th>
+                        <th width="200">Fecha de publicación</th>
+                        <th width="200">Ver convocatoria</th>
+                        <th width="400">Descripción</th>
+                    </tr>
+                    @foreach($convocatorias as $convocatoria)
+                    <tr>
+                        <th>{{$convocatoria->titulo}}</th>
+                        <th>{{$convocatoria->year}}</th> 
+                        <th>{{$convocatoria->documento}}</th>
+                        <th>{{$convocatoria->descripcion}}</th>
+
+                    </tr>
+                    @endforeach
+                </table>
             </div>
         </section>
         
-        <!-- <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img"> -->
+<!--    <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img"> -->
         <!-- <div class="title">
                 <div id="carousel-container">
                     <div id="carousel">
@@ -92,6 +102,9 @@
                     </div>
                 </div> -->
 <script>
+
+/* Carruce fallido
+
     // const carousel = document.getElementById('carousel');
     // const totalImages = 3; // Total de imágenes en el carrusel
     // const intervalDuration = 3000; // Duración del intervalo en milisegundos
@@ -128,7 +141,7 @@
 
     // setInterval(updateCarousel, intervalDuration); // Cambia la imagen cada 3 segundos
 
-    // Función para mostrar las convocatorias del mes seleccionado
+/*    // Función para mostrar las convocatorias del mes seleccionado
         function showConvocations(month) {
     // Aquí debes agregar lógica para obtener y mostrar las convocatorias del mes específico
             const convocationsTable = document.getElementById('convocationsTable');
@@ -180,6 +193,7 @@
     // Función para mostrar las convocatorias del año seleccionado
         function showConvocationsByYear(year) {
         }
+    */
 </script>        
     </main>
     @include('layouts/footer')

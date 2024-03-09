@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="col-sm-4 my1">
-                    <a href="/gestion-bibliotech" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
+                    <a href="{{ route('nuevo.create')}}" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
                         <i class="bi bi-plus-circle-fill"></i> Crear
                     </a>
                 </div>
@@ -25,10 +25,10 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Título:</th>
+                                <th>Titulo:</th>
                                 <th>Fecha:</th>
                                 <th>Documento:</th>
-                                <th>Descripción</th>
+                                <th>Descripcion</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -42,9 +42,9 @@
                             <tr>
                                 <td>{{ $d->titulo}}</td>
                                 <td>{{ $d->year}}</td>
-                                <td><a href="bibliotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
+                                <td><a href="infotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                 <td>{{ $d->descripcion}}</td>
-                                <td><a href="{{route('bibliotech.edit', $d->id)}}" class="btn btn-warning">Editar</a>| Eliminar</td>
+                                <td>Editar | Eliminacion </td>
                             </tr>
                             @endforeach
                             @endif
