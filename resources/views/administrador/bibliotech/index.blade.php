@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="col-sm-4 my1">
-                    <a href="/gestion-bibliotech" class="btn btn-primary">
+                    <a href="{{ route('bibliotech.create')}}" class="btn btn-primary">
                         <i class="bi bi-plus-circle-fill"></i> Crear
                     </a>
                 </div>

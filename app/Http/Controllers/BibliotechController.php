@@ -8,7 +8,7 @@ use App\Models\Bibliotech;
 
 class BibliotechController extends Controller
 {
-    public function insertar(Request $request)
+    public function store(Request $request)
     {
         //dd($request);
         try {
@@ -67,5 +67,10 @@ class BibliotechController extends Controller
         $datos = Bibliotech::findOrFail($id);
         $datos->delete();
         return redirect()->route('listaBibliotech');
+    }
+
+    public function create()
+    {
+        return view('administrador.bibliotech.create');
     }
 }

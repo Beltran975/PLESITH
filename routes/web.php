@@ -103,6 +103,7 @@ Route::get('/tablaBibliotech', function () {
 Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
 Route::get('/bibliotechComunidad', [App\Http\Controllers\BibliotechController::class, 'index']);
 Route::resource('/bibliotech', BibliotechController::class);
+Route::resource('/add', BibliotechController::class);
 Route::get('administrador/bibliotech/tabla', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech');
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
