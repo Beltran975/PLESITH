@@ -44,7 +44,7 @@
                                 <td>{{ $d->year}}</td>
                                 <td><a href="infotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                 <td>{{ $d->descripcion}}</td>
-                                <td>Editar | Eliminacion </td>
+                                <td><a href="{{route('infotech.edit', $d->id)}}" class="btn btn-warning">Editar</a>| Eliminar</td>
                             </tr>
                             @endforeach
                             @endif

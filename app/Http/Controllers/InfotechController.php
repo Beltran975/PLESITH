@@ -48,4 +48,21 @@ class InfotechController extends Controller
         $convocatorias = Infotech::all();
         return view('infotechComunidad', compact('convocatorias'));
     }
+
+    public function edit($id)
+    {
+        $datos=Infotech::findOrFail($id);
+        return view('administrador.infotech.editInfotech', compact('datos'));
+    }
+    public function update(Request $request, $id){
+        
+        $datos=Infotech::findOrFail($id);
+        $datos->titulo=$request->input('titulo');
+        $datos->year=$request->input('year');
+        // $datos->documento=$request->input('documento');
+        $datos->descripcion=$request->input('descripcion');
+
+        $datos->save();
+        return redirect()->route('listaInfotech');
+    }
 }
