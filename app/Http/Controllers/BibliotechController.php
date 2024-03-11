@@ -49,6 +49,7 @@ class BibliotechController extends Controller
         $datos= Bibliotech::findOrFail($id);
         return view('administrador.bibliotech.editBibliotech', compact('datos'));
     }
+
     public function update(Request $request, $id){
         
         $datos=Bibliotech::findOrFail($id);
@@ -58,6 +59,13 @@ class BibliotechController extends Controller
         $datos->descripcion=$request->input('descripcion');
 
         $datos->save();
+        return redirect()->route('listaBibliotech');
+    }
+
+    public function destroy($id)
+    {
+        $datos = Bibliotech::findOrFail($id);
+        $datos->delete();
         return redirect()->route('listaBibliotech');
     }
 }
