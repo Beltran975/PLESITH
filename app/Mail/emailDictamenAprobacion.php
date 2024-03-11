@@ -22,7 +22,7 @@ class emailDictamenAprobacion extends Mailable
 
     public function build()
     {
-        return $this->view('administrador.Mail-postulacion-aprobada')
+        return $this->view('administrador.postulaciones.Mail-postulacion-aprobada')
         ->subject('Estatus de postulación');
     }
 }

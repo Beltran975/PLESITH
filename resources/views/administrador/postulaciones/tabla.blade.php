@@ -59,7 +59,7 @@
 
                                             </li>
                                             <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
-                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar">Negar postulación</a></li>
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -100,8 +100,12 @@
                                             <li>
                                                 <a class="dropdown-item" href="../storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobacion/{{ $postulacion->id }}">Aprobar postulación</a></li>
-                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar">Negar postulación</a></li>
+                                            @if($postulacion->estatus == 'Negado')
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
+                                            @else
+                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
+                                            @endif
+                                            <li><a class="dropdown-item" href="#">Dar de baja al usuario</a></li>
                                         </ul>
                                     </div>
                                 </td>

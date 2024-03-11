@@ -31,14 +31,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/pru', function () {
-    return view('prueba-index');
-});
-
-Route::get('/la', function () {
-    return view('prueba-layouts');
-});
-
 Route::get('/nodo', function () {
     return view('nodo');
 });
@@ -115,7 +107,7 @@ Route::get('/registros', [App\Http\Controllers\BibliotechController::class, 'lis
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
-Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos']);
+Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('auth');
 
 //Rutas para enviar correos 
 Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
@@ -128,10 +120,10 @@ Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class
 
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
 Route::get('/administrador/postulaciones/form-aprobar/{PosId}',[tablaController::class,'FormAprobar'])->name('postulaciones.form-aprobar');
-Route::get('/administrador/postulaciones/generar-pdf-aprobado', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.get');
-Route::post('/administrador/postulaciones/generar-pdf-aprobado', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.post');
+Route::post('/administrador/postulaciones/generar-pdf-aprobado/{PosId}', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.post');
 //postulacion negada
-Route::get('/administrador/postulaciones/form-negar',[tablaController::class,'FormNegar']);
+Route::get('/administrador/postulaciones/form-negar/{PosId}',[tablaController::class,'FormNegar'])->name ('postulaciones.form-negar');
+Route::post('/administrador/postulaciones/generar-pdf-negado/{PosId}',[TablaController::class, 'generarPDFnegado'])->name('generarPDFnegado.post');
 
 
 //ruta nodos

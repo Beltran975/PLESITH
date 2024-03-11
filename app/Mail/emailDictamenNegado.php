@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Postulaciones;
 
-class emailDictamen extends Mailable
+class emailDictamenNegado extends Mailable
 {
     use Queueable, SerializesModels;
     public $postulacion;
@@ -22,7 +22,7 @@ class emailDictamen extends Mailable
 
     public function build()
     {
-        return $this->view('administrador.Mail-postulacion-negada')
+        return $this->view('administrador.postulaciones.Mail-postulacion-negada')
         ->subject('Estatus de postulación');
     }
   
