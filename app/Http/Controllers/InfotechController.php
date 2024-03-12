@@ -27,7 +27,7 @@ class InfotechController extends Controller
         } catch (Exception $e) {
             DB::rollback();
         }
-        return view('administrador.home-admin');
+        return redirect()->route('listaInfotech');
     }
 
 
@@ -63,6 +63,13 @@ class InfotechController extends Controller
         $datos->descripcion=$request->input('descripcion');
 
         $datos->save();
+        return redirect()->route('listaInfotech');
+    }
+
+    public function destroy($id)
+    {
+        $datos = Infotech::findOrFail($id);
+        $datos->delete();
         return redirect()->route('listaInfotech');
     }
 }
