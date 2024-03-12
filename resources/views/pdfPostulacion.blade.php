@@ -83,6 +83,7 @@
             <tr>
                 <th class="rotated-header">Programa educativo</th>
                 <td>{{ $user-> programa}}</td>
+
             </tr>
         </tbody>
     </table>
@@ -95,7 +96,10 @@
         <tbody>
             <tr>
                 <th>Área de conocimiento</th>
-                <td>ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</td>
+                @foreach (Auth::user()->producciones as $postulacion)
+    <p>{{ $postulacion->tipo }}</p>
+@endforeach
+  
             </tr>
             <tr>
                 <th class="rotated-header">Grado académico</th>
