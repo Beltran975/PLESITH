@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="col-sm-4 my1">
-                    <a href="/gestion-bibliotech" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
+                    <a href="{{ route('bibliotech.create')}}" class="btn btn-primary">
                         <i class="bi bi-plus-circle-fill"></i> Crear
                     </a>
                 </div>
@@ -28,8 +28,9 @@
                                 <th>Título:</th>
                                 <th>Fecha:</th>
                                 <th>Documento:</th>
-                                <th>Descripción</th>
-                                <th>Opciones</th>
+                                <th>Descripción: </th>
+                                <th>Opciones: </th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,10 +43,19 @@
                             <tr>
                                 <td>{{ $d->titulo}}</td>
                                 <td>{{ $d->year}}</td>
-                                <td><a href="bibliotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
+                                <td><a href="/bibliotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                 <td>{{ $d->descripcion}}</td>
-                                <td><a href="{{route('bibliotech.edit', $d->id)}}" class="btn btn-warning">Editar</a>| Eliminar</td>
+                                <td>
+                                    <a href="{{route('bibliotech.edit', $d->id)}}" class="btn btn-warning">Editar</a>
+                                </td>
+                                <td>
+                                    <!-- Button delete modal -->
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ $d->id}}">
+                                        Eliminar
+                                    </button>
+                                </td>
                             </tr>
+                            @include('administrador.bibliotech.delete')
                             @endforeach
                             @endif
                         </tbody>
@@ -55,4 +65,7 @@
         </div>
     </div>
 </body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>

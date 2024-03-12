@@ -103,7 +103,8 @@ Route::get('/tablaBibliotech', function () {
 Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
 Route::get('/bibliotechComunidad', [App\Http\Controllers\BibliotechController::class, 'index']);
 Route::resource('/bibliotech', BibliotechController::class);
-Route::get('/registros', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech');
+Route::resource('/add', BibliotechController::class);
+Route::get('administrador/bibliotech/tabla', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech');
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
@@ -149,7 +150,10 @@ Route::get('/tablaInfotech', function(){
     return view('administrador.infotech.index');
 });
 Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'insertar']);
-Route::get('/tablaInfo', [App\Http\Controllers\InfotechController::class, 'lista']);
+Route::get('administrador/infotech/tabla', [App\Http\Controllers\InfotechController::class, 'lista'])->name('listaInfotech');
+Route::get('/infotech/{id}/edit', [InfotechController::class, 'edit'])->name('infotech.edit');;
+Route::get('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
+Route::put('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
 Route::resource('/nuevo', InfotechController::class);
 
 Route::get('/infotechComunidad', [App\Http\Controllers\InfotechController::class, 'indexInfo']);
