@@ -1,5 +1,4 @@
-.main{
-    margin-top: 15%;
+.main {
     display: flex;
 }
 
@@ -9,17 +8,8 @@
     justify-content: center;
 }
 
-.busquedas {
-    height: auto;
-    display: none; /* Inicialmente oculto */
-}
-
-.busquedas.active {
-    display: block; /* Mostrar cuando el menú está activo */
-}
-
 .card-biblio {
-    width: 330px;
+    width: 330px; /* Ancho de los cards */
     height: 400px;
     margin: 6px; /* Este margen controla el espacio entre las tarjetas */
     text-align: center;
@@ -27,26 +17,30 @@
 }
 
 .card a {
-    text-decoration: none
+    text-decoration: none;
 }
 
-.image {
-    width: 100%;
+.menu-toggle {
+    margin-top: 70px;
+}
+
+.busquedas {
     height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none; /* Inicialmente oculto */
 }
 
-.image img {
-    width: 500px;
-    /* Ajusta el ancho máximo de la imagen */
-    height: 200px;
-    ;
-    object-fit: cover;
+.busquedas.active {
+    display: block; /* Mostrar cuando el menú está activo */
+    position: fixed; /* Posición fija para centrar en la pantalla */
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Centrado exacto */
+    z-index: 9999; /* Asegura que esté por encima de todo el contenido */
+    color: #ffffff; /* Color del texto */
+    background-color: #691b32; /* Color de fondo */
+    padding: 15px; /* Añadir espacio interno */
 }
 
-/* Estilos para pantallas más grandes (inicialmente visible) */
 @media (min-width: 769px) {
     .busquedas {
         display: block; /* Mostrar el menú en pantallas más grandes */
@@ -62,29 +56,12 @@
     }
 }
 
-/* Estilos para pantallas más pequeñas (oculto por defecto) */
 @media (max-width: 768px) {
-    .busquedas {
-        display: none; /* Ocultar el menú en pantallas más pequeñas */
-    }
-
     .main {
         position: relative; /* Ajustar posición relativa para que el menú se sobreponga */
-    }
-
-    .busquedas.active {
-        display: block; /* Mostrar el menú cuando está activo */
-        position: absolute; /* Posición absoluta para sobreponer el menú */
-        top: 100px; /* Espacio desde la parte superior */
-        left: 0; /* Alinear a la izquierda */
-        width: 250px; /* Ancho del menú */
-        color: #ffffff; /* Color del texto */
-        background-color: #691b32; /* Color de fondo */
-        padding: 15px; /* Añadir espacio interno */
     }
 
     .content-biblio {
         margin-left: auto; /* Restablecer margen lateral */
     }
 }
-
