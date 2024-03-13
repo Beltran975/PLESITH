@@ -22,22 +22,47 @@
     <main class="page">
         <div class="content">
             <div class="green-box">
-                
+
                 <div class="titulo row d-flex  mb-3">
-                    <h3>Datos generales</h3>&nbsp<!-- espacio en blanco -->
-                    <h3>|</h3>&nbsp
-                    <h3>{{ Auth::user()->name }}</h3>
+                    <h3>Datos generales | {{ Auth::user()->name }}</h3><!-- espacio en blanco -->
+
                 </div>
-                
-                @if(Auth::user()->verificacion == 'en proceso') 
+
+
+                <a href="/verificar-Correo" id="verificar-correo" class="btn btn-secondary">Verificar correo</a>
+
+
+                <!-- Otros campos de la postulación si es necesario -->
+
                 <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
                 <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
-                
-                <!-- Otros campos de la postulación si es necesario -->
-                @elseif(Auth::user()->verificacion == 'ninguno')
-                <a href="/verificar-Correo" class="btn btn-secondary">Verificar correo</a>
-                
-                @endif
+
+                <!--Veridicación de postulación-->
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-estatus-pos">Estatus de postulación</button>
+
+
+                <div class="modal fade" id="Modal-estatus-pos" tabindex="-1" aria-label="Modal-estatus-label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="Modal-estatus-label">Estatus de postulación</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                            </div>
+                            <div class="modal-body">
+                                @foreach (Auth::user()->postulaciones as $postulacion)
+                                <p>{{ $postulacion->estatus }} p</p>
+                                @endforeach
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                                <button type="button" class="btn btn-primary">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 @if(session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
@@ -158,7 +183,7 @@
                                     <label class="form-label" for="evidenciaGrado">Evidencia del grado académico </label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF" required/>
+                                    <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF" required />
                                 </div>
                             </div>
                             <!-- Pertenece al SNI -->
@@ -167,9 +192,9 @@
                                     <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="radio"  name="pertenece" autocomplete="off" value="si" required>
+                                    <input type="radio" name="pertenece" autocomplete="off" value="si" required>
                                     <label class="btn" for="pertenece">Sí</label>
-                                    <input type="radio"  name="pertenece" autocomplete="off" value="no" required>
+                                    <input type="radio" name="pertenece" autocomplete="off" value="no" required>
                                     <label class="btn" for="pertenece">No</label>
                                 </div>
                             </div>
@@ -179,7 +204,7 @@
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required/>
+                                    <input type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required />
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Guardar</button>
@@ -197,7 +222,9 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th><p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear</p></th>
+                                        <th>
+                                            <p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear</p>
+                                        </th>
                                         <th><a class="btn btn-primary" href="/Producciones/listaProducciones">Mis Producciones</a></th>
                                     </tr>
                                 </thead>
@@ -245,7 +272,7 @@
                             </table>
                         </div>
                     </div>-->
-                    
+
                 </div>
 
                 <!-- Nodos de colaboración -->
@@ -258,7 +285,9 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th><p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</p></th>
+                                        <th>
+                                            <p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</p>
+                                        </th>
                                         <th><a class="btn btn-primary" href="/nodo/listaNodos">Mis nodos creados</a></th>
                                     </tr>
                                 </thead>
@@ -315,14 +344,12 @@
                                     <input class="form-control" type="file" name="evidencia" onchange="validarDocumento(event)" required>
                                 </div>
                                 <script>
-                                    function validarDocumento(event)
-                                    {
+                                    function validarDocumento(event) {
                                         const input = event.target;
                                         const file = input.files[0];
                                         const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-                                        
-                                        if (!allowedTypes.includes(file.type))
-                                        {
+
+                                        if (!allowedTypes.includes(file.type)) {
                                             alert('Solo se permiten archivos de documentos (PDF, DOC, DOCX, XLS, XLSX).');
                                             input.value = '';
                                         }
@@ -651,17 +678,15 @@
                                     <label class="form-label" for="documento">{{ __('Documentación:')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="file" name="documento" id="documento"  onchange="validarDocumento(event)" required>
+                                    <input class="form-control" type="file" name="documento" id="documento" onchange="validarDocumento(event)" required>
                                 </div>
                                 <script>
-                                    function validarDocumento(event) 
-                                    {
+                                    function validarDocumento(event) {
                                         const input = event.target;
                                         const file = input.files[0];
                                         const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-                                        
-                                        if (!allowedTypes.includes(file.type)) 
-                                        {
+
+                                        if (!allowedTypes.includes(file.type)) {
                                             alert('Solo se permiten archivos de documentos (PDF, DOC, DOCX, XLS, XLSX).');
                                             input.value = '';
                                         }
@@ -677,8 +702,9 @@
                 </div>
             </div>
         </div>
-        
+
     </main>
+
     @include('layouts/footer')
 
     <!-- Include Bootstrap JS and Popper.js before closing body tag -->
@@ -721,58 +747,83 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Asociar un evento de clic al botón
-        document.getElementById('botonPostulacion').addEventListener('click', function (event) {
-        // Prevenir la acción predeterminada del enlace
-        event.preventDefault();
+        document.getElementById('botonPostulacion').addEventListener('click', function(event) {
+            // Prevenir la acción predeterminada del enlace
+            event.preventDefault();
 
-        // Mostrar una alerta SweetAlert2
-        Swal.fire({
-            title: "Enviar postulación",
-            text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema.",
-            icon: "warning",
-            iconColor: '#bc955b',
-            showCancelButton: true,
-            confirmButtonColor: "#bc955b",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Enviar",
-            cancelButtonText: "Cancelar"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Obtener la URL del enlace y redireccionar al usuario
-                const url = document.getElementById('ruta').getAttribute('href');
-                window.location.href = url;
+            // Mostrar una alerta SweetAlert2
+            Swal.fire({
+                title: "Enviar postulación",
+                text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema.",
+                icon: "warning",
+                iconColor: '#bc955b',
+                showCancelButton: true,
+                confirmButtonColor: "#bc955b",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Enviar",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Obtener la URL del enlace y redireccionar al usuario
+                    const url = document.getElementById('ruta').getAttribute('href');
+                    window.location.href = url;
 
-                // Mostrar otra alerta SweetAlert2 después de la redirección
-                Swal.fire({
-                    title: "¡Postulación enviada con éxito!",
-                    text: "En breve se descarga una copia de su postulación.",
-                    icon: "success",
-                    iconColor: '#bc955b',
-                    confirmButtonText: 'Aceptar',
-            customClass: {
-                confirmButton: 'btn btn-primary'
-            }
-                });
-            }
+                    // Mostrar otra alerta SweetAlert2 después de la redirección
+                    Swal.fire({
+                        title: "¡Postulación enviada con éxito!",
+                        text: "En breve se descarga una copia de su postulación.",
+                        icon: "success",
+                        iconColor: '#bc955b',
+                        confirmButtonText: 'Aceptar',
+                        customClass: {
+                            confirmButton: 'btn btn-primary'
+                        }
+                    });
+                }
+            });
         });
-    });
     </script>
 
-<script>
-    let pertenece = document.querySelectorAll('input[name="pertenece"]');
-    let evidenciaSni = document.querySelector('input[name="evidenciaSni"]');
-    
-    pertenece.forEach((input) => {
-        input.addEventListener("change", () => {
-            if (input.value === "no") {
-                evidenciaSni.disabled = true;
-            } else {
-                evidenciaSni.disabled = false;
-            }
+    <script>
+        let pertenece = document.querySelectorAll('input[name="pertenece"]');
+        let evidenciaSni = document.querySelector('input[name="evidenciaSni"]');
+
+        pertenece.forEach((input) => {
+            input.addEventListener("change", () => {
+                if (input.value === "no") {
+                    evidenciaSni.disabled = true;
+                } else {
+                    evidenciaSni.disabled = false;
+                }
+            });
         });
-    });
-</script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtiene el elemento del botón
+            var btnVerificarCorreo = document.getElementById("verificar-correo");
+
+            // Agrega un evento de clic al botón
+            btnVerificarCorreo.addEventListener("click", function(event) {
+                // Previene el comportamiento predeterminado del enlace
+                event.preventDefault();
+
+                Swal.fire({
+                    title: "Verificar correo electronico",
+                    confirmButtonText: 'verificar',
+                }).then((result) => {
+                // Si el usuario hace clic en "Sí, verificar"
+                if (result.isConfirmed) {
+                    // Aquí podrías añadir código para redireccionar a la página de verificación de correo
+                     window.location.href = "/verificar-Correo";
+                    Swal.fire('Correo verificado', '', 'success');
+                }
+            });
+
+            });
+        });
+    </script>
 
 
 </body>
+
 </html>

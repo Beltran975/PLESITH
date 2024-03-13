@@ -26,7 +26,7 @@ class User extends Authenticatable
         'password',
         'archivoCurp',
         'image_path',
-        'verificacion',
+        'tipo',
         'fullacces',
         'codigo',
     ];
@@ -45,4 +45,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Informacion::class, 'user_id');
 
+}
 }

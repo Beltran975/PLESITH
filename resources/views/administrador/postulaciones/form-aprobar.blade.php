@@ -72,9 +72,9 @@
         <!-- Script para manejar modales con jQuery -->
         <script>
             function mostrarTextArea() {
-                var select = document.getElementById("razonAprobacion");
-                var otroRazonDiv = document.getElementById("otraRazon");
-                var selectedOption = select.options[select.selectedIndex].value;
+                let select = document.getElementById("razonAprobacion");
+                let otroRazonDiv = document.getElementById("otraRazon");
+                let selectedOption = select.options[select.selectedIndex].value;
 
                 if (selectedOption === "Otros") {
                     otroRazonDiv.style.display = "block";
@@ -83,17 +83,7 @@
                 }
             }
 
-            function mostrarTextAreaNegada() {
-                var select = document.getElementById("razon-negada");
-                var otroRazonDiv = document.getElementById("otraRazonNegada");
-                var selectedOption = select.options[select.selectedIndex].value;
-
-                if (selectedOption === "Otros") {
-                    otroRazonDiv.style.display = "block";
-                } else {
-                    otroRazonDiv.style.display = "none";
-                }
-            }
+          
         </script>
 
 

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('archivoCurp')->nullable();
             $table->string('image_path')->nullable();
-            $table->string('verificacion');
+            $table->string('tipo');
             $table->string('codigo')->unique()->nullable();
             $table->enum('fullacces',['yes','no'])->nullable();
             $table->timestamps();

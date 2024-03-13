@@ -32,7 +32,7 @@ class tablaController extends Controller
         $postulacion = Postulaciones::findOrFail($id);
         $postulacion->estatus = 'Aprobado';
         $postulacion->pdfDictamen = 'Dictamen_aprobado_' . $id . '.pdf';
-        $postulacion->save();
+       $postulacion->save(); 
 
         // Generar el pdf del dictamen con datos del formulario
         $descripcion = $request->input('descripcion-apro');

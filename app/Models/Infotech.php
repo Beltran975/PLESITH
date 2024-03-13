@@ -17,4 +17,6 @@ class Infotech extends Model
         'documento',
         'descripcion',
     ];
+
+    
 }

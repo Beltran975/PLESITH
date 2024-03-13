@@ -34,9 +34,9 @@ public function aprobarVerificacionDeCorreo($userId)
 
     if ($user) {
         // Cambiar el atributo de verificación
-        $user->verificacion = "en proceso";
+        $user->tipo = "correo verificado";
         $user->save();
-        return redirect()->route('home')->with('success', 'Correo verificado correctamente.');
+        return view('home')->with('success', 'Correo verificado correctamente.');
     } else {
         return redirect()->route('home')->with('error', 'No se encontró el usuario.');
     }
