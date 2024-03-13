@@ -26,13 +26,12 @@
                         <div class="col-2 barra-nodo">
                             <a class="btn " href="/home"   data-bs-target="#Modal-crear-produccion">Crear nodo</a>
                         </div>
-
                         <div class="col-3 buscar-nodo">
-                        <form class="form-inline" action="{{route('buscar.index')}}" method="get">
-                        <input name="buscar" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+                            <form class="form-inline" action="{{route('buscar.index')}}" method="get">
+                            <input name="buscar" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
                         </div>
                         <div class="col-2">
-                        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i>Buscar</button>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i>Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -61,7 +60,7 @@
                                 </button>
                             </td>
                             <td>
-                                <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
+                                <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $d->id }}">
                                     Leer más
                                 </a>
                             </td>
@@ -71,7 +70,8 @@
                 </table>
                 
                 <!-- Modal de nodos de colaboración -->
-                <div class="modal fade" id="Modal-crear-produccion">
+                @foreach ($datos as $d)
+                <div class="modal fade" id="Modal-crear-produccion-{{ $d->id }}">
                     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -80,7 +80,6 @@
                             <div class="modal-body">
                                 <table class="tabla-modal table table-borderless" >
                                     <tbody>
-                                        @foreach ($datos as $d)
                                         <tr>
                                             <th class="rotated-header">Área de conocimiento: </th>
                                             <td class="contenido-produccion">{{ $d->linea_inv}}</td>
@@ -109,7 +108,6 @@
                                             <th class="rotated-header">Documentación: </th>
                                             <td class="contenido-produccion"><a href="nodos/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                         </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -119,6 +117,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </main>
         @include('layouts/footer')

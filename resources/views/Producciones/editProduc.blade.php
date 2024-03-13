@@ -75,21 +75,19 @@
                             </div>
 
                             <div class="row justify-content-center mb-2">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label class="form-label" for="pais">{{ __('País *')}}</label>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input id="pais" type="text" class="form-control" name="pais" value="{{ $produccion->pais }}" required autocomplete="pais" autofocus>
-                                    </div>
+                                <div class="col-md-4">
+                                    <label class="form-label" for="pais">{{ __('País *')}}</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label class="form-label" for="year">{{ __('Fecha *')}}</label>
-                                    </div>
-                                    <div class="col-md-9 mb-3">
-                                        <input id="year" type="month" min="1900" max="2099" step="1"  class="form-control" name="year" value="{{ $produccion->year }}" required autocomplete="year" autofocus>
-                                    </div>
+                                <div class="col-md-6 mb-3">
+                                    <input id="pais" type="text" class="form-control" name="pais" value="{{ $produccion->pais }}" required autocomplete="pais" autofocus>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mb-2">
+                                <div class="col-md-4">
+                                    <label class="form-label" for="year">{{ __('Fecha *')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input id="year" type="month" min="1900" max="2099" step="1"  class="form-control" name="year" value="{{ $produccion->year }}" required autocomplete="year" autofocus>
                                 </div>
                             </div>
                             
