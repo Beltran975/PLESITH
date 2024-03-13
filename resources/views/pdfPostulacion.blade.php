@@ -93,11 +93,10 @@
         <p>Información PLESITH</p>
     </div>
     <table class="table contenido-produccion">
-        @foreach ($users as $user)
-        @foreach ($user->datos as $dato)
+        @foreach ( Auth::user()->datos as $dato)
             <tr>
                 <th>Área de conocimiento</th>
-                <td>ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</td>
+                <td>{{ $dato -> lineaInv}}</td>
             </tr>
             <tr>
                 <th class="rotated-header">Grado académico</th>
@@ -109,13 +108,12 @@
             </tr>
             <tr>
                 <th class="rotated-header">Colaboración al SNI</th>
-                <td>{{ $dato-> institucion}}</td>
+                <td>{{ $dato-> pertenece}}</td>
             </tr>
             <tr>
                 <th class="rotated-header">Evidencia SNI</th>
                 <td><a href="produccion/{{ $dato->evidenciaSni}}" target="blanck_">{{ $dato->evidenciaSni}}</a></td>
             </tr>
-        @endforeach
         @endforeach
     </table>
     <!--Sección de producciones..................................-->
@@ -136,7 +134,7 @@
                 <th>Fecha</th>
                 <th>Proposito</th>
             </tr>
-            @foreach ($producciones as $produccion)
+            @foreach (Auth::user()->producciones as $produccion)
             <tr>
                 <td>{{ $produccion->tipo}}</td>
                 <td scope="row"><a href="produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>

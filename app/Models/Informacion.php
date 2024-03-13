@@ -20,4 +20,8 @@ class Informacion extends Model
         'pertenece',
         'evidenciaSni',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

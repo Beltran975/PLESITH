@@ -26,7 +26,7 @@ class User extends Authenticatable
         'password',
         'archivoCurp',
         'image_path',
-        'tipo',
+        'verificacion',
         'fullacces',
         'codigo',
     ];
@@ -36,14 +36,14 @@ class User extends Authenticatable
         return $this->hasMany(Postulaciones::class, 'user_id');
     }
 
-    public function produccion() //Producciones
+    public function producciones() //Producciones
     {
         return $this->hasMany(Producciones::class, 'id_user');
     }
 
-    public function info_plesith()
+    public function datos()
     {
-        return $this->hasMany(Informacion::class, 'user_id');
+        return $this->hasMany(Informacion::class, 'id_user');
+    }
 
-}
 }
