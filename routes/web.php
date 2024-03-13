@@ -137,6 +137,7 @@ Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 
 Route::get('/administrador/gestion-nodos', function () {
     return view('/administrador/gestion-nodos'); 
 });
+Route::get('/administrador/nodos/tabla', [App\Http\Controllers\ListadoController::class, 'index']);
 
 Route::get('/administrador/gestion-producciones', function () {
     return view('/administrador/gestion-producciones'); 
