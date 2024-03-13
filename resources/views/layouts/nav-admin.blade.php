@@ -25,7 +25,7 @@
           <li><a href="/administrador/producciones/table"><i class="bi bi-file-text-fill"></i> Producciones</a></li>
           <li><a href="/administrador/nodos/tabla"><i class="bi bi-folder2"></i> Nodos de colaboración</a></li>
           <li><a href="/administrador/bibliotech/tabla"><i class="bi bi-file-earmark-check-fill"></i> Bibliotech</a></li>
-          <li><a href="/administrador/infotech/tabla"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
+          <li><a href="/administrador/infotech/tabla"><i class="bi bi-exclamation-circle-fill"></i> Infotecch</a></li>
         </ul>
         <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           Cerrar sesión
