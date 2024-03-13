@@ -83,6 +83,7 @@
             <tr>
                 <th class="rotated-header">Programa educativo</th>
                 <td>{{ $user-> programa}}</td>
+
             </tr>
         </tbody>
     </table>
@@ -96,7 +97,7 @@
         @foreach ($user->datos as $dato)
             <tr>
                 <th>Área de conocimiento</th>
-                <td>{{ $dato->lineaInv }}</td>
+                <td>ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</td>
             </tr>
             <tr>
                 <th class="rotated-header">Grado académico</th>

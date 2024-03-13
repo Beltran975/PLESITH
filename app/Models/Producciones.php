@@ -23,4 +23,9 @@ class Producciones extends Model
         'year',
         'proposito',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

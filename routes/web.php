@@ -31,14 +31,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/pru', function () {
-    return view('prueba-index');
-});
-
-Route::get('/la', function () {
-    return view('prueba-layouts');
-});
-
 Route::get('/nodo', function () {
     return view('nodo');
 });
@@ -111,11 +103,12 @@ Route::get('/tablaBibliotech', function () {
 Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::class,'Insertar']);
 Route::get('/bibliotechComunidad', [App\Http\Controllers\BibliotechController::class, 'index']);
 Route::resource('/bibliotech', BibliotechController::class);
-Route::get('/registros', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech');
+Route::resource('/add', BibliotechController::class);
+Route::get('administrador/bibliotech/tabla', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech');
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
-Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos']);
+Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('auth');
 
 //Rutas para enviar correos 
 Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
@@ -128,10 +121,10 @@ Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class
 
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
 Route::get('/administrador/postulaciones/form-aprobar/{PosId}',[tablaController::class,'FormAprobar'])->name('postulaciones.form-aprobar');
-Route::get('/administrador/postulaciones/generar-pdf-aprobado', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.get');
-Route::post('/administrador/postulaciones/generar-pdf-aprobado', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.post');
+Route::post('/administrador/postulaciones/generar-pdf-aprobado/{PosId}', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.post');
 //postulacion negada
-Route::get('/administrador/postulaciones/form-negar',[tablaController::class,'FormNegar']);
+Route::get('/administrador/postulaciones/form-negar/{PosId}',[tablaController::class,'FormNegar'])->name ('postulaciones.form-negar');
+Route::post('/administrador/postulaciones/generar-pdf-negado/{PosId}',[TablaController::class, 'generarPDFnegado'])->name('generarPDFnegado.post');
 
 
 //ruta nodos
@@ -157,7 +150,10 @@ Route::get('/tablaInfotech', function(){
     return view('administrador.infotech.index');
 });
 Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'insertar']);
-Route::get('/tablaInfo', [App\Http\Controllers\InfotechController::class, 'lista']);
+Route::get('administrador/infotech/tabla', [App\Http\Controllers\InfotechController::class, 'lista'])->name('listaInfotech');
+Route::get('/infotech/{id}/edit', [InfotechController::class, 'edit'])->name('infotech.edit');;
+Route::get('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
+Route::put('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
 Route::resource('/nuevo', InfotechController::class);
 
 //vista de usuario de Convocatorias Infotech

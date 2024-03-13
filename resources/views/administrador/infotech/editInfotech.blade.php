@@ -7,7 +7,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-rbs5oRmyz9BDjzS9nEIEUnzM1qDe5ICorxF9uF8g5SeFOByuB+8Z3Gk5Sck/GJvI" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <title>Bibliotech | PLESITH</title>
+        <title>Infotech | PLESITH</title>
     </head>
 <body>
     @include('layouts/headregob')
@@ -20,10 +20,10 @@
             <hr class="hr-gob" >
             <div class="card">
                 <div class="card-header">
-                    <h3>Bibliotech</h3>
+                    <h3>Infotech</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('bibliotech.update', $datos->id)}}" method="post" enctype="multipart/form-data" novalidate>
+                    <form action="{{route('infotech.update', $datos->id)}}" method="post" enctype="multipart/form-data" novalidate>
                         @csrf
                         @method('PUT')
                         

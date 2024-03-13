@@ -32,18 +32,16 @@
                 <hr class="hr-gob">
 
                 <div class="form-group">
-                    <form action="{{ route('generarPDFaprobado.post') }}" method="post">
-                    @csrf
-                        <input type="hidden" name="postulacion_id" value="">
+                    <form action="{{ route('generarPDFaprobado.post', $pos->id) }}" method="post">
+                        @csrf
                         <div class="modal-body">
                             <div class="mb-3">
                                 <blockquote>
-                                    <p>Para aprobar al usuario <span style=" background-color: #691b32;"></span> favor de llenar el siguiente formulario</p>
+                                    <p>Para aprobar al usuario <span style="background-color: #691b32;">{{$pos->id}}</span> favor de llenar el siguiente formulario</p>
                                 </blockquote>
-
                             </div>
                             <div class="md-3">
-                                <label for="dictamenAprobar" class="form-label">Descripción general</label>
+                                <label for="descripcion-apro" class="form-label">Descripción general</label>
                                 <textarea class="form-control" id="descripcion-apro" name="descripcion-apro" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
@@ -66,6 +64,7 @@
                             <button class="btn btn-primary" type="submit">Enviar</button>
                         </div>
                     </form>
+
                 </div>
 
         </main>

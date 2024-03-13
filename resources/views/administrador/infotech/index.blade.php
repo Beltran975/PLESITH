@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="col-sm-4 my1">
-                    <a href="{{ route('nuevo.create')}}" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">
+                    <a href="{{ route('nuevo.create')}}" class="btn btn-primary">
                         <i class="bi bi-plus-circle-fill"></i> Crear
                     </a>
                 </div>
@@ -30,6 +30,7 @@
                                 <th>Documento:</th>
                                 <th>Descripcion</th>
                                 <th>Opciones</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,8 +45,17 @@
                                 <td>{{ $d->year}}</td>
                                 <td><a href="infotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                 <td>{{ $d->descripcion}}</td>
-                                <td>Editar | Eliminacion </td>
+                                <td>
+                                    <a href="{{route('infotech.edit', $d->id)}}" class="btn btn-warning">Editar</a>
+                                </td>
+                                <th>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$d->id}}">
+                                        Eliminar
+                                    </button>
+                                </th>
                             </tr>
+                            @include('administrador.infotech.delete')
                             @endforeach
                             @endif
                         </tbody>
@@ -55,4 +65,5 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>

@@ -36,13 +36,13 @@ class User extends Authenticatable
         return $this->hasMany(Postulaciones::class, 'user_id');
     }
 
-    public function produccion()
+    public function produccion() //Producciones
     {
-        return $this->hasMany(Producciones::class, 'user_id');
+        return $this->hasMany(Producciones::class, 'id_user');
     }
 
     public function info_plesith()
     {
         return $this->hasMany(Informacion::class, 'user_id');
-    }
+
 }
