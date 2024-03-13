@@ -88,35 +88,37 @@
         </tbody>
     </table>
 
-    <!--Sección información PLESITH-->
+    <!--Sección información PLESITH..................................-->
     <div class="title">
         <p>Información PLESITH</p>
     </div>
-    <table class="table">
-        <tbody>
+    <table class="table contenido-produccion">
+        @foreach ($users as $user)
+        @foreach ($user->datos as $dato)
             <tr>
                 <th>Área de conocimiento</th>
-                @foreach (Auth::user()->producciones as $postulacion)
-    <p>{{ $postulacion->tipo }}</p>
-@endforeach
-  
+                <td>ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</td>
             </tr>
             <tr>
                 <th class="rotated-header">Grado académico</th>
-                <td>Ingeniería</td>
+                <td>{{ $dato->grado }}</td>
             </tr>
             <tr>
-                <th class="rotated-header">¿Pertenece al SNI?:</th>
-                <td>Sí</td>
+                <th class="rotated-header">Evidencia del grado académico</th>
+                <td><a href="produccion/{{ $dato->evidenciaGrado}}" target="blanck_">{{ $dato->evidenciaGrado}}</a></td>
+            </tr>
+            <tr>
+                <th class="rotated-header">Colaboración al SNI</th>
+                <td>{{ $dato-> institucion}}</td>
             </tr>
             <tr>
                 <th class="rotated-header">Evidencia SNI</th>
-                <td><a href="storage/archivos_curp/{{ $user-> archivoCurp}}">DocumentoSNI.pdf</a></td>
+                <td><a href="produccion/{{ $dato->evidenciaSni}}" target="blanck_">{{ $dato->evidenciaSni}}</a></td>
             </tr>
-        </tbody>
+        @endforeach
+        @endforeach
     </table>
-
-    <!--Sección de producciones-->
+    <!--Sección de producciones..................................-->
     <div class="title">
         <p>Mis producciones</p>
     </div>
@@ -125,62 +127,31 @@
     <table class="table contenido-produccion">
         <tbody>
             <tr>
-                <th class="rotated-header">Tema de la investigación:</th>
-                <td class="contenido-produccion">Bases de Datos</td>
+                <th>Tipo</th>
+                <th>Evidencia</th>
+                <th>Autores</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>País</th>
+                <th>Fecha</th>
+                <th>Proposito</th>
             </tr>
+            @foreach ($producciones as $produccion)
             <tr>
-                <th class="rotated-header">Categoría:</th>
-                <td class="contenido-produccion">Nacional</td>
+                <td>{{ $produccion->tipo}}</td>
+                <td scope="row"><a href="produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
+                <td>{{ $produccion->autores}}</td>
+                <td>{{ $produccion->titulo}}</td>
+                <td>{{ $produccion->descripcion}}</td>
+                <td>{{ $produccion->pais}}</td>
+                <td>{{ $produccion->year}}</td>
+                <td>{{ $produccion->proposito}}</td>
+                
             </tr>
-            <tr>
-                <th class="rotated-header">Líder:</th>
-                <td class="contenido-produccion">Dr. Ana García</td>
-            </tr>
-            <tr>
-                <th class="rotated-header">Colaboradores:</th>
-                <td class="contenido-produccion">Ing. Carlos Martínez</td>
-            </tr>
-            <tr>
-                <th class="rotated-header">Descripción:</th>
-                <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, al combinar los principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
-            </tr>
-            <tr>
-                <th class="rotated-header">Documentación:</th>
-                <td class="contenido-produccion"><a href="storage/archivos_curp/{{ $user-> archivoCurp}}">Ejemplo.pdf</a></td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
     <!---->
-    <table class="table contenido-produccion">
-        <tbody>
-            <tr>
-                <th class="rotated-header">Tema de la investigación:</th>
-                <td class="contenido-produccion">Bases de Datos</td>
-            </tr>
-            <tr>
-                <th class="rotated-header">Categoría:</th>
-                <td class="contenido-produccion">Nacional</td>
-            </tr>
-            <tr>
-                <th class="rotated-header">Líder:</th>
-                <td class="contenido-produccion">Dr. Ana García</td>
-            </tr>
-            <tr>
-                <th class="rotated-header">Colaboradores:</th>
-                <td class="contenido-produccion">Ing. Carlos Martínez</td>
-            </tr>
-            <tr>
-                <th class="rotated-header">Descripción:</th>
-                <td class="contenido-produccion">Este estudio examina los desarrollos más recientes en la eficiencia de celdas solares, combinando principios de nanotecnología, química y física aplicada. Los autores, con experiencia en sus respectivos campos, exploran la mejora de la conversión fotovoltaica y la reducción de pérdidas energéticas.</td>
-            </tr>
-            <tr>
-                <th class="rotated-header">Documentación:</th>
-                <td class="contenido-produccion"><a href="storage/archivos_curp/{{ $user-> archivoCurp}}">Ejemplo.pdf</a></td>
-            </tr>
-        </tbody>
-    </table>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

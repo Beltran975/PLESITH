@@ -23,7 +23,7 @@ class TodosSeeder extends Seeder
             'password' => Hash::make('admin'),
             'archivoCurp' => '',
             'image_path' => '',
-            'verificacion' => '',
+            'tipo' => '',
             'fullacces' => 'yes',
             'codigo' => 'adm1'
         ]);
@@ -37,7 +37,7 @@ class TodosSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'archivoCurp' => '',
             'image_path' => '',
-            'verificacion' => '',
+            'tipo' => '',
             'fullacces' => 'no',
             'codigo' => 'casa1'
         ]);

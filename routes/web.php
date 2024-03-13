@@ -14,6 +14,11 @@ use App\Http\Controllers\ListaNodosController;
 use App\Http\Controllers\BibliotechController;
 use App\Http\Controllers\InfotechController;
 
+use App\Http\Controllers\AdminProduccionesController;
+
+use App\Http\Controllers\HomeController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,9 +52,12 @@ Route::get('/bibliotechComunidad', function () {
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
@@ -190,3 +198,8 @@ Route::resource('/home', VistaController::class)->middleware('auth');
 
 Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista'])->name('listaNodos');
+
+
+Route::get('/buscar-producciones', 'AdminProduccionesController@buscar')->name('buscar-producciones');
+Route::get('/buscar-producciones', [AdminProduccionesController::class, 'index'])->name('buscar-producciones');
+Route::get('/administrador/producciones/table',[App\Http\Controllers\AdminProduccionesController::class,'lista']);

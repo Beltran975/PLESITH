@@ -1,18 +1,17 @@
 <?php
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Barryvdh\DomPDF\Facade\PDF;
+use App\Http\Controllers\Controller;
 use App\Models\Postulaciones;
-
+use App\Models\User;
+use Barryvdh\DomPDF\Facade\PDF;
+use Illuminate\Support\Facades\Auth;
 class PdfController extends Controller
 {
     public function generatePdf()
     {
         $user = Auth::user();
         $data = User::all();
+        
 
         $pdf = PDF::loadView('pdfPostulacion', compact('user', 'data'));
         
@@ -36,6 +35,12 @@ class PdfController extends Controller
             'pdfDictamen' => '',
             
         ]);
+
+        User::where('id', Auth::id())->update([
+            'tipo' => 'No revisado',
+            
+        ]);
+        
 
         // Puedes personalizar este método según la estructura de tu tabla de postulaciones
     }

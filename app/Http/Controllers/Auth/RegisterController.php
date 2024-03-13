@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'institucion' => $request->input('institucion'),
             'programa' => $request->input('programa'),
             'password' => bcrypt($request->input('password')),
-            'verificacion' => 'ninguno',
+            'tipo' => 'correo no verificado',
             'fullacces' => 'no',
         ];
 
