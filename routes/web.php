@@ -13,6 +13,7 @@ use App\Http\Controllers\VistaController;
 use App\Http\Controllers\ListaNodosController;
 use App\Http\Controllers\BibliotechController;
 use App\Http\Controllers\InfotechController;
+use App\Http\Controllers\AdminProduccionesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -156,7 +157,6 @@ Route::get('/infotech/{id}/update', [InfotechController::class, 'update'])->name
 Route::put('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
 Route::resource('/nuevo', InfotechController::class);
 
-//vista de usuario de Convocatorias Infotech
 Route::get('/infotechComunidad', [App\Http\Controllers\InfotechController::class, 'indexInfo']);
 
 
@@ -180,7 +180,6 @@ Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\Produ
 Route::resource('/editProduc', ProduccionesController::class,);
 Route::resource('/home', VistaController::class);
 
-
 Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
 
@@ -191,3 +190,8 @@ Route::resource('/home', VistaController::class)->middleware('auth');
 
 Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista'])->name('listaNodos');
+
+
+Route::get('/buscar-producciones', 'AdminProduccionesController@buscar')->name('buscar-producciones');
+Route::get('/buscar-producciones', [AdminProduccionesController::class, 'index'])->name('buscar-producciones');
+Route::get('/administrador/producciones/table',[App\Http\Controllers\AdminProduccionesController::class,'lista']);

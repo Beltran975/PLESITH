@@ -6,95 +6,75 @@
     <link rel="stylesheet" href="{{ asset('asset/documentosinfo.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
     <title>Gestion producciones | PLESITH</title>
+
 </head>
-<body class="body">
-@include('layouts/datos-gob')    
-    <main class="main">
-            <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
-            @include('layouts.nav-admin')
-            <div class="title">
-            <h1>Buscador de producciones</h1>
-    <form id="busqueda-form">
-        <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="titulo"><br>
+<body>
 
-        <label for="region">Región:</label>
-        <select id="region" name="region">
-            <option value="">Selecciona una región</option>
-            <option value="Altiplanicie pulquera">Altiplanicie pulquera</option>
-            <option value="Valle del mezquital">Valle del mezquital</option>
-            <option value="Comarca minera">Comarca minera</option>
-            <option value="Huasteca">Huasteca</option>
-            <option value="Valle de Tulancingo">Valle de Tulancingo</option>
-            <option value="Sierra alta">Sierra alta</option>
-            <option value="Sierra gorda">Sierra gorda</option>
-            <option value="Sierra baja">Sierra baja</option>
-            <option value="Cuenca de mexico">Cuenca de mexico</option>
-        </select><br>
+@include('layouts.datos-gob')
 
-        <label for="area">Área de conocimiento:</label>
-        <select id="area" name="area">
-            <option value="">Selecciona un área de conocimiento</option>
-            <option value="Ciencias Naturales">Ciencias Naturales</option>
-            <option value="Ciencias Sociales">Ciencias Sociales</option>
-            <option value="Matemáticas">Matemáticas</option>
-            <option value="Arte y Cultura">Arte y Cultura</option>
-            <option value="Tecnología">Tecnología</option>
-        </select><br>
+<main class="main">
+    <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
+    @include('layouts.nav-admin')
+    <div class="title">
+        <h1>Buscador de producciones</h1>
+        <form id="busqueda-form" action="{{ route('buscar-producciones') }}" method="GET">
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo"><br>
 
-        <label for="año">Año:</label>
-        <select id="año" name="año">
-            <option value="">Selecciona un año</option>
-            <option value="2020">2020</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-        </select><br>
+            <label for="autores">Autores:</label>
+            <input type="text" id="autores" name="autores"><br>
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre"><br>
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo"><br>
 
-        <label for="institucion">Institución ligada:</label>
-        <select id="institucion" name="institucion">
-            <option value="">Selecciona una institución</option>
-            <option value="Institución 1">Institución 1</option>
-            <option value="Institución 2">Institución 2</option>
-            <option value="Institución 3">Institución 3</option>
-        </select><br>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion"><br>
 
-        <input type="submit" value="Buscar">
-        <br>
-        <h7>Resultados encontrados</h7>
-    </form>
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais"><br>
 
-    <div id="resultados">
+            <label for="year">Año:</label>
+            <input type="text" id="year" name="year"><br>
+
+            <label for="proposito">Propósito:</label>
+            <input type="text" id="proposito" name="proposito"><br>
+
+            <input type="submit" value="Buscar">
+
+            <div id="resultados">
+        <!-- Aquí se mostrarán los resultados de la búsqueda en una tabla -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Autores</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>País</th>
+                    <th>Año</th>
+                    <th>Propósito</th>
+                </tr>
+            </thead>
+            <tbody>
+    @foreach ($producciones as $produccion)
+        <tr>
+            <td>{{ $produccion->tipo }}</td>
+            <td>{{ $produccion->autores }}</td>
+            <td>{{ $produccion->titulo }}</td>
+            <td>{{ $produccion->descripcion }}</td>
+            <td>{{ $produccion->pais }}</td>
+            <td>{{ $produccion->year }}</td>
+            <td>{{ $produccion->proposito }}</td>
+        </tr>
+    @endforeach
+</tbody>
+        </table>
+    </div>
+        </form>
     </div>
 
-    <script>
-        document.getElementById('busqueda-form').addEventListener('submit', function(event) {
-            event.preventDefault(); 
+    
+</main>
 
-            // Obtener los valores de los campos
-            var titulo = document.getElementById('titulo').value;
-            var region = document.getElementById('region').value;
-            var area = document.getElementById('area').value;
-            var año = document.getElementById('año').value;
-            var nombre = document.getElementById('nombre').value;
-            var institucion = document.getElementById('institucion').value;
-
-            // Crear tabla con los resultados en formato vertical
-            var tablaResultados = '<table><tr><th>Nombre de la produccion</th><th>Informacion</th></tr>';
-            tablaResultados += '<tr><td>Título</td><td>' + titulo + '</td></tr>';
-            tablaResultados += '<tr><td>Región</td><td>' + region + '</td></tr>';
-            tablaResultados += '<tr><td>Área de Conocimiento</td><td>' + area + '</td></tr>';
-            tablaResultados += '<tr><td>Año</td><td>' + año + '</td></tr>';
-            tablaResultados += '<tr><td>Nombre</td><td>' + nombre + '</td></tr>';
-            tablaResultados += '<tr><td>Institución Ligada</td><td>' + institucion + '</td></tr>';
-            tablaResultados += '</table>';
-
-            // Mostrar tabla en la sección de resultados
-            document.getElementById('resultados').innerHTML = tablaResultados;
-        });
-    </script>
 </body>
 </html>
