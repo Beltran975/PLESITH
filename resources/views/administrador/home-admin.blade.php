@@ -16,6 +16,8 @@
     <main class="main">
         <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
         @include('layouts.nav-admin')
+
+
         <div class="title">
             <div class="row ml-5">
                 <h3>{{ __('Bienvenido administrador') }}</h3>
