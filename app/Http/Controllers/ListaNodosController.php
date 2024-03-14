@@ -25,6 +25,6 @@ class ListaNodosController extends Controller
     {
         $query = Nodo::findOrFail($id);
         $query->delete();
-        return redirect()->route('home.index');
+        return redirect()->route('listaNodos');
     }
 }
