@@ -34,7 +34,7 @@ public function aprobarVerificacionDeCorreo($userId)
 
     if ($user) {
         // Cambiar el atributo de verificación
-        $user->tipo = "correo verificado";
+        $user->tipo = "autenticado";
         $user->save();
         return view('home')->with('success', 'Correo verificado correctamente.');
     } else {

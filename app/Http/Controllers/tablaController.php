@@ -47,7 +47,8 @@ class tablaController extends Controller
 
         // Obtener el usuario asociado a la postulación
         $usuario = $postulacion->user;
-
+        $usuario->tipo = 'revisado';
+        $usuario->save();
         // Enviar correo electrónico al usuario
         Mail::to($usuario->email)->send(new emailDictamenAprobacion($postulacion));
 
@@ -85,6 +86,8 @@ class tablaController extends Controller
 
         // Obtener el usuario asociado a la postulación
         $usuario = $postulacion->user;
+        $usuario->tipo = 'revisado';
+        $usuario->save();
 
         // Enviar correo electrónico al usuario
         Mail::to($usuario->email)->send(new emailDictamenNegado($postulacion));

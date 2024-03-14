@@ -14,7 +14,33 @@
   transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   filter: brightness(0.2);
 }
+/*-------*/
+.hr-gob{
+  margin: 10px 0 10px;
+  background-color: var(--gold);
+  border-top: 1px solid var(--gold);
+  opacity: 1;
+  margin-bottom: 50px;
+}
 
+table{
+  background-color: #ffffff;
+}
+.title{
+  margin-top: 5%;
+}
+
+ .hr-gob::before{
+  content: " ";
+  width: 35px;
+  height: 5px;
+  background-color: var(--wine) !important;
+  display: block;
+  position: absolute;
+}
+#postulacionesHeader{
+  margin-left: 10px;
+}
 
 .title {
   position: absolute;

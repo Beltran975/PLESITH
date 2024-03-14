@@ -37,7 +37,7 @@ class PdfController extends Controller
         ]);
 
         User::where('id', Auth::id())->update([
-            'tipo' => 'No revisado',
+            'tipo' => 'postulado',
             
         ]);
         
