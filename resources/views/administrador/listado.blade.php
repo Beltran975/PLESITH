@@ -20,7 +20,7 @@
                     <div>
                         <div class="py-2 space-y-5 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <br>
-                            <form action="">
+                            <form action="{{ route('buscar-listado') }}" method="GET">
                                 <div class="container text-center">
                                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                                         <div class="col">
@@ -29,39 +29,15 @@
                                         </div>
                                         <div class="col">
                                             <label for="region">Región:</label>
-                                            <select id="region" name="region">
-                                                <option value="">Selecciona una región</option>
-                                                <option value="Altiplanicie pulquera">Altiplanicie pulquera</option>
-                                                <option value="Valle del mezquital">Valle del mezquital</option>
-                                                <option value="Comarca minera">Comarca minera</option>
-                                                <option value="Huasteca">Huasteca</option>
-                                                <option value="Valle de Tulancingo">Valle de Tulancingo</option>
-                                                <option value="Sierra alta">Sierra alta</option>
-                                                <option value="Sierra gorda">Sierra gorda</option>
-                                                <option value="Sierra baja">Sierra baja</option>
-                                                <option value="Cuenca de mexico">Cuenca de mexico</option>
-                                            </select>
+                                            <input type="text" name="region" id="region">
                                         </div>
                                         <div class="col">
                                             <label for="area">Área de conocimiento:</label>
-                                            <select id="area" name="area">
-                                                <option value="">Selecciona un área de conocimiento</option>
-                                                <option value="Ciencias Naturales">Ciencias Naturales</option>
-                                                <option value="Ciencias Sociales">Ciencias Sociales</option>
-                                                <option value="Matemáticas">Matemáticas</option>
-                                                <option value="Arte y Cultura">Arte y Cultura</option>
-                                                <option value="Tecnología">Tecnología</option>
-                                            </select>
+                                            <input type="text" name="area" id="area">
                                         </div>
                                         <div class="col">
                                             <label for="año">Año:</label>
-                                            <select id="año" name="año">
-                                                <option value="">Selecciona un año</option>
-                                                <option value="2020">2020</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2023">2023</option>
-                                                <option value="2024">2024</option>
-                                            </select>
+                                            <input type="text" name="año" id="año">
                                         </div>
                                     </div>
                                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
@@ -72,12 +48,7 @@
                                         </div>
                                         <div class="col">
                                             <label for="institucion">Institución ligada:</label>
-                                            <select id="institucion" name="institucion">
-                                                <option value="">Selecciona una institución</option>
-                                                <option value="Institución 1">Institución 1</option>
-                                                <option value="Institución 2">Institución 2</option>
-                                                <option value="Institución 3">Institución 3</option>
-                                            </select>
+                                            <input type="text" name="institucion" id="institucion">
                                         </div>
                                         <div class="container text-center">
                                             <input type="submit" value="Buscar">
