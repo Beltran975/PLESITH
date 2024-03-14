@@ -1,5 +1,51 @@
+.menu-toggle {
+    display: none;
+    position: fixed; /* Ajuste de posición */
+    top: 150px; /* Ajuste de posición para bajar el botón */
+    left: 20px; /* Ajuste de posición */
+    z-index: 99999; /* Ajuste de z-index */
+    background-color: #691b32;; /* Color de fondo azul para diferenciar */
+    color: white; /* Color de texto blanco para contrastar */
+    padding: 10px; /* Ajuste de relleno */
+    border: none; /* Eliminar borde */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+}
+
+
+.menu-toggle-container {
+    display: none; /* Por defecto oculto */
+}
+
+@media (max-width: 768px) {
+    .menu-toggle-container {
+        display: block; /* Mostrar solo en pantallas pequeñas */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .busquedas.active {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999; /* Asegura que esté por encima de todo el contenido */
+        color: #ffffff; /* Color del texto */
+        background-color: #691b32; /* Color de fondo */
+        padding: 15px; /* Añadir espacio interno */
+    }
+
+    .content-biblio {
+        margin-left: auto;
+        margin-top: 120px; /* Ajuste del margen superior */
+    }
+}
+
 .main {
     display: flex;
+    margin-top: 120px; /* Ajuste del margen superior */
 }
 
 .cards {
@@ -20,10 +66,6 @@
     text-decoration: none;
 }
 
-.menu-toggle {
-    margin-top: 70px;
-}
-
 .busquedas {
     height: auto;
     display: none; /* Inicialmente oculto */
@@ -42,6 +84,10 @@
 }
 
 @media (min-width: 769px) {
+    .menu-toggle-container {
+        display: none; /* Ocultar en pantallas más grandes */
+    }
+
     .busquedas {
         display: block; /* Mostrar el menú en pantallas más grandes */
         color: #ffffff; /* Color del texto */
@@ -53,15 +99,5 @@
 
     .content-biblio {
         margin-left: -20px; /* Ajustar margen para dar espacio al menú */
-    }
-}
-
-@media (max-width: 768px) {
-    .main {
-        position: relative; /* Ajustar posición relativa para que el menú se sobreponga */
-    }
-
-    .content-biblio {
-        margin-left: auto; /* Restablecer margen lateral */
     }
 }

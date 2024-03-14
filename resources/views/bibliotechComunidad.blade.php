@@ -11,7 +11,7 @@
     @include('layouts/headregob')
     @include('layouts/header')
         <div class="menu-toggle-container">
-            <div class="menu-toggle" onclick="toggleMenu()">Menú</div>
+            <div class="menu-toggle" onclick="toggleMenu()">Filtros</div>
         </div>
     <main class="main">
         <section class="busquedas" id="busqueda-menu">
