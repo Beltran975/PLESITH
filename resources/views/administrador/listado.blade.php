@@ -253,12 +253,13 @@
                                                     <p class="card-text"><strong>Área de conocimiento:</strong> {{$i->linea_inv}}</p>
                                                     <p class="card-text"><strong>Institución ligada:</strong> {{$i->institucion_ligada}}</p>
                                                     <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-lista-{{$i->id}}">
                                                         Leer mas...
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
+                                        @include('administrador.modalNodo')
                                     @endforeach
                                 </div>
                             </div>
@@ -269,4 +270,5 @@
         </div>
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>

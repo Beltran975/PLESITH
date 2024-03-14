@@ -361,7 +361,7 @@
                                     <label class="form-label" for="autores">{{ __('Autor (es) *')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" name="autores" type="text" required value="{{ Auth::user()->name}}">
+                                    <input class="form-control" name="autores" type="text" required value="{{ Auth::user()->name}}" disabled>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
@@ -461,7 +461,7 @@
                                     <label class="form-label" for="lider">{{ __('Líder*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" id="lider" name="lider" type="text" value="{{ Auth::user()->name}}" required>
+                                    <input class="form-control" id="lider" name="lider" type="text" value="{{ Auth::user()->name}}" disabled required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
