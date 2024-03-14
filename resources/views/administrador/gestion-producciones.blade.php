@@ -21,7 +21,20 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                         <div class="col">
                             <label for="tipo">Tipo:</label>
-                            <input type="text" id="tipo" name="tipo">
+                            <select class="form-control" name="tipo" id="tipo">
+                                        <option name="tipo" value="" disabled selected>Seleccionar</option>
+                                        <option name="tipo" value="Libros o capitulos de libro">Libros o capítulos de libro</option>
+                                        <option name="tipo" value="Articulos arbitrados y articulos indexados">Artículos arbitrados y artículos indexados</option>
+                                        <option name="tipo" value="Propiedad intelectual">Propiedad intelectual</option>
+                                        <option name="tipo" value="Modelos de utilidad">Modelos de utilidad</option>
+                                        <option name="tipo" value="Patentes">Patentes</option>
+                                        <option name="tipo" value="Prototipos">Prototipos</option>
+                                        <option name="tipo" value="Transferencia de tecnología">Transferencia de tecnología</option>
+                                        <option name="tipo" value="Desarrollo de infraestructura">Desarrollo de infraestructura</option>
+                                        <option name="tipo" value="Informes técnicos">Informes técnicos</option>
+                                        <option name="tipo" value="Obras artísticas">Obras artísticas</option>
+                                        <option name="tipo" value="Otro">Otro</option>
+                                    </select>
                         </div>
                         <div class="col">
                             <label for="autores">Autores:</label>
@@ -32,22 +45,27 @@
                             <input type="text" id="titulo" name="titulo">
                         </div>
                         <div class="col">
-                            <label for="descripcion">Descripción:</label>
-                            <input type="text" id="descripcion" name="descripcion">
+                            <label for="pais">País:</label>
+                            <input type="text" id="pais" name="pais">
                         </div>
                     </div>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                         <div class="col">
-                            <label for="pais">País:</label>
-                            <input type="text" id="pais" name="pais">
-                        </div>
-                        <div class="col">
-                            <label for="year">Año:</label>
-                            <input type="text" id="year" name="year">
+                            <label for="year">Fecha:</label>
+                            <input class="form-control" id="year" name="year" type="month" min="1900" max="2099" step="1" />
                         </div>
                         <div class="col">
                             <label for="proposito">Propósito:</label>
-                            <input type="text" id="proposito" name="proposito"><br>
+                            <select class="form-control" name="proposito" id="proposito">
+                                        <option name="proposito" value="" disabled selected>Seleccionar</option>
+                                        <option name="proposito" value="Asimilacion de tecnologia">Asimilación de tecnología</option>
+                                        <option name="proposito" value="Creación">Creación</option>
+                                        <option name="proposito" value="Desarrollo tecnológico">Desarrollo tecnológico</option>
+                                        <option name="proposito" value="Difusión">Difusión</option>
+                                        <option name="proposito" value="Generación de conocimiento">Generación de conocimiento</option>
+                                        <option name="proposito" value="Investigación aplicada">Investigación aplicada</option>
+                                        <option name="proposito" value="Transferencia tecnologica">Transferencia tecnológica</option>
+                                    </select>
                         </div>
                         <div class="container text-center">
                             <input type="submit" value="Buscar">
@@ -65,11 +83,8 @@
                                 <h5 class="card-title">{{ $produccion->titulo }}</h5>
                             </div>
                             <div class="card-body">
-                                <p class="card-text"><strong>Tipo:</strong> {{ $produccion->tipo }}</p>
-                                <p class="card-text"><strong>Autores:</strong> {{ $produccion->autores }}</p>
                                 <p class="card-text"><strong>Título:</strong> {{ $produccion->titulo }}</p>
-                                <p class="card-text"><strong>Descripción:</strong> {{ $produccion->descripcion }}</p>
-                                <p class="card-text"><strong>País:</strong> {{ $produccion->pais }}</p>
+                                <p class="card-text"><strong>Autores:</strong> {{ $produccion->autores }}</p>
                                 <p class="card-text"><strong>Año:</strong> {{ $produccion->year }}</p>
                                 <p class="card-text"><strong>Propósito:</strong> {{ $produccion->proposito }}</p>
                                 <!-- Button trigger modal -->

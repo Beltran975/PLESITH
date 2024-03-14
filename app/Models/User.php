@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'archivoCurp',
         'image_path',
+        'tipo',
         'verificacion',
         'fullacces',
         'codigo',

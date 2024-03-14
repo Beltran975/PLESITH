@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-3 buscar-nodo">
                             <form class="form-inline" action="{{route('buscar.index')}}" method="get">
-                            <input name="buscar" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+                            <input name="buscar" class="form-control mr-sm-2" type="search" placeholder="Área de conocimiento" aria-label="Search">
                         </div>
                         <div class="col-2">
                             <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i>Buscar</button>
