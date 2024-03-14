@@ -122,33 +122,45 @@
     </div>
     <div>
     </div>
+    @foreach (Auth::user()->producciones as $produccion)
     <table class="table contenido-produccion">
         <tbody>
             <tr>
                 <th>Tipo</th>
-                <th>Evidencia</th>
-                <th>Autores</th>
-                <th>Título</th>
-                <th>Descripción</th>
-                <th>País</th>
-                <th>Fecha</th>
-                <th>Proposito</th>
-            </tr>
-            @foreach (Auth::user()->producciones as $produccion)
-            <tr>
                 <td>{{ $produccion->tipo}}</td>
-                <td scope="row"><a href="produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
-                <td>{{ $produccion->autores}}</td>
-                <td>{{ $produccion->titulo}}</td>
-                <td>{{ $produccion->descripcion}}</td>
-                <td>{{ $produccion->pais}}</td>
-                <td>{{ $produccion->year}}</td>
-                <td>{{ $produccion->proposito}}</td>
-                
             </tr>
-            @endforeach
+            <tr>
+                <th>Evidencia</th>
+                <td scope="row"><a href="produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
+            </tr>
+            <tr>
+                <th>Autores</th>
+                <td>{{ $produccion->autores}}</td>
+            </tr>
+            <tr>
+                <th>Título</th>
+                <td>{{ $produccion->titulo}}</td>
+            </tr>   
+            <tr>
+                <th>Descripción</th>
+                <td>{{ $produccion->descripcion}}</td>
+            </tr>
+            <tr>
+                <th>País</th>
+                <td>{{ $produccion->pais}}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ $produccion->year}}</td>
+            </tr>
+            <tr>
+                <th>Proposito</th>
+                <td>{{ $produccion->proposito}}</td>
+            </tr>
+           
         </tbody>
     </table>
+    @endforeach
     <!---->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -17,16 +17,71 @@
             <h1>Nodos de toda la comunidad</h1>
             <div class="p-10">
                 <div class="flex flex-col">
-                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div>
                         <div class="py-2 space-y-5 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <br>
                             <form action="">
-                                <div class="grid grid-cols-12 gap-6">
-                                    <div class="col-span-3 sm:col-span-3">
-                                        <input type="text" name="categoria" placeholder="Categoria...." value="" autocomplete="off" class="bg-white h-10 px-5 pr-10 rounded text-sm focus:outline-none w-full">
+                                <div class="container text-center">
+                                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                                        <div class="col">
+                                            <label for="titulo">Título:</label>
+                                            <input type="text" id="titulo" name="titulo">
+                                        </div>
+                                        <div class="col">
+                                            <label for="region">Región:</label>
+                                            <select id="region" name="region">
+                                                <option value="">Selecciona una región</option>
+                                                <option value="Altiplanicie pulquera">Altiplanicie pulquera</option>
+                                                <option value="Valle del mezquital">Valle del mezquital</option>
+                                                <option value="Comarca minera">Comarca minera</option>
+                                                <option value="Huasteca">Huasteca</option>
+                                                <option value="Valle de Tulancingo">Valle de Tulancingo</option>
+                                                <option value="Sierra alta">Sierra alta</option>
+                                                <option value="Sierra gorda">Sierra gorda</option>
+                                                <option value="Sierra baja">Sierra baja</option>
+                                                <option value="Cuenca de mexico">Cuenca de mexico</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label for="area">Área de conocimiento:</label>
+                                            <select id="area" name="area">
+                                                <option value="">Selecciona un área de conocimiento</option>
+                                                <option value="Ciencias Naturales">Ciencias Naturales</option>
+                                                <option value="Ciencias Sociales">Ciencias Sociales</option>
+                                                <option value="Matemáticas">Matemáticas</option>
+                                                <option value="Arte y Cultura">Arte y Cultura</option>
+                                                <option value="Tecnología">Tecnología</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label for="año">Año:</label>
+                                            <select id="año" name="año">
+                                                <option value="">Selecciona un año</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col-span-3 sm:col-span-3">
-                                        <input type="text" name="linea_inv" placeholder="Área de conocimiento...." value="" autocomplete="off"class="bg-white h-10 px-5 pr-10 rounded text-sm focus:outline-none w-full ml-5">
+                                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                                        <div class="col">
+                                            <label for="nombre">Nombre:</label>
+                                            <input type="text" id="nombre" name="nombre">
+
+                                        </div>
+                                        <div class="col">
+                                            <label for="institucion">Institución ligada:</label>
+                                            <select id="institucion" name="institucion">
+                                                <option value="">Selecciona una institución</option>
+                                                <option value="Institución 1">Institución 1</option>
+                                                <option value="Institución 2">Institución 2</option>
+                                                <option value="Institución 3">Institución 3</option>
+                                            </select>
+                                        </div>
+                                        <div class="container text-center">
+                                            <input type="submit" value="Buscar">
+                                        </div>
                                     </div>
                                 </div>
                             </form>
