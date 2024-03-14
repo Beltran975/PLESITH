@@ -314,7 +314,7 @@ body{
 
 
 /*seccion-descrpcion*/ 
-.seccion-descrpcion {
+.section-descrpcion {
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
@@ -351,7 +351,7 @@ body{
     margin-left: 50px; /* Ajusta la distancia entre las imágenes */
 }
 @media screen and (max-width: 768px) {
-    .seccion-descrpcion{
+    .section-descrpcion{
        margin-left: 10%;
     }
     .img-descrpcion {

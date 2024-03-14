@@ -11,68 +11,80 @@
         <title>PLESITH</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     </head>
-  
     <body>
         @include('layouts/headregob')
         @include('layouts/header')
-
         <main class="page">
             <br>    
-        <div class="content">
-            <div class="head-dos">
-                <!--Barra de navegación unica-->
-                <nav class="nav-plesith">
-                    <button class="nav-toggle">&#9776;</button>
-                    <ul>
-                        <li>
-                            <button class="btn btn-primary" type="button">
-                                <i class="bi bi-search"></i>
-                                Buscar
-                            </button>
-                        </li>
-                        <li>
-                            <input type="search" class="form-control rounded" aria-label="Search" aria-describedby="search-addon" />
-                        </li>
-                        <li><a href="{{ route('login') }}">Inicio de sesión</a></li>
-                        <li><a href="#seccion-descrpcion">Acerca</a></li>
-                        <li><a href="#footer">Contacto</a></li>
-                        <li><a href="#">Inicio</a></li>
-                    </ul>
-                </nav>
-
-                <!--sección de titulo inicial-->
-                <div class="inicio">
-                    <div class="section-content">
-                        <div class="titulo bottom-buffer">
-                            <h1>PLESITH</h1>
-                            <h2>Plataforma Estatal de Investigadores y Tecnólogos de Hidalgo</h2>
-                            <a href="/register" class="btn btn-primary">
-                                Formar parte
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                        </div>
-                        <br>
-                        <br>
-                </div> 
-            </div>
-            <!--Tarjetas de modulos plesith-->
-            <div class="section-cards">
-                <div class="contenedor-tarjetas">
-
-                    <!-- Tarjeta de producciones -->
-                    <div class="tarjeta">
-                        <div class="tarjeta-content">
-                            <div class="tarjera-image">
-                                <a href="#producciones" id="BtnModalProducciones">
-                                    <i class="bi bi-book-half"></i>                                 
+            <div class="content">
+                <div class="head-dos">
+                    <!--Barra de navegación unica-->
+                    <nav class="nav-plesith">
+                        <button class="nav-toggle">&#9776;</button>
+                        <ul>
+                            <li>
+                                <button class="btn btn-primary" type="button">
+                                    <i class="bi bi-search"></i>
+                                    Buscar
+                                </button>
+                            </li>
+                            <li>
+                                <input type="search" class="form-control rounded" aria-label="Search" aria-describedby="search-addon" />
+                            </li>
+                            <li><a href="{{ route('login') }}">Inicio de sesión</a></li>
+                            <li><a href="#seccion-descrpcion">Acerca</a></li>
+                            <li><a href="#footer">Contacto</a></li>
+                            <li><a href="#">Inicio</a></li>
+                        </ul>
+                    </nav>
+                    <!--sección de titulo inicial-->
+                    <div class="inicio">
+                        <section class="section-content">
+                            <div class="titulo bottom-buffer">
+                                <h1>PLESITH</h1>
+                                <h2>Plataforma Estatal de Investigadores y Tecnólogos de Hidalgo</h2>
+                                <a href="/register" class="btn btn-primary">
+                                    Formar parte
+                                    <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
+                        </section>
+                        <br>
+                        <br>
+                    </div> 
+                </div>
+                <!--sección de descripción PLESITH-->
+                <section class="section-descrpcion" id="section-descrpcion">
+                    <div class="img-descrpcion">
+                        <div class="img-descrpcion-1">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS27izVvvw5idm_jAHGR5Z8ucjADd8O8gMZiw&usqp=CAU" alt="">
                         </div>
-                        <h3 class="card-title">Producciones</h3>
+                        <div class="img-descrpcion-2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1hnqohlYlvqYJDF_meiBGQzu0kjXigjkg9A&usqp=CAU" alt="">
                         </div>
-
-                        
+                    </div>
+                    <div class="descripcion-ple">
+                        <h1>¿Qué es PLESITH?</h1>
+                        <p>La Plataforma Estatal de Investigadores y Tecnólogos de Hidalgo (PLESITH) se erige como un instrumento gubernamental para la administración eficiente y rigurosa de las aportaciones de los investigadores en el estado. Concebida como una entidad institucional, PLESITH facilita la solicitud y evaluación de patentes, así como la promoción de colaboraciones interdisciplinarias entre profesionales del ámbito científico y tecnológico.
+                            En su esencia, PLESITH representa una herramienta de gestión estratégica que permite el monitoreo y seguimiento detallado de las contribuciones en curso y potenciales. Mediante un catálogo exhaustivo, los miembros del departamento pueden acceder a información actualizada sobre las colaboraciones establecidas y los proyectos en desarrollo, brindando así un panorama completo de las actividades en desarrollo.
+                            A través de procesos definidos y protocolos establecidos, PLESITH se posiciona como un catalizador para la promoción de la investigación innovadora y la generación de soluciones tecnológicas. Con un enfoque riguroso y orientado a resultados, esta plataforma gubernamental se compromete a impulsar el progreso científico y tecnológico en el estado de Hidalgo, contribuyendo al desarrollo y fortalecimiento de la región en estos ámbitos críticos.
+                        </p>
+                    </div>
+                </section>
+                <!--Tarjetas de modulos plesith-->
+                <section class="section-cards">
+                    <div class="contenedor-tarjetas">
+                        <!-- Tarjeta de producciones -->
+                        <div class="tarjeta">
+                            <div class="tarjeta-content">
+                                <div class="tarjera-image">
+                                    <a href="#producciones" id="BtnModalProducciones">
+                                        <i class="bi bi-book-half"></i>                                 
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Producciones</h3>
+                        </div>
                         <!-- Tarjeta de Instituciones Ligadas -->
                         <div class="tarjeta">
                             <div class="tarjeta-content">
@@ -84,7 +96,6 @@
                             </div>
                             <h3 class="card-title">Instituciones Ligadas</h3>
                         </div>
-                        
                         <!-- Tarjeta de Nodos de Colaboración -->
                         <div class="tarjeta">
                             <div class="tarjeta-content">
@@ -94,16 +105,11 @@
                                     </a>
                                 </div>
                             </div>
-                        
                             <h3 class="card-title">Nodos de Colaboración</h3>
-                        </div>
-                       
-                        
+                        </div> 
                     </div>
-                </div>
-
+                </section>
                 <!-- Modales de modulos PLESITH -->
-
                 <!-- Modal de producciones -->
                 <div class="modal fade" id="ModalProducciones">
                     <div class="modal-dialog modal-dialog-centered ">
@@ -144,10 +150,9 @@
                         </div>
                     </div>
                 </div>
-
-                        <!-- Modal de Nodos de colaboración-->
-                        <div class="modal fade" id="ModalNodos">
-                        <div class="modal-dialog modal-dialog-centered ">
+                <!-- Modal de Nodos de colaboración-->
+                <div class="modal fade" id="ModalNodos">
+                    <div class="modal-dialog modal-dialog-centered ">
                         <div class="modal-content">
                             <div class="modal-img">
                                 <div>
@@ -164,7 +169,7 @@
                             </div>
                         </div>
                     </div>
-                        </div>
+                </div>
                 <br>
                 <br>
                 <div class="seccion-image">
@@ -202,40 +207,13 @@
                             </div>
                         </div>
                     </div>
-                   
                 </div>
-                
-                <!--sección de descripción PLESITH-->
-                <div class="seccion-descrpcion" id="seccion-descrpcion">
-                    <div class="img-descrpcion">
-                        <div class="img-descrpcion-1">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS27izVvvw5idm_jAHGR5Z8ucjADd8O8gMZiw&usqp=CAU" alt="">
-                        </div>
-                        
-                        <div class="img-descrpcion-2">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1hnqohlYlvqYJDF_meiBGQzu0kjXigjkg9A&usqp=CAU" alt="">
-                        </div>
-
-                    </div>
-                    <div class="descripcion-ple">
-                        <h1>¿Qué es PLESITH?</h1>
-                        <p>La Plataforma Estatal de Investigadores y Tecnólogos de Hidalgo (PLESITH) se erige como un instrumento gubernamental para la administración eficiente y rigurosa de las aportaciones de los investigadores en el estado. Concebida como una entidad institucional, PLESITH facilita la solicitud y evaluación de patentes, así como la promoción de colaboraciones interdisciplinarias entre profesionales del ámbito científico y tecnológico.
-
-                        En su esencia, PLESITH representa una herramienta de gestión estratégica que permite el monitoreo y seguimiento detallado de las contribuciones en curso y potenciales. Mediante un catálogo exhaustivo, los miembros del departamento pueden acceder a información actualizada sobre las colaboraciones establecidas y los proyectos en desarrollo, brindando así un panorama completo de las actividades en desarrollo.
-
-                        A través de procesos definidos y protocolos establecidos, PLESITH se posiciona como un catalizador para la promoción de la investigación innovadora y la generación de soluciones tecnológicas. Con un enfoque riguroso y orientado a resultados, esta plataforma gubernamental se compromete a impulsar el progreso científico y tecnológico en el estado de Hidalgo, contribuyendo al desarrollo y fortalecimiento de la región en estos ámbitos críticos.
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
-            
+            </div> 
         </main>
         @include('layouts/footer')
-
         <!--SCRIPT para barra de navagación -->
         <script>
-          document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('DOMContentLoaded', function () {
             const navToggle = document.querySelector('.nav-toggle');
             const navList = document.querySelector('.nav-plesith ul');
             navToggle.addEventListener('click', function () {
@@ -267,4 +245,4 @@
             });
         </script>
     </body>
-    </html>
+</html>
