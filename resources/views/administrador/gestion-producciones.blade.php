@@ -7,6 +7,24 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Gestion producciones | PLESITH</title>
+    <style>
+    /* Estilo para hacer el área de los cards scrollable */
+    .scrollable-cards {
+        max-height: 500px; /* Ajusta la altura máxima según sea necesario */
+        overflow-y: auto;
+    }
+
+    /* Estilo para el formulario fijo */
+    #busqueda-form {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: none; /* Ajusta el color de fondo según tu diseño */
+        padding: 30px; /* Ajusta el relleno según sea necesario */
+         /* Ajusta el índice Z según sea necesario */
+    }
+</style>
 </head>
 <body>
     @include('layouts.datos-gob')
@@ -15,8 +33,8 @@
         <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
         @include('layouts.nav-admin')
         <div class="title">
-            <h1>Buscador de producciones</h1>
             <form id="busqueda-form" action="{{ route('buscar-producciones') }}" method="GET">
+            <h1>Buscador de producciones</h1>
                 <div class="container text-center">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                         <div class="col">
@@ -38,15 +56,15 @@
                         </div>
                         <div class="col">
                             <label for="autores">Autores:</label>
-                            <input type="text" id="autores" name="autores">
+                            <input class="form-control" type="text" id="autores" name="autores">
                         </div>
                         <div class="col">
                             <label for="titulo">Título:</label>
-                            <input type="text" id="titulo" name="titulo">
+                            <input class="form-control" type="text" id="titulo" name="titulo">
                         </div>
                         <div class="col">
                             <label for="pais">País:</label>
-                            <input type="text" id="pais" name="pais">
+                            <input class="form-control" type="text" id="pais" name="pais">
                         </div>
                     </div>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
@@ -67,14 +85,16 @@
                                         <option name="proposito" value="Transferencia tecnologica">Transferencia tecnológica</option>
                                     </select>
                         </div>
-                        <div class="container text-center">
+                        <div class="col">
                             <input type="submit" value="Buscar">
                         </div>
                     </div>
                 </div>
             </form>
             
-            <div class="container">
+            <!-- Sección de cards scrollable -->
+            <div class="container scrollable-cards">
+                <br><br><br><br><br><br><br><br><br><br><br><br>
                 <div class="row">
                     @foreach ($producciones as $produccion)
                     <div class="col-md-4 mb-4">
@@ -89,7 +109,7 @@
                                 <p class="card-text"><strong>Propósito:</strong> {{ $produccion->proposito }}</p>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Leer mas...
+                                    Leer más...
                                 </button>
                             </div>
                         </div>

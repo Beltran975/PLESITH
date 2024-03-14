@@ -7,23 +7,35 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Nodos | PLESITH</title>
+    <style>
+    /* Estilo para hacer el área de los cards scrollable */
+    .scrollable-cards {
+        max-height: 500px; /* Ajusta la altura máxima según sea necesario */
+        overflow-y: auto;
+    }
+
+    /* Estilo para el formulario fijo */
+    #busqueda-form {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: none; /* Ajusta el color de fondo según tu diseño */
+        padding: 30px; /* Ajusta el relleno según sea necesario */
+         /* Ajusta el índice Z según sea necesario */
+    }
+</style>
 </head>
-<body class="body">
+<body >
     @include('layouts/datos-gob')
     <main class="main">
         <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
         @include('layouts.nav-admin')
         <div class="title">
-            <h1>Nodos de toda la comunidad</h1>
-            <div class="p-10">
-                <div class="flex flex-col">
-                    <div>
-                        <div class="py-2 space-y-5 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                            <br>
                             <form action="{{ route('buscar-listado') }}" method="GET">
+                            <h1>Nodos de toda la comunidad</h1>
                                 <div class="container text-center">
                                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                                        
                                         <div class="col">
                                             <label for="region">Categoría:</label>
                                             <select class="form-control" name="region" id="region">
@@ -226,7 +238,8 @@
                                 </div>
                             </form>
                             
-                            <div class="container">
+                            <div class="container scrollable-cards">
+                            <br><br><br><br>
                                 <div class="row">
                                     @foreach ($info as $i)
                                         <div class="col-md-4 mb-4">
@@ -249,10 +262,10 @@
                                     @endforeach
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        
+                    
+                
+            
         </div>
     </main>
 </body>
