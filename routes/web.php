@@ -13,7 +13,7 @@ use App\Http\Controllers\VistaController;
 use App\Http\Controllers\ListaNodosController;
 use App\Http\Controllers\BibliotechController;
 use App\Http\Controllers\InfotechController;
-
+use App\Http\Controllers\ListadoController;
 use App\Http\Controllers\AdminProduccionesController;
 
 use App\Http\Controllers\HomeController;
@@ -200,6 +200,8 @@ Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista'])->name('listaNodos');
 
 
-Route::get('/buscar-producciones', 'AdminProduccionesController@buscar')->name('buscar-producciones');
 Route::get('/buscar-producciones', [AdminProduccionesController::class, 'index'])->name('buscar-producciones');
 Route::get('/administrador/producciones/table',[App\Http\Controllers\AdminProduccionesController::class,'lista']);
+
+//Route::get('/listado/buscar', 'ListadoController@buscar')->name('listado.buscar');
+Route::get('/buscar-listado', [ListadoController::class, 'buscar'])->name('buscar-listado');
