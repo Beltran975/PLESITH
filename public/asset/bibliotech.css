@@ -1,7 +1,128 @@
+/*Carrusel*/
+h1{
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+.carousel-inner {
+    /* width: 100%; */
+    height: 200px; 
+}
+.carousel-item {
+    /* width: auto;  */
+    height: auto; 
+}
+.carousel-item img {
+    /* width: 100%;  */
+    height: 200px; 
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+/* filtros */
+h3{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+div.filtros{
+    margin-left: 0%;
+    padding: 0%;
+    height: auto;
+    /* width: auto; */
+}
+/* busqueda */
+div.busqueda{
+    height: 100px;
+    /* width: auto; */
+    padding-top: 25px;
+    margin-bottom: 2%;
+    margin-left: none;
+    text-align: center;
+}
+input.search{
+    width: 70%;
+    border: 1px solid black;
+}
+button.button{
+    width: 10%;
+    border: 1px solid black;
+}
+
+/* área de conocimiento */
+div.linea{
+    height: 100px;
+    margin-bottom: 2%;
+    text-align: center;
+    padding: 25px;
+}
+select.form-select{
+    width: 100%;
+    height: 50%;
+}
+
+/* tipo */
+div.tipo{
+    height: 200px;
+    margin-bottom: 2%;
+    padding: 25px;
+}
+input[type=checkbox]{
+    transform: scale(2);
+    margin-right: 10px;
+}
+
+/* fecha de publicación */
+div.fecha{
+    height: 100px;
+    margin-bottom: 2%;
+    text-align: center;
+    padding: 25px;   
+}
+input.date{
+    width: 100%;
+    height:50%;
+}
+
+/* resultados */
+h5{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+/*hr de gobierno*/
+.hr-gob{
+    margin: 10px 10px 10px 10px;
+    background-color: var(--gold);
+    border-top: 1px solid var(--gold);
+    opacity: 1;
+    margin-bottom: 50px;
+}
+.hr-gob::before{
+    content: " ";
+    width: 35px;
+    height: 5px;
+    background-color: var(--wine) !important;
+    display: block;
+    position: absolute;
+}
+div.cards {
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-biblio {
+    width: 300px;
+    height: 300px;
+    margin: 6px; /* Este margen controla el espacio entre las tarjetas */
+    text-align: center;
+}
+
+/* menu/filtros de busqueda */
 .menu-toggle {
     display: none;
     position: fixed; /* Ajuste de posición */
-    top: 150px; /* Ajuste de posición para bajar el botón */
+    top: 250px; /* Ajuste de posición para bajar el botón */
     left: 20px; /* Ajuste de posición */
     z-index: 99999; /* Ajuste de z-index */
     background-color: #691b32;; /* Color de fondo azul para diferenciar */
@@ -10,93 +131,58 @@
     border: none; /* Eliminar borde */
     cursor: pointer; /* Cambiar cursor al pasar el ratón */
 }
-
-
 .menu-toggle-container {
     display: none; /* Por defecto oculto */
 }
-
 @media (max-width: 768px) {
     .menu-toggle-container {
         display: block; /* Mostrar solo en pantallas pequeñas */
     }
-
     .menu-toggle {
         display: block;
     }
-
     .busquedas.active {
         display: block;
         position: fixed;
-        top: 50%;
-        left: 50%;
+        /* top: 50%;
+        left: 50%; */
         transform: translate(-50%, -50%);
         z-index: 9999; /* Asegura que esté por encima de todo el contenido */
         color: #ffffff; /* Color del texto */
         background-color: #691b32; /* Color de fondo */
-        padding: 15px; /* Añadir espacio interno */
+        /*padding: 15px; /* Añadir espacio interno */
     }
-
     .content-biblio {
         margin-left: auto;
         margin-top: 120px; /* Ajuste del margen superior */
     }
 }
-
-.main {
-    display: flex;
-    margin-top: 120px; /* Ajuste del margen superior */
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card-biblio {
-    width: 330px; /* Ancho de los cards */
-    height: 400px;
-    margin: 6px; /* Este margen controla el espacio entre las tarjetas */
-    text-align: center;
-    overflow: hidden;
-}
-
-.card a {
-    text-decoration: none;
-}
-
 .busquedas {
     height: auto;
-    display: none; /* Inicialmente oculto */
+    display: none;
 }
-
 .busquedas.active {
     display: block; /* Mostrar cuando el menú está activo */
     position: fixed; /* Posición fija para centrar en la pantalla */
-    top: 50%; /* Centrado vertical */
-    left: 50%; /* Centrado horizontal */
+    top: 680px; /* Centrado vertical */
+    left: 100px; /* Centrado horizontal */
     transform: translate(-50%, -50%); /* Centrado exacto */
     z-index: 9999; /* Asegura que esté por encima de todo el contenido */
     color: #ffffff; /* Color del texto */
     background-color: #691b32; /* Color de fondo */
     padding: 15px; /* Añadir espacio interno */
 }
-
 @media (min-width: 769px) {
     .menu-toggle-container {
         display: none; /* Ocultar en pantallas más grandes */
     }
-
     .busquedas {
         display: block; /* Mostrar el menú en pantallas más grandes */
         color: #ffffff; /* Color del texto */
         background-color: #691b32; /* Color de fondo */
         padding: 15px; /* Añadir espacio interno */
-        position: static; /* Restablecer la posición estática */
         width: 250px; /* Ancho del menú */
     }
-
     .content-biblio {
         margin-left: -20px; /* Ajustar margen para dar espacio al menú */
     }
