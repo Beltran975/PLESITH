@@ -28,19 +28,15 @@
 
                 </div>
 
-
-                <a href="/verificar-Correo" id="verificar-correo" class="btn btn-secondary">Verificar correo</a>
-
-
-                <!-- Otros campos de la postulación si es necesario -->
-
+                <!--Acciones del usuario-->
+                @if(Auth::user()->tipo == 'bacico')
+                <a href="#" id="verificar-correo" class="btn btn-secondary">Verificar correo</a>
+                @elseif(Auth::user()->tipo == 'autenticado')
                 <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
                 <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
-
-                <!--Veridicación de postulación-->
-
+                @elseif(Auth::user()->tipo == 'postulado' || 'revisado')
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-estatus-pos">Estatus de postulación</button>
-
+                @endif
 
                 <div class="modal fade" id="Modal-estatus-pos" tabindex="-1" aria-label="Modal-estatus-label" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -51,13 +47,18 @@
                             </div>
                             <div class="modal-body">
                                 @foreach (Auth::user()->postulaciones as $postulacion)
-                                <p>{{ $postulacion->estatus }} p</p>
+                                <p>De acuerdo con el proceso de selección para la verificación, le notificamos que su postulación realizada el dia {{ $postulacion->created_at->formatLocalized('%A, %d de %B') }} su proceso de postulación a es: <b>{{ $postulacion->estatus }}</b></p>
+                                <p>Para mayor detalle sobre su proceso de postulación consulte su dictamen</p>
+                                @if($postulacion->estatus == 'Aprobado')
+                                <a href="storage/dictamenes/aprobados/{{ $postulacion->pdfDictamen}}" target="blanck_">Dictamen</a>
+                                @elseif($postulacion->estatus == 'Negado')
+                                <a href="storage/dictamenes/negados/{{ $postulacion->pdfDictamen}}" target="blanck_">Dictamen</a>
+                                @endif
                                 @endforeach
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-                                <button type="button" class="btn btn-primary">Aceptar</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
                             </div>
                         </div>
                     </div>
@@ -145,6 +146,7 @@
                         Información PLESITH
                     </div>
                     <div class="card-body collapse" id="informacionPLESITH">
+                        @if(!is_null(Auth::user()->datos) && Auth::user()->datos->isEmpty())
                         <form action="EnvioInformacion" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row form-outline md-4">
@@ -209,6 +211,44 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </form>
+                        @else
+                        @foreach(Auth::user()->datos as $info)
+
+                        <!--Área de conocimiento-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Área de conocimiento :</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $info->lineaInv}}</p>
+                            </div>
+                        </div>
+
+                        <!--Grado academico-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Grado academico :</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $info->grado}}</p>
+                                <a href="academico/{{ $info->evidenciaSni}}" target="blanck_">{{ $info->evidenciaSni}}</a>
+                            </div>
+                        </div>
+
+                        <!--Pertenece al SNI-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>¿Pertenece al SNI? :</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $info->pertenece}}</p>
+                            </div>
+                        </div>
+
+
+
+                        @endforeach
+                        @endif
                     </div>
                 </div>
 
@@ -218,18 +258,33 @@
                         Mis producciones
                     </div>
                     <div class="card-body collapse" id="produccion">
-                        <div class="nav-producciones">
-                            <table>
+                        <div class="row row-cols-auto">
+                           <div class="col">
+                           <a href="#" class="btn btn-primary"  id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion"><i class="bi bi-plus-circle-fill"></i></a>
+                           </div> 
+                           <div class="col">
+                           <a class="btn btn-primary" href="/Producciones/listaProducciones">Mis Producciones</a>
+                           </div>
+                        </div>
+                            <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            <p href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion">Crear</p>
-                                        </th>
-                                        <th><a class="btn btn-primary" href="/Producciones/listaProducciones">Mis Producciones</a></th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Proposito</th>
+                                        <th scope="col">Año</th>
                                     </tr>
                                 </thead>
+                                @foreach (Auth::user()->producciones as $produccion)
+                                <tbody class="table-group-divider">
+                                    <tr>
+                                        <th>{{$produccion->tipo}}</th>
+                                        <td>{{$produccion->proposito}}</td>
+                                        <td>{{$produccion->year}}</td>
+                                    </tr>
+                                </tbody>
+                                @endforeach
                             </table>
-                        </div>
+                            
                     </div>
 
                     <!--<div class="card-body collapse" id="produccion">
@@ -286,7 +341,7 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                            <p class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</p>
+                                            <a class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</a>
                                         </th>
                                         <th><a class="btn btn-primary" href="/nodo/listaNodos">Mis nodos creados</a></th>
                                     </tr>
@@ -361,7 +416,7 @@
                                     <label class="form-label" for="autores">{{ __('Autor (es) *')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" name="autores" type="text" required value="{{ Auth::user()->name}}" disabled>
+                                    <input class="form-control" name="autores" type="text" required value="{{ Auth::user()->name}}">
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
@@ -461,7 +516,7 @@
                                     <label class="form-label" for="lider">{{ __('Líder*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" id="lider" name="lider" type="text" value="{{ Auth::user()->name}}" disabled required>
+                                    <input class="form-control" id="lider" name="lider" type="text" value="{{ Auth::user()->name}}" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
@@ -746,12 +801,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // Asociar un evento de clic al botón
+        // Función para realizar postulación
         document.getElementById('botonPostulacion').addEventListener('click', function(event) {
             // Prevenir la acción predeterminada del enlace
             event.preventDefault();
 
-            // Mostrar una alerta SweetAlert2
             Swal.fire({
                 title: "Enviar postulación",
                 text: "Al seleccionar el botón de generar, se enviará su postulación para ser revisada por el administrador del sistema.",
@@ -782,11 +836,10 @@
                 }
             });
         });
-    </script>
 
-    <script>
-        let pertenece = document.querySelectorAll('input[name="pertenece"]');
-        let evidenciaSni = document.querySelector('input[name="evidenciaSni"]');
+        //Función para conprobar SNI
+        var pertenece = document.querySelectorAll('input[name="pertenece"]');
+        var evidenciaSni = document.querySelector('input[name="evidenciaSni"]');
 
         pertenece.forEach((input) => {
             input.addEventListener("change", () => {
@@ -798,26 +851,25 @@
             });
         });
 
+        //Función para autenticar correo electronico
         document.addEventListener("DOMContentLoaded", function() {
             // Obtiene el elemento del botón
-            var btnVerificarCorreo = document.getElementById("verificar-correo");
+            let btnVerificarCorreo = document.getElementById("verificar-correo");
 
             // Agrega un evento de clic al botón
             btnVerificarCorreo.addEventListener("click", function(event) {
                 // Previene el comportamiento predeterminado del enlace
                 event.preventDefault();
-
                 Swal.fire({
-                    title: "Verificar correo electronico",
-                    confirmButtonText: 'verificar',
-                }).then((result) => {
-                // Si el usuario hace clic en "Sí, verificar"
-                if (result.isConfirmed) {
-                    // Aquí podrías añadir código para redireccionar a la página de verificación de correo
-                     window.location.href = "/verificar-Correo";
-                    Swal.fire('Correo verificado', '', 'success');
-                }
-            });
+                    title: "<strong>Auntenticación de correo electronico</strong>",
+                    icon: "info",
+                    iconColor: '#bc955b',
+                    html: `<b>Se enviará un correo de verificación para confirmar la validez de la dirección. Esto garantiza la seguridad y confianza en las comunicaciones.</b> <br> <br>
+                    <a href="/verificar-Correo" class="btn btn-primary">Enviar</a> <br>`,
+                    showConfirmButton: false,
+
+
+                });
 
             });
         });

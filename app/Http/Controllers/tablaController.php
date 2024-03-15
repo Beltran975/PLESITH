@@ -81,7 +81,7 @@ class tablaController extends Controller
         $pdf = PDF::loadView('administrador.postulaciones.dictamen-negado', compact('descripcionNega', 'razonNegacion', 'razonTextAreaNegacion'));
 
         //Guardar pdf en la carpeta de "negados" dentro de "dictamenes" 
-        $pdfPath = 'storage/dictamenes/negados/Dictamen_negado' . $id . '.pdf';
+        $pdfPath = 'storage/dictamenes/negados/Dictamen_negado_' . $id . '.pdf';
         $pdf->save(public_path($pdfPath));
 
         // Obtener el usuario asociado a la postulación
@@ -93,6 +93,6 @@ class tablaController extends Controller
         Mail::to($usuario->email)->send(new emailDictamenNegado($postulacion));
         
         //Descargar el pdf
-        return $pdf->download('Dictamen_negado' . $id . '.pdf');
+        return $pdf->download('Dictamen_negado_' . $id . '.pdf');
     }
 }
