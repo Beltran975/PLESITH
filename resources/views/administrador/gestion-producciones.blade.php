@@ -108,17 +108,83 @@
                                 <p class="card-text"><strong>Año:</strong> {{ $produccion->year }}</p>
                                 <p class="card-text"><strong>Propósito:</strong> {{ $produccion->proposito }}</p>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Leer más...
-                                </button>
+                                <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $produccion->id_pro }}">
+                                    Leer más
+                                </a>
                             </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
+
+                <!-- Modal leer mas producciones administrador -->
+                @foreach ($producciones as $produccion)
+                <div class="modal fade" id="Modal-crear-produccion-{{ $produccion->id_pro }}">
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">{{$produccion->titulo}}</h4>
+                                <button type="button" class="btn btn-secondary">Generar reporte <i class="bi bi-download"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="tabla-modal table table-borderless" >
+                                    <tbody>
+                                        <tr>
+                                            <th class="rotated-header">Tipo: </th>
+                                            <td class="contenido-produccion">{{$produccion->tipo}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="rotated-header">Evidencia: </th>
+                                            <td class="contenido-produccion"><a href="/produccion/{{$produccion->evidencia}}" target="blanck_">{{$produccion->evidencia}}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="rotated-header">Autor (es) </th>
+                                            <td class="contenido-produccion">{{$produccion->autores}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="rotated-header">Título: </th>
+                                            <td class="contenido-produccion">{{$produccion->titulo}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="rotated-header">Descripción:</th>
+                                            <td class="contenido-produccion">{{$produccion->descripcion}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="rotated-header">País: </th>
+                                            <td class="contenido-produccion">{{$produccion->pais}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="rotated-header">Fecha: </th>
+                                            <td class="contenido-produccion">{{$produccion->year}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="rotated-header">Propósito: </th>
+                                            <td class="contenido-produccion">{{$produccion->proposito}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
             
         </div>
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+
+<script>
+    //script modal 
+    $(document).ready(function(){
+        $("#btnAbrirModalnodo").click(function(){
+            $("#Modal-crear-produccion").modal();
+        });
+    });
+</script>
 </html>
