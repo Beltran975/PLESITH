@@ -31,11 +31,11 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Número de usuarios:
-                            <span>185</span>
+                            <li class="list-group-item">Número de usuarios: 
+                                <span>{{ $userCount }}</span>
                             </li>
-                            <li class="list-group-item">Número de postulaciones:
-                            <span>119</span>
+                            <li class="list-group-item">Número de postulaciones: 
+                                <span>{{ $postulacionesCount }}</span>
                             </li>
                         </ul>
                     </div>
@@ -48,10 +48,10 @@
                         
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Número de producciones:
-                            <span>76</span>
+                                <span>{{ $produccionesCount }}</span>
                             </li>
                             <li class="list-group-item">Número de nodos:
-                            <span>91</span>
+                                <span>{{ $nodoCount }}</span>
                             </li>
                         </ul>
                     </div>
@@ -67,10 +67,10 @@
                         
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Número de convocatorias:
-                            <span>19</span>
+                                <span>{{ $infotechCount }}</span>
                             </li>
                             <li class="list-group-item">Número de publicaciones:
-                            <span>21</span>
+                                <span>{{ $bibliotechCount }}</span>
                             </li>
                         </ul>
                     </div>

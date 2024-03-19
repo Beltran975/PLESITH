@@ -167,6 +167,10 @@ Route::resource('/nuevo', InfotechController::class);
 
 Route::get('/infotechComunidad', [App\Http\Controllers\InfotechController::class, 'indexInfo']);
 
+//homeAdmin
+Route::get('/home-admin', [App\Http\Controllers\homeAdminController::class, 'getUser'])->name('administrador.home-admin');
+
+
 
 Route::get('/gestion-bibliotech', function(){
     return view('administrador.bibliotech.gestion-bibliotech');
