@@ -56,6 +56,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
+//homeAdmin
+Route::get('/admin', [App\Http\Controllers\homeAdminController::class, 'getUser'])->name('administrador.home-admin');
+
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');

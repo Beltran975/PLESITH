@@ -27,10 +27,23 @@
                     <h3>Datos generales | {{ Auth::user()->name }}</h3><!-- espacio en blanco -->
 
                 </div>
+                <!-- En tu archivo home.blade.php o donde desees mostrar la alerta -->
+@if (session('correo'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Your work has been saved",
+  showConfirmButton: false,
+  timer: 1500
+});
+    </script>
+@endif
 
                 <!--Acciones del usuario-->
-                @if(Auth::user()->tipo == 'bacico')
-                <a href="#" id="verificar-correo" class="btn btn-secondary">Verificar correo</a>
+                @if(Auth::user()->tipo == 'basico')
+                <button onclick="verificarMail()" type="button" class="btn btn-secondary">Autenticar Correo electronico</button>
                 @elseif(Auth::user()->tipo == 'autenticado')
                 <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
                 <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
@@ -260,32 +273,32 @@
                     </div>
                     <div class="card-body collapse" id="produccion">
                         <div class="row row-cols-auto">
-                           <div class="col">
-                           <a href="#" class="btn btn-primary"  id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion"><i class="bi bi-plus-circle-fill"></i></a>
-                           </div> 
-                           <div class="col">
-                           <a class="btn btn-primary" href="/Producciones/listaProducciones">Mis Producciones</a>
-                           </div>
+                            <div class="col">
+                                <a href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion"><i class="bi bi-plus-circle-fill"></i></a>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-primary" href="/Producciones/listaProducciones">Mis Producciones</a>
+                            </div>
                         </div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Tipo</th>
-                                        <th scope="col">Proposito</th>
-                                        <th scope="col">Año</th>
-                                    </tr>
-                                </thead>
-                                @foreach (Auth::user()->producciones as $produccion)
-                                <tbody class="table-group-divider">
-                                    <tr>
-                                        <th>{{$produccion->tipo}}</th>
-                                        <td>{{$produccion->proposito}}</td>
-                                        <td>{{$produccion->year}}</td>
-                                    </tr>
-                                </tbody>
-                                @endforeach
-                            </table>
-                            
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tipo</th>
+                                    <th scope="col">Proposito</th>
+                                    <th scope="col">Año</th>
+                                </tr>
+                            </thead>
+                            @foreach (Auth::user()->producciones as $produccion)
+                            <tbody class="table-group-divider">
+                                <tr>
+                                    <th>{{$produccion->tipo}}</th>
+                                    <td>{{$produccion->proposito}}</td>
+                                    <td>{{$produccion->year}}</td>
+                                </tr>
+                            </tbody>
+                            @endforeach
+                        </table>
+
                     </div>
 
                 </div>
@@ -798,27 +811,18 @@
         });
 
         //Función para autenticar correo electronico
-        document.addEventListener("DOMContentLoaded", function() {
-            // Obtiene el elemento del botón
-            let btnVerificarCorreo = document.getElementById("verificar-correo");
-
-            // Agrega un evento de clic al botón
-            btnVerificarCorreo.addEventListener("click", function(event) {
-                // Previene el comportamiento predeterminado del enlace
-                event.preventDefault();
-                Swal.fire({
-                    title: "<strong>Auntenticación de correo electronico</strong>",
-                    icon: "info",
-                    iconColor: '#bc955b',
-                    html: `<b>Se enviará un correo de verificación para confirmar la validez de la dirección. Esto garantiza la seguridad y confianza en las comunicaciones.</b> <br> <br>
+        function verificarMail() {
+            Swal.fire({
+                title: "<strong>Auntenticación de correo electronico</strong>",
+                icon: "info",
+                iconColor: '#bc955b',
+                html: `<b>Se enviará un correo de verificación para confirmar la validez de la dirección. Esto garantiza la seguridad y confianza en las comunicaciones.</b> <br> <br>
                     <a href="/verificar-Correo" class="btn btn-primary">Enviar</a> <br>`,
-                    showConfirmButton: false,
-
-
-                });
+                showConfirmButton: false,
+                showCloseButton: true,
 
             });
-        });
+        }
     </script>
 
     <script>

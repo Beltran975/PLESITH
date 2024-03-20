@@ -23,8 +23,7 @@ class CorreoverController extends Controller
         return redirect()->route('login')->with('error', 'Debe iniciar sesión para verificar el correo electrónico.');
     }
 
-    return view('home');
-}
+    return redirect('/home')->with('correo', 'Correo verificado correctamente.');}
     
 
 
