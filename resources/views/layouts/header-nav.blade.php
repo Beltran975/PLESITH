@@ -23,7 +23,7 @@
                                 <a href="{{ route('datos.edit', Auth::user()->id)}}" class="dropdown-item">Editar perfil</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="">Editar información PLESITH</a>
+                                <a href="{{ route('informacion.edit', $info->id_inf)}}" class="dropdown-item" href="">Editar información PLESITH</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">

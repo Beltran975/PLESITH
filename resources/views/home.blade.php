@@ -17,7 +17,9 @@
 </head>
 
 <body>
+    @foreach(Auth::user()->datos as $info)
     @include('layouts/headregob')
+    @endforeach
     @include('layouts/header-nav')
     <main class="page">
         <div class="content">
@@ -258,8 +260,6 @@
                                 <p>{{ $info->pertenece}}</p>
                             </div>
                         </div>
-
-
 
                         @endforeach
                         @endif
