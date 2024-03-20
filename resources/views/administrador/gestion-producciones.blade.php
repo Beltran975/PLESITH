@@ -108,12 +108,13 @@
                                 <p class="card-text"><strong>Año:</strong> {{ $produccion->year }}</p>
                                 <p class="card-text"><strong>Propósito:</strong> {{ $produccion->proposito }}</p>
                                 <!-- Button trigger modal -->
-                                <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $produccion->id_pro }}">
+                                <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-pruduc-{{ $produccion->id_pro }}">
                                     Leer más
                                 </a>
                             </div>
                         </div>
                     </div>
+                    @include('administrador.modalProducciones')
                     @endforeach
                 </div>
 
