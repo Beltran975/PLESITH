@@ -3,28 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('asset/documentosinfo.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/produccionesadm.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Gestion producciones | PLESITH</title>
-    <style>
-    /* Estilo para hacer el área de los cards scrollable */
-    .scrollable-cards {
-        max-height: 500px; /* Ajusta la altura máxima según sea necesario */
-        overflow-y: auto;
-    }
-
-    /* Estilo para el formulario fijo */
-    #busqueda-form {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: none; /* Ajusta el color de fondo según tu diseño */
-        padding: 30px; /* Ajusta el relleno según sea necesario */
-         /* Ajusta el índice Z según sea necesario */
-    }
-</style>
 </head>
 <body>
     @include('layouts.datos-gob')
@@ -94,7 +76,6 @@
             
             <!-- Sección de cards scrollable -->
             <div class="container scrollable-cards">
-                <br><br><br><br><br><br><br><br><br><br><br><br>
                 <div class="row">
                     @foreach ($producciones as $produccion)
                     <div class="col-md-4 mb-4">
@@ -187,5 +168,11 @@
             $("#Modal-crear-produccion").modal();
         });
     });
+
+    $(document).ready(function(){
+            $('#Modal-crear-produccion').on('hidden.bs.modal', function (e) {
+                $('.modal-backdrop').remove();
+            });
+        });
 </script>
 </html>
