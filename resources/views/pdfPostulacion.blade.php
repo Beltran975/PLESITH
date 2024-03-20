@@ -104,7 +104,7 @@
             </tr>
             <tr>
                 <th class="rotated-header">Evidencia del grado académico</th>
-                <td><a href="produccion/{{ $dato->evidenciaGrado}}" target="blanck_">{{ $dato->evidenciaGrado}}</a></td>
+                <td><a href="/produccion/{{ $dato->evidenciaGrado}}" target="blanck_">{{ $dato->evidenciaGrado}}</a></td>
             </tr>
             <tr>
                 <th class="rotated-header">Colaboración al SNI</th>
@@ -131,7 +131,7 @@
             </tr>
             <tr>
                 <th>Evidencia</th>
-                <td scope="row"><a href="produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
+                <td scope="row"><a href="/produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
             </tr>
             <tr>
                 <th>Autores</th>

@@ -16,7 +16,7 @@
                 </tr>
                 <tr>
                     <th class="rotated-header">Evidencia:</th>
-                    <td class="contenido-produccion"><a href="produccion/{{ $d->evidencia}}" target="blanck_">Evidencia PDF</a></td>
+                    <td class="contenido-produccion"><a href="/produccion/{{ $d->evidencia}}" target="blanck_">Evidencia PDF</a></td>
                 </tr>
                 <tr>
                     <th class="rotated-header">Autor(es):</th>

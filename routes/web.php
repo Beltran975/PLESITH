@@ -57,6 +57,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
 
+
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
 Route::get('/gestionDatos', function () {
@@ -166,11 +167,6 @@ Route::put('/infotech/{id}/update', [InfotechController::class, 'update'])->name
 Route::resource('/nuevo', InfotechController::class);
 
 Route::get('/infotechComunidad', [App\Http\Controllers\InfotechController::class, 'indexInfo']);
-
-//homeAdmin
-Route::get('/home-admin', [App\Http\Controllers\homeAdminController::class, 'getUser'])->name('administrador.home-admin');
-
-
 
 Route::get('/gestion-bibliotech', function(){
     return view('administrador.bibliotech.gestion-bibliotech');

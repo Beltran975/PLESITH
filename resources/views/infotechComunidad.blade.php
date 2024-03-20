@@ -82,8 +82,8 @@
                     @foreach($convocatorias as $convocatoria)
                     <tr>
                         <th>{{$convocatoria->titulo}}</th>
-                        <th>{{$convocatoria->year}}</th> 
-                        <th>{{$convocatoria->documento}}</th>
+                        <th>{{$convocatoria->year}}</th>
+                        <th><a href="/infotech/{{$convocatoria->documento}}" target="blanck_">{{$convocatoria->documento}}</a></th>
                         <th>{{$convocatoria->descripcion}}</th>
 
                     </tr>

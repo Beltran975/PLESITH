@@ -27,19 +27,5 @@ class TodosSeeder extends Seeder
             'fullacces' => 'yes',
             'codigo' => 'adm1'
         ]);
-
-        $user1=User::create([
-            'name' => 'bothi',
-            'email' => 'bothi@gmail.com',
-            'curp' => 'KLHSK343VDD',
-            'institucion' => 'UTVM',
-            'programa' => 'tics',
-            'password' => Hash::make('12345678'),
-            'archivoCurp' => '',
-            'image_path' => '',
-            'tipo' => '',
-            'fullacces' => 'no',
-            'codigo' => 'casa1'
-        ]);
     }
 }

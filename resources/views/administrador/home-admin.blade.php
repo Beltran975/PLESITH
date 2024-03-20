@@ -31,10 +31,10 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Número de usuarios: 
+                            <li class="list-group-item">Número de usuarios : 
                                 <span>{{ $userCount }}</span>
                             </li>
-                            <li class="list-group-item">Número de postulaciones: 
+                            <li class="list-group-item">Número de postulaciones : 
                                 <span>{{ $postulacionesCount }}</span>
                             </li>
                         </ul>
@@ -47,10 +47,10 @@
                     <div class="card-body">
                         
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Número de producciones:
+                            <li class="list-group-item">Número de producciones :
                                 <span>{{ $produccionesCount }}</span>
                             </li>
-                            <li class="list-group-item">Número de nodos:
+                            <li class="list-group-item">Número de nodos :
                                 <span>{{ $nodoCount }}</span>
                             </li>
                         </ul>
@@ -66,10 +66,10 @@
                         
                         
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Número de convocatorias:
+                            <li class="list-group-item">Número de convocatorias (Infotech) :
                                 <span>{{ $infotechCount }}</span>
                             </li>
-                            <li class="list-group-item">Número de publicaciones:
+                            <li class="list-group-item">Número de publicaciones (Bibliotech) :
                                 <span>{{ $bibliotechCount }}</span>
                             </li>
                         </ul>

@@ -106,7 +106,7 @@
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Documentación: </th>
-                                            <td class="contenido-produccion"><a href="nodos/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
+                                            <td class="contenido-produccion"><a href="/nodos/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                         </tr>
                                     </tbody>
                                 </table>

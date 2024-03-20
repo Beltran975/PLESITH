@@ -231,7 +231,7 @@
                             </div>
                             <div class="col-md-6">
                                 <p>{{ $info->grado}}</p>
-                                <a href="academico/{{ $info->evidenciaSni}}" target="blanck_">{{ $info->evidenciaSni}}</a>
+                                <a href="/academico/{{ $info->evidenciaSni}}" target="blanck_">{{ $info->evidenciaSni}}</a>
                             </div>
                         </div>
 

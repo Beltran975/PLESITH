@@ -38,7 +38,7 @@
                         @foreach ($producciones as $produccion)
                         <tr>
                             <td scope="row">{{ $produccion->tipo }}</td>
-                            <td scope="row"><a href="produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
+                            <td scope="row"><a href="/produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
                             <td scope="row">{{ $produccion->autores }}</td>
                             <td scope="row">{{ $produccion->titulo }}</td>
                             <td scope="row">{{ $produccion->descripcion }}</td>
