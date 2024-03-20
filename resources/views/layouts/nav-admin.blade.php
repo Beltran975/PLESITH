@@ -26,9 +26,19 @@
       <li><a href="/administrador/bibliotech/tabla"><i class="bi bi-file-earmark-check-fill"></i> Bibliotech</a></li>
       <li><a href="/administrador/infotech/tabla"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
     </ul>
-    <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    <div class="container text-center">
+      <div aria-labelledby="navbarDropdown">
+        <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+          {{ __('Cerrar sesión') }}
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+          @csrf
+        </form>
+      </div>
+    </div>
+    <!--<button onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
       Cerrar sesión
-    </button>
+    </button>-->
   </div>
 
   <!-- Menú desplegable para el usuario -->
