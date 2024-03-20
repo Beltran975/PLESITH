@@ -200,13 +200,14 @@
                                     <label class="btn" for="pertenece">No</label>
                                 </div>
                             </div>
+
                             <!-- Evidencia de SNI -->
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required />
+                                    <input type="file" name="evidenciaSni" id="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required disabled />
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Guardar</button>
@@ -796,20 +797,6 @@
             });
         });
 
-        //Función para conprobar SNI
-        var pertenece = document.querySelectorAll('input[name="pertenece"]');
-        var evidenciaSni = document.querySelector('input[name="evidenciaSni"]');
-
-        pertenece.forEach((input) => {
-            input.addEventListener("change", () => {
-                if (input.value === "no") {
-                    evidenciaSni.disabled = true;
-                } else {
-                    evidenciaSni.disabled = false;
-                }
-            });
-        });
-
         //Función para autenticar correo electronico
         document.addEventListener("DOMContentLoaded", function() {
             // Obtiene el elemento del botón
@@ -833,6 +820,30 @@
             });
         });
     </script>
+
+    <script>
+        // Seleccionar los elementos relevantes
+        const radioSi = document.querySelector('input[value="si"]');
+        const radioNo = document.querySelector('input[value="no"]');
+        const fileInput = document.querySelector('input[name="evidenciaSni"]');
+
+        // Función para habilitar o deshabilitar el input de archivo basado en la selección del radio
+        function toggleFileInput() {
+            if (radioSi.checked) {
+                fileInput.removeAttribute('disabled');
+            } else {
+                fileInput.setAttribute('disabled', 'disabled');
+            }
+        }
+
+        // Agregar un evento de cambio a los radios para llamar a la función
+        radioSi.addEventListener('change', toggleFileInput);
+        radioNo.addEventListener('change', toggleFileInput);
+
+        // Llamar a la función al inicio para asegurar que el estado sea correcto
+        toggleFileInput();
+    </script>
+
 
 
 </body>
