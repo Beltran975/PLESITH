@@ -1,0 +1,7 @@
+.table-wrapper {
+    margin-left: auto;
+}
+.table-responsive {
+    width: 100%; /* O el ancho deseado */
+    overflow-x: auto;
+}
