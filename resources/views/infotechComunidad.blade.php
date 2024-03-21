@@ -46,6 +46,7 @@
             <hr class="hr-gob">
             <div class="row justify-content-center">
                 <!-- Tabla de meses -->
+                <form action="{{ route('filtro-buscar') }}" method="GET">
                 <table class="months">
                     <tr>
                         <td onclick="showConvocations('Enero')">Enero</td>
@@ -63,14 +64,19 @@
                     </tr>
                 </table>
         <!-- Menú desplegable con años -->
-                <select class="fecha" onchange="showConvocationsByYear(this.value)">
+        
+        <select name="year" class="fecha" onchange="this.form.submit()">
+                    <option value="">Año</option>
+                    <option value="all">Todos</option>
                     <option value="2024">2024</option>
                     <option value="2023">2023</option>
-                    <option value="2023">2022</option>
-                    <option value="2023">2021</option>
-                    <option value="2023">2020</option>
+                    <option value="2024">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
                     <!-- Agrega los demás años según sea necesario -->
                 </select>
+                </form>
+
                 <!-- Tabla de convocatorias -->
                 <table class="resultados table table-responsive" id="convocationsTable" style="display: table;">
                     <tr>
@@ -194,6 +200,7 @@
         function showConvocationsByYear(year) {
         }
     */
+   
 </script>        
     </main>
     @include('layouts/footer')

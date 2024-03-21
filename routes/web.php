@@ -212,3 +212,7 @@ Route::get('/administrador/producciones/table',[App\Http\Controllers\AdminProduc
 
 //Route::get('/listado/buscar', 'ListadoController@buscar')->name('listado.buscar');
 Route::get('/buscar-listado', [ListadoController::class, 'buscar'])->name('buscar-listado');
+
+Route::get('/filtro-buscar', [InfotechController::class, 'filter'])->name('filtro-buscar');
+
+//Route::get('/filtro-convocations', 'InfotechController@showconvocatoriasByYear')->name('filtro.convocations');
