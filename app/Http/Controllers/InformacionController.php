@@ -46,6 +46,11 @@ class InformacionController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+        $dato = Informacion::findOrFail($id);
+        $dato->lineaInv = $request->input('lineaInv');
+        $dato->grado = $request->input('grado');
+        $dato->pertenece = $request->input('pertenece');
+        $dato->save();
+        return redirect()->route('home.index');
     }
 }

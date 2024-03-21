@@ -22,8 +22,9 @@
                         <h3>Información PLESITH</h3>
                     </div>
                     <div class="card-body">
-                    <form action="{{ route('informacion.edit', $dato->id_inf)}}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('informacion.update', $dato->id_inf)}}" method="post" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="row form-outline md-4">
                                 <div class="col-md-4">
                                     <label class="form-label" for="lineaInv">Área de conocimiento</label>
@@ -51,7 +52,7 @@
                                     <label class="form-label" for="grado">Grado académico</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" name="grado" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required value="{{$dato->grado}}" />
+                                    <input type="text" name="grado" class="form-control" value="{{$dato->grado}}" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
                                 </div>
                             </div>
                             
