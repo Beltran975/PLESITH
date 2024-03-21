@@ -15,7 +15,7 @@ use App\Http\Controllers\BibliotechController;
 use App\Http\Controllers\InfotechController;
 use App\Http\Controllers\ListadoController;
 use App\Http\Controllers\AdminProduccionesController;
-
+use App\Http\Controllers\InformacionController;
 use App\Http\Controllers\HomeController;
 
 
@@ -56,6 +56,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
+//homeAdmin
+Route::get('/admin', [App\Http\Controllers\homeAdminController::class, 'getUser'])->name('administrador.home-admin');
+
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
@@ -95,6 +98,10 @@ Route::get('/showFilesById/{id}/files', [RegisterController::class, 'showFilesBy
 
 //ruta para registrar Informacion PLESITH
 Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
+Route::resource('/informacion', InformacionController::class);
+Route::get('/edit/informacion/PLESITH', function () {
+    return view('auth.editInfoPLESITH');
+});
 //ruta para registrar Informacion Producciones
 Route::post('EnvioProduccion', [App\Http\Controllers\ProduccionesController::class,'Insert']);
 Route::get('ListaProduccion', [App\Http\Controllers\ListaprodController::class,'list']);

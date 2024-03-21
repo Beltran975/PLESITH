@@ -37,4 +37,15 @@ class InformacionController extends Controller
         }
         return redirect()->route('home.index');
     }
+
+    public function edit($id)
+    {
+        $dato = Informacion::findOrFail($id);
+        return view('auth.editInfoPLESITH', compact('dato'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        
+    }
 }
