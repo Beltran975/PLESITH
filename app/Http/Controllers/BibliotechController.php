@@ -32,11 +32,15 @@ class BibliotechController extends Controller
     
     public function index(Request $request)
     {
-        $buscador=$request->get('buscador');
-        $datos = Bibliotech::where('titulo','like','%'.$buscador.'%')->simplePaginate();
-         // $query = DB::table('dovInves')->get();
-        return view('bibliotechComunidad', compact('datos','buscador'));
-        return view('administrador.docInvestigacion', ['datos'=>$query]); 
+        $titulo=$request->get('titulo');
+        $date=$request->get('date');
+        $month=$request->get('month');
+        $year=$request->get('year');
+        $datos = Bibliotech::where('titulo','like','%'.$titulo.'%')
+        ->where('created_at','like','%'.$date.'%')
+        ->where('created_at','like','%'.$month.'%')
+        ->where('created_at','like','%'.$year.'%')->simplePaginate();
+        return view('bibliotechComunidad', compact('datos','titulo','date','month','year'));
     }
 
     public function lista()

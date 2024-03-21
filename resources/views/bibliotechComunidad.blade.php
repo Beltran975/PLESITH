@@ -40,31 +40,51 @@
                 </div>
             </section>
             <section class="bibliotech seccion-clara container-lx">
-                <div class="row">
+                <div class="row principal">
                     <!-- Filtros de busqueda -->
-                    <div id="busqueda-menu" class="busquedas col-3">
+                    <div class="busquedas col-3" id="busqueda-menu">
                         <div class="filtros">
                             <form action="" method="get">
-                                <div class="row">
-                                    <div class="col">
-                                        <h3>Búsqueda</h3>
+                                <div class="row1">
+                                    <div class="col1">
+                                        <h3>Título</h3>
                                         <div class="busqueda">
-                                            <input name="buscador" type="search" class="search" aria-label="Search" aria-describedby="search-addon" />
+                                            <input name="titulo" type="search" class="search" aria-label="Search" aria-describedby="search-addon" />
                                             <button class="button" type="submit">
                                                 <i class="bi bi-search"></i>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
+                                <div class="row2">
+                                    <div class="col2">
                                         <h3>Fecha de publicación</h3>
                                         <div class="fecha">
-                                            <input type="date" id="" class="date">
+                                            <label><input type="radio" name="fecha" value="dia"checked> Día</label>
+                                            <label><input type="radio" name="fecha" value="mes"> Mes</label>
+                                            <label><input type="radio" name="fecha" value="año"> Año</label>
+                                            <input name="date" id="date" class="date" type="date">
+                                            <input name="month" id="month" class="form-control"  type="month" min="1900" max="2099" step="1" />
+                                            <select name="year" id="year" class="form-control">
+                                                <option value="0">Año</option>
+                                                <!-- <option value="2024">2024</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option> -->
+                                                <?php 
+                                                $year = date("Y");
+                                                for ($i = 2020; $i <= $year; $i++) { 
+                                                    echo '<option value="' . $i . '">' . $i . '</option>';
+                                                }
+                                                ?>
+                                            </select>
+                                            <button class="button" type="submit">
+                                                <i class="bi bi-search"></i>
+                                            </button>
                                         </div>
                                     </div>                    
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col">
                                         <h3>Área del conocimiento</h3>
                                         <div class="linea">
@@ -82,8 +102,8 @@
                                             </select>
                                         </div>
                                     </div>                    
-                                </div>
-                                <div class="row">
+                                </div> -->
+                                <!-- <div class="row">
                                     <div class="col">
                                         <h3>Tipo</h3>
                                         <div class="tipo">
@@ -100,14 +120,14 @@
                                             <label for="cbox2">Investigaciones</label>
                                         </div>
                                     </div>                    
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
                     <!-- Resultados de busqueda -->
-                    <div class="col">
-                        <div class="resultados">
-                            <div class="row justify-content-around">
+                    <div class="col resultados">
+                        <!-- <div class="resultados"> -->
+                            <div class="row3">
                                 <div class="titulo">
                                     <h5>Resultados encontrados:</h5>
                                 </div>
@@ -115,13 +135,15 @@
                                 <div class="cards">
                                     @foreach($datos as $item)
                                     <div class="card-biblio">
-                                        <label class="control-label" for="titulo">{{$item->titulo}}</label>
+                                        <div class="card-titulo">
+                                            <label class="control-label" for="titulo">{{$item->titulo}}</label>
+                                        </div>
                                         <iframe src="/bibliotech/{{ $item->documento }}" type="application/pdf" width="100%" height="100%"></iframe>
                                     </div>
                                     @endforeach
                                 </div>
                             </div>
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="menu-toggle-container">
@@ -136,5 +158,36 @@
             menu.classList.toggle('active');
             }
         </script>
+        <script>
+
+            const radioDate = document.querySelector('input[value="dia"]');
+            const radioMonth = document.querySelector('input[value="mes"]');
+            const radioYear = document.querySelector('input[value="año"]');
+            const dateInput = document.querySelector('input[name="date"]');
+            const monthInput = document.querySelector('input[name="month"]');
+            const yearSelect = document.querySelector('select[name="year"]');
+
+            function toggleDateInput() {
+                if (radioDate.checked) {
+                    dateInput.removeAttribute('disabled');
+                    monthInput.setAttribute('disabled', 'disabled');
+                    yearSelect.setAttribute('disabled', 'disabled');
+                } else if (radioMonth.checked) {
+                    monthInput.removeAttribute('disabled');
+                    dateInput.setAttribute('disabled', 'disabled');
+                    yearSelect.setAttribute('disabled', 'disabled');
+                } if (radioYear.checked) {
+                    yearSelect.removeAttribute('disabled');
+                    dateInput.setAttribute('disabled', 'disabled');
+                    monthInput.setAttribute('disabled', 'disabled');
+                }
+            }
+
+            radioDate.addEventListener('change', toggleDateInput);
+            radioMonth.addEventListener('change', toggleDateInput);
+            radioYear.addEventListener('change', toggleDateInput);
+
+            toggleDateInput();
+    </script>
     </body>
 </html>
