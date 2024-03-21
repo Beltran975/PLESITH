@@ -60,12 +60,17 @@
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
                                     <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
+                                    <label><h4> {{$dato->pertenece}}</h4></label>
                                 </div>
-                                <div class="col-md-8">
+                            </div>
+                            <div class="container text-center">
+                                <div class="row align-items-start">
+                                    <div class="col">
                                     <input type="radio" name="pertenece" autocomplete="off" value="si" value="{{$dato->pertenece}}" required>
                                     <label class="btn" for="pertenece">Sí</label>
                                     <input type="radio" name="pertenece" autocomplete="off" value="no" value="{{$dato->pertenece}}" required>
                                     <label class="btn" for="pertenece">No</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -79,5 +84,6 @@
         </main>
         @include('layouts/footer')
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8N+1lUE3+XjwIXqityaM2UwEJrHjeZX/nezF8+Ad5A0tjFkA5Vx7Js1KrI95" crossorigin="anonymous"></script>
+        
     </body>
 </html>
