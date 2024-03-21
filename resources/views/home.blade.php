@@ -29,27 +29,15 @@
                     <h3>Datos generales | {{ Auth::user()->name }}</h3><!-- espacio en blanco -->
 
                 </div>
-                <!-- En tu archivo home.blade.php o donde desees mostrar la alerta -->
-@if (session('correo'))
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script>
-        Swal.fire({
-  position: "top-end",
-  icon: "success",
-  title: "Your work has been saved",
-  showConfirmButton: false,
-  timer: 1500
-});
-    </script>
-@endif
-
                 <!--Acciones del usuario-->
                 @if(Auth::user()->tipo == 'basico')
                 <button onclick="verificarMail()" type="button" class="btn btn-secondary">Autenticar Correo electronico</button>
-                @elseif(Auth::user()->tipo == 'autenticado')
+                @elseif(Auth::user()->tipo == 'autenticado' && Auth::user()->datos->count() > 0)
                 <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
                 <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
-                @elseif(Auth::user()->tipo == 'postulado' || 'revisado')
+                @elseif(Auth::user()->tipo == 'autenticado')
+                <button disabled class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
+                @elseif(Auth::user()->tipo == 'postulado' || 'revisado'&& Auth::user()->datos->count() > 0)
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-estatus-pos">Estatus de postulación</button>
                 @endif
 
@@ -847,7 +835,18 @@
         // Llamar a la función al inicio para asegurar que el estado sea correcto
         toggleFileInput();
     </script>
-
+    @if (session('correo'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        //Alerta de correo enviado
+        Swal.fire({
+            icon: "success",
+            title: "Correo enviado con éxito.",
+            showConfirmButton: false,
+            timer: 2500
+        });
+    </script>
+    @endif
 
 
 </body>
