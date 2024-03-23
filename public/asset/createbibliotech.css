@@ -5,3 +5,15 @@
     width: 100%; /* O el ancho deseado */
     overflow-x: auto;
 }
+
+.main img {
+    width: 100vw; /* Ancho igual al ancho de la ventana */
+    height: 100vh; /* Altura igual a la altura de la ventana */
+    object-fit: cover; /* Escalar la imagen para que cubra todo el contenedor */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    filter: brightness(0.2);
+  }

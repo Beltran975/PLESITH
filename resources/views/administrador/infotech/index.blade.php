@@ -11,6 +11,8 @@
 </head>
 <body>
     @include('layouts.nav-admin')
+    <main class="main">
+        <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
     <br>
     <div class="container">
         <div class="row">
@@ -66,6 +68,7 @@
         </div>
     </div>
 </div>
+</main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>
