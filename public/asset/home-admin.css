@@ -1,0 +1,159 @@
+/* fondo */
+.main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    filter: brightness(0.3);
+      /* transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1); */
+}
+
+/* Evita que se haga un desmadre */
+main, div.row.blanco{
+    width: 100vw;
+}
+section.admin.seccion-obscura, div.col.blanco, div.col.obscuro, div.filtros.nodos, div.filtros.producciones{
+    width: 100%;
+}
+div.resultados.producciones, div.resultados.nodos{
+width: 100%;
+}
+
+/* mac */
+@media (min-width: 801px) {
+    /* col en blanco */
+    div.col.blanco{
+        max-width: 277px;
+        height: 100%;
+        background-color: #691b32;
+    }
+    /* col obscuro */
+    div.col.obscuro{
+        padding: 50px;
+    }
+    /* titulo */
+    .main h3{
+        color: #ffffff;
+        font-size: 30px;
+    }
+    /*hr de gobierno*/
+    .hr-gob{
+    margin: 10px 10px 10px 10px;
+    background-color: var(--gold);
+    border-top: 1px solid var(--gold);
+    opacity: 1;
+    }
+    .hr-gob::before{
+    content: " ";
+    width: 35px;
+    height: 5px;
+    background-color: var(--wine) !important;
+    display: block;
+    position: absolute;
+    }
+
+    /* home-admin */
+    h5.card-title{
+        font-size: medium;
+        font-weight:bold;
+        width: auto;
+    }
+    .card-header{
+        height: auto;
+    }
+    li{
+        font-size: medium;
+    }
+    li.list-group-item{
+        height: 40px;
+        align-content: none;
+    }
+
+    /* postulaciones */
+
+    /* producciones y nodos*/
+    form#busqueda-form{
+        height: auto;
+        width: 100%;
+    }
+    label{
+        color: #ffffff;
+        font-size: large;
+        }
+    button.button.producciones{
+        width: auto;
+        border: 1px solid black;
+        height: 25px;
+        width: 100%;
+        margin-top: 30px;
+        border: 1px solid white;
+    }
+    button.button.nodos{
+        width: auto;
+        border: 1px solid black;
+        height: 25px;
+        width: 100%;
+        margin-top: 20px;
+        border: 1px solid white;
+    }
+    div.resultados.producciones, div.resultados.nodos{
+        padding: 60px 0px 0px 0px;
+    }
+    div.card.producciones{
+        margin: 0px 5px 5px 5px;
+        height: 250px;
+        max-height: 400px;
+        min-width: 220px;
+    }
+    div.card.nodos{
+        margin: 0px 5px 5px 5px;
+        height: 270px;
+        max-height: 400px;
+        min-width: 220px;
+    }
+    div.card-header.producciones, div.card-header.nodos{
+        height: auto;
+        max-height: 60px;
+    }
+    /* modal */
+    .modal-dialog-scrollable .modal-content {
+        height: 300px;
+        width: 600px;
+        left: 25%;
+    }
+    div.modal-header{
+        background-color: #691b32;
+        color: #ffffff;
+    }
+    h4.modal-title{
+        font-size: large;
+    }
+    th.rotated-header, td.contenido-produccion{
+        font-size: medium;
+    }
+
+    /* bibliotech e infotech*/
+    div.card.bibliotech, div.card.infotech{
+        width: 100%;
+        height: auto;
+    }
+    p.card-text{
+        font-size: medium;
+    }
+    ul.dropdown-menu.show{
+        height: auto;
+        width: auto;
+        padding: 0px;
+        background: none;
+    }  
+}
+
+/* ipad */
+@media (min-width: 413px) and (max-width: 800px){
+
+}
+/* iphone */
+@media (max-width: 412px) {
+
+}
