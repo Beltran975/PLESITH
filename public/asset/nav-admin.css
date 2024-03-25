@@ -1,0 +1,76 @@
+/* sidebar */
+.sidebar {
+    width: 260px;
+    height: 100%;
+    z-index: 9999;
+    position: fixed;
+    transition: left 0.3s ease;
+    background-color: #691b32;
+}
+.profile-info {
+    font-size: 18px;
+    display: flex;
+    padding: 20px;
+    color: white;
+    align-items: center;
+}
+.avatar-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    justify-content: center;
+    background-color: white;
+}
+.avatar-circle i {
+    color: rgb(106, 111, 122);
+}
+.sidebar ul li {
+    list-style: none;
+    padding: 10px 0px 10px 5px;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+/* boton sidebar */
+.small-screen-only{
+    height: 50px;
+    width: 50px;
+    border: none;
+    position: absolute;
+    top: 30px;
+    left: 75%;
+    border-radius: 100%;
+    background: #691b32;
+    color: rgb(255, 255, 255);
+}
+
+/* Botón solo visible en pantallas pequeñas */
+.small-screen-only {
+    display: none;
+}
+
+@media(min-width: 1024px){
+    .div.blanco{
+        width: 260px;
+        height: 100%;
+        position: absolute;
+        background-color: #691b32;
+    }
+}
+@media screen and (max-width: 768px) {
+    .sidebar {
+      left: -300px; /* sidebar oculto */
+    }
+    #sidebar.show {
+      left: 0; /* Muestra sidebar */
+    }
+    #sidebar-toggle {
+      display: block; /* Muestra botón */
+    }
+}
