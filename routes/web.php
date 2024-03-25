@@ -17,6 +17,7 @@ use App\Http\Controllers\ListadoController;
 use App\Http\Controllers\AdminProduccionesController;
 use App\Http\Controllers\InformacionController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -55,13 +56,22 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
+//Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
 //homeAdmin
-Route::get('/admin', [App\Http\Controllers\homeAdminController::class, 'getUser'])->name('administrador.home-admin');
+//Route::get('/admin', [App\Http\Controllers\homeAdminController::class, 'getUser'])->name('administrador.home-admin');
 
+//Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+//rutas de validacion usuario/administrador
+Route::get('/home-admin', [App\Http\Controllers\HomeController::class, 'getUser'])->name('administrador.home-admin');
 
-
-Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/home', function () {
+    $user = Auth::user();
+    if ($user && $user->email === 'admin@admin.com') {
+        return view('administrador.home-admin');
+    } else {
+        return view('home');
+    }
+})->name('home')->middleware('auth');
 
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
@@ -120,7 +130,7 @@ Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::c
 Route::get('/bibliotechComunidad', [App\Http\Controllers\BibliotechController::class, 'index']);
 Route::resource('/bibliotech', BibliotechController::class);
 Route::resource('/add', BibliotechController::class);
-Route::get('administrador/bibliotech/tabla', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech')->middleware('auth');
+Route::get('administrador/bibliotech/tabla', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech');
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
@@ -167,7 +177,7 @@ Route::get('/tablaInfotech', function(){
     return view('administrador.infotech.index');
 });
 Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'insertar']);
-Route::get('administrador/infotech/tabla', [App\Http\Controllers\InfotechController::class, 'lista'])->name('listaInfotech')->middleware('auth');
+Route::get('administrador/infotech/tabla', [App\Http\Controllers\InfotechController::class, 'lista'])->name('listaInfotech');
 Route::get('/infotech/{id}/edit', [InfotechController::class, 'edit'])->name('infotech.edit');;
 Route::get('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
 Route::put('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
