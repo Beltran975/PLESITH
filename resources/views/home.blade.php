@@ -488,7 +488,6 @@
                                 </div>
                             </div>
 
-
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
                                     <label class="form-label" for="linea_inv">{{ __('Área de conocimiento*')}}</label>
@@ -810,6 +809,20 @@
 
             });
         }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.get('/obtener-correos', function(data) {
+                var opciones = '';
+                data.forEach(function(correo) {
+                    opciones += '<option value="' + correo + '">';
+                });
+                $('#colaboradores').attr('list', 'correosList');
+                $('#colaboradores').after('<datalist id="correosList">' + opciones + '</datalist>');
+            });
+        });
     </script>
 
     <script>
