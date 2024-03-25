@@ -25,7 +25,7 @@
                         <div class="card-group">
                             <!-- postulaciones plesith -->
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header home-admin">
                                     <h5 class="card-title home-admin">Postulaciones PLESITH</h5>
                                 </div>
                                 <div class="card-body">
@@ -41,7 +41,7 @@
                             </div>
                             <!-- producciones y nodos -->
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header home-admin">
                                     <h5 class="card-title home-admin">Producciones y Nodos de colaboración</h5>
                                 </div>
                                 <div class="card-body">
@@ -57,7 +57,7 @@
                             </div>
                             <!-- bibliotech e infotech -->
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header home-admin">
                                     <h5 class="card-title home-admin">Gestión Bibliotech e Infotech</h5>
                                 </div>
                                 <div class="card-body">

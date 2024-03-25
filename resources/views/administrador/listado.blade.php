@@ -23,7 +23,7 @@
                         <hr class="hr-gob">
                         <!-- filtros de busqueda-->
                         <div class="filtros nodos">
-                            <form action="{{ route('buscar-listado') }}" method="GET">
+                            <form action="{{ route('buscar-listado') }}" method="GET" id="busqueda-form">
                                 <div class="container text-center">
                                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                                         <div class="col">
