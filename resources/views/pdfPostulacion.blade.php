@@ -104,7 +104,7 @@
             </tr>
             <tr>
                 <th class="rotated-header">Evidencia del grado académico</th>
-                <td><a href="/produccion/{{ $dato->evidenciaGrado}}" target="blanck_">{{ $dato->evidenciaGrado}}</a></td>
+                <td><a href="academico/{{ $dato->evidenciaGrado}}" target="blanck_">{{ $dato->evidenciaGrado}}</a></td>
             </tr>
             <tr>
                 <th class="rotated-header">Colaboración al SNI</th>

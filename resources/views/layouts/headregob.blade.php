@@ -8,6 +8,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
         <title>PLESITH</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.hidalgo.gob.mx/transicion/headergob/headergob-1.0.0.css">
     </head>
   
     <body>

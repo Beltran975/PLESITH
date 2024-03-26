@@ -14,6 +14,9 @@
         <div class="nav-header">
             <ul>
                 <li>
+                <a href="#" onclick="VerAyuda()"><i class="bi bi-question-circle-fill"></i> Ayuda</a>
+                </li>
+                <li>
                     <div class="dropdown">
                         <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Perfil

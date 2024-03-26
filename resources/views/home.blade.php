@@ -26,19 +26,38 @@
 
                 <div class="titulo row d-flex  mb-3">
                     <h3>Datos generales | {{ Auth::user()->name }}</h3><!-- espacio en blanco -->
-
                 </div>
                 <!--Acciones del usuario-->
-                @if(Auth::user()->tipo == 'basico')
-                <button onclick="verificarMail()" type="button" class="btn btn-secondary">Autenticar Correo electronico</button>
-                @elseif(Auth::user()->tipo == 'autenticado' && Auth::user()->datos->count() > 0)
+                @switch(Auth::user()->tipo)
+                @case('basico')
+                <button onclick="verificarMail()" type="button" class="btn btn-secondary">Autenticar Correo electrónico</button>
+                @break
+
+                @case('autenticado')
+                @if(Auth::user()->datos->count() > 0)
                 <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
-                <button class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
-                @elseif(Auth::user()->tipo == 'autenticado')
-                <button disabled class="btn btn-primary" id="botonPostulacion">Enviar postulación</button>
-                @elseif(Auth::user()->tipo == 'postulado' || 'revisado'&& Auth::user()->datos->count() > 0)
+                <button class="btn btn-success" id="botonPostulacion">Enviar postulación <i class="bi bi-send"></i></button>
+                @else
+                <button disabled class="btn btn-success" id="botonPostulacion">Enviar postulación <i class="bi bi-send"></i></button>
+                <br>
+                <br>
+                <figcaption class="blockquote-footer">
+                Para completar adecuadamente su solicitud, le solicitamos que ingrese sus datos correspondientes en "Información PLESITH". Además, de manera opcional, puede agregar información sobre sus investigaciones, patentes y documentos de investigación en la sección "Mis Producciones".
+                </figcaption>
+                @endif
+                @break
+
+                @case('postulado')
+                @case('revisado')
+                @if(Auth::user()->datos->count() > 0)
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-estatus-pos">Estatus de postulación</button>
                 @endif
+                @break
+
+                @default
+                <!-- Si no coincide con ninguno de los casos anteriores -->
+                @endswitch
+
 
                 <div class="modal fade" id="Modal-estatus-pos" tabindex="-1" aria-label="Modal-estatus-label" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -808,6 +827,29 @@
                 showConfirmButton: false,
                 showCloseButton: true,
 
+            });
+        }
+
+        function VerAyuda() {
+            Swal.fire({
+                title: "<strong>HTML <u>example</u></strong>",
+                icon: "info",
+                html: `
+    You can use <b>bold text</b>,
+    <a href="#">links</a>,
+    and other HTML tags
+  `,
+                showCloseButton: true,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText: `
+    <i class="fa fa-thumbs-up"></i> Great!
+  `,
+                confirmButtonAriaLabel: "Thumbs up, great!",
+                cancelButtonText: `
+    <i class="fa fa-thumbs-down"></i>
+  `,
+                cancelButtonAriaLabel: "Thumbs down"
             });
         }
     </script>
