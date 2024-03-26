@@ -503,10 +503,9 @@
                                     <label class="form-label" for="colaboradores">{{ __('Colaboradores*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" id="colaboradores" name="colaboradores" type="text" required>
+                                    <input class="form-control" id="colaboradores" name="colaboradores" type="text" >
                                 </div>
                             </div>
-
 
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
@@ -514,7 +513,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <select class="form-control" name="linea_inv" required>
-                                        <option name="linea_inv" disabled selected>Seleccionar</option>
+                                        <option name="linea_inv" value="" disabled selected>Seleccionar</option>
                                         <option name="linea_inv" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
                                         <option name="linea_inv" value="ÁREA II. Biología y Química">ÁREA II. Biología y Química</option>
                                         <option name="linea_inv" value="ÁREA III. Medicina y Ciencias de la Salud">ÁREA III. Medicina y Ciencias de la Salud </option>
@@ -852,6 +851,20 @@
                 cancelButtonAriaLabel: "Thumbs down"
             });
         }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.get('/obtener-correos', function(data) {
+                var opciones = '';
+                data.forEach(function(correo) {
+                    opciones += '<option value="' + correo + '">';
+                });
+                $('#colaboradores').attr('list', 'correosList');
+                $('#colaboradores').after('<datalist id="correosList">' + opciones + '</datalist>');
+            });
+        });
     </script>
 
     <script>

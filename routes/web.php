@@ -67,9 +67,9 @@ Route::get('/home-admin', [App\Http\Controllers\HomeController::class, 'getUser'
 Route::get('/home', function () {
     $user = Auth::user();
     if ($user && $user->email === 'admin@admin.com') {
-        return view('administrador.home-admin');
+        return redirect()->route('administrador.home-admin');
     } else {
-        return view('home');
+        return redirect()->route('home');
     }
 })->name('home')->middleware('auth');
 
@@ -223,6 +223,9 @@ Route::get('/administrador/producciones/table',[App\Http\Controllers\AdminProduc
 //Route::get('/listado/buscar', 'ListadoController@buscar')->name('listado.buscar');
 Route::get('/buscar-listado', [ListadoController::class, 'buscar'])->name('buscar-listado');
 
-Route::get('/filtro-buscar', [InfotechController::class, 'filter'])->name('filtro-buscar');
+Route::get('/filtro-buscar', [App\Http\Controllers\InfotechController::class, 'filtroBuscar'])->name('filtro-buscar');
+//Route::get('/filtro-buscar', [InfotechController::class, 'filter'])->name('filtro-buscar');
 
 //Route::get('/filtro-convocations', 'InfotechController@showconvocatoriasByYear')->name('filtro.convocations');
+
+Route::get('/obtener-correos', [App\Http\Controllers\ColaboradoresController::class, 'obtenerCorreos']);

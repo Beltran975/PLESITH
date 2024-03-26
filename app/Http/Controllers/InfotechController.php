@@ -73,26 +73,24 @@ class InfotechController extends Controller
         return redirect()->route('listaInfotech');
     }
 
-    public function filter(Request $request)
+    public function filtroBuscar(Request $request)
     {
+        $mes = $request->input('mes');
         $year = $request->input('year');
-    $month = $request->input('month'); // Agrega esta línea para obtener el mes seleccionado
 
-    // Verifica si se ha seleccionado un año
-    if ($year === 'all') {
-        $convocatorias = Infotech::all();
-    } else {
-        $query = Infotech::query()->whereYear('year', $year);
+        $query = Infotech::query();
 
-        // Verifica si se ha seleccionado un mes específico
-        if ($month) {
-            $query->whereMonth('fecha_de_tu_campo_mes', $month); // Reemplaza 'fecha_de_tu_campo_mes' con el nombre real de tu columna de mes
+        if ($mes) {
+            $query->whereMonth('year', '=', $mes);
+        }
+
+        if ($year && $year != 'all') {
+            $query->whereYear('year', '=', $year);
         }
 
         $convocatorias = $query->get();
-    }
 
-        return view('infotechComunidad', compact('convocatorias', 'year'));
+        return view('infotechComunidad', compact('convocatorias'));
     }
 
 }
