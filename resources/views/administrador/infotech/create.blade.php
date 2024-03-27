@@ -24,7 +24,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="year">{{ __('Fecha *')}}</label>
-                        <input class="form-control" name="year" type="date" min="1900" max="2099" step="1" required />
+                        <input id="fecha-input" class="form-control" name="year" type="date" min="1900" max="2099" step="1" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="documento">{{ __('Documento *')}}</label>
@@ -43,4 +43,14 @@
         </div>
     </div>
 </body>
+<script>
+    // Obtener la fecha actual del sistema
+    var fechaActual = new Date();
+    
+    // Formatear la fecha en el formato adecuado para el campo de entrada
+    var formattedDate = fechaActual.toISOString().split('T')[0];
+    
+    // Establecer el valor del campo de entrada como la fecha actual
+    document.getElementById('fecha-input').value = formattedDate;
+</script>
 </html>

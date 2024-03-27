@@ -415,21 +415,19 @@
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label class="form-label" for="pais">{{ __('País *')}}</label>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input class="form-control" name="pais" type="text" required>
-                                    </div>
+                                <div class="col-md-4">
+                                    <label class="form-label" for="pais">{{ __('País *')}}</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label class="form-label" for="year">{{ __('Fecha *')}}</label>
-                                    </div>
-                                    <div class="col-md-9 mb-3">
-                                        <input class="form-control" name="year" type="month" min="1900" max="2099" step="1" required />
-                                    </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" name="pais" id="paisInput" type="text" required>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mb-2">
+                                <div class="col-md-4">
+                                    <label class="form-label" for="year">{{ __('Fecha *')}}</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" name="year" id="fechaInput" type="month" min="1900" max="2099" step="1" required />
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
@@ -866,6 +864,242 @@
             });
         });
     </script>
+
+    <script>
+        // Lista de países
+        var paises = [  
+        "Afganistán",
+        "Albania",
+        "Alemania",
+        "Andorra",
+        "Angola",
+        "Antigua y Barbuda",
+        "Arabia Saudita",
+        "Argelia",
+        "Argentina",
+        "Armenia",
+        "Australia",
+        "Austria",
+        "Azerbaiyán",
+        "Bahamas",
+        "Bangladés",
+        "Barbados",
+        "Baréin",
+        "Bélgica",
+        "Belice",
+        "Benín",
+        "Bielorrusia",
+        "Birmania",
+        "Bolivia",
+        "Bosnia y Herzegovina",
+        "Botsuana",
+        "Brasil",
+        "Brunéi",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Bután",
+        "Cabo Verde",
+        "Camboya",
+        "Camerún",
+        "Canadá",
+        "Catar",
+        "Chad",
+        "Chile",
+        "China",
+        "Chipre",
+        "Ciudad del Vaticano",
+        "Colombia",
+        "Comoras",
+        "Corea del Norte",
+        "Corea del Sur",
+        "Costa de Marfil",
+        "Costa Rica",
+        "Croacia",
+        "Cuba",
+        "Dinamarca",
+        "Dominica",
+        "Ecuador",
+        "Egipto",
+        "El Salvador",
+        "Emiratos Árabes Unidos",
+        "Eritrea",
+        "Eslovaquia",
+        "Eslovenia",
+        "España",
+        "Estados Unidos",
+        "Estonia",
+        "Etiopía",
+        "Filipinas",
+        "Finlandia",
+        "Fiyi",
+        "Francia",
+        "Gabón",
+        "Gambia",
+        "Georgia",
+        "Ghana",
+        "Granada",
+        "Grecia",
+        "Guatemala",
+        "Guyana",
+        "Guinea",
+        "Guinea ecuatorial",
+        "Guinea-Bisáu",
+        "Haití",
+        "Honduras",
+        "Hungría",
+        "India",
+        "Indonesia",
+        "Irak",
+        "Irán",
+        "Irlanda",
+        "Islandia",
+        "Islas Marshall",
+        "Islas Salomón",
+        "Israel",
+        "Italia",
+        "Jamaica",
+        "Japón",
+        "Jordania",
+        "Kazajistán",
+        "Kenia",
+        "Kirguistán",
+        "Kiribati",
+        "Kuwait",
+        "Laos",
+        "Lesoto",
+        "Letonia",
+        "Líbano",
+        "Liberia",
+        "Libia",
+        "Liechtenstein",
+        "Lituania",
+        "Luxemburgo",
+        "Macedonia del Norte",
+        "Madagascar",
+        "Malasia",
+        "Malaui",
+        "Maldivas",
+        "Maldivas",
+        "Malta",
+        "Marruecos",
+        "Mauricio",
+        "Mauritania",
+        "México",
+        "Micronesia",
+        "Moldavia",
+        "Mónaco",
+        "Mongolia",
+        "Montenegro",
+        "Mozambique",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Nicaragua",
+        "Níger",
+        "Nigeria",
+        "Noruega",
+        "Nueva Zelanda",
+        "Omán",
+        "Países Bajos",
+        "Pakistán",
+        "Palaos",
+        "Panamá",
+        "Papúa Nueva Guinea",
+        "Paraguay",
+        "Perú",
+        "Polonia",
+        "Portugal",
+        "Reino Unido",
+        "República Centroafricana",
+        "República Checa",
+        "República del Congo",
+        "República Democrática del Congo",
+        "República Dominicana",
+        "República Sudafricana",
+        "Ruanda",
+        "Rumanía",
+        "Rusia",
+        "Samoa",
+        "San Cristóbal y Nieves",
+        "San Marino",
+        "San Vicente y las Granadinas",
+        "Santa Lucía",
+        "Santo Tomé y Príncipe",
+        "Senegal",
+        "Serbia",
+        "Seychelles",
+        "Sierra Leona",
+        "Singapur",
+        "Siria",
+        "Somalia",
+        "Sri Lanka",
+        "Suazilandia",
+        "Sudán",
+        "Sudán del Sur",
+        "Suecia",
+        "Suiza",
+        "Surinam",
+        "Tailandia",
+        "Tanzania",
+        "Tayikistán",
+        "Timor Oriental",
+        "Togo",
+        "Tonga",
+        "Trinidad y Tobago",
+        "Túnez",
+        "Turkmenistán",
+        "Turquía",
+        "Tuvalu",
+        "Ucrania",
+        "Uganda",
+        "Uruguay",
+        "Uzbekistán",
+        "Vanuatu",
+        "Venezuela",
+        "Vietnam",
+        "Yemen",
+        "Yibuti",
+        "Zambia",
+        "Zimbabue",
+        // Agrega más países según sea necesario
+        ];
+
+        // Función para mostrar la lista de países
+        function mostrarPaises() {
+            var input = document.getElementById('paisInput');
+            input.setAttribute('list', 'lista-paises');
+
+            var datalist = document.createElement('datalist');
+            datalist.id = 'lista-paises';
+
+            paises.forEach(function(pais) {
+                var option = document.createElement('option');
+                option.value = pais;
+                datalist.appendChild(option);
+            });
+
+            input.parentNode.appendChild(datalist);
+        }
+
+        // Llama a la función para mostrar los países
+        mostrarPaises();
+    </script>
+    <script>
+    // Función para obtener la fecha actual en el formato YYYY-MM
+    function obtenerFechaActual() {
+        var fecha = new Date();
+        var mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+        var año = fecha.getFullYear();
+        return `${año}-${mes}`;
+    }
+
+    // Obtener el campo de entrada de fecha
+    var fechaInput = document.getElementById('fechaInput');
+
+    // Establecer el valor del campo de entrada como la fecha actual
+    fechaInput.value = obtenerFechaActual();
+</script>
 
     <script>
         // Seleccionar los elementos relevantes
