@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador | PLESITH</title>
-</head>
-
-<body>
-    <!DOCTYPE html>
-    <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ asset('asset/tabla.css') }}">
+        <link rel="stylesheet" href="{{ asset('asset/home-admin.css') }}">
         <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png" />
-        <title>Administrador | PLESITH</title>
+        <title>Postulación negada | PLESITH</title>
     </head>
-
     <body class="body">
         @include('layouts/datos-gob')
-
+        @include('layouts.nav-admin')
         <main class="main">
             <img src="https://lajornadahidalgo.com/wp-content/uploads/2022/08/CITNOVA-SINCROTON.jpg" alt="img">
-            @include('layouts.nav-admin')
-            <div class="title">
-                <div class="row ml-5">
-                    <h3>{{ __('Formulario de negación') }}</h3>
-                </div>
-                <hr class="hr-gob">
-
-                <div class="form-group">
-                    <form action="{{ route('generarPDFnegado.post', $pos->id)}}" method="post">
-                    @csrf
-                        <div class="modal-body">
+            <div class="row">
+                <div class="col invisible"></div>
+                <div class="col obscuro">
+                    <div class="titulo row d-flex  mb-3">
+                        <h1>{{ __('Formulario de Negación') }}</h1>
+                    </div>
+                    <hr class="hr-gob">
+                    <!-- formulario negación -->
+                    <div class="form-group modal-body">
+                        <form action="{{ route('generarPDFnegado.post', $pos->id)}}" method="post">
+                            @csrf
                             <div class="mb-3">
                                 <blockquote>
-                                    <p>Para aprobar al usuario favor de llenar el siguiente formulario</p>
+                                    <p>Para aprobar al usuario favor de llenar el siguiente formulario:</p>
                                 </blockquote>
                             </div>
                             <div class="md-3">
@@ -59,12 +47,12 @@
                                     <textarea class="form-control" id="reazon-nega-Text" name="reazon-nega-Text" rows="3"></textarea>
                                 </div>
                             </div>
-                        </div>
-                        <button class="btn btn-primary" type="submit">Enviar</button>
-
-                    </form>
+                            <button class="btn btn-secondary" type="button" onclick="history.back()" name="volver atrás">Cancelar</button>
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </form>
+                    </div>
                 </div>
-
+            </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <!-- Script para manejar modales con jQuery -->
@@ -93,13 +81,5 @@
                 }
             }
         </script>
-
-
-
-
     </body>
-
-    </html>
-</body>
-
 </html>

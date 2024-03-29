@@ -1,0 +1,483 @@
+/* mac */
+@media (min-width: 801px) {
+    /* carrusel */
+    .carousel-inner {
+        height: 190px; 
+    }
+    .carousel-item {
+        height: auto; 
+    }
+    .carousel-item img {
+        height: 190px; 
+        object-fit: cover;
+        filter: brightness(0.5);
+    }
+    /* titulo */
+    h1{
+        position: absolute;
+        top: 240px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+    }
+    /* otros */
+    main{
+        width: 100%;
+        padding: none;
+    }
+    div.row-invisible.nav{
+        width: 100%;
+        height: 30px;
+    }
+    div.row.initial{
+        width: 100%;
+    }
+
+    /* filtros de busqueda */
+    div.filtros.search{
+        height: auto;
+        padding: 30px;
+        color: #fff;
+    }
+    /* titulo */
+    div.titulo{
+        height: 100px;
+        margin-bottom: 2%;
+        text-align: center;
+        padding: 25px 0px 110px 0px;
+        
+    }
+    input.search{
+        height: 25px;
+        width: 100%;
+        border: 1px solid white;
+    }
+    button.button{
+        height: 25px;
+        width: 100%;
+        margin-top: 10px;
+        border: 1px solid white;
+    }
+
+    /* fecha de publicación */
+    div.fecha{
+        height: 300px;
+        margin-bottom: 2%;
+        padding-top: 20px;
+        text-align: center;   
+    }
+    /* subtitulos */
+    label{
+        font-size: 1.2rem;
+    }
+    /* inputs radio */
+    input[type=radio] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid white;
+        background-color: #fff;
+        outline: none;
+        cursor: pointer;
+    }
+    input[type=radio]:checked {
+        background-color:rgb(0, 0, 0);
+        border-color: rgb(0, 0, 0);
+    }
+    input#date.form-control, 
+    input#month.form-control, 
+    select#year.form-control{
+        height: 25px;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 0%;
+        font-size: 12px;
+        border: 1px solid white;
+    }
+    input#date.form-control:disabled, 
+    input#month.form-control:disabled, 
+    select#year.form-control:disabled {
+        width: 100%;
+        cursor: not-allowed;
+        color: #691b32;
+        border-color: #691b32;
+        background-color: #691b32;
+    }
+
+    /* resultados */
+    h5{
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    /* cards */
+    div.cards.bibliotech {
+        padding-top: 50px;
+        padding-left: 70px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-wrap:wrap;
+    }
+    div.card.bibliotech {
+        margin: 0px 15px 15px 0px;
+        width: 250px;
+        height: 300px;
+        text-align: center;
+    }
+    /* titulo card */
+    div.card-titulo{
+        background-color: rgb(184, 192, 192);
+        height: auto;
+    }
+    label.control-label{
+        font-size: medium;
+    }
+
+    /* menu */
+    .menu-toggle-container {
+        display: none;
+    }
+    .searchBibliotech{
+        display: block;
+        background-color: #691b32;
+    }
+    
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ipad */
+@media (min-width: 431px) and (max-width: 800px){
+    /* carrusel */
+    .carousel-inner {
+        height: 180px; 
+    }
+    .carousel-item {
+        height: auto; 
+    }
+    .carousel-item img {
+        height: 180px; 
+        object-fit: cover;
+        filter: brightness(0.5);
+    }
+    /* titulo */
+    h1{
+        position: absolute;
+        top: 240px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+    }
+    
+    
+    /* otros */
+    main{
+        width: 100%;
+        min-height: 900px;
+    }
+    div.row-invisible.nav{
+        width: 100%;
+        height: 44px;
+    }
+    div.row.initial{
+        width: 100%;
+    }
+    div.row3{
+        width: 100%;
+    }
+
+    /* filtros de busqueda */
+    div.filtros.search{
+        height: auto;
+        padding: 20px;
+        color: #fff;
+    }
+    /* titulo */
+    div.titulo{
+        height: 100px;
+        padding: 25px 0px 110px 0px;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+    input.search{
+        height: 30px;
+        width: 100%;
+        border: 1px solid white;
+    }
+    button.button{
+        height: 30px;
+        width: 100%;
+        margin-top: 10px;
+        border: 1px solid white;
+    }
+
+    /* fecha de publicación */
+    div.fecha{
+        height: 300px;
+        padding-top: 20px;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+    /* subtitulos */
+    label{
+        font-size: 1.3rem;
+    }
+    /* inputs radio */
+    input[type=radio] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid white;
+        background-color: #fff;
+        outline: none;
+        cursor: pointer;
+    }
+    input[type=radio]:checked {
+        background-color: black;
+        border-color: black;
+    }
+    input#date.form-control, 
+    input#month.form-control, 
+    select#year.form-control{
+        height: 30px;
+        width: 100%;
+        font-size: 15px;
+        margin-top: 10px;
+        border: 1px solid white;
+        border-radius: 0%;
+    }
+    input#date.form-control:disabled, 
+    input#month.form-control:disabled, 
+    select#year.form-control:disabled {
+        cursor: not-allowed;
+        color: #691b32;
+        border-color: #691b32;
+        background-color: #691b32;
+        width: 100%;
+    }
+
+    /* resultados */
+    h5{
+        padding-left: 30px;
+        padding-top: 30px;
+    }
+    /* cards */
+    div.cards.bibliotech{
+        padding-top: 50px;
+        padding-left: 70px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-wrap:wrap;
+    }
+    div.card.bibliotech {
+        margin: 0px 15px 15px 0px;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+    }
+    /* titulo card */
+    div.card-titulo{
+        background-color: rgb(184, 192, 192);
+        height: auto;
+    }
+    label.control-label{
+        font-size: medium;
+    }
+
+    /* boton menu */
+    div.menu-toggle {
+        position: absolute;
+        top: 355px;
+        right: 30px;
+        background-color: #691b32;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+    }
+    /* menu */
+    .searchBibliotech {
+        display: none;
+    }
+    .searchBibliotech-menu.active {
+        display: block;
+        position: absolute;
+        color: #ffffff;
+        background-color: #691b32;
+        min-height: 679px;
+        width: 400px;
+        z-index: 9;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* iphone */
+@media (max-width: 430px) {
+    /* carrusel */
+    .carousel-inner {
+        height: 100px; 
+    }
+    .carousel-item {
+        height: auto; 
+    }
+    .carousel-item img {
+        height: 100px; 
+        object-fit: cover;
+        filter: brightness(0.5);
+    }
+    /* titulo */
+    h1{
+        position: absolute;
+        top: 190px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+    }
+    
+    /* otros */
+    main{
+        min-height: 1000px;
+    }
+    div.row-invisible.nav{
+        width: 100%;
+        height: 30px;
+    }
+    div.row.initial{
+        width: 100%;
+    }
+    div.row3{
+        width: 100%;
+    }
+
+    /* filtros de busqueda */
+    div.filtros.search{
+        padding: 40px;
+    }
+    /* titulo */
+    div.titulo{
+        height: 100px;
+        padding: 25px 0px 110px 0px;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+    input.search{
+        height: 30px;
+        width: 100%;
+        border: 1px solid white;
+    }
+    button.button{
+        height: 30px;
+        width: 100%;
+        margin-top: 10px;
+        border: 1px solid white;
+    }
+
+    /* fecha de publicación */
+    div.fecha{
+        height: 300px;
+        padding-top: 20px;
+        margin-bottom: 2%;
+        text-align: center;
+    }
+    /* subtitulos */
+    label{
+        font-size: 1.3rem;
+    }
+    /* inputs radio */
+    input[type=radio] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid white;
+        background-color: #fff;
+        outline: none;
+        cursor: pointer;
+    }
+    input[type=radio]:checked {
+        background-color: black;
+        border-color: black;
+    }
+    input#date.form-control, 
+    input#month.form-control, 
+    select#year.form-control{
+        padding: 4.5px 9px;
+        height: 30px;
+        width: 100%;
+        font-size: 15px;
+        margin-top: 10px;
+        border: 1px solid white;
+        border-radius: 0%;
+    }
+    input#date.form-control:disabled, 
+    input#month.form-control:disabled, 
+    select#year.form-control:disabled {
+        width: 100%;
+        cursor: not-allowed;
+        color: #691b32;
+        border-color: #691b32;
+        background-color: #691b32;
+        
+    }
+
+    /* resultados */
+    h5{
+        padding-left: 20px;
+        padding-top: 90px;
+    }
+    /* cards */
+    div.cards.bibliotech{
+        padding-top: 40px;
+        padding-left: 60px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-wrap:wrap;
+    }
+    div.card.bibliotech {
+        margin-bottom: 15px;
+        width: 250px;
+        height: 250px;
+        text-align: center;
+    }
+    /* titulo card */
+    div.card-titulo{
+        background-color: rgb(184, 192, 192);
+        height: auto;
+    }
+    label.control-label{
+        font-size: medium;
+    }
+
+    /* boton menu */
+    div.menu-toggle {
+        position: absolute;
+        top: 260px;
+        left: 50px;
+        background-color: #691b32;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+    }
+    /* menu */
+    .searchBibliotech {
+        display: none;
+    }
+    .searchBibliotech.active {
+        display: block;
+        position: absolute;
+        color: #ffffff;
+        background-color: #691b32;
+        top: 330px;
+        min-height: 500px;
+        height: 600px;
+        width: 100vw;
+        z-index: 9;
+    }
+}
