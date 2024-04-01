@@ -50,11 +50,11 @@ class RegisterController extends Controller
     {
         $request ->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'curp'=> 'required',
             'institucion' => 'required',
             'programa' => 'required',
-            'password' => 'required',
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
             'archivoCurp' => 'required|mimes:pdf|max:2048',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);

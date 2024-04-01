@@ -92,14 +92,14 @@
                   </div>
                 </div>
                 
-               <!-- <div class="row justify-content-center mb-3">
+               <div class="row justify-content-center mb-3">
                   <div class="col-md-4">
                     <label class="control-label" for="password-confirm">{{ __('Confirmar contraseña *') }}</label>
                   </div>
                   <div class="col-md-6">
                   <input class="form-control" id="password-confirm" type="password"  name="password_confirmation" required autocomplete="new-password">
                   </div>
-                </div> -->
+                </div>
                 
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-4">

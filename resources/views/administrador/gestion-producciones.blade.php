@@ -110,7 +110,10 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">{{$produccion->titulo}}</h4>
-                            <button type="button" class="btn btn-secondary">Generar reporte <i class="bi bi-download"></i></button>
+                            <form action="{{ route('generarPDF') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-secondary">Generar reporte <i class="bi bi-download"></i></button>
+                            </form>
                         </div>
                         <div class="modal-body">
                             <table class="tabla-modal table table-borderless" >
