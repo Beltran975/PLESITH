@@ -24,18 +24,21 @@
                     <div class="modal-body">
                         <form action="{{ route('buscar-listado') }}" method="GET" id="busqueda-form">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
                                 <div class="col">
-                                    <label for="region">Categoría:</label>
-                                    <select class="form-control" name="region" id="region">
+                                    <label for="categoria">Categoría:</label>
+                                    <select class="form-control" name="categoria" id="categoria">
                                         <option name="categoria" disabled selected>Seleccionar</option>
                                         <option name="categoria" value="Nacional">Nacional</option>
                                         <option name="categoria" value="Internacional">Internacional</option>
                                     </select>
                                 </div>
+
                                 <div class="col">
                                     <label for="area">Líder:</label>
                                     <input class="form-control" type="text" name="area" id="area">
                                 </div>
+
                                 <div class="col">
                                     <label for="nombre">Área de conocimiento:</label>
                                     <select class="form-control" name="nombre" id="nombre">
@@ -51,6 +54,7 @@
                                         <option name="linea_inv" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
                                     </select>
                                 </div>
+
                                 <div class="col">
                                     <label for="institucion">Institución ligada:</label>
                                     <select class="form-control" name="institucion" id="institucion">

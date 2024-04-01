@@ -17,7 +17,7 @@ class ListadoController extends Controller
     public function buscar(Request $request)
     {
         $titulo = $request->input('titulo');
-        $region = $request->input('region');
+        $categoria = $request->input('categoria');
         $area = $request->input('area');
         $año = $request->input('año');
         $nombre = $request->input('nombre');
@@ -28,8 +28,8 @@ class ListadoController extends Controller
         if ($titulo) {
             $query->where('tema_inv', 'like', "%$titulo%");
         }
-        if ($region) {
-            $query->where('categoria', 'like', "%$region%");
+        if ($categoria) {
+            $query->where('categoria', 'like', "$categoria%");
         }
         if ($area) {
             $query->where('lider', 'like', "%$area%");
