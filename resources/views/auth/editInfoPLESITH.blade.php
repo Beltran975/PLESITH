@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ asset('asset/register.css') }}">    
+        <link rel="stylesheet" href="{{ asset('asset/home-user.css') }}">    
         <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-rbs5oRmyz9BDjzS9nEIEUnzM1qDe5ICorxF9uF8g5SeFOByuB+8Z3Gk5Sck/GJvI" crossorigin="anonymous">
         <title>Actualización | PLESITH</title>
@@ -14,24 +14,23 @@
         <main class="main">
             <div class="content-registro form-group">
                 <div class="row ml-5">
-                    <h3>{{ __('Actualizacion información PLESTIH') }}</h3>
+                    <h3>{{ __('Información PLESTIH') }}</h3>
                 </div>
                 <hr class="hr-gob" >
                 <div class="card">
                     <div class="card-header">
-                        <h3>Información PLESITH</h3>
+                        <h3>Actualizar</h3>
                     </div>
                     <div class="card-body">
-                    <form action="{{ route('informacion.update', $dato->id_inf)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('informacion.update', $dato->id_inf)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div class="row form-outline md-4">
+                            <div class="row justify-content-center">
+                                <!-- Área de conocimiento -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="lineaInv">Área de conocimiento</label>
                                 </div>
-                                <br>
-                                <br>
-                                <div class="col-md-8">
+                                <div class="col-md-6 mb-3">
                                     <select class="form-control" name="lineaInv" required>
                                         <option name="lineaInv" value="" disabled selected>{{$dato->lineaInv}}</option>
                                         <option name="lineaInv" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
@@ -45,32 +44,29 @@
                                         <option name="lineaInv" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
                                     </select>
                                 </div>
-                            </div>
-                            <!-- Grado Academico -->
-                            <div class="row form-outline mb-4">
+                                <!-- Grado Academico -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="grado">Grado académico</label>
                                 </div>
-                                <div class="col-md-8">
-                                    <input type="text" name="grado" class="form-control" value="{{$dato->grado}}" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" type="text" name="grado" value="{{$dato->grado}}" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
                                 </div>
-                            </div>
-                            
-                            <!-- Pertenece al SNI -->
-                            <div class="row form-outline mb-4">
+                                <!-- Pertenece al SNI -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
-                                    <label><h4> {{$dato->pertenece}}</h4></label>
                                 </div>
-                            </div>
-                            <div class="container text-center">
-                                <div class="row align-items-start">
-                                    <div class="col">
-                                    <input type="radio" name="pertenece" autocomplete="off" value="si" value="{{$dato->pertenece}}" required>
+                                <div class="col-md-6 mb-3">
+                                    <input type="radio" name="pertenece" autocomplete="off" value="si" {{$dato->pertenece == 'si' ? 'checked' : '' }}>
                                     <label class="btn" for="pertenece">Sí</label>
-                                    <input type="radio" name="pertenece" autocomplete="off" value="no" value="{{$dato->pertenece}}" required>
+                                    <input type="radio" name="pertenece" autocomplete="off" value="no" {{$dato->pertenece == 'no' ? 'checked' : '' }}>
                                     <label class="btn" for="pertenece">No</label>
-                                    </div>
+                                </div>
+                                <!-- Evidencia de SNI -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input id="evidenciaSni" type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required disabled />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -84,6 +80,23 @@
         </main>
         @include('layouts/footer')
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8N+1lUE3+XjwIXqityaM2UwEJrHjeZX/nezF8+Ad5A0tjFkA5Vx7Js1KrI95" crossorigin="anonymous"></script>
-        
+        <script>
+            const radioSi = document.querySelector('input[value="si"]');
+            const radioNo = document.querySelector('input[value="no"]');
+            const fileInput = document.querySelector('input[name="evidenciaSni"]');
+
+            function toggleFileInput() {
+                if (radioSi.checked) {
+                    fileInput.removeAttribute('disabled');
+                } else {
+                    fileInput.setAttribute('disabled', 'disabled');
+                }
+            }
+
+            radioSi.addEventListener('change', toggleFileInput);
+            radioNo.addEventListener('change', toggleFileInput);
+
+            toggleFileInput();
+        </script>
     </body>
 </html>

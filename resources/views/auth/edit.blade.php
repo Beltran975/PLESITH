@@ -3,15 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ asset('asset/register.css') }}">    
+        <link rel="stylesheet" href="{{ asset('asset/home-user.css') }}">    
         <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-rbs5oRmyz9BDjzS9nEIEUnzM1qDe5ICorxF9uF8g5SeFOByuB+8Z3Gk5Sck/GJvI" crossorigin="anonymous">
-        <title>Registro | PLESITH</title>
-        <script> //funcion para mayusculas
-            function mayus(e) {
-                e.value = e.value.toUpperCase();
-            }
-        </script>
+        <title>Actualización | PLESITH</title>
     </head>
     <body>
         @include('layouts/headregob')
@@ -19,51 +14,45 @@
         <main class="main">
             <div class="content-registro form-group">
                 <div class="row ml-5">
-                    <h3>{{ __('Actualizacion de usuario') }}</h3>
+                    <h3>{{ __('Información personal') }}</h3>
                 </div>
                 <hr class="hr-gob" >
                 <div class="card">
                     <div class="card-header">
-                        <h3>Datos generales</h3>
+                        <h3>Actualizar</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('datos.update', Auth::user()->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method ('PUT')
-                            
-                            <div class="row justify-content-center mb-3">
+                            <div class="row justify-content-center">
+                                <!-- Nombre completo -->
                                 <div class="col-md-4">
-                                    <label class="control-label" for="name" >{{ __('Nombre completo *') }}</label>
+                                    <label class="form-label" for="name">{{ __('Nombre completo *') }}</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{Auth::user()->name}}" required autocomplete="name" autofocus>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" id="name" type="text" name="name" value="{{Auth::user()->name}}" required autocomplete="name" autofocus>
                                 </div>
-                            </div>
-                            
-                            <div class="row justify-content-center mb-3">
+                                <!-- CURP -->
                                 <div class="col-md-4">
-                                    <label class="control-label" for="curp" class="">{{ __('CURP *')}}</label>
+                                    <label class="form-label" for="curp">{{ __('CURP *')}}</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <input id="curp" ttype="text" onkeyup="mayus(this);" class="form-control" name="curp" value="{{Auth::user()->curp}}" required maxlength="18"><br>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" id="curp" type="text" name="curp" value="{{Auth::user()->curp}}" onkeyup="mayus(this);" required maxlength="18">
                                 </div>
-                            </div>
-                            
-                            <div class="row justify-content-center mb-3">
+                                <!-- Correo -->
                                 <div class="col-md-4">
-                                    <label class="control-label" for="email" class="">{{ __('Correo *') }}</label>
+                                    <label class="form-label" for="email">{{ __('Correo *') }}</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" required autocomplete="email">
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control @error('email') is-invalid @enderror" id="email" type="email" name="email" value="{{Auth::user()->email}}" required autocomplete="email">
                                 </div>
-                            </div>
-                            
-                            <div class="row justify-content-center mb-3">
+                                <!-- Intitución ligada -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="institucion">{{ __('Institución ligada* ')}}</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <select class="form-control" name="institucion" id="institucion" required>
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-control" id="institucion" name="institucion" required>
                                         <option disabled selected>{{Auth::user()->institucion}}</option>
                                         <option name="institucion" value="CENTRO DE ESTUDIO VALORES CON LIBERTAD">CENTRO DE ESTUDIO VALORES CON LIBERTAD, "CEVAL"</option>
                                         <option name="institucion" value="CENTRO CULTURAL EUROPEO DE ESTUDIOS UNIVERSITARIOS DE HIDALGO">CENTRO CULTURAL EUROPEO DE ESTUDIOS UNIVERSITARIOS DE HIDALGO</option>
@@ -229,19 +218,17 @@
                                         <option name="institucion" value="UNIVERSIDAD TECNOLOGICA TULA-TEPEJI">UNIVERSIDAD TECNOLÓGICA TULA-TEPEJI</option>
                                     </select>
                                 </div>
-                            </div>
-                            
-                            <div class="row justify-content-center mb-3">
+                                <!-- Programa educativo -->
                                 <div class="col-md-4">
-                                    <label class="control-label" for="programa" class="">{{ __('Programa educativo *')}}</label>
+                                    <label class="form-label" for="programa">{{ __('Programa educativo *')}}</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <input class="form-control" id="programa" value="{{Auth::user()->programa}}"  type="text"  name="programa" required>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" id="programa" type="text"  name="programa" value="{{Auth::user()->programa}}" required>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">{{ __('Actualizar') }}</button>
                                 <button class="btn btn-secondary" type="button" onclick="history.back()" name="volver atrás">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">{{ __('Actualizar') }}</button>
                             </div>
                         </form>
                     </div>

@@ -4,21 +4,19 @@
     align-items: center;  
     margin-top: 5%;
 }
-
 .content-registro{
     width: 700px;
 }
 
 /*hr gobierno*/
- .hr-gob{
+  .hr-gob{
     margin: 10px 0 10px;
     background-color: var(--gold);
     border-top: 1px solid var(--gold);
     opacity: 1;
     margin-bottom: 50px;
   }
-  
-   .hr-gob::before{
+  .hr-gob::before{
     content: " ";
     width: 35px;
     height: 5px;
@@ -28,6 +26,9 @@
   }
 
 /*card de registro*/
+div.card{
+  margin-bottom: 50px;
+}
 .card 
 .card-header{
     color: #ffffff;
