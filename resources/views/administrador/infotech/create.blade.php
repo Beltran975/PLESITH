@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="control-label" for="year">{{ __('Fecha *')}}</label>
-                                        <input id="fecha-input" class="form-control" name="year" type="date" min="1900" max="2099" step="1" required />
+                                        <input id="fecha-input" class="form-control" name="year" type="date" min=<?php $hoy=date("Y-m-d"); echo $hoy;?> max="2099" step="1" required />
                                     </div>
                                     <div class="mb-3">
                                         <label class="control-label" for="documento">{{ __('Documento *')}}</label>
@@ -67,5 +67,6 @@
         
         // Establecer el valor del campo de entrada como la fecha actual
         document.getElementById('fecha-input').value = formattedDate;
+        document.getElementById('#fecha-input').value = new Date().toDateInputValue();
     </script>
 </html>

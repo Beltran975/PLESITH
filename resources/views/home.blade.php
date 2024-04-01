@@ -443,14 +443,16 @@
                                     <input class="form-control" name="pais" id="paisInput" type="text" required>
                                 </div>
                             </div>
+
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
                                     <label class="form-label" for="year">{{ __('Fecha *')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" name="year" id="fechaInput" type="month" min="1900" max="2099" step="1" required />
+                                    <input id="fecha-input" class="form-control" name="year" type="date" min=<?php $hoy=date("Y-m-d"); echo $hoy;?> max="2099" step="1" required />
                                 </div>
                             </div>
+                            
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
                                     <label class="form-label" for="proposito">{{ __('Propósito *')}}</label>
@@ -1097,20 +1099,16 @@
         mostrarPaises();
     </script>
     <script>
-    // Función para obtener la fecha actual en el formato YYYY-MM
-    function obtenerFechaActual() {
-        var fecha = new Date();
-        var mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
-        var año = fecha.getFullYear();
-        return `${año}-${mes}`;
-    }
-
-    // Obtener el campo de entrada de fecha
-    var fechaInput = document.getElementById('fechaInput');
-
-    // Establecer el valor del campo de entrada como la fecha actual
-    fechaInput.value = obtenerFechaActual();
-</script>
+        // Obtener la fecha actual del sistema
+        var fechaActual = new Date();
+        
+        // Formatear la fecha en el formato adecuado para el campo de entrada
+        var formattedDate = fechaActual.toISOString().split('T')[0];
+        
+        // Establecer el valor del campo de entrada como la fecha actual
+        document.getElementById('fecha-input').value = formattedDate;
+        document.getElementById('#fecha-input').value = new Date().toDateInputValue();
+    </script>
 
     <script>
         // Seleccionar los elementos relevantes
