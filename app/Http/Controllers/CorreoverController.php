@@ -23,7 +23,8 @@ class CorreoverController extends Controller
         return redirect()->route('login')->with('error', 'Debe iniciar sesión para verificar el correo electrónico.');
     }
 
-    return redirect('/home')->with('correo',);}
+    return redirect('/home')->with('correo',);
+}
     
 
 
@@ -35,10 +36,11 @@ public function aprobarVerificacionDeCorreo($userId)
         // Cambiar el atributo de verificación
         $user->tipo = "autenticado";
         $user->save();
-        return view('home')->with('success', 'Correo verificado correctamente.');
+        return redirect('/home')->with('success', 'Correo verificado correctamente.');
     } else {
         return redirect()->route('home')->with('error', 'No se encontró el usuario.');
     }
+    
 }
 }
 

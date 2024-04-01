@@ -142,7 +142,7 @@ Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('en
 //verificar direccion de correo
 Route::get('/verificar-Correo', [CorreoverController::class, 'VerificarCorreo'])->name('enviar.correo');
 
-Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class, 'aprobarVerificacionDeCorreo'])->name('aprobarVerificacionDeCorreo');
+Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class, 'aprobarVerificacionDeCorreo'])->name('aprobarVerificacionDeCorreo')->middleware('auth');
 //verficar usuario 
 
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 

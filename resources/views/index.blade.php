@@ -32,7 +32,7 @@
                                 <input type="search" class="form-control rounded" aria-label="Search" aria-describedby="search-addon" />
                             </li>
                             <li><a href="{{ route('login') }}">Inicio de sesión</a></li>
-                            <li><a href="#seccion-descrpcion">Acerca</a></li>
+                            <li><a href="#section-descrpcion">Acerca</a></li>
                             <li><a href="#footer">Contacto</a></li>
                             <li><a href="#">Inicio</a></li>
                         </ul>

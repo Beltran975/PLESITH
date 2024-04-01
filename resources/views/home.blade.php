@@ -42,7 +42,7 @@
                 <br>
                 <br>
                 <figcaption class="blockquote-footer">
-                Para completar adecuadamente su solicitud, le solicitamos que ingrese sus datos correspondientes en "Información PLESITH". Además, de manera opcional, puede agregar información sobre sus investigaciones, patentes y documentos de investigación en la sección "Mis Producciones".
+                    Para completar adecuadamente su solicitud, le solicitamos que ingrese sus datos correspondientes en "Información PLESITH". Además, de manera opcional, puede agregar información sobre sus investigaciones, patentes y documentos de investigación en la sección "Mis Producciones".
                 </figcaption>
                 @endif
                 @break
@@ -310,8 +310,28 @@
                 </div>
 
                 <!-- Nodos de colaboración -->
+                @if(Auth::user()->postulaciones->count() < 0 )
                 <div class="card mb-3">
                     <div class="card-header" data-bs-toggle="collapse" href="#nodos">
+                        Mis nodos de colaboración
+                    </div>
+                    <div class="card-body collapse" id="nodos">
+                        <div class="nav-producciones">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <p>Sin verificación</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                @elseif( Auth::user()->postulaciones = 'Aprobado')
+                <div class="card mb-3">
+                    <div disabled class="card-header" data-bs-toggle="collapse" href="#nodos">
                         Mis nodos de colaboración
                     </div>
                     <div class="card-body collapse" id="nodos">
@@ -329,6 +349,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <hr>
@@ -500,7 +521,7 @@
                                     <label class="form-label" for="colaboradores">{{ __('Colaboradores*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input class="form-control" id="colaboradores" name="colaboradores" type="text" >
+                                    <input class="form-control" id="colaboradores" name="colaboradores" type="text">
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
@@ -827,24 +848,16 @@
 
         function VerAyuda() {
             Swal.fire({
-                title: "<strong>HTML <u>example</u></strong>",
+                title: "<strong>Ayuda</strong>",
                 icon: "info",
-                html: `
-    You can use <b>bold text</b>,
-    <a href="#">links</a>,
-    and other HTML tags
-  `,
+                html: `<ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#"> Preguntas frecuentes </a></li>
+                <li class="list-group-item"><a href="#"> Manual de Usuario </a></li>
+                <li class="list-group-item"><a href="#"> Contacto </a></li>`,
+                showConfirmButton: false,
                 showCloseButton: true,
-                showCancelButton: true,
-                focusConfirm: false,
-                confirmButtonText: `
-    <i class="fa fa-thumbs-up"></i> Great!
-  `,
-                confirmButtonAriaLabel: "Thumbs up, great!",
-                cancelButtonText: `
-    <i class="fa fa-thumbs-down"></i>
-  `,
-                cancelButtonAriaLabel: "Thumbs down"
+
+
             });
         }
     </script>
