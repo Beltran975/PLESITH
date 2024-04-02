@@ -32,7 +32,7 @@
         <div class="container text-center">
           <div aria-labelledby="navbarDropdown">
             <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-              {{ __('Cerrar sesión') }}
+              <i class="bi bi-arrow-left-square"></i> {{ __('Cerrar sesión') }}
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
               @csrf

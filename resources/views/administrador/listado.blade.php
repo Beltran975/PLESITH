@@ -229,7 +229,7 @@
                                 </div>
                                 <div class="col">
                                     <!-- <input type="submit" value="Buscar"> -->
-                                    <button class="button nodos" type="submit" value="buscar">
+                                    <button class="button nodos btn btn-primary" type="submit" value="buscar">
                                         <i class="bi bi-search"></i>
                                     </button>
                                 </div>
@@ -249,7 +249,7 @@
                                         <p class="card-text"><strong>Área de conocimiento:</strong> {{$i->linea_inv}}</p>
                                         <p class="card-text"><strong>Institución ligada:</strong> {{$i->institucion_ligada}}</p>
                                         <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $i->id }}">
-                                            Leer más <i class="bi bi-book-fill"></i>
+                                            <i class="bi bi-book"></i> Leer más
                                         </a>
                                     </div>
                                 </div>

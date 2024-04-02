@@ -280,10 +280,10 @@
                     <div class="card-body collapse" id="produccion">
                         <div class="row row-cols-auto">
                             <div class="col">
-                                <a href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion"><i class="bi bi-plus-circle-fill"></i></a>
+                                <a href="#" class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion"><i class="bi bi-plus-circle-fill"></i> Crear</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="/Producciones/listaProducciones">Mis Producciones</a>
+                                <a class="btn btn-primary" href="/Producciones/listaProducciones"><i class="bi bi-list-ul"></i> Mis producciones</a>
                             </div>
                         </div>
                         <table class="table">
@@ -335,18 +335,15 @@
                         Mis nodos de colaboración
                     </div>
                     <div class="card-body collapse" id="nodos">
-                        <div class="nav-producciones">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <a class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo" class="bi bi-plus-circle-fill">Crear</a>
-                                        </th>
-                                        <th><a class="btn btn-primary" href="/nodo/listaNodos">Mis nodos creados</a></th>
-                                    </tr>
-                                </thead>
-                            </table>
+                        <div class="row row-cols-auto">
+                            <div class="col">
+                                <a class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo"><i class="bi bi-plus-circle-fill"></i> Crear</a>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-primary" href="/nodo/listaNodos"><i class="bi bi-list-ul"></i> Mis nodos</a>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
                 @endif

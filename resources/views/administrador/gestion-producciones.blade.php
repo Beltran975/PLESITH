@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="col">
                                     <!-- <input type="submit" value="Buscar"> -->
-                                    <button class="button producciones" type="submit" value="Buscar">
+                                    <button class="button producciones btn btn-primary" type="submit" value="Buscar">
                                         <i class="bi bi-search"></i>
                                     </button>
                                 </div>
@@ -98,7 +98,7 @@
                                     <p class="card-text"><strong>Propósito:</strong> {{ $produccion->proposito }}</p>
                                     <!-- <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-pruduc-{{ $produccion->id_pro }}"> -->
                                     <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $produccion->id_pro }}">
-                                        Leer más <i class="bi bi-book-fill"></i>
+                                        <i class="bi bi-book"></i> Leer más 
                                     </a>
                                 </div>
                             </div>

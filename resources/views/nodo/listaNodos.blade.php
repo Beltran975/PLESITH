@@ -19,7 +19,7 @@
     @include('layouts/header')
     <br>
     <main class="page">
-        <a href="/home" class="btn btn-primary">Volver atrás</a>
+        <a href="/home" class="btn btn-primary"><i class="bi bi-arrow-bar-left"></i> Volver atrás</a>
         <div id="tab5" class="tabs-producciones active">
             <table class="table table-bordered">
                 <thead>
@@ -47,13 +47,13 @@
                         <td scope="row"><a href="/nodos/{{ $dato->documento}}" target="blanck_">{{ $dato->documento }}</a></td>
                         <td scope="row">
                             <a href="{{route('nodos.edit', $dato->id)}}" class="btn btn-secondary">
-                                <i class="bi bi-pencil-square"></i>
+                                <i class="bi bi-pencil-square"></i> Editar
                             </a>
                         </td>
                         <td scope="row">
                             <!-- Button delete modal -->
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$dato->id}}">
-                                Eliminar
+                                <i class="bi bi-trash3"></i> Eliminar
                             </button>
                         </td>
                     </tr>

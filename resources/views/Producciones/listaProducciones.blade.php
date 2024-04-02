@@ -19,7 +19,7 @@
         @include('layouts/header')
         <br>
         <main class="page">
-            <a href="/home" class="btn btn-primary">Volver atrás</a>
+            <a href="/home" class="btn btn-primary"><i class="bi bi-arrow-bar-left"></i> Volver atrás</a>
             <div id="tab5" class="tabs-producciones active">
                 <table class="table table-bordered">
                     <thead>
@@ -47,12 +47,12 @@
                             <td scope="row">{{ $produccion->proposito }}</td>
                             <td scope="row">
                                 <a href="{{ route('editProduc.edit', $produccion->id_pro)}}" class="btn btn-secondary">
-                                    <i class="bi bi-pencil-square"></i>
+                                    <i class="bi bi-pencil-square"></i> Editar
                                 </a>
                             </td>
                             <td scope="row">       
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal-delete1-{{$produccion->id_pro}}">
-                                    Eliminar
+                                    <i class="bi bi-trash3"></i> Eliminar
                                 </button>
                             </td>
                         </tr>

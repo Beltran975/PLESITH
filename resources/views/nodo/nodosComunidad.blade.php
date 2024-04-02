@@ -24,14 +24,14 @@
                             <h3>Nodos de colaboración</h3>
                         </div>
                         <div class="col-2 barra-nodo">
-                            <a class="btn " href="/home"   data-bs-target="#Modal-crear-produccion">Crear nodo</a>
+                            <a class="btn btn-primary" href="/home"><i class="bi bi-plus-circle-fill"></i> Crear nodo</a>
                         </div>
                         <div class="col-3 buscar-nodo">
                             <form class="form-inline" action="{{route('buscar.index')}}" method="get">
                             <input name="buscar" class="form-control mr-sm-2" type="search" placeholder="Área de conocimiento" aria-label="Search">
                         </div>
                         <div class="col-2">
-                            <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i>Buscar</button>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -56,12 +56,12 @@
                             <td class="contenido-produccion">{{ $d->institucion_ligada}}</td>
                             <td>
                                 <button class="btn btn-primary" onclick="AlertaColaborador()" type="button">
-                                    Colaborar
+                                    <i class="bi bi-send-plus"></i> Colaborar
                                 </button>
                             </td>
                             <td>
                                 <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $d->id }}">
-                                    Leer más
+                                    <i class="bi bi-book"></i> Leer más
                                 </a>
                             </td>
                         </tr>

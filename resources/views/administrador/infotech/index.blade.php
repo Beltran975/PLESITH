@@ -55,9 +55,9 @@
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                                     <ul class="dropdown-menu">
-                                                        <a href="{{route('infotech.edit', $d->id)}}" class="btn btn-warning">Editar</a>
+                                                        <a href="{{route('infotech.edit', $d->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Editar</a>
                                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{ $d->id}}">
-                                                            Eliminar
+                                                            <i class="bi bi-trash3"></i> Eliminar
                                                         </button>
                                                     </ul>
                                                 </button>
