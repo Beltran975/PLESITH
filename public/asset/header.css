@@ -1,5 +1,5 @@
 /* mac */
-@media (min-width: 801px) {    
+@media (min-width: 900px) {    
     header {
         margin-top: -3%;
         position: fixed; /* Fija el encabezado en la parte superior */
@@ -52,7 +52,7 @@
 /* -------------------------------------------------------------------------------------------------------- */
 
 /* ipad */
-@media (min-width: 431px) and (max-width: 800px){
+@media (min-width: 541px) and (max-width: 899px){
     header {
         margin-top: -4%;
         position: fixed;
@@ -77,7 +77,7 @@
 /* -------------------------------------------------------------------------------------------------------- */
 
 /* iphone */
-@media (max-width: 430px) {
+@media (max-width: 540px) {
     header {
         margin-top: -7%;
         position: fixed; /* Fija el encabezado en la parte superior */
