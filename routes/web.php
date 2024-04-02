@@ -229,4 +229,7 @@ Route::get('/filtro-buscar', [App\Http\Controllers\InfotechController::class, 'f
 //Route::get('/filtro-convocations', 'InfotechController@showconvocatoriasByYear')->name('filtro.convocations');
 
 Route::get('/obtener-correos', [App\Http\Controllers\ColaboradoresController::class, 'obtenerCorreos']);
+//ruta reporte producciones administrador PDF
 Route::post('/generar-pdf', [App\Http\Controllers\ReporteproduccionController::class, 'generarPDF'])->name('generarPDF');
+//ruta reporte nodos admisnistrador PDF
+Route::post('/generar', [App\Http\Controllers\ReportenodoController::class, 'generar'])->name('generar');

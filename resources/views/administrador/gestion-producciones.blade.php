@@ -18,6 +18,10 @@
                 <div class="col obscuro">
                     <div class="titulo row d-flex  mb-3">
                         <h1>{{ __('Buscador | Producciones') }}</h1>
+                        <form action="{{ route('generarPDF') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-success">Generar reporte <i class="bi bi-download"></i></button>
+                        </form>
                     </div>
                     <hr class="hr-gob">
                     <!-- filtros de busqueda -->
@@ -94,7 +98,7 @@
                                     <p class="card-text"><strong>Propósito:</strong> {{ $produccion->proposito }}</p>
                                     <!-- <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-pruduc-{{ $produccion->id_pro }}"> -->
                                     <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $produccion->id_pro }}">
-                                        Leer más
+                                        Leer más <i class="bi bi-book-fill"></i>
                                     </a>
                                 </div>
                             </div>
@@ -110,10 +114,6 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">{{$produccion->titulo}}</h4>
-                            <form action="{{ route('generarPDF') }}" method="POST">
-                                @csrf
-                                <button type="submit" class="btn btn-secondary">Generar reporte <i class="bi bi-download"></i></button>
-                            </form>
                         </div>
                         <div class="modal-body">
                             <table class="tabla-modal table table-borderless" >

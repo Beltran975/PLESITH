@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('asset/register.css') }}">    
+    <link rel="stylesheet" href="{{ asset('asset/home-user.css') }}">    
     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-rbs5oRmyz9BDjzS9nEIEUnzM1qDe5ICorxF9uF8g5SeFOByuB+8Z3Gk5Sck/GJvI" crossorigin="anonymous">
     <title>Registro | PLESITH</title>
@@ -53,7 +53,7 @@
                   </div>
                   <div class="col-md-6">
                   <!--<input type="text" onkeyup="mayus(this);">-->
-                    <input id="curp" ttype="text" onkeyup="mayus(this);" class="form-control" name="curp" required maxlength="18"><br>
+                    <input id="curp" ttype="text" onkeyup="mayus(this);" class="form-control" name="curp" required maxlength="18">
                     <input class="form-control" id="archivoCurp" type="file" accept="application/pdf"  name="archivoCurp" required>
                   </div>
                 </div>
@@ -272,7 +272,6 @@
                       <option name="institucion" value="UNIVERSIDAD TECNOLOGICA TULA-TEPEJI">UNIVERSIDAD TECNOLÓGICA TULA-TEPEJI</option>
                     </select>
                   </div>
-                  <br>
                 </div>
                 
                 <div class="row justify-content-center mb-3">

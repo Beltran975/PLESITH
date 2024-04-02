@@ -18,6 +18,10 @@
                 <div class="col obscuro">
                     <div class="titulo row d-flex  mb-3">
                         <h1>{{ __('Buscador | Nodos de colaboración') }}</h1>
+                        <form action="{{ route('generar') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-success">Generar reporte <i class="bi bi-download"></i></button>
+                        </form>
                     </div>
                     <hr class="hr-gob">
                     <!-- filtros de busqueda-->
@@ -245,7 +249,7 @@
                                         <p class="card-text"><strong>Área de conocimiento:</strong> {{$i->linea_inv}}</p>
                                         <p class="card-text"><strong>Institución ligada:</strong> {{$i->institucion_ligada}}</p>
                                         <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $i->id }}">
-                                            Leer más
+                                            Leer más <i class="bi bi-book-fill"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -259,7 +263,6 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title">{{$i->tema_inv}}</h4>
-                                        <button type="button" class="btn btn-secondary">Generar reporte <i class="bi bi-download"></i></button>
                                     </div>
                                     <div class="modal-body">
                                         <table class="tabla-modal table table-borderless" >

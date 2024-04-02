@@ -34,7 +34,8 @@
             <td class="contenido-produccion">{{$produccion->proposito}}</td>
         </tr>
         <tr>
-            <hr class="hr-gob">
+            <th><hr class="hr-gob"></th>
+            <td><hr class="hr-gob"></td>
         </tr>
         @endforeach
     </tbody>
