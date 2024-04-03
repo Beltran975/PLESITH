@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
-use App\Models\Instituciones;
 use Illuminate\Support\Facades\Hash;
 
 class TodosSeeder extends Seeder
