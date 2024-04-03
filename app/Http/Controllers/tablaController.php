@@ -95,4 +95,15 @@ class tablaController extends Controller
         //Descargar el pdf
         return $pdf->download('Dictamen_negado_' . $id . '.pdf');
     }
+
+    public function inhabilitarUsuario($userId)
+    {
+        $postulacion = Postulaciones::FindOrFail($id);
+        $postulacion->estatus = 'no_revisado';
+        $postulacion->save();
+        $usuario = $postulacion->user;
+        $usuario->tipo = 'revisado';
+        $usuario->save();
+        return view('administrador.postulaciones.tabla', compact('users'));
+    }
 }
