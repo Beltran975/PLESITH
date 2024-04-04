@@ -233,3 +233,5 @@ Route::get('/obtener-correos', [App\Http\Controllers\ColaboradoresController::cl
 Route::post('/generar-pdf', [App\Http\Controllers\ReporteproduccionController::class, 'generarPDF'])->name('generarPDF');
 //ruta reporte nodos admisnistrador PDF
 Route::post('/generar', [App\Http\Controllers\ReportenodoController::class, 'generar'])->name('generar');
+//ruta para obtener las isntituciones
+Route::get('/instituciones', [App\Http\Controllers\InstitucionController::class, 'obtenerInstituciones']);
