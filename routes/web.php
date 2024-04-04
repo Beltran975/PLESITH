@@ -133,6 +133,8 @@ Route::resource('/add', BibliotechController::class);
 Route::get('administrador/bibliotech/tabla', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech');
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
+//generar PDF del CV para el usuario
+Route::get('/generate-CV',[PdfController::class, 'generateCV']);
 
 Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('auth');
 

@@ -47,4 +47,9 @@ class User extends Authenticatable
         return $this->hasMany(Informacion::class, 'id_user');
     }
 
+    public function nodos()
+    {
+        return $this->hasMany(Nodo::class,'id_user');
+    }
+
 }
