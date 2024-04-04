@@ -34,23 +34,32 @@
                 @break
 
                 @case('autenticado')
-                @if(Auth::user()->datos->count() > 0)
+                @if(Auth::user()->datos->count() > 0 && Auth::user()->producciones->count() > 0)
                 <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
                 <button class="btn btn-success" id="botonPostulacion">Enviar postulación <i class="bi bi-send"></i></button>
+                <br>
+                <br>
+                <figcaption class="blockquote-footer">
+                    Antes de enviar su postulación, verifique que todos sus datos estén llenos correctamente.
+                </figcaption>
                 @else
                 <button disabled class="btn btn-success" id="botonPostulacion">Enviar postulación <i class="bi bi-send"></i></button>
                 <br>
                 <br>
                 <figcaption class="blockquote-footer">
-                    Para completar adecuadamente su solicitud, le solicitamos que ingrese sus datos correspondientes en "Información PLESITH". Además, de manera opcional, puede agregar información sobre sus investigaciones, patentes y documentos de investigación en la sección "Mis Producciones".
+                    Para completar adecuadamente su solicitud, le solicitamos que ingrese sus datos correspondientes en "Información PLESITH". Además, agregue información sobre sus investigaciones, patentes y documentos de investigación en la sección "Mis Producciones".
                 </figcaption>
                 @endif
                 @break
 
                 @case('postulado')
                 @case('revisado')
-                @if(Auth::user()->datos->count() > 0)
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-estatus-pos">Estatus de postulación</button>
+                @if(Auth::user()->datos->count() > 0 && Auth::user()->producciones->count() > 0)
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-estatus-pos">Estatus de cuenta</button>
+                <a href="/generate-CV" class="btn btn-success">
+                <i class="bi bi-box-arrow-in-down"></i>
+                    Descargar Perfil PLESITH
+                </a>
                 @endif
                 @break
 
@@ -310,7 +319,8 @@
                 </div>
 
                 <!-- Nodos de colaboración -->
-                @if(Auth::user()->postulaciones->count() < 0 )
+                @foreach (Auth::user()->postulaciones as $postulacion)
+                @if($postulacion->estatus == 'No revisado' ) 
                 <div class="card mb-3">
                     <div class="card-header" data-bs-toggle="collapse" href="#nodos">
                         Mis nodos de colaboración
@@ -329,7 +339,7 @@
                         </div>
                     </div>
                 </div>
-                @elseif( Auth::user()->postulaciones = 'Aprobado')
+                @elseif($postulacion->estatus == 'Aprobado')
                 <div class="card mb-3">
                     <div disabled class="card-header" data-bs-toggle="collapse" href="#nodos">
                         Mis nodos de colaboración
@@ -343,10 +353,29 @@
                                 <a class="btn btn-primary" href="/nodo/listaNodos"><i class="bi bi-list-ul"></i> Mis nodos</a>
                             </div>
                         </div>
-                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tema de investigación</th>
+                                    <th scope="col">Línea de investigación</th>
+                                    <th scope="col">Categoría</th>
+                                </tr>
+                            </thead>
+                            @foreach (Auth::user()->nodos as $nodo)
+                            <tbody class="table-group-divider">
+                                <tr>
+                                    <th>{{$nodo->tema_inv}}</th>
+                                    <td>{{$nodo->linea_inv}}</td>
+                                    <td>{{$nodo->categoria}}</td>
+                                </tr>
+                            </tbody>
+                            @endforeach
+                        </table>
+
                     </div>
                 </div>
                 @endif
+                @endforeach
             </div>
         </div>
         <hr>
@@ -446,10 +475,11 @@
                                     <label class="form-label" for="year">{{ __('Fecha *')}}</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input id="fecha-input" class="form-control" name="year" type="date" min=<?php $hoy=date("Y-m-d"); echo $hoy;?> max="2099" step="1" required />
+                                    <input id="fecha-input" class="form-control" name="year" type="date" min=<?php $hoy = date("Y-m-d");
+                                                                                                                echo $hoy; ?> max="2099" step="1" required />
                                 </div>
                             </div>
-                            
+
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
                                     <label class="form-label" for="proposito">{{ __('Propósito *')}}</label>
@@ -727,202 +757,202 @@
 
     <script>
         // Lista de países
-        var paises = [  
-        "Afganistán",
-        "Albania",
-        "Alemania",
-        "Andorra",
-        "Angola",
-        "Antigua y Barbuda",
-        "Arabia Saudita",
-        "Argelia",
-        "Argentina",
-        "Armenia",
-        "Australia",
-        "Austria",
-        "Azerbaiyán",
-        "Bahamas",
-        "Bangladés",
-        "Barbados",
-        "Baréin",
-        "Bélgica",
-        "Belice",
-        "Benín",
-        "Bielorrusia",
-        "Birmania",
-        "Bolivia",
-        "Bosnia y Herzegovina",
-        "Botsuana",
-        "Brasil",
-        "Brunéi",
-        "Bulgaria",
-        "Burkina Faso",
-        "Burundi",
-        "Bután",
-        "Cabo Verde",
-        "Camboya",
-        "Camerún",
-        "Canadá",
-        "Catar",
-        "Chad",
-        "Chile",
-        "China",
-        "Chipre",
-        "Ciudad del Vaticano",
-        "Colombia",
-        "Comoras",
-        "Corea del Norte",
-        "Corea del Sur",
-        "Costa de Marfil",
-        "Costa Rica",
-        "Croacia",
-        "Cuba",
-        "Dinamarca",
-        "Dominica",
-        "Ecuador",
-        "Egipto",
-        "El Salvador",
-        "Emiratos Árabes Unidos",
-        "Eritrea",
-        "Eslovaquia",
-        "Eslovenia",
-        "España",
-        "Estados Unidos",
-        "Estonia",
-        "Etiopía",
-        "Filipinas",
-        "Finlandia",
-        "Fiyi",
-        "Francia",
-        "Gabón",
-        "Gambia",
-        "Georgia",
-        "Ghana",
-        "Granada",
-        "Grecia",
-        "Guatemala",
-        "Guyana",
-        "Guinea",
-        "Guinea ecuatorial",
-        "Guinea-Bisáu",
-        "Haití",
-        "Honduras",
-        "Hungría",
-        "India",
-        "Indonesia",
-        "Irak",
-        "Irán",
-        "Irlanda",
-        "Islandia",
-        "Islas Marshall",
-        "Islas Salomón",
-        "Israel",
-        "Italia",
-        "Jamaica",
-        "Japón",
-        "Jordania",
-        "Kazajistán",
-        "Kenia",
-        "Kirguistán",
-        "Kiribati",
-        "Kuwait",
-        "Laos",
-        "Lesoto",
-        "Letonia",
-        "Líbano",
-        "Liberia",
-        "Libia",
-        "Liechtenstein",
-        "Lituania",
-        "Luxemburgo",
-        "Macedonia del Norte",
-        "Madagascar",
-        "Malasia",
-        "Malaui",
-        "Maldivas",
-        "Maldivas",
-        "Malta",
-        "Marruecos",
-        "Mauricio",
-        "Mauritania",
-        "México",
-        "Micronesia",
-        "Moldavia",
-        "Mónaco",
-        "Mongolia",
-        "Montenegro",
-        "Mozambique",
-        "Namibia",
-        "Nauru",
-        "Nepal",
-        "Nicaragua",
-        "Níger",
-        "Nigeria",
-        "Noruega",
-        "Nueva Zelanda",
-        "Omán",
-        "Países Bajos",
-        "Pakistán",
-        "Palaos",
-        "Panamá",
-        "Papúa Nueva Guinea",
-        "Paraguay",
-        "Perú",
-        "Polonia",
-        "Portugal",
-        "Reino Unido",
-        "República Centroafricana",
-        "República Checa",
-        "República del Congo",
-        "República Democrática del Congo",
-        "República Dominicana",
-        "República Sudafricana",
-        "Ruanda",
-        "Rumanía",
-        "Rusia",
-        "Samoa",
-        "San Cristóbal y Nieves",
-        "San Marino",
-        "San Vicente y las Granadinas",
-        "Santa Lucía",
-        "Santo Tomé y Príncipe",
-        "Senegal",
-        "Serbia",
-        "Seychelles",
-        "Sierra Leona",
-        "Singapur",
-        "Siria",
-        "Somalia",
-        "Sri Lanka",
-        "Suazilandia",
-        "Sudán",
-        "Sudán del Sur",
-        "Suecia",
-        "Suiza",
-        "Surinam",
-        "Tailandia",
-        "Tanzania",
-        "Tayikistán",
-        "Timor Oriental",
-        "Togo",
-        "Tonga",
-        "Trinidad y Tobago",
-        "Túnez",
-        "Turkmenistán",
-        "Turquía",
-        "Tuvalu",
-        "Ucrania",
-        "Uganda",
-        "Uruguay",
-        "Uzbekistán",
-        "Vanuatu",
-        "Venezuela",
-        "Vietnam",
-        "Yemen",
-        "Yibuti",
-        "Zambia",
-        "Zimbabue",
-        // Agrega más países según sea necesario
+        var paises = [
+            "Afganistán",
+            "Albania",
+            "Alemania",
+            "Andorra",
+            "Angola",
+            "Antigua y Barbuda",
+            "Arabia Saudita",
+            "Argelia",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaiyán",
+            "Bahamas",
+            "Bangladés",
+            "Barbados",
+            "Baréin",
+            "Bélgica",
+            "Belice",
+            "Benín",
+            "Bielorrusia",
+            "Birmania",
+            "Bolivia",
+            "Bosnia y Herzegovina",
+            "Botsuana",
+            "Brasil",
+            "Brunéi",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Bután",
+            "Cabo Verde",
+            "Camboya",
+            "Camerún",
+            "Canadá",
+            "Catar",
+            "Chad",
+            "Chile",
+            "China",
+            "Chipre",
+            "Ciudad del Vaticano",
+            "Colombia",
+            "Comoras",
+            "Corea del Norte",
+            "Corea del Sur",
+            "Costa de Marfil",
+            "Costa Rica",
+            "Croacia",
+            "Cuba",
+            "Dinamarca",
+            "Dominica",
+            "Ecuador",
+            "Egipto",
+            "El Salvador",
+            "Emiratos Árabes Unidos",
+            "Eritrea",
+            "Eslovaquia",
+            "Eslovenia",
+            "España",
+            "Estados Unidos",
+            "Estonia",
+            "Etiopía",
+            "Filipinas",
+            "Finlandia",
+            "Fiyi",
+            "Francia",
+            "Gabón",
+            "Gambia",
+            "Georgia",
+            "Ghana",
+            "Granada",
+            "Grecia",
+            "Guatemala",
+            "Guyana",
+            "Guinea",
+            "Guinea ecuatorial",
+            "Guinea-Bisáu",
+            "Haití",
+            "Honduras",
+            "Hungría",
+            "India",
+            "Indonesia",
+            "Irak",
+            "Irán",
+            "Irlanda",
+            "Islandia",
+            "Islas Marshall",
+            "Islas Salomón",
+            "Israel",
+            "Italia",
+            "Jamaica",
+            "Japón",
+            "Jordania",
+            "Kazajistán",
+            "Kenia",
+            "Kirguistán",
+            "Kiribati",
+            "Kuwait",
+            "Laos",
+            "Lesoto",
+            "Letonia",
+            "Líbano",
+            "Liberia",
+            "Libia",
+            "Liechtenstein",
+            "Lituania",
+            "Luxemburgo",
+            "Macedonia del Norte",
+            "Madagascar",
+            "Malasia",
+            "Malaui",
+            "Maldivas",
+            "Maldivas",
+            "Malta",
+            "Marruecos",
+            "Mauricio",
+            "Mauritania",
+            "México",
+            "Micronesia",
+            "Moldavia",
+            "Mónaco",
+            "Mongolia",
+            "Montenegro",
+            "Mozambique",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Nicaragua",
+            "Níger",
+            "Nigeria",
+            "Noruega",
+            "Nueva Zelanda",
+            "Omán",
+            "Países Bajos",
+            "Pakistán",
+            "Palaos",
+            "Panamá",
+            "Papúa Nueva Guinea",
+            "Paraguay",
+            "Perú",
+            "Polonia",
+            "Portugal",
+            "Reino Unido",
+            "República Centroafricana",
+            "República Checa",
+            "República del Congo",
+            "República Democrática del Congo",
+            "República Dominicana",
+            "República Sudafricana",
+            "Ruanda",
+            "Rumanía",
+            "Rusia",
+            "Samoa",
+            "San Cristóbal y Nieves",
+            "San Marino",
+            "San Vicente y las Granadinas",
+            "Santa Lucía",
+            "Santo Tomé y Príncipe",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leona",
+            "Singapur",
+            "Siria",
+            "Somalia",
+            "Sri Lanka",
+            "Suazilandia",
+            "Sudán",
+            "Sudán del Sur",
+            "Suecia",
+            "Suiza",
+            "Surinam",
+            "Tailandia",
+            "Tanzania",
+            "Tayikistán",
+            "Timor Oriental",
+            "Togo",
+            "Tonga",
+            "Trinidad y Tobago",
+            "Túnez",
+            "Turkmenistán",
+            "Turquía",
+            "Tuvalu",
+            "Ucrania",
+            "Uganda",
+            "Uruguay",
+            "Uzbekistán",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Yibuti",
+            "Zambia",
+            "Zimbabue",
+            // Agrega más países según sea necesario
         ];
 
         // Función para mostrar la lista de países
@@ -948,10 +978,10 @@
     <script>
         // Obtener la fecha actual del sistema
         var fechaActual = new Date();
-        
+
         // Formatear la fecha en el formato adecuado para el campo de entrada
         var formattedDate = fechaActual.toISOString().split('T')[0];
-        
+
         // Establecer el valor del campo de entrada como la fecha actual
         document.getElementById('fecha-input').value = formattedDate;
         document.getElementById('#fecha-input').value = new Date().toDateInputValue();

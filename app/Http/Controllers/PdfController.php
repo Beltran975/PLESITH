@@ -44,4 +44,20 @@ class PdfController extends Controller
 
         // Puedes personalizar este método según la estructura de tu tabla de postulaciones
     }
+
+    //pdf con CV del usuario
+    public function generateCV()
+    {
+        $user = Auth::user();
+        $data = User::all();
+        
+
+        $pdf = PDF::loadView('pdf-cv', compact('user', 'data'));
+        
+        // Guardar el PDF en el almacenamiento público
+        $pdfFilename = $user->name . '_CV_profile.pdf';        
+        $pdf->save(storage_path('app/public/profiles/' . $pdfFilename));
+        
+        return $pdf->download($pdfFilename);
+    }
 }
