@@ -189,7 +189,7 @@ Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class
 
 
 //rutas producciones
-Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
+Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista'])->name('listaProducciones');
 Route::resource('/editProduc', ProduccionesController::class,);
 Route::resource('/home', VistaController::class);
 

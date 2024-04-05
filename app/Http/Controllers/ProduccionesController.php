@@ -73,7 +73,7 @@ public function update(Request $request, $id_pro)
     }
     //$produccion->proposito = $request->input('proposito');
     $produccion->save();
-    return redirect()->route('home.index');
+    return redirect()->route('listaProducciones');
 }
 
 public function destroy($id_pro)
@@ -81,8 +81,7 @@ public function destroy($id_pro)
         
     $produccion = Producciones::findOrFail($id_pro);
     $produccion->delete();
-    return redirect()->route('home.index');
-
+    return redirect()->route('listaProducciones');
     }
 
 }
