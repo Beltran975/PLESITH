@@ -55,23 +55,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin')->middleware('soloadmin')->middleware('auth');
 
-//Route::get('/home-admin', [App\Http\Controllers\HomeController::class,'getUser'])->name('administrador.home-admin');
-//homeAdmin
-//Route::get('/admin', [App\Http\Controllers\homeAdminController::class, 'getUser'])->name('administrador.home-admin');
-
-//Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
-//rutas de validacion usuario/administrador
-Route::get('/home-admin', [App\Http\Controllers\HomeController::class, 'getUser'])->name('administrador.home-admin');
-
-Route::get('/home', function () {
-    $user = Auth::user();
-    if ($user && $user->email === 'admin@admin.com') {
-        return redirect()->route('administrador.home-admin');
-    } else {
-        return redirect()->route('home');
-    }
-})->name('home')->middleware('auth');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
 Route::get('/gestionDatos', function () {
     return view('gestionDatos');
@@ -130,13 +116,13 @@ Route::post('EnvioDocInves', [App\Http\Controllers\docInvestigacionController::c
 Route::get('/bibliotechComunidad', [App\Http\Controllers\BibliotechController::class, 'index']);
 Route::resource('/bibliotech', BibliotechController::class);
 Route::resource('/add', BibliotechController::class);
-Route::get('administrador/bibliotech/tabla', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech');
+Route::get('administrador/bibliotech/tabla', [App\Http\Controllers\BibliotechController::class, 'lista'])->name('listaBibliotech')->middleware('soloadmin')->middleware('auth');
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 //generar PDF del CV para el usuario
 Route::get('/generate-CV',[PdfController::class, 'generateCV']);
 
-Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('auth');
+Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('soloadmin')->middleware('auth');
 
 //Rutas para enviar correos 
 Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
@@ -148,11 +134,11 @@ Route::get('/aprobar-usuario-desde-correo/{userId}', [CorreoverController::class
 //verficar usuario 
 
 //rutas para enviar dictamen dictamen de aceptación y negación de postulación 
-Route::get('/administrador/postulaciones/form-aprobar/{PosId}',[tablaController::class,'FormAprobar'])->name('postulaciones.form-aprobar');
-Route::post('/administrador/postulaciones/generar-pdf-aprobado/{PosId}', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.post');
+Route::get('/administrador/postulaciones/form-aprobar/{PosId}',[tablaController::class,'FormAprobar'])->name('postulaciones.form-aprobar')->middleware('soloadmin')->middleware('auth');
+Route::post('/administrador/postulaciones/generar-pdf-aprobado/{PosId}', [TablaController::class, 'generarPDFaprobado'])->name('generarPDFaprobado.post')->middleware('soloadmin')->middleware('auth');
 //postulacion negada
-Route::get('/administrador/postulaciones/form-negar/{PosId}',[tablaController::class,'FormNegar'])->name ('postulaciones.form-negar');
-Route::post('/administrador/postulaciones/generar-pdf-negado/{PosId}',[TablaController::class, 'generarPDFnegado'])->name('generarPDFnegado.post');
+Route::get('/administrador/postulaciones/form-negar/{PosId}',[tablaController::class,'FormNegar'])->name ('postulaciones.form-negar')->middleware('soloadmin')->middleware('auth');
+Route::post('/administrador/postulaciones/generar-pdf-negado/{PosId}',[TablaController::class, 'generarPDFnegado'])->name('generarPDFnegado.post')->middleware('soloadmin')->middleware('auth');
 
 
 //ruta nodos
@@ -165,7 +151,7 @@ Route::get('NodosComunidad', [App\Http\Controllers\ListaNodosController::class, 
 Route::get('/administrador/gestion-nodos', function () {
     return view('/administrador/gestion-nodos'); 
 });
-Route::get('/administrador/nodos/tabla', [App\Http\Controllers\ListadoController::class, 'index'])->middleware('auth');
+Route::get('/administrador/nodos/tabla', [App\Http\Controllers\ListadoController::class, 'index'])->middleware('soloadmin')->middleware('auth');
 
 Route::get('/administrador/gestion-producciones', function () {
     return view('/administrador/gestion-producciones'); 
@@ -179,7 +165,7 @@ Route::get('/tablaInfotech', function(){
     return view('administrador.infotech.index');
 });
 Route::post('EnvioInfotech', [App\Http\Controllers\InfotechController::class, 'insertar']);
-Route::get('administrador/infotech/tabla', [App\Http\Controllers\InfotechController::class, 'lista'])->name('listaInfotech');
+Route::get('administrador/infotech/tabla', [App\Http\Controllers\InfotechController::class, 'lista'])->name('listaInfotech')->middleware('soloadmin')->middleware('auth');
 Route::get('/infotech/{id}/edit', [InfotechController::class, 'edit'])->name('infotech.edit');;
 Route::get('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
 Route::put('/infotech/{id}/update', [InfotechController::class, 'update'])->name('infotech.update');;
@@ -220,7 +206,7 @@ Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class
 
 
 Route::get('/buscar-producciones', [AdminProduccionesController::class, 'index'])->name('buscar-producciones');
-Route::get('/administrador/producciones/table',[App\Http\Controllers\AdminProduccionesController::class,'lista'])->middleware('auth');
+Route::get('/administrador/producciones/table',[App\Http\Controllers\AdminProduccionesController::class,'lista'])->middleware('soloadmin')->middleware('auth');
 
 //Route::get('/listado/buscar', 'ListadoController@buscar')->name('listado.buscar');
 Route::get('/buscar-listado', [ListadoController::class, 'buscar'])->name('buscar-listado');
