@@ -25,50 +25,57 @@
                         <form action="{{ route('informacion.update', $dato->id_inf)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div class="row justify-content-center">
-                                <!-- Área de conocimiento -->
+                            <!-- Área de conocimiento -->
+                            <div class="row justify-content-center mb-3">
                                 <div class="col-md-4">
                                     <label class="form-label" for="lineaInv">Área de conocimiento</label>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6">
                                     <select class="form-control" name="lineaInv" required>
-                                        <option name="lineaInv" value="" disabled selected>{{$dato->lineaInv}}</option>
-                                        <option name="lineaInv" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
-                                        <option name="lineaInv" value="ÁREA II. Biología y Química">ÁREA II. Biología y Química</option>
-                                        <option name="lineaInv" value="ÁREA III. Medicina y Ciencias de la Salud">ÁREA III. Medicina y Ciencias de la Salud </option>
-                                        <option name="lineaInv" value="ÁREA IV. Ciencias de la Conducta y la Educación">ÁREA IV. Ciencias de la Conducta y la Educación</option>
-                                        <option name="lineaInv" value="ÁREA V. Humanidades">ÁREA V. Humanidades</option>
-                                        <option name="lineaInv" value="ÁREA VI. Ciencias Sociales">ÁREA VI. Ciencias Sociales</option>
-                                        <option name="lineaInv" value="ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas">ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas</option>
-                                        <option name="lineaInv" value="ÁREA VIII. Ingenierías y Desarrollo Tecnológico">ÁREA VIII. Ingenierías y Desarrollo Tecnológico</option>
-                                        <option name="lineaInv" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
+                                        <option disabled selected>{{$dato->lineaInv}}</option>
+                                        <option name="linea_inv" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
+                                        <option name="linea_inv" value="ÁREA II. Biología y Química">ÁREA II. Biología y Química</option>
+                                        <option name="linea_inv" value="ÁREA III. Medicina y Ciencias de la Salud">ÁREA III. Medicina y Ciencias de la Salud </option>
+                                        <option name="linea_inv" value="ÁREA IV. Ciencias de la Conducta y la Educación">ÁREA IV. Ciencias de la Conducta y la Educación</option>
+                                        <option name="linea_inv" value="ÁREA V. Humanidades">ÁREA V. Humanidades</option>
+                                        <option name="linea_inv" value="ÁREA VI. Ciencias Sociales">ÁREA VI. Ciencias Sociales</option>
+                                        <option name="linea_inv" value="ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas">ÁREA VII. Ciencias de la Agricultura, Agropecuarias, Forestales y de Ecosistemas</option>
+                                        <option name="linea_inv" value="ÁREA VIII. Ingenierías y Desarrollo Tecnológico">ÁREA VIII. Ingenierías y Desarrollo Tecnológico</option>
+                                        <option name="linea_inv" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
                                     </select>
                                 </div>
-                                <!-- Grado Academico -->
+                            </div>
+                            <!-- Grado Academico -->
+                            <div class="row justify-content-center mb-3">
                                 <div class="col-md-4">
                                     <label class="form-label" for="grado">Grado académico</label>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6">
                                     <input class="form-control" type="text" name="grado" value="{{$dato->grado}}" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
                                 </div>
-                                <!-- Pertenece al SNI -->
+                            </div>
+                            <!-- Pertenece al SNI -->
+                            <div class="row justify-content-center mb-3">
                                 <div class="col-md-4">
                                     <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6">
                                     <input type="radio" name="pertenece" autocomplete="off" value="si" {{$dato->pertenece == 'si' ? 'checked' : '' }}>
                                     <label class="btn" for="pertenece">Sí</label>
                                     <input type="radio" name="pertenece" autocomplete="off" value="no" {{$dato->pertenece == 'no' ? 'checked' : '' }}>
                                     <label class="btn" for="pertenece">No</label>
                                 </div>
-                                <!-- Evidencia de SNI -->
+                            </div>
+
+                            <div class="row justify-content-center mb-3">
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6">
                                     <input id="evidenciaSni" type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required disabled />
                                 </div>
                             </div>
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" onclick="history.back()" name="volver atrás">Cancelar</button>
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
