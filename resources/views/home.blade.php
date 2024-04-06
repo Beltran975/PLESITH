@@ -372,8 +372,8 @@
                                     <td>{{$nodo->linea_inv}}</td>
                                     <td>{{$nodo->categoria}}</td>
                                     <td>
-                                       <!-- Button trigger modal -->
-                                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-Colab-{{$nodo->id}}">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-Colab-{{$nodo->id}}">
                                             Enviar Correo
                                         </button>
                                     </td>
@@ -558,14 +558,6 @@
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="colaboradores">{{ __('Colaboradores*')}}</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input class="form-control" id="colaboradores" name="colaboradores" type="text">
-                                </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
-                                <div class="col-md-4">
                                     <label class="form-label" for="linea_inv">{{ __('Área de conocimiento*')}}</label>
                                 </div>
                                 <div class="col-md-6">
@@ -740,30 +732,16 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $.get('/instituciones', function(data) {
-              var opciones = '';
-              data.forEach(function(institucion){
+    $(document).ready(function() {
+        $.get('/instituciones', function(data) {
+            var opciones = '';
+            data.forEach(function(institucion){
                 opciones += '<option value="' + institucion + '">';
-              });
-              $('#institucion_ligada').attr('list', 'nombre');
-              $('#institucion_ligada').after('<datalist id="nombre">' + opciones + '</datalist>');
             });
+            $('#institucion_ligada').attr('list', 'nombre');
+            $('#institucion_ligada').after('<datalist id="nombre">' + opciones + '</datalist>');
         });
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $.get('/obtener-correos', function(data) {
-                var opciones = '';
-                data.forEach(function(correo) {
-                    opciones += '<option value="' + correo + '">';
-                });
-                $('#colaboradores').attr('list', 'correosList');
-                $('#colaboradores').after('<datalist id="correosList">' + opciones + '</datalist>');
-            });
-        });
+    });
     </script>
 
     <script>

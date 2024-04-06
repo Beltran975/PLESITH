@@ -3,11 +3,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$nodo->tema_inv}} title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$nodo->tema_inv}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <label for="correoColaborador" class="form-label">Correo</label>
+        <label for="correoColaborador" class="form-label">Correo de colaboración</label>
         <input class="form-control" id="colaboradores" name="colaboradores" type="text">
       </div>
       <div class="modal-footer">

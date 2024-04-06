@@ -108,7 +108,11 @@
                                                             @else
                                                             <li><a class="btn btn-danger" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
                                                             @endif
-                                                            <li><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Inhabilitar al usuario</button></li>
+                                                            <li>
+                                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modal-baja-{{$postulacion->id}}">
+                                                                    Inhabilitar al usuario
+                                                                </button>
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </td>
@@ -135,10 +139,11 @@
                                         <tbody>
                                             @foreach ($users as $user)
                                             @foreach ($user->postulaciones as $postulacion)
-                                            @if($user->postulaciones->count() > 0 && $postulacion->estatus == 'No revisado' )
+                                            @if($user->postulaciones->count() > 0 && $postulacion->estatus == 'Inhabilitado' )
                                             <tr>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user-> programa}}</td>
+                                                <td>{{ $postulacion->estatus}}</td>
                                                 <td>{{ $postulacion->created_at->format(' d/m/Y') }}</td>
                                                 <td>
                                                     <div class="btn-group">

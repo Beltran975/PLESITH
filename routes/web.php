@@ -122,7 +122,7 @@ Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 //generar PDF del CV para el usuario
 Route::get('/generate-CV',[PdfController::class, 'generateCV']);
 
-Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('soloadmin')->middleware('auth');
+Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('soloadmin')->middleware('auth')->name('tabla');
 
 //Rutas para enviar correos 
 Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
@@ -226,6 +226,4 @@ Route::get('/instituciones', [App\Http\Controllers\InstitucionController::class,
 
 Route::get('/Correo_Colaborador', [App\Http\Controllers\ColaboradoresController::class, 'enviarCorreo'])->name('enviar.correo');
 
-
-
-
+Route::post('/postulacion/{id}/no-revisado',[App\Http\Controllers\PostulacionController::class, 'marcarNoRevisado'])->name('postulacion.no_revisado');
