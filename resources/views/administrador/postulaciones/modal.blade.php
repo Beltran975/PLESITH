@@ -6,14 +6,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Usuario: {{$user->name}}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        ¿Estas seguro de inhabilitar a este usuario?
+        <br>
+        El usuario {{$user->name}} quedara inhabilitado hasta que se presente una nueva postulacion.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" onclick="document.getElementById('formNoRevisado').submit()">Inhabilitar usuario</button>
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('formNoRevisado').submit()">Si, inhabilitar usuario</button>
       </div>
     </div>
   </form>
