@@ -18,7 +18,7 @@ use App\Http\Controllers\AdminProduccionesController;
 use App\Http\Controllers\InformacionController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\ColaboradoresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -223,3 +223,9 @@ Route::post('/generar-pdf', [App\Http\Controllers\ReporteproduccionController::c
 Route::post('/generar', [App\Http\Controllers\ReportenodoController::class, 'generar'])->name('generar');
 //ruta para obtener las isntituciones
 Route::get('/instituciones', [App\Http\Controllers\InstitucionController::class, 'obtenerInstituciones']);
+
+Route::get('/Correo_Colaborador', [App\Http\Controllers\ColaboradoresController::class, 'enviarCorreo'])->name('enviar.correo');
+
+
+
+

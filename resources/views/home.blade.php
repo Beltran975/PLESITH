@@ -310,6 +310,9 @@
                                     <th>{{$produccion->tipo}}</th>
                                     <td>{{$produccion->proposito}}</td>
                                     <td>{{$produccion->year}}</td>
+                                    <td>
+                                        <Button trpe="button" clas></Button>
+                                    </td>
                                 </tr>
                             </tbody>
                             @endforeach
@@ -368,8 +371,15 @@
                                     <th>{{$nodo->tema_inv}}</th>
                                     <td>{{$nodo->linea_inv}}</td>
                                     <td>{{$nodo->categoria}}</td>
+                                    <td>
+                                       <!-- Button trigger modal -->
+                                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-Colab-{{$nodo->id}}">
+                                            Enviar Correo
+                                        </button>
+                                    </td>
                                 </tr>
                             </tbody>
+                            @include('ModalCorreo')
                             @endforeach
                         </table>
 
