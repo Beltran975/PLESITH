@@ -10,9 +10,9 @@
     
 </head>
 <body>
-    <h1>PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO</h1>
-    <p>Te quieres inviatar a que colabores con migo en mi Nodo</p>
-    <p>*Si te gustaria colaborar entra al sigiente Link</p>
-    <p>*Si no te gustaria colaborar solo Ignora el Correo</p>
+     <h1>PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO</h1>
+     <p>Te quiero invitar a que colabores conmigo en mi Nodo</p>
+     <p>*Si te gustaría colaborar entra al siguiente enlace</p>
+     <p>*Si no te gustaría colaborar solo ignora el correo</p>
 </body>
 </html>

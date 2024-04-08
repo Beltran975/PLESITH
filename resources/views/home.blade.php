@@ -310,9 +310,6 @@
                                     <th>{{$produccion->tipo}}</th>
                                     <td>{{$produccion->proposito}}</td>
                                     <td>{{$produccion->year}}</td>
-                                    <td>
-                                        <Button trpe="button" clas></Button>
-                                    </td>
                                 </tr>
                             </tbody>
                             @endforeach
@@ -363,6 +360,7 @@
                                     <th scope="col">Tema de investigación</th>
                                     <th scope="col">Línea de investigación</th>
                                     <th scope="col">Categoría</th>
+                                    <th scope="col">Invitar Colaboradores</th>
                                 </tr>
                             </thead>
                             @foreach (Auth::user()->nodos as $nodo)
