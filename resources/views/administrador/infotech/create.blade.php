@@ -40,6 +40,10 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="control-label" for="documento">{{ __('Documento *')}}</label>
+                                        <div class="tooltipUNO">
+                                            <div class="iconUNO">i</div>
+                                            <div class="tooltiptextUNO">Éste documento no se podrá modificar</div>
+                                        </div>
                                         <input class="form-control" type="file" name="documento" required>
                                     </div>
                                     <div class="mb-5">

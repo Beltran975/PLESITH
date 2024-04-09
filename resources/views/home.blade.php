@@ -30,7 +30,7 @@
                 <!--Acciones del usuario-->
                 @switch(Auth::user()->tipo)
                 @case('basico')
-                <button onclick="verificarMail()" type="button" class="btn btn-secondary">Autenticar Correo electrónico</button>
+                <button onclick="verificarMail()" type="button" class="btn btn-secondary">Autenticar correo electrónico</button>
                 @break
 
                 @case('autenticado')
@@ -213,6 +213,10 @@
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaGrado">Evidencia del grado académico </label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">i</div>
+                                        <div class="tooltiptextUNO">Adjunta solo documentos cetificados por alguna institución ¡No podrás editar este archivo!</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF" required />
@@ -235,6 +239,10 @@
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">i</div>
+                                        <div class="tooltiptextUNO">Adjunta solo documentos cetificados por alguna institución ¡No podrás editar este archivo!</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="file" name="evidenciaSni" id="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required disabled />
@@ -480,6 +488,10 @@
                                 <!-- Documentación -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidencia">{{ __('Documentación *')}}</label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">i</div>
+                                        <div class="tooltiptextUNO">¡No podrás editar este archivo! Asegurate de que sea el correcto</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" type="file" name="evidencia" onchange="validarDocumento(event)" required>
@@ -578,6 +590,10 @@
                                 <!-- Documentación -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="documento">{{ __('Documentación *')}}</label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">i</div>
+                                        <div class="tooltiptextUNO">¡No podrás editar este archivo!¡Asegurate de que sea el correcto!</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" type="file" name="documento" id="documento" onchange="validarDocumento(event)" required>

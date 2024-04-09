@@ -49,6 +49,10 @@
                             <div class="row justify-content-center mb-3">
                                 <div class="col-md-4">
                                     <label class="form-label" for="grado">Grado académico</label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">i</div>
+                                        <div class="tooltiptextUNO">(Ingeniería, Maestría, Doctorado, etc.)</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <input class="form-control" type="text" name="grado" value="{{$dato->grado}}" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
@@ -70,6 +74,10 @@
                             <div class="row justify-content-center mb-3">
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">i</div>
+                                        <div class="tooltiptextUNO">¡No podrás editar este archivo! ¡Asegurate de que sea el correcto!</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <input id="evidenciaSni" type="file" name="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required disabled />
