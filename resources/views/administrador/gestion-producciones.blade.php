@@ -18,10 +18,6 @@
                 <div class="col obscuro">
                     <div class="titulo row d-flex  mb-3">
                         <h1>{{ __('Buscador | Producciones') }}</h1>
-                        <form action="{{ route('generarPDF') }}" method="POST">
-                            @csrf
-                            <button type="submit" class="btn btn-success">Generar reporte <i class="bi bi-download"></i></button>
-                        </form>
                     </div>
                     <hr class="hr-gob">
                     <!-- filtros de busqueda -->
@@ -83,27 +79,39 @@
                             </div>
                         </div>
                     </form>
-                    <!-- resultados producciones-->
-                    <div class="row resultados producciones">
-                        @foreach ($producciones as $produccion)
-                        <div class="col-md-4 mb-4">
-                            <div class="card producciones">
-                                <div class="card-header producciones">
-                                    <h5 class="card-title">{{ $produccion->titulo }}</h5>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-text"><strong>Título:</strong> {{ $produccion->titulo }}</p>
-                                    <p class="card-text"><strong>Autores:</strong> {{ $produccion->autores }}</p>
-                                    <p class="card-text"><strong>Año:</strong> {{ $produccion->year }}</p>
-                                    <p class="card-text"><strong>Propósito:</strong> {{ $produccion->proposito }}</p>
-                                    <!-- <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-pruduc-{{ $produccion->id_pro }}"> -->
-                                    <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $produccion->id_pro }}">
-                                        <i class="bi bi-book"></i> Leer más 
-                                    </a>
+                    <form action="{{ route('generarPDF') }}" method="POST">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-success">Generar reporte <i class="bi bi-download"></i></button>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                    </form>
+                    <!-- resultados producciones-->
+                    <div class="modal-body">
+                        <div class="row resultados producciones">
+                            @foreach ($producciones as $produccion)
+                            <div class="col-md-4 mb-4">
+                                <div class="card producciones">
+                                    <div class="card-header producciones">
+                                        <h5 class="card-title">{{ $produccion->titulo }}</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text"><strong>Título:</strong> {{ $produccion->titulo }}</p>
+                                        <p class="card-text"><strong>Autores:</strong> {{ $produccion->autores }}</p>
+                                        <p class="card-text"><strong>Año:</strong> {{ $produccion->year }}</p>
+                                        <p class="card-text"><strong>Propósito:</strong> {{ $produccion->proposito }}</p>
+                                        <!-- <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-pruduc-{{ $produccion->id_pro }}"> -->
+                                        <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $produccion->id_pro }}">
+                                            <i class="bi bi-book"></i> Leer más 
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 /* mac */
-@media (min-width: 801px) {
+@media (min-width: 900px) {
     /* carrusel */
     .carousel-inner {
         height: 190px; 
@@ -123,7 +123,7 @@
     div.card.bibliotech {
         margin: 0px 15px 15px 0px;
         width: 250px;
-        height: 300px;
+        height: auto;
         text-align: center;
     }
     /* titulo card */
@@ -149,7 +149,7 @@
 /* -------------------------------------------------------------------------------------------------------- */
 
 /* ipad */
-@media (min-width: 431px) and (max-width: 800px){
+@media (min-width: 541px) and (max-width: 899px){
     /* carrusel */
     .carousel-inner {
         height: 180px; 
@@ -179,7 +179,7 @@
     }
     div.row-invisible.nav{
         width: 100%;
-        height: 44px;
+        height: 40px;
     }
     div.row.initial{
         width: 100%;
@@ -303,7 +303,7 @@
     .searchBibliotech {
         display: none;
     }
-    .searchBibliotech-menu.active {
+    .searchBibliotech.active {
         display: block;
         position: absolute;
         color: #ffffff;
@@ -317,7 +317,7 @@
 /* -------------------------------------------------------------------------------------------------------- */
 
 /* iphone */
-@media (max-width: 430px) {
+@media (max-width: 540px) {
     /* carrusel */
     .carousel-inner {
         height: 100px; 
@@ -345,7 +345,7 @@
     }
     div.row-invisible.nav{
         width: 100%;
-        height: 30px;
+        height: 20px;
     }
     div.row.initial{
         width: 100%;
@@ -459,7 +459,7 @@
     div.menu-toggle {
         position: absolute;
         top: 260px;
-        left: 50px;
+        left: 35%;
         background-color: #691b32;
         color: white;
         padding: 10px;

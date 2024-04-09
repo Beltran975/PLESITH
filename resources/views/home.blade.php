@@ -394,8 +394,7 @@
             </div>-->
         <hr>
 
-        <!-- Modales de edición -->
-        <!--Modal con formulario de producciones-->
+        <!--Modal crear producción-->
         <div class="modal fade" id="Modal-crear-produccion">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
@@ -405,11 +404,41 @@
                     <div class="modal-body">
                         <form action="EnvioProduccion" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div class="row justify-content-center mb-2">
+                            <div class="row justify-content-center">
+                                <!-- Título -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="titulo">{{ __('Título *')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" name="titulo" type="text" required>
+                                </div>
+                                <!-- Autor -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="autores">{{ __('Autor *')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" name="autores" type="text" required value="{{ Auth::user()->name}}">
+                                </div>
+                                <!-- Fecha -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="year">{{ __('Fecha *')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input id="fecha-input" class="form-control" name="year" type="date" min=<?php $hoy = date("Y-m-d");
+                                                                                                                echo $hoy; ?> max="2099" step="1" required />
+                                </div>
+                                <!-- País -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="pais">{{ __('País *')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" name="pais" id="paisInput" type="text" required>
+                                </div>
+                                <!-- Tipo -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="tipo">{{ __('Tipo *') }}</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
                                     <select class="form-control" name="tipo" required>
                                         <option name="tipo" value="" disabled selected>Seleccionar</option>
                                         <option name="tipo" value="Libros o capitulos de libro">Libros o capítulos de libro</option>
@@ -425,12 +454,34 @@
                                         <option name="tipo" value="Otro">Otro</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
+                                <!-- Propósito -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="evidencia">{{ __('Evidencia *')}}</label>
+                                    <label class="form-label" for="proposito">{{ __('Propósito *')}}</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-control" name="proposito" required>
+                                        <option name="proposito" value="" disabled selected>Seleccionar</option>
+                                        <option name="proposito" value="Asimilacion de tecnologia">Asimilación de tecnología</option>
+                                        <option name="proposito" value="Creación">Creación</option>
+                                        <option name="proposito" value="Desarrollo tecnológico">Desarrollo tecnológico</option>
+                                        <option name="proposito" value="Difusión">Difusión</option>
+                                        <option name="proposito" value="Generación de conocimiento">Generación de conocimiento</option>
+                                        <option name="proposito" value="Investigación aplicada">Investigación aplicada</option>
+                                        <option name="proposito" value="Transferencia tecnologica">Transferencia tecnológica</option>
+                                    </select>
+                                </div>
+                                <!-- Descripción -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="descripcion">{{ __('Descripción *')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <textarea class="form-control" name="descripcion" required></textarea>
+                                </div>
+                                <!-- Documentación -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="evidencia">{{ __('Documentación *')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
                                     <input class="form-control" type="file" name="evidencia" onchange="validarDocumento(event)" required>
                                 </div>
                                 <script>
@@ -446,66 +497,6 @@
                                     }
                                 </script>
                             </div>
-                            <div class="row justify-content-center mb-2">
-                                <div class="col-md-4">
-                                    <label class="form-label" for="autores">{{ __('Autor (es) *')}}</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input class="form-control" name="autores" type="text" required value="{{ Auth::user()->name}}">
-                                </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
-                                <div class="col-md-4">
-                                    <label class="form-label" for="titulo">{{ __('Título *')}}</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input class="form-control" name="titulo" type="text" required>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
-                                <div class="col-md-4">
-                                    <label class="form-label" for="descripcion">{{ __('Descripción *')}}</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <textarea class="form-control" name="descripcion" required></textarea>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
-                                <div class="col-md-4">
-                                    <label class="form-label" for="pais">{{ __('País *')}}</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <input class="form-control" name="pais" id="paisInput" type="text" required>
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-center mb-2">
-                                <div class="col-md-4">
-                                    <label class="form-label" for="year">{{ __('Fecha *')}}</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <input id="fecha-input" class="form-control" name="year" type="date" min=<?php $hoy = date("Y-m-d");
-                                                                                                                echo $hoy; ?> max="2099" step="1" required />
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-center mb-2">
-                                <div class="col-md-4">
-                                    <label class="form-label" for="proposito">{{ __('Propósito *')}}</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <select class="form-control" name="proposito" required>
-                                        <option name="proposito" value="" disabled selected>Seleccionar</option>
-                                        <option name="proposito" value="Asimilacion de tecnologia">Asimilación de tecnología</option>
-                                        <option name="proposito" value="Creación">Creación</option>
-                                        <option name="proposito" value="Desarrollo tecnológico">Desarrollo tecnológico</option>
-                                        <option name="proposito" value="Difusión">Difusión</option>
-                                        <option name="proposito" value="Generación de conocimiento">Generación de conocimiento</option>
-                                        <option name="proposito" value="Investigación aplicada">Investigación aplicada</option>
-                                        <option name="proposito" value="Transferencia tecnologica">Transferencia tecnológica</option>
-                                    </select>
-                                </div>
-                            </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -516,7 +507,7 @@
             </div>
         </div>
 
-        <!--Modal con formulario de nodos-->
+        <!--Modal crear nodo-->
         <div class="modal fade" id="Modal-crear-nodo">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
@@ -526,39 +517,37 @@
                     <div class="modal-body">
                         <form action="EnvioNodo" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div class="row justify-content-center mb-2">
+                            <div class="row justify-content-center">
+                                <!-- Tema de investigación -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="tema_inv">{{ __('Tema de investigación*')}}</label>
+                                    <label class="form-label" for="tema_inv">{{ __('Tema de investigación *')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" id="tema_inv" name="tema_inv" type="text" required>
                                 </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
-                                <div class="col-md-4">
-                                    <label class="form-label" for="categoria">{{ __('Categoría*') }}</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <select class="form-control" name="categoria" id="categoria" required>
-                                        <option name="categoria" value="" disabled selected>Seleccionar</option>
-                                        <option name="categoria" value="Nacional">Nacional</option>
-                                        <option name="categoria" value="Internacional">Internacional</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
+                                <!-- Líder -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="lider">{{ __('Líder*')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" id="lider" name="lider" type="text" value="{{ Auth::user()->name}}" required>
                                 </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
+                                <!-- Categoría -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="linea_inv">{{ __('Área de conocimiento*')}}</label>
+                                    <label class="form-label" for="categoria">{{ __('Categoría*') }}</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-control" name="categoria" id="categoria" required>
+                                        <option name="categoria" value="" disabled selected>Seleccionar</option>
+                                        <option name="categoria" value="Nacional">Nacional</option>
+                                        <option name="categoria" value="Internacional">Internacional</option>
+                                    </select>
+                                </div>
+                                <!-- Área de conocimiento -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="linea_inv">{{ __('Área de conocimiento *')}}</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
                                     <select class="form-control" name="linea_inv" required>
                                         <option name="linea_inv" value="" disabled selected>Seleccionar</option>
                                         <option name="linea_inv" value="ÁREA I. Físico-Matemáticas y Ciencias de la Tierra">ÁREA I. Físico-Matemáticas y Ciencias de la Tierra</option>
@@ -572,28 +561,25 @@
                                         <option name="linea_inv" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
+                                <!-- Institución ligada -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="institucion_ligada">{{ __('Institución ligada* ')}}</label>
+                                    <label class="form-label" for="institucion_ligada">{{ __('Institución ligada * ')}}</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
                                     <input class="form-control" type="text" name="institucion_ligada" id="institucion_ligada" required>
                                 </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
+                                <!-- Descripción -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="descripcion">{{ __('Descripción *')}}</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
                                     <textarea class="form-control" name="descripcion" id="descripcion" required></textarea>
                                 </div>
-                            </div>
-                            <div class="row justify-content-center mb-2">
+                                <!-- Documentación -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="documento">{{ __('Documentación:')}}</label>
+                                    <label class="form-label" for="documento">{{ __('Documentación *')}}</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
                                     <input class="form-control" type="file" name="documento" id="documento" onchange="validarDocumento(event)" required>
                                 </div>
                                 <script>
@@ -701,7 +687,7 @@
         //Función para autenticar correo electronico
         function verificarMail() {
             Swal.fire({
-                title: "<strong>Auntenticación de correo electronico</strong>",
+                title: "<strong>Autenticación de correo electrónico</strong>",
                 icon: "info",
                 iconColor: '#bc955b',
                 html: `<b>Se enviará un correo de verificación para confirmar la validez de la dirección. Esto garantiza la seguridad y confianza en las comunicaciones.</b> <br> <br>

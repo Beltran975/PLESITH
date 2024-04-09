@@ -92,19 +92,23 @@
     /* botones de busqueda */
     button.button.producciones{
         width: auto;
-        border: 1px solid black;
-        height: 25px;
+        height: auto;
         width: 100%;
         margin-top: 30px;
-        border: 1px solid white;
+        border: none;
     }
     button.button.nodos{
         width: auto;
-        border: 1px solid black;
-        height: 25px;
+        height: auto;
         width: 100%;
         margin-top: 20px;
-        border: 1px solid white;
+        border: none;
+    }
+    button.btn.btn-success{
+        width: auto;
+        height: auto;
+        width: 100%;
+        border: none;
     }
     /* letra en cards */
     p.card-text{
@@ -237,19 +241,23 @@
      /* botones de busqueda */
     button.button.producciones{
         width: auto;
-        border: 1px solid black;
-        height: 25px;
+        height: auto;
         width: 100%;
         margin-top: 10px;
-        border: 1px solid white;
+        border: none;
     }
     button.button.nodos{
         width: auto;
-        border: 1px solid black;
-        height: 25px;
+        height: auto;
         width: 100%;
         margin-top: 10px;
-        border: 1px solid white;
+        border: none;
+    }
+    button.btn.btn-success{
+        width: auto;
+        height: auto;
+        width: 100%;
+        border: none;
     }
     /* letra en cards */
     p.card-text{
@@ -413,19 +421,23 @@
     /* botones de busqueda */
     button.button.producciones{
         width: auto;
-        border: 1px solid black;
         height: auto;
         width: 100%;
         margin-top: 30px;
-        border: 1px solid white;
+        border: none;
     }
     button.button.nodos{
         width: auto;
-        border: 1px solid black;
         height: auto;
         width: 100%;
         margin-top: 30px;
-        border: 1px solid white;
+        border: none;
+    }
+    button.btn.btn-success{
+        width: auto;
+        height: auto;
+        width: 100%;
+        border: none;
     }
     /* letra en cards */
     p.card-text{

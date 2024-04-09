@@ -18,17 +18,12 @@
                 <div class="col obscuro">
                     <div class="titulo row d-flex  mb-3">
                         <h1>{{ __('Buscador | Nodos de colaboración') }}</h1>
-                        <form action="{{ route('generar') }}" method="POST">
-                            @csrf
-                            <button type="submit" class="btn btn-success">Generar reporte <i class="bi bi-download"></i></button>
-                        </form>
                     </div>
                     <hr class="hr-gob">
                     <!-- filtros de busqueda-->
-                    <div class="modal-body">
-                        <form action="{{ route('buscar-listado') }}" method="GET" id="busqueda-form">
+                    <form action="{{ route('buscar-listado') }}" method="GET" id="busqueda-form">
+                        <div class="modal-body">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-
                                 <div class="col">
                                     <label for="categoria">Categoría:</label>
                                     <select class="form-control" name="categoria" id="categoria">
@@ -37,12 +32,10 @@
                                         <option name="categoria" value="Internacional">Internacional</option>
                                     </select>
                                 </div>
-
                                 <div class="col">
                                     <label for="area">Líder:</label>
                                     <input class="form-control" type="text" name="area" id="area">
                                 </div>
-
                                 <div class="col">
                                     <label for="nombre">Área de conocimiento:</label>
                                     <select class="form-control" name="nombre" id="nombre">
@@ -58,7 +51,6 @@
                                         <option name="linea_inv" value="ÁREA IX. Multidisciplinaria">ÁREA IX. Multidisciplinaria</option>
                                     </select>
                                 </div>
-
                                 <div class="col">
                                     <label for="institucion">Institución ligada:</label>
                                     <select class="form-control" name="institucion" id="institucion">
@@ -234,8 +226,20 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
-                        <!-- resultados nodos -->
+                        </div>
+                    </form>
+                    <form action="{{ route('generar') }}" method="POST">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-success">Generar reporte <i class="bi bi-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- resultados nodos -->
+                    <div class="modal-body">
                         <div class="row resultados nodos">
                             @foreach ($info as $i)
                             <div class="col-md-4 mb-4">
@@ -256,60 +260,60 @@
                             </div>
                             @endforeach
                         </div>
-                        <!--modal nodo -->
-                        @foreach ($info as $i)
-                        <div class="modal fade" id="Modal-crear-produccion-{{ $i->id }}">
-                            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">{{$i->tema_inv}}</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <table class="tabla-modal table table-borderless" >
-                                            <tbody>
-                                                <tr>
-                                                    <th class="rotated-header">Tema de investigación: </th>
-                                                    <td class="contenido-produccion">{{$i->tema_inv}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="rotated-header">Categoría: </th>
-                                                    <td class="contenido-produccion">{{$i->categoria}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="rotated-header">Líder:</th>
-                                                    <td class="contenido-produccion">{{$i->lider}}</td>
-                                                    </tr>
-                                                <tr>
-                                                    <th class="rotated-header">Colaboradores: </th>
-                                                    <td class="contenido-produccion">{{$i->colaboradores}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="rotated-header">Área de conocimiento:</th>
-                                                    <td class="contenido-produccion">{{$i->linea_inv}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="rotated-header">Institución ligada:: </th>
-                                                    <td class="contenido-produccion">{{$i->institucion_ligada}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="rotated-header">Descripción: </th>
-                                                    <td class="contenido-produccion">{{$i->descripcion}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="rotated-header">Documentación: </th>
-                                                    <td class="contenido-produccion"><a href="/nodos/{{$i->documento}}" target="blanck_">{{$i->documento}}</a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    </div>
+                    </div>
+                    <!--modal nodo -->
+                    @foreach ($info as $i)
+                    <div class="modal fade" id="Modal-crear-produccion-{{ $i->id }}">
+                        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">{{$i->tema_inv}}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="tabla-modal table table-borderless" >
+                                        <tbody>
+                                            <tr>
+                                                <th class="rotated-header">Tema de investigación: </th>
+                                                <td class="contenido-produccion">{{$i->tema_inv}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Categoría: </th>
+                                                <td class="contenido-produccion">{{$i->categoria}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Líder:</th>
+                                                <td class="contenido-produccion">{{$i->lider}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Colaboradores: </th>
+                                                <td class="contenido-produccion">{{$i->colaboradores}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Área de conocimiento:</th>
+                                                <td class="contenido-produccion">{{$i->linea_inv}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Institución ligada:: </th>
+                                                <td class="contenido-produccion">{{$i->institucion_ligada}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Descripción: </th>
+                                                <td class="contenido-produccion">{{$i->descripcion}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="rotated-header">Documentación: </th>
+                                                <td class="contenido-produccion"><a href="/nodos/{{$i->documento}}" target="blanck_">{{$i->documento}}</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
                     </div>
+                    @endforeach
                 </div>
             </div>
         </main>
