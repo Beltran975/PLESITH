@@ -5,6 +5,23 @@ main{
    
 }
 
+/*hr gobierno*/
+.hr-gob{
+  margin: 10px 0 10px;
+  background-color: var(--gold);
+  border-top: 1px solid var(--gold);
+  opacity: 1;
+  margin-bottom: 40px;
+}
+.hr-gob::before{
+  content: " ";
+  width: 35px;
+  height: 5px;
+  background-color: var(--wine) !important;
+  display: block;
+  position: absolute;
+}
+
 .bottom-buffer {
     margin-bottom: 20px; /* Agrega margen inferior según tus necesidades */
   }
