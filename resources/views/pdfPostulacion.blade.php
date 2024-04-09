@@ -104,7 +104,7 @@
             </tr>
             <tr>
                 <th class="rotated-header">Evidencia del grado académico</th>
-                <td><a href="academico/{{ $dato->evidenciaGrado}}" target="blanck_">{{ $dato->evidenciaGrado}}</a></td>
+                <td><a href="documentos-users/info-PLESITH/academico/{{ $dato->evidenciaGrado}}" target="blanck_">{{ $dato->evidenciaGrado}}</a></td>
             </tr>
             <tr>
                 <th class="rotated-header">Colaboración al SNI</th>
@@ -112,7 +112,7 @@
             </tr>
             <tr>
                 <th class="rotated-header">Evidencia SNI</th>
-                <td><a href="produccion/{{ $dato->evidenciaSni}}" target="blanck_">{{ $dato->evidenciaSni}}</a></td>
+                <td><a href="documentos-users/info-PLESITH/evidencia/{{ $dato->evidenciaSni}}" target="blanck_">{{ $dato->evidenciaSni}}</a></td>
             </tr>
         @endforeach
     </table>
@@ -131,7 +131,7 @@
             </tr>
             <tr>
                 <th>Evidencia</th>
-                <td scope="row"><a href="/produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
+                <td scope="row"><a href="documentos-users/produccion/{{ $produccion->evidencia}}" target="blanck_">{{ $produccion->evidencia}}</a></td>
             </tr>
             <tr>
                 <th>Autores</th>

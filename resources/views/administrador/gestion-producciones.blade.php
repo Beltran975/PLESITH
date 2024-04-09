@@ -132,7 +132,7 @@
                                     </tr>
                                     <tr>
                                         <th class="rotated-header">Evidencia: </th>
-                                        <td class="contenido-produccion"><a href="/produccion/{{$produccion->evidencia}}" target="blanck_">{{$produccion->evidencia}}</a></td>
+                                        <td class="contenido-produccion"><a href="/documentos-users/produccion/{{$produccion->evidencia}}" target="blanck_">{{$produccion->evidencia}}</a></td>
                                     </tr>
                                     <tr>
                                         <th class="rotated-header">Autor(es): </th>

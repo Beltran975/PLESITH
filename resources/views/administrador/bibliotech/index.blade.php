@@ -49,7 +49,7 @@
                                     <tr>
                                         <td>{{ $d->titulo}}</td>
                                         <td>{{ $d->year}}</td>
-                                        <td class="docbibliotech"><a href="/bibliotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
+                                        <td class="docbibliotech"><a href="/documentos-admin/bibliotech/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
                                         <td class="descbibliotech">{{ $d->descripcion}}</td>
                                         <td>
                                             <div class="btn-group">

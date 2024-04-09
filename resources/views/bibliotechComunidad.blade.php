@@ -94,7 +94,7 @@
                                 <div class="card-titulo">
                                     <label class="control-label" for="titulo">{{$item->titulo}}</label>
                                 </div>
-                                <iframe src="/bibliotech/{{ $item->documento }}" type="application/pdf" width="100%" height="100%"></iframe>
+                                <iframe src="/documentos-admin/bibliotech/{{ $item->documento }}" type="application/pdf" width="100%" height="100%"></iframe>
                             </div>
                             @endforeach
                         </div>

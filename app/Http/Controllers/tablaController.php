@@ -10,6 +10,7 @@ use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\emailDictamenAprobacion;
 use App\Mail\emailDictamenNegado;
+use Illuminate\Support\Facades\Redirect;
 
 class tablaController extends Controller
 {
@@ -23,26 +24,29 @@ class tablaController extends Controller
     /*Funciones para aprobar las postulaciones*/
     public function FormAprobar($PosId)
     {
-        $pos = Postulaciones::findOrFail($PosId);
+        $pos = Postulaciones::with('user')->findOrFail($PosId);
         return view('administrador.postulaciones.form-aprobar', compact('pos'));
     }
 
     public function generarPDFaprobado(Request $request, $id)
     {
-        $postulacion = Postulaciones::findOrFail($id);
+        $postulacion = Postulaciones::with('user')->findOrFail($id);
         $postulacion->estatus = 'Aprobado';
-        $postulacion->pdfDictamen = 'Dictamen_aprobado_' . $id . '.pdf';
+        $nombreUsuario = $postulacion->user->name;
+        $postulacion->pdfDictamen = 'Dictamen_aprobado_' . $nombreUsuario. '.pdf';
        $postulacion->save(); 
 
         // Generar el pdf del dictamen con datos del formulario
         $descripcion = $request->input('descripcion-apro');
         $razonAprobacion = $request->input('razonAprobacion');
         $razonTextArea = $request->input('razonTextArea');
+        $datosUser = Postulaciones::with('user')->findOrFail($id);
 
-        $pdf = PDF::loadView('administrador.postulaciones.dictamen-aprobado', compact('descripcion', 'razonAprobacion', 'razonTextArea'));
+
+        $pdf = PDF::loadView('administrador.postulaciones.dictamen-aprobado', compact('descripcion', 'razonAprobacion', 'razonTextArea', 'datosUser'));
 
         // Guardar pdf en la carpeta de "aprobados" dentro de "dictamenes"
-        $pdfPath = 'storage/dictamenes/aprobados/Dictamen_aprobado_' . $id . '.pdf';
+        $pdfPath = '/documentos-admin/dictamenes/aprobados/Dictamen_aprobado_' . $nombreUsuario . '.pdf';
         $pdf->save(public_path($pdfPath));
 
         // Obtener el usuario asociado a la postulación
@@ -53,14 +57,17 @@ class tablaController extends Controller
         Mail::to($usuario->email)->send(new emailDictamenAprobacion($postulacion));
 
         // Descargar el PDF
-        return $pdf->download('Dictamen_aprobado_' . $id . '.pdf');
+        return $pdf->download('Dictamen_aprobado_' . $nombreUsuario . '.pdf');
+        return redirect()->route('/tabla');
+
     }
 
 
     /*Funciones para negar las postulaciones*/
     public function FormNegar($PosId)
     {
-        $pos = Postulaciones::findOrFail($PosId);
+
+    $pos = Postulaciones::with('user')->findOrFail($PosId);
         return view('administrador.postulaciones.form-negar', compact('pos'));
     }
 
@@ -68,20 +75,23 @@ class tablaController extends Controller
     {
 
         //Actualizar los datos de postulación
-        $postulacion = Postulaciones::FindOrFail($id);
+        $postulacion = Postulaciones::with('user')->findOrFail($id);
         $postulacion->estatus = 'Negado';
-        $postulacion->pdfDictamen = 'Dictamen_negado_' . $id . '.pdf';
+        $nombreUsuario = $postulacion->user->name;
+        $postulacion->pdfDictamen = 'Dictamen_negado_' . $nombreUsuario . '.pdf';
         $postulacion->save();
 
         //Generar el pdf del dictamen con datos del formulario
         $descripcionNega = $request->input('decripcion-negada');
         $razonNegacion = $request->input('razon-negada');
         $razonTextAreaNegacion = $request->input('reazon-nega-Text');
+        $datosUser = Postulaciones::with('user')->findOrFail($id);
 
-        $pdf = PDF::loadView('administrador.postulaciones.dictamen-negado', compact('descripcionNega', 'razonNegacion', 'razonTextAreaNegacion'));
+
+        $pdf = PDF::loadView('administrador.postulaciones.dictamen-negado', compact('descripcionNega', 'razonNegacion', 'razonTextAreaNegacion', 'datosUser'));
 
         //Guardar pdf en la carpeta de "negados" dentro de "dictamenes" 
-        $pdfPath = 'storage/dictamenes/negados/Dictamen_negado_' . $id . '.pdf';
+        $pdfPath = '/documentos-admin/dictamenes/negados/Dictamen_negado_' . $nombreUsuario . '.pdf';
         $pdf->save(public_path($pdfPath));
 
         // Obtener el usuario asociado a la postulación
@@ -93,17 +103,9 @@ class tablaController extends Controller
         Mail::to($usuario->email)->send(new emailDictamenNegado($postulacion));
         
         //Descargar el pdf
-        return $pdf->download('Dictamen_negado_' . $id . '.pdf');
+        return $pdf->download('Dictamen_negado_' . $nombreUsuario. '.pdf');
+
+        return redirect()->route('administrador.tabla');
     }
 
-    public function inhabilitarUsuario($userId)
-    {
-        $postulacion = Postulaciones::FindOrFail($id);
-        $postulacion->estatus = 'no_revisado';
-        $postulacion->save();
-        $usuario = $postulacion->user;
-        $usuario->tipo = 'revisado';
-        $usuario->save();
-        return view('administrador.postulaciones.tabla', compact('users'));
-    }
 }

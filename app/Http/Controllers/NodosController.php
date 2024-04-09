@@ -25,7 +25,7 @@ class NodosController extends Controller
             $reg->descripcion = $request->get('descripcion');
             if ($request->hasFile('documento')) {
                 $documento = $request->file('documento');
-                $documento->move(public_path().'/nodos/',$documento->getClientOriginalName());
+                $documento->move(public_path().'/documentos-users/nodos/',$documento->getClientOriginalName());
                 $reg->documento = $documento->getClientOriginalName();
             }
             $reg->save();

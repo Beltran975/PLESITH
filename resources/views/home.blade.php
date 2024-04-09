@@ -80,9 +80,9 @@
                                 <p>De acuerdo con el proceso de selección para la verificación, le notificamos que su postulación realizada el dia {{ $postulacion->created_at->formatLocalized('%A, %d de %B') }} su proceso de postulación a es: <b>{{ $postulacion->estatus }}</b></p>
                                 <p>Para mayor detalle sobre su proceso de postulación consulte su dictamen</p>
                                 @if($postulacion->estatus == 'Aprobado')
-                                <a href="storage/dictamenes/aprobados/{{ $postulacion->pdfDictamen}}" target="blanck_">Dictamen</a>
+                                <a href="/documentos-admin/dictamenes/aprobados/{{ $postulacion->pdfDictamen}}" target="blanck_">Dictamen</a>
                                 @elseif($postulacion->estatus == 'Negado')
-                                <a href="storage/dictamenes/negados/{{ $postulacion->pdfDictamen}}" target="blanck_">Dictamen</a>
+                                <a href="/documentos-admin/dictamenes/negados/{{ $postulacion->pdfDictamen}}" target="blanck_">Dictamen</a>
                                 @endif
                                 @endforeach
 
@@ -137,7 +137,7 @@
                             </div>
                             <div class="col-md-6">
                                 <p>{{ Auth::user()->curp}}</p>
-                                <a href="storage/archivos_curp/{{ Auth::user()->archivoCurp}}" target="blanck_">{{ Auth::user()->archivoCurp}}</a>
+                                <a href="/documentos-users/perfil/archivos_curp/{{ Auth::user()->archivoCurp}}" target="blanck_">{{ Auth::user()->archivoCurp}}</a>
                             </div>
                         </div>
                         <br>
@@ -163,7 +163,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="image-Ipersonal">
-                                    <img src="{{ asset('storage/'.Auth::user()->image_path)}}" alt="">
+                                    <img src="/documentos-users/perfil/profiles/{{ Auth::user()->image_path}}" alt="{{Auth::user()->image_path}}">
                                 </div>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                             </div>
                             <div class="col-md-6">
                                 <p>{{ $info->grado}}</p>
-                                <a href="/academico/{{ $info->evidenciaGrado}}" target="blanck_">{{ $info->evidenciaGrado}}</a>
+                                <a href="documentos-users/info-PLESITH/academico/{{ $info->evidenciaGrado}}" target="blanck_">{{ $info->evidenciaGrado}}</a>
                             </div>
                         </div>
 
@@ -273,7 +273,7 @@
                             </div>
                             <div class="col-md-6">
                                 <p>{{ $info->pertenece}}</p>
-                                <a href="/evidencia/{{ $info->evidenciaSni}}" target="blanck_">{{ $info->evidenciaSni}}</a>
+                                <a href="documentos-users/info-PLESITH/evidencia/{{ $info->evidenciaSni}}" target="blanck_">{{ $info->evidenciaSni}}</a>
                             </div>
                         </div>
 

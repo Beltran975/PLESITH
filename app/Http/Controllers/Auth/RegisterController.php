@@ -74,17 +74,17 @@ class RegisterController extends Controller
 
         if ($request->hasFile('archivoCurp')) {
             $pdfPath = $request->file('archivoCurp');
-            $pdfPath->move(public_path().'/storage/archivos_curp',$pdfPath->getClientOriginalName());
+            $pdfPath->move(public_path().'/documentos-users/perfil/archivos_curp',$pdfPath->getClientOriginalName());
             $profile->archivoCurp=$pdfPath->getClientOriginalName();
-            //$pdfPath = $request->file('archivoCurp')->store('archivos_curp', 'public');
-            //$profile->update(['archivoCurp' => $pdfPath]);
         }
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('profiles', 'public');
-            $profile->update(['image_path' => $imagePath]);
+            $imagePath = $request->file('image');
+            $imagePath->move(public_path().'/documentos-users/perfil/profiles', $imagePath->getClientOriginalName());
+            $profile->image_path=$imagePath->getClientOriginalName();
         }
 
+        $profile->save();
         return view('auth.login');
 
     }

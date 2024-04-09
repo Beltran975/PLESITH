@@ -61,12 +61,17 @@
                                                 <td>
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a class="btn btn-primary" href="/storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a></li>
-                                                            <li><a class="btn btn-success" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
-                                                            <li><a class="btn btn-danger" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
+                                                        <ul class="dropdown-menu ">
+                                                           <div class="card">
+                                                           <li><a class="dropdown-item" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a></li>
+                                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
+                                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
+                                                           </div>
                                                         </ul>
                                                     </div>
+                                                </td>
+                                                <td>
+                                                    
                                                 </td>
                                             </tr>
                                             @endif
@@ -100,8 +105,9 @@
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                                         <ul class="dropdown-menu">
+                                                            <div class="card">
                                                             <li>
-                                                                <a class="btn btn-primary" href="/storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
+                                                                <a class="btn btn-primary" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
                                                             </li>
                                                             @if($postulacion->estatus == 'Negado')
                                                             <li><a class="btn btn-primary" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
@@ -113,6 +119,7 @@
                                                                     Inhabilitar al usuario
                                                                 </button>
                                                             </li>
+                                                            </div>
                                                         </ul>
                                                     </div>
                                                 </td>

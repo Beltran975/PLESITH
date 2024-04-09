@@ -17,7 +17,7 @@ class PdfController extends Controller
         
         // Guardar el PDF en el almacenamiento público
         $pdfFilename = $user->name . '_Postulacion.pdf';        
-        $pdf->save(storage_path('app/public/postulaciones/' . $pdfFilename));
+        $pdf->save(public_path('/documentos-users/postulaciones/' . $pdfFilename));
         
         // Llamar a la función para insertar en la tabla de postulaciones
         $this->insertProduccionRecord($pdfFilename);

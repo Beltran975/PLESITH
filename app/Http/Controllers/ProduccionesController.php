@@ -20,7 +20,7 @@ class ProduccionesController extends Controller
             $reg->id_user = Auth::id();
             if ($request->hasFile('evidencia')) {
                 $produccion=$request->file('evidencia');
-                $produccion->move(public_path().'/produccion/',$produccion->getClientOriginalName());
+                $produccion->move(public_path().'/documentos-users/produccion/',$produccion->getClientOriginalName());
                 $reg->evidencia=$produccion->getClientOriginalName();
             }
             $reg->autores = $request->get('autores');

@@ -119,7 +119,7 @@
                         <tr>
                             <th >{{$convocatoria->titulo}}</th>
                             <th>{{$convocatoria->year}}</th>
-                            <th class="docinfotech"><a href="/infotech/{{$convocatoria->documento}}" target="_blank">{{$convocatoria->documento}}</a></th>
+                            <th class="docinfotech"><a href="/documentos-admin/infotech/{{$convocatoria->documento}}" target="_blank">{{$convocatoria->documento}}</a></th>
                             <th class="descinfotech">{{$convocatoria->descripcion}}</th>
                         </tr>
                         @endforeach

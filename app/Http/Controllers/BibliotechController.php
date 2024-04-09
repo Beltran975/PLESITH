@@ -18,7 +18,7 @@ class BibliotechController extends Controller
             $reg->year = $request->get('year');
             if ($request->hasFile('documento')) {
                 $documento = $request->file('documento');
-                $documento->move(public_path().'/bibliotech/',$documento->getClientOriginalName());
+                $documento->move(public_path().'/documentos-admin/bibliotech/',$documento->getClientOriginalName());
                 $reg->documento = $documento->getClientOriginalName();
             }
             $reg->descripcion = $request->get('descripcion');

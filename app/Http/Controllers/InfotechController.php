@@ -18,7 +18,7 @@ class InfotechController extends Controller
             $reg->year = $request->get('year');
             if ($request->hasFile('documento')) {
                 $documento = $request->file('documento');
-                $documento->move(public_path().'/infotech/', $documento->getClientOriginalName());
+                $documento->move(public_path().'/documentos-admin/infotech/', $documento->getClientOriginalName());
                 $reg->documento = $documento->getClientOriginalName();
             }
             $reg->descripcion = $request->get('descripcion');

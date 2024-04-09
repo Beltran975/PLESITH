@@ -21,13 +21,13 @@ class InformacionController extends Controller
             $reg->id_user = Auth::id();
             if ($request->hasFile('evidenciaGrado')) {
                 $academico=$request->file('evidenciaGrado');
-                $academico->move(public_path().'/academico/',$academico->getClientOriginalName());
+                $academico->move(public_path().'/documentos-users/info-PLESITH/academico/',$academico->getClientOriginalName());
                 $reg->evidenciaGrado=$academico->getClientOriginalName();
             }
             $reg->pertenece = $request->get('pertenece');
             if ($request->hasFile('evidenciaSni')) {
                 $evidencia=$request->file('evidenciaSni');
-                $evidencia->move(public_path().'/evidencia/',$evidencia->getClientOriginalName());
+                $evidencia->move(public_path().'/documentos-users/info-PLESITH/evidencia/',$evidencia->getClientOriginalName());
                 $reg->evidenciaSni=$evidencia->getClientOriginalName();
             }
             $reg->save();
@@ -54,7 +54,7 @@ class InformacionController extends Controller
         $dato->pertenece = $request->input('pertenece');
         if($request->hasFile('evidenciaSni')){
             $evidencia = $request->file('evidenciaSni');
-            $evidencia->move(public_path().'/evidencia/',$evidencia->getClientOriginalName());
+            $evidencia->move(public_path().'/documentos-users/info-PLESITH/evidencia/',$evidencia->getClientOriginalName());
             $dato->evidenciaSni=$evidencia->getClientOriginalName();
         }
         $dato->save();

@@ -44,7 +44,7 @@
                         <td scope="row">{{$dato->linea_inv}}</td>
                         <td scope="row">{{$dato->institucion_ligada}}</td>
                         <td scope="row">{{$dato->descripcion}}</td>
-                        <td scope="row"><a href="/nodos/{{ $dato->documento}}" target="blanck_">{{ $dato->documento }}</a></td>
+                        <td scope="row"><a href="/documentos-users/nodos/{{ $dato->documento}}" target="blanck_">{{ $dato->documento }}</a></td>
                         <td scope="row">
                             <a href="{{route('nodos.edit', $dato->id)}}" class="btn btn-secondary">
                                 <i class="bi bi-pencil-square"></i> Editar
