@@ -30,8 +30,8 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="name">{{ __('Nombre completo *') }}</label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
-                                        <div class="tooltiptextUNO">Empieza por el Nombre(s)</div>
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Ingresa nombre completo, empieza por el Nombre(s)</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
@@ -41,7 +41,7 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="curp">{{ __('CURP *')}}</label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
+                                        <div class="iconUNO">?</div>
                                         <div class="tooltiptextUNO">La CURP debe coincidir con el archivo adjunto previamente.</div>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="email">{{ __('Correo *') }}</label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
+                                        <div class="iconUNO">?</div>
                                         <div class="tooltiptextUNO">Ingresa un correo valido</div>
                                     </div>
                                 </div>
@@ -62,6 +62,10 @@
                                 <!-- Intitución ligada -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="institucion">{{ __('Institución ligada* ')}}</label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Selecciona la intitución a la que perteneces</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <select class="form-control" id="institucion" name="institucion" required>
@@ -234,10 +238,10 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="programa">{{ __('Programa educativo *')}}</label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
-                                        <div class="tooltiptextUNO">No colocar siglas</div>
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Ingresa el nombre completo de tu programa educativo ¡No colocar siglas!</div>
                                     </div>
-                                </div>
+                                </div> 
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" id="programa" type="text"  name="programa" value="{{Auth::user()->programa}}" required>
                                 </div>

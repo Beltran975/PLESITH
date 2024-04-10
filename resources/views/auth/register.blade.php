@@ -39,8 +39,8 @@
                   <div class="col-md-4">
                     <label class="control-label" for="name" >{{ __('Nombre completo *') }}</label>
                     <div class="tooltipUNO">
-                      <div class="iconUNO">i</div>
-                      <div class="tooltiptextUNO">Empieza por Nombre(s)</div>
+                      <div class="iconUNO">?</div>
+                      <div class="tooltiptextUNO">Ingresa el nombre completo, empezando por Nombre(s)</div>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -60,8 +60,14 @@
                   <div class="col-md-4">
                     <label class="control-label" for="curp" class="">{{ __('CURP *')}}</label>
                     <div class="tooltipUNO">
-                      <div class="iconUNO">i</div>
-                      <div class="tooltiptextUNO">Asegurate de adjuntar el archivo correcto, no se podrá editar.</div>
+                      <div class="iconUNO">?</div>
+                      <div class="tooltiptextUNO">Asegurate de ingresar correctamente los 18 caracteres que coincidan con el archivo.</div>
+                    </div>
+                    <div></br>
+                        <div class="tooltipUNO">
+                          <div class="iconUNO">?</div>
+                          <div class="tooltiptextUNO">Asegurate de adjuntar el archivo correcto, no se podrá editar.</div>
+                        </div>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -75,7 +81,7 @@
                   <div class="col-md-4">
                     <label class="control-label" for="email" class="">{{ __('Correo *') }}</label>
                    <div class="tooltipUNO">
-                      <div class="iconUNO">i</div>
+                      <div class="iconUNO">?</div>
                       <div class="tooltiptextUNO">Ingresa un correo existente</div>
                     </div>
                   </div>
@@ -96,8 +102,8 @@
                   <div class="col-md-4">
                     <label class="control-label" for="password" >{{ __('Contraseña *') }}</label>
                     <div class="tooltipUNO">
-                      <div class="iconUNO">i</div>
-                      <div class="tooltiptextUNO">¡No podras recuperar tu contraseña! ¡Que no se te olvide!</div>
+                      <div class="iconUNO">?</div>
+                      <div class="tooltiptextUNO">Escribe minimo 8 caracteres ¡No podrás recuperar tu contraseña! ¡Que no se te olvide!</div>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -125,6 +131,10 @@
                 <div class="row justify-content-center mb-2">
                   <div class="col-md-4">
                       <label class="form-label" for="institucion">{{ __('Institución ligada* ')}}</label>
+                    <div class="tooltipUNO">
+                      <div class="iconUNO">?</div>
+                      <div class="tooltiptextUNO">Selecciona el nombre de la institución a la  que perteneces</div>
+                    </div>
                   </div>
                   <div class="col-md-6">
                       <input class="form-control" type="text" name="institucion" id="institucion_ligada" required>
@@ -135,8 +145,8 @@
                   <div class="col-md-4">
                     <label class="control-label" for="programa" class="">{{ __('Programa educativo *')}}</label>
                     <div class="tooltipUNO">
-                      <div class="iconUNO">i</div>
-                      <div class="tooltiptextUNO">¡No escribas siglas!</div>
+                      <div class="iconUNO">?</div>
+                      <div class="tooltiptextUNO">Ingresa el nombre completo de tu programa educativo ¡No escribas siglas!</div>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -148,8 +158,8 @@
                   <div class="col-md-4">
                     <label for="foto" class="control-label">{{ __('Fotografía de perfil *')}}</label>
                     <div class="tooltipUNO">
-                      <div class="iconUNO">i</div>
-                      <div class="tooltiptextUNO">Adjunta foto profecional</div>
+                      <div class="iconUNO">?</div>
+                      <div class="tooltiptextUNO">Adjunta foto profecional ¡No se podrá editar!</div>
                     </div>
                   </div>  
                   <div class="col-md-6">

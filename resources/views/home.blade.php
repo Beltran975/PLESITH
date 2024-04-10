@@ -214,8 +214,8 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaGrado">Evidencia del grado académico </label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
-                                        <div class="tooltiptextUNO">Adjunta solo documentos cetificados por alguna institución ¡No podrás editar este archivo!</div>
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Adjunta solo documentos certificados por alguna institución ¡No podrás editar este archivo!</div>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -240,8 +240,8 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
-                                        <div class="tooltiptextUNO">Adjunta solo documentos cetificados por alguna institución ¡No podrás editar este archivo!</div>
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Adjunta solo documentos certificados por alguna institución ¡No podrás editar este archivo!</div>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -489,7 +489,7 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidencia">{{ __('Documentación *')}}</label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
+                                        <div class="iconUNO">?</div>
                                         <div class="tooltiptextUNO">¡No podrás editar este archivo! Asegurate de que sea el correcto</div>
                                     </div>
                                 </div>
@@ -591,7 +591,7 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="documento">{{ __('Documentación *')}}</label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
+                                        <div class="iconUNO">?</div>
                                         <div class="tooltiptextUNO">¡No podrás editar este archivo!¡Asegurate de que sea el correcto!</div>
                                     </div>
                                 </div>

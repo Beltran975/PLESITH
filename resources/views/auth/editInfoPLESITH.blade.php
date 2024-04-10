@@ -50,7 +50,7 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="grado">Grado académico</label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
+                                        <div class="iconUNO">?</div>
                                         <div class="tooltiptextUNO">(Ingeniería, Maestría, Doctorado, etc.)</div>
                                     </div>
                                 </div>
@@ -75,8 +75,8 @@
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                     <div class="tooltipUNO">
-                                        <div class="iconUNO">i</div>
-                                        <div class="tooltiptextUNO">¡No podrás editar este archivo! ¡Asegurate de que sea el correcto!</div>
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">¡Asegurate de que sea el correcto!</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
