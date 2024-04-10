@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" name="grado" value="{{$dato->grado}}" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
+                                    <input class="form-control" type="text" name="grado" value="{{$dato->grado}}" pattern="[a-zA-Z\s\"']*"  title="Solo se permiten letras y espacios" required />
                                 </div>
                             </div>
                             <!-- Pertenece al SNI -->

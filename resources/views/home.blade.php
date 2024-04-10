@@ -206,7 +206,7 @@
                                     <label class="form-label" for="grado">Grado académico</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" name="grado" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
+                                    <input type="text" name="grado" class="form-control" pattern="[a-zA-Z\s\"']*" required  title="Solo se permiten letras y espacios" required />
                                 </div>
                             </div>
                             <!-- Evidencia Grado Academico -->
