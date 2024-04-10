@@ -16,15 +16,15 @@ return new class extends Migration
             $table->string('tema_inv');
             $table->string('categoria');
             $table->string('lider');
-            $table->string('colaboradores')->nullable();
+            //$table->string('colaboradores')->nullable();
             $table->string('linea_inv');
             $table->string('institucion_ligada');
             $table->longText('descripcion');
             $table->string('documento');
+            $table->unsignedBigInteger('colaboradores')->nullable();
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-
-            
+            $table->foreign('colaboradores')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
