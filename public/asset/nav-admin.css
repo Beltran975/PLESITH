@@ -63,7 +63,7 @@
         background-color: #691b32;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .sidebar {
       left: -300px; /* sidebar oculto */
     }

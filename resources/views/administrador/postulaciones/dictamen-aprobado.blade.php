@@ -11,8 +11,8 @@
     }
 </style>
 <body>
-<h1>Estimado {{$datosUser->user->name}}</h1>
-    <p>Nos complace informar que su solicitud cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNOLÓGOS DE HIDALGO.</p>
+<h1>Estimad@ {{$datosUser->user->name}}</h1>
+    <p>Nos complace informar que su solicitud cumple con los parámetros necesarios para ser un usuario verificado dentro de la PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO.</p>
     <P>Resaltando los siguientes motivos</P>
     <p><strong>Descripción general:</strong> {{ $descripcion }}</p>
     <p><strong>Razón de la aprobación:</strong> {{ $razonAprobacion === 'Otros' ? $razonTextArea : $razonAprobacion }}</p>

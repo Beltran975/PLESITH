@@ -38,16 +38,16 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- no revisados -->
                             <div class="tab-content" id="myTabContent">
+                                <!-- no revisados -->
                                 <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                                     <table class="table header">
                                         <thead>
                                             <tr>
-                                                <th>Postulante</th>
-                                                <th>Área de conocimiento</th>
-                                                <th>Fecha de postulación</th>
-                                                <th>Opciones</th>
+                                                <th class="subtitulo1">Postulante</th>
+                                                <th class="subtitulo1">Área de conocimiento</th>
+                                                <th class="subtitulo2">Fecha de postulación</th>
+                                                <th class="subtitulo2">Opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -62,16 +62,13 @@
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                                         <ul class="dropdown-menu ">
-                                                           <div class="card">
-                                                           <li><a class="dropdown-item" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a></li>
-                                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
-                                                            <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
-                                                           </div>
+                                                            <div class="card">
+                                                                <li><a class="dropdown-item" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a></li>
+                                                                <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
+                                                                <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
+                                                            </div>
                                                         </ul>
                                                     </div>
-                                                </td>
-                                                <td>
-                                                    
                                                 </td>
                                             </tr>
                                             @endif
@@ -85,11 +82,11 @@
                                     <table class="table header">
                                         <thead>
                                             <tr>
-                                                <th>Postulante</th>
-                                                <th>Área de conocimiento</th>
-                                                <th>Estatus</th>
-                                                <th>Fecha de postulación</th>
-                                                <th>Opciones</th>
+                                                <th class="subtitulo4">Postulante</th>
+                                                <th class="subtitulo1">Área de conocimiento</th>
+                                                <th class="subtitulo5">Estatus</th>
+                                                <th class="subtitulo5">Fecha de postulación</th>
+                                                <th class="subtitulo5">Opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -106,19 +103,21 @@
                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                                         <ul class="dropdown-menu">
                                                             <div class="card">
-                                                            <li>
-                                                                <a class="btn btn-primary" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
-                                                            </li>
-                                                            @if($postulacion->estatus == 'Negado')
-                                                            <li><a class="btn btn-primary" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
-                                                            @else
-                                                            <li><a class="btn btn-danger" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
-                                                            @endif
-                                                            <li>
-                                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modal-baja-{{$postulacion->id}}">
-                                                                    Inhabilitar al usuario
-                                                                </button>
-                                                            </li>
+                                                                <li>
+                                                                    <a class="btn btn-primary" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
+                                                                </li>
+                                                                @if($postulacion->estatus == 'Negado')
+                                                                <li>
+                                                                    <a class="btn btn-primary" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
+                                                                @else
+                                                                <li>
+                                                                    <a class="btn btn-danger" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
+                                                                @endif
+                                                                <li>
+                                                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modal-baja-{{$postulacion->id}}">
+                                                                        Inhabilitar al usuario
+                                                                    </button>
+                                                                </li>
                                                             </div>
                                                         </ul>
                                                     </div>
@@ -133,14 +132,14 @@
                                 </div>
                                 <!-- inhabilitados -->
                                 <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                <table class="table header">
+                                    <table class="table header">
                                         <thead>
                                             <tr>
-                                                <th>Postulante</th>
-                                                <th>Área de conocimiento</th>
-                                                <th>Estatus</th>
-                                                <th>Fecha de inhabilitación</th>
-                                                <th>Opciones</th>
+                                                <th class="subtitulo4">Postulante</th>
+                                                <th class="subtitulo1">Área de conocimiento</th>
+                                                <th class="subtitulo5">Estatus</th>
+                                                <th class="subtitulo5">Fecha de inhabilitación</th>
+                                                <th class="subtitulo5">Opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>

@@ -28,7 +28,7 @@
                             <div class="row justify-content-center">
                                 <!-- Nombre completo -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="name">{{ __('Nombre completo *') }}</label>
+                                    <label class="form-label" for="name">{{ __('Nombre completo ') }}</label>
                                     <div class="tooltipUNO">
                                         <div class="iconUNO">?</div>
                                         <div class="tooltiptextUNO">Ingresa nombre completo, empieza por el Nombre(s)</div>
@@ -37,31 +37,9 @@
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" id="name" type="text" name="name" value="{{Auth::user()->name}}" required autocomplete="name" autofocus>
                                 </div>
-                                <!-- CURP -->
-                                <div class="col-md-4">
-                                    <label class="form-label" for="curp">{{ __('CURP *')}}</label>
-                                    <div class="tooltipUNO">
-                                        <div class="iconUNO">?</div>
-                                        <div class="tooltiptextUNO">La CURP debe coincidir con el archivo adjunto previamente.</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input class="form-control" id="curp" type="text" name="curp" value="{{Auth::user()->curp}}" onkeyup="mayus(this);" required maxlength="18">
-                                </div>
-                                <!-- Correo -->
-                                <div class="col-md-4">
-                                    <label class="form-label" for="email">{{ __('Correo *') }}</label>
-                                    <div class="tooltipUNO">
-                                        <div class="iconUNO">?</div>
-                                        <div class="tooltiptextUNO">Ingresa un correo valido</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input class="form-control @error('email') is-invalid @enderror" id="email" type="email" name="email" value="{{Auth::user()->email}}" required autocomplete="email">
-                                </div>
                                 <!-- Intitución ligada -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="institucion">{{ __('Institución ligada* ')}}</label>
+                                    <label class="form-label" for="institucion">{{ __('Institución a la que pertenece ')}}</label>
                                     <div class="tooltipUNO">
                                         <div class="iconUNO">?</div>
                                         <div class="tooltiptextUNO">Selecciona la intitución a la que perteneces</div>
@@ -236,7 +214,7 @@
                                 </div>
                                 <!-- Programa educativo -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="programa">{{ __('Programa educativo *')}}</label>
+                                    <label class="form-label" for="programa">{{ __('Programa educativo ')}}</label>
                                     <div class="tooltipUNO">
                                         <div class="iconUNO">?</div>
                                         <div class="tooltiptextUNO">Ingresa el nombre completo de tu programa educativo ¡No colocar siglas!</div>
@@ -244,6 +222,28 @@
                                 </div> 
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" id="programa" type="text"  name="programa" value="{{Auth::user()->programa}}" required>
+                                </div>
+                                <!-- CURP -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="curp">{{ __('CURP ')}}</label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">La CURP debe coincidir con el archivo adjunto previamente.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" id="curp" type="text" name="curp" value="{{Auth::user()->curp}}" onkeyup="mayus(this);" required maxlength="18">
+                                </div>
+                                <!-- Correo -->
+                                <div class="col-md-4">
+                                    <label class="form-label" for="email">{{ __('Correo electrónico ') }}</label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Ingresa un correo valido</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control @error('email') is-invalid @enderror" id="email" type="email" name="email" value="{{Auth::user()->email}}" required autocomplete="email">
                                 </div>
                             </div>
                             <div class="modal-footer">

@@ -64,9 +64,9 @@
                                     <label class="form-label" for="pertenece">¿Pertenece al SNI?</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="radio" name="pertenece" autocomplete="off" value="si" {{$dato->pertenece == 'si' ? 'checked' : '' }}>
+                                    <input type="radio" name="pertenece" autocomplete="off" value="Sí" {{$dato->pertenece == 'Sí' ? 'checked' : '' }}>
                                     <label class="btn" for="pertenece">Sí</label>
-                                    <input type="radio" name="pertenece" autocomplete="off" value="no" {{$dato->pertenece == 'no' ? 'checked' : '' }}>
+                                    <input type="radio" name="pertenece" autocomplete="off" value="No" {{$dato->pertenece == 'No' ? 'checked' : '' }}>
                                     <label class="btn" for="pertenece">No</label>
                                 </div>
                             </div>
@@ -96,8 +96,8 @@
         @include('layouts/footer')
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8N+1lUE3+XjwIXqityaM2UwEJrHjeZX/nezF8+Ad5A0tjFkA5Vx7Js1KrI95" crossorigin="anonymous"></script>
         <script>
-            const radioSi = document.querySelector('input[value="si"]');
-            const radioNo = document.querySelector('input[value="no"]');
+            const radioSi = document.querySelector('input[value="Sí"]');
+            const radioNo = document.querySelector('input[value="No"]');
             const fileInput = document.querySelector('input[name="evidenciaSni"]');
 
             function toggleFileInput() {
