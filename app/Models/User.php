@@ -52,4 +52,14 @@ class User extends Authenticatable
         return $this->hasMany(Nodo::class,'id_user');
     }
 
+    public function mensajes()
+    {
+        return $this->hasMany(MensajesUsers::class,'id_user_emisor');
+    }
+
+    public function mensajesRecibidos()
+    {
+        return $this->hasMany(MensajesUsers::class,'id_user_destinatario');
+    }
+
 }

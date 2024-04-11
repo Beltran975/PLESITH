@@ -7,6 +7,7 @@ use App\Models\User; //nombre de el modelo que contengs en campo 'email'
 use App\Mail\CorreoColaborador;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Nodo;
+use App\Models\MensajesUsers;
 
 class ColaboradoresController extends Controller
 {
@@ -16,16 +17,38 @@ class ColaboradoresController extends Controller
         return response()->json($correos);
     }
 
-    public function enviarCorreo(Request $request)
+    public function enviarCorreo(Request $request, $nodoId)
 {
     $correoColaborador = $request->input('correo');
 
     // Verifica si el correo del colaborador es válido antes de enviar
     if ($correoColaborador) {
-        $correo = new CorreoColaborador($correoColaborador);
-        Mail::to($correoColaborador)->send($correo);
+        // Encuentra al usuario asociado al correo electrónico
+        $usuario = User::where('email', $correoColaborador)->first();
+
+        $nodo = Nodo::find($nodoId);
+
+
+        if ($usuario && $nodo) {
+            // Crea un nuevo mensaje de usuario
+            $mensajeUsuario = new MensajesUsers();
+            $mensajeUsuario->id_user_emisor	 = auth()->user()->id; // Supongo que obtienes el ID del remitente de alguna manera
+            $mensajeUsuario->id_user_destinatario	 = $usuario->id;
+            $mensajeUsuario->mensaje = auth()->user()->name . " te quiere invitar a que colabores en el Nodo '" . $nodo->tema_inv . "'";
+            $mensajeUsuario->save();
+
+            // Envía el correo electrónico
+            $correo = new CorreoColaborador($correoColaborador);
+            Mail::to($correoColaborador)->send($correo);
+        } else {
+            // Maneja la situación si no se encuentra el usuario
+            // Por ejemplo, muestra un mensaje de error o registra un log
+            // Puedes adaptar esta parte según tus necesidades
+            // Por ejemplo: return back()->with('error', 'Usuario no encontrado');
+        }
     }
 
     return redirect()->route('home.index');
+    
 }
 }

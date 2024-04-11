@@ -103,23 +103,6 @@
                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                                         <ul class="dropdown-menu">
                                                             <div class="card">
-<<<<<<< Updated upstream
-                                                                <li>
-                                                                    <a class="btn btn-primary" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
-                                                                </li>
-                                                                @if($postulacion->estatus == 'Negado')
-                                                                <li>
-                                                                    <a class="btn btn-primary" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
-                                                                @else
-                                                                <li>
-                                                                    <a class="btn btn-danger" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
-                                                                @endif
-                                                                <li>
-                                                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modal-baja-{{$postulacion->id}}">
-                                                                        Inhabilitar al usuario
-                                                                    </button>
-                                                                </li>
-=======
                                                             <li>
                                                                 <a class="dropdown-item" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a>
                                                             </li>
@@ -133,7 +116,6 @@
                                                                     Inhabilitar al usuario
                                                                 </button>
                                                             </li>
->>>>>>> Stashed changes
                                                             </div>
                                                         </ul>
                                                     </div>

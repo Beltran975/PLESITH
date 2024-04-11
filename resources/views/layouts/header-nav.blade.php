@@ -33,6 +33,13 @@
                                 @endforeach
                             </li>
                             <li>
+                                <!-- Button trigger modal -->
+                                <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="bi bi-envelope"></i>
+                                    Mensajes
+                                </a>
+                            </li>
+                            <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
@@ -65,6 +72,8 @@
         </div>
     </header>
     <!-- Contenido de la página aquí -->
+    <!-- Modal -->
+    
 </body>
 
 </html>

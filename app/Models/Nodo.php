@@ -24,4 +24,9 @@ class Nodo extends Model
         'documento',
     ];
     
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    
 }

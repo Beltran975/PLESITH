@@ -11,20 +11,22 @@
         <input class="form-control" id="colaboradores" name="colaboradores" type="text">
       </div>
       <div class="modal-footer">
+      <input type="hidden" id="nodoId" name="nodoId" value="{{$nodo->id}}">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerra</button>
-        <button type="button" class="btn btn-primary" onclick="enviarCorreo()">Enviar</button>
+        <button type="button" class="btn btn-primary" onclick="enviarCorreo({{$nodo->id}})">Enviar Correo</button>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-function enviarCorreo() {
+function enviarCorreo(nodoId) {
     var colaboradores = $('#colaboradores').val();
 
-    // Redirige a la ruta enviar.correo con el parámetro 'correo' en la URL
-    window.location.href = "{{ route('enviar.correo') }}?correo=" + encodeURIComponent(colaboradores);
+    // Redirige a la ruta enviar.correo con el ID del nodo y el parámetro 'correo' en la URL
+    window.location.href = "{{ route('enviar.correo', ':nodoId') }}".replace(':nodoId', nodoId) + "?correo=" + encodeURIComponent(colaboradores);
 }
+
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>

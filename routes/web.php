@@ -17,6 +17,7 @@ use App\Http\Controllers\ListadoController;
 use App\Http\Controllers\AdminProduccionesController;
 use App\Http\Controllers\InformacionController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\mensajesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\ColaboradoresController;
 
@@ -125,7 +126,7 @@ Route::get('/generate-CV',[PdfController::class, 'generateCV']);
 Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('soloadmin')->middleware('auth')->name('tabla');
 
 //Rutas para enviar correos 
-Route::get('/enviar-correo', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
+Route::get('/enviar-correo/{id}', [EmailController::class, 'enviarCorreo'])->name('enviar.correo');
 
 //verificar direccion de correo
 Route::get('/verificar-Correo', [CorreoverController::class, 'VerificarCorreo'])->name('enviar.correo');
@@ -192,6 +193,8 @@ Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class
 Route::get('/Producciones/produc/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista'])->name('listaProducciones');
 Route::resource('/editProduc', ProduccionesController::class,);
 Route::resource('/home', VistaController::class);
+Route::get('/home', [mensajesController::class, 'mostrarMensajes'])->name('home');
+
 
 Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
@@ -224,6 +227,6 @@ Route::post('/generar', [App\Http\Controllers\ReportenodoController::class, 'gen
 //ruta para obtener las isntituciones
 Route::get('/instituciones', [App\Http\Controllers\InstitucionController::class, 'obtenerInstituciones']);
 
-Route::get('/Correo_Colaborador', [App\Http\Controllers\ColaboradoresController::class, 'enviarCorreo'])->name('enviar.correo');
+Route::get('/Correo_Colaborador/{nodoId}', [App\Http\Controllers\ColaboradoresController::class, 'enviarCorreo'])->name('enviar.correo');
 
 Route::post('/postulacion/{id}/no-revisado',[App\Http\Controllers\PostulacionController::class, 'marcarNoRevisado'])->name('postulacion.no_revisado');
