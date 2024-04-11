@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< Updated upstream
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,103 @@
                 <div class="green-box">
                     <div class="titulo row d-flex  mb-3">
                         <h3>Datos generales | {{ Auth::user()->name }}</h3>
+=======
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('asset/home.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.hidalgo.gob.mx/logo.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <title>{{ Auth::user()->name }} | PLESITH</title>
+</head>
+
+<body>
+
+    @include('layouts/headregob')
+    @include('layouts/header-nav')
+    <main class="page">
+        <div class="content">
+            <div class="green-box">
+
+                <div class="titulo row d-flex  mb-3">
+                    <h3>Datos generales | {{ Auth::user()->name }}</h3><!-- espacio en blanco -->
+                </div>
+                <!--Acciones del usuario-->
+                @switch(Auth::user()->tipo)
+                @case('basico')
+                <button onclick="verificarMail()" type="button" class="btn btn-secondary">Autenticar correo electrónico</button>
+                @break
+
+                @case('autenticado')
+                @if(Auth::user()->datos->count() > 0 && Auth::user()->producciones->count() > 0)
+                <a style="display: none;" class="btn btn-primary" id="ruta" href="/generate-pdf">Generar postulación</a>
+                <button class="btn btn-success" id="botonPostulacion">Enviar postulación <i class="bi bi-send"></i></button>
+                <br>
+                <br>
+                <figcaption class="blockquote-footer">
+                    Antes de enviar su postulación, verifique que todos sus datos estén llenos correctamente.
+                </figcaption>
+                @else
+                <button disabled class="btn btn-success" id="botonPostulacion">Enviar postulación <i class="bi bi-send"></i></button>
+                <br>
+                <br>
+                <figcaption class="blockquote-footer">
+                    Para completar adecuadamente su solicitud, le solicitamos que ingrese sus datos correspondientes en "Información PLESITH". Además, agregue información sobre sus investigaciones, patentes y documentos de investigación en la sección "Mis Producciones".
+                </figcaption>
+                @endif
+                @break
+
+                @case('postulado')
+                @case('revisado')
+                @if(Auth::user()->datos->count() > 0 && Auth::user()->producciones->count() > 0)
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-estatus-pos">Estatus de cuenta</button>
+                <a href="/generate-CV" class="btn btn-success">
+                <i class="bi bi-box-arrow-in-down"></i>
+                    Descargar Perfil PLESITH
+                </a>
+                @endif
+                @break
+                @case('Inhabilitado')
+                <a href="#" class="btn btn-danger">Enviar</a>
+                @break
+
+                @default
+                <!-- Si no coincide con ninguno de los casos anteriores -->
+                @endswitch
+
+
+
+                <div class="modal fade" id="Modal-estatus-pos" tabindex="-1" aria-label="Modal-estatus-label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="Modal-estatus-label">Estatus de postulación</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                            </div>
+                            <div class="modal-body">
+                                @foreach (Auth::user()->postulaciones as $postulacion)
+                                <p>De acuerdo con el proceso de selección para la verificación, le notificamos que su postulación realizada el dia {{ $postulacion->created_at->formatLocalized('%A, %d de %B') }} su proceso de postulación a es: <b>{{ $postulacion->estatus }}</b></p>
+                                <p>Para mayor detalle sobre su proceso de postulación consulte su dictamen</p>
+                                @if($postulacion->estatus == 'Aprobado')
+                                <a href="/documentos-admin/dictamenes/aprobados/{{ $postulacion->pdfDictamen}}" target="blanck_">Dictamen</a>
+                                @elseif($postulacion->estatus == 'Negado')
+                                <a href="/documentos-admin/dictamenes/negados/{{ $postulacion->pdfDictamen}}" target="blanck_">Dictamen</a>
+                                @endif
+                                @endforeach
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                            </div>
+                        </div>
+>>>>>>> Stashed changes
                     </div>
 
                     <!--Acciones del usuario-->

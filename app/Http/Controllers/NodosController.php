@@ -82,4 +82,9 @@ class NodosController extends Controller
         $dato->save();
         return redirect()->route('listaNodos');
     }
+
+    public function solisitudUser(Request $request, $id){
+        $solisitud = Nodo::findOrFail($id);
+        
+    }
 }
