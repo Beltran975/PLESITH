@@ -108,4 +108,18 @@ class tablaController extends Controller
         return redirect()->route('administrador.tabla');
     }
 
+    public function marcarNoRevisado($id)
+    {
+        // Encuentra la postulación por su ID
+        $postulacion = Postulaciones::with('user')->findOrFail($id);
+        $postulacion->estatus= 'Inhabilitado';
+        $postulacion->save();
+        // Cambia el estado a "no revisado"
+        $usuario = $postulacion->user;
+        $usuario->tipo = 'Inhabilitado';
+        $usuario->save();
+
+        return redirect()->route('tabla');
+    }
+
 }

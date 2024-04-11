@@ -16,7 +16,6 @@ class PostulacionController extends Controller
         $postulacion->estatus = 'Inhabilitado';
         $postulacion->save();
 
-        //return response()->json(['message' => 'Estado cambiado a no revisado', 'postulacion' => $postulacion]);
         return redirect()->route('tabla');
     }
 }
