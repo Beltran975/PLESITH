@@ -227,6 +227,9 @@ Route::post('/generar', [App\Http\Controllers\ReportenodoController::class, 'gen
 //ruta para obtener las isntituciones
 Route::get('/instituciones', [App\Http\Controllers\InstitucionController::class, 'obtenerInstituciones']);
 
-Route::get('/Correo_Colaborador/{nodoId}', [App\Http\Controllers\ColaboradoresController::class, 'enviarCorreo'])->name('enviar.correo');
+Route::post('/enviar-correo/{nodoId}', [App\Http\Controllers\ColaboradoresController::class, 'enviarCorreo'])->name('enviarCorreo');
+Route::post('/aceptar-invitacion/{mensajeId}', 'App\Http\Controllers\ColaboradoresController@aceptarInvitacion')->name('aceptarInvitacion');
 
-Route::post('/postulacion/{id}/no-revisado',[App\Http\Controllers\PostulacionController::class, 'marcarNoRevisado'])->name('postulacion.no_revisado');
+
+
+Route::post('/postulacion/{id}/no-revisado',[App\Http\Controllers\tablaController::class, 'marcarNoRevisado'])->name('postulacion.no_revisado');

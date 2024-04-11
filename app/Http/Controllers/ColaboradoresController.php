@@ -19,6 +19,7 @@ class ColaboradoresController extends Controller
 
     public function enviarCorreo(Request $request, $nodoId)
 {
+    
     $correoColaborador = $request->input('correo');
 
     // Verifica si el correo del colaborador es válido antes de enviar
@@ -28,13 +29,13 @@ class ColaboradoresController extends Controller
 
         $nodo = Nodo::find($nodoId);
 
-
         if ($usuario && $nodo) {
             // Crea un nuevo mensaje de usuario
             $mensajeUsuario = new MensajesUsers();
             $mensajeUsuario->id_user_emisor	 = auth()->user()->id; // Supongo que obtienes el ID del remitente de alguna manera
             $mensajeUsuario->id_user_destinatario	 = $usuario->id;
             $mensajeUsuario->mensaje = auth()->user()->name . " te quiere invitar a que colabores en el Nodo '" . $nodo->tema_inv . "'";
+            $mensajeUsuario->nodo_id = $nodo->id;
             $mensajeUsuario->save();
 
             // Envía el correo electrónico
@@ -49,6 +50,22 @@ class ColaboradoresController extends Controller
     }
 
     return redirect()->route('home.index');
-    
 }
+public function aceptarInvitacion($mensajeId)
+    {
+        // Encuentra el mensaje por su ID
+        $mensaje = MensajesUsers::findOrFail($mensajeId);
+
+        // Encuentra el nodo relacionado con el mensaje
+        $nodo = Nodo::findOrFail($mensaje->nodo_id);
+
+        // Actualiza el campo colaboradores del nodo
+        // Por ejemplo, podrías concatenar el ID del usuario que acepta la invitación
+        // con los colaboradores existentes, separados por comas
+        $nodo->colaboradores = $nodo->colaboradores ? $nodo->colaboradores . ',' . auth()->user()->id : auth()->user()->id;
+        $nodo->save();
+
+        // Redirige a donde desees después de aceptar la invitación
+        return redirect()->route('home.index');
+    }
 }

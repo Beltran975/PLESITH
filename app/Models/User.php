@@ -51,6 +51,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Nodo::class,'id_user');
     }
+    public function nodosColab()
+    {
+        return $this->hasMany(Nodo::class,'colaboradores');
+    }
 
     public function mensajes()
     {

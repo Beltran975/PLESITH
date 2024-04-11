@@ -17,8 +17,8 @@ class ListaNodosController extends Controller
 
     public function lista()
     {
-        $query = Nodo::where('id_user', Auth::id())->get();
-        return view('nodo.listaNodos', ['datos'=>$query]);
+        $query = Nodo::where('id_user', Auth::id())->with('user')->get();
+        return view('nodo.listaNodos', ['datos' => $query]);
     }
 
     public function destroy($id)

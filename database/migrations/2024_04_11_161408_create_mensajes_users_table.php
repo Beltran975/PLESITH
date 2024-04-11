@@ -24,6 +24,11 @@ return new class extends Migration
                 ->constrained('users')
                 ->cascadeOnUpdate()
                 ->nullOnDelete();
+            $table->foreignId('nodo_id')
+                ->nullable()
+                ->constrained('nodo')
+                ->cascadeOnUpdate()
+                ->nullOnDelete();
             $table->timestamps();
 
         });

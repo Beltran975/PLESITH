@@ -11,11 +11,17 @@ class MensajesUsers extends Model
     protected $fillable = [
         'mensaje',
         'id_user_emisor',
-        'id_user_destinatario'
+        'id_user_destinatario',
+        'nodo_id'
 
     ];
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+    public function nodo()
+    {
+        return $this->belongsTo(Nodo::class);
+    }
+
 }

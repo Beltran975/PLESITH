@@ -48,7 +48,7 @@ class NodosController extends Controller
     }
     
     public function edit($id){
-        $datos=Nodo::findOrFail($id);
+        $datos=Nodo:: findOrFail($id);
         return view('nodo.editMinodo', compact('datos'));
     }
     

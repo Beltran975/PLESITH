@@ -375,13 +375,49 @@
                                     <td>{{$nodo->categoria}}</td>
                                     <td>
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-Colab-{{$nodo->id}}">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-Colab-{{$nodo->id}}" data-nodo-id="{{$nodo->id}}">
                                             Enviar Correo
                                         </button>
                                     </td>
                                 </tr>
                             </tbody>
                             @include('ModalCorreo')
+                            @endforeach
+                        </table>
+
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div disabled class="card-header" data-bs-toggle="collapse" href="#nodos-colab">
+                        Nodos donde colaboras
+                    </div>
+                    <div class="card-body collapse" id="nodos-colab">
+                        <div class="row row-cols-auto">
+                            <div class="col">
+                                <a class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo"><i class="bi bi-plus-circle-fill"></i> Crear</a>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-primary" href="/nodo/listaNodos"><i class="bi bi-list-ul"></i> Mis nodos</a>
+                            </div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tema de investigación</th>
+                                    <th scope="col">Lider del Nodo</th>
+                                    <th scope="col">Línea de investigación</th>
+                                    <th scope="col">Categoría</th>
+                                </tr>
+                            </thead>
+                            @foreach (Auth::user()->nodosColab as $nodoColab)
+                            <tbody class="table-group-divider">
+                                <tr>
+                                    <th>{{$nodoColab->tema_inv}}</th>
+                                    <td>{{$nodoColab->lider}}</td>
+                                    <td>{{$nodoColab->linea_inv}}</td>
+                                    <td>{{$nodoColab->categoria}}</td>
+                                </tr>
+                            </tbody>
                             @endforeach
                         </table>
 
@@ -629,8 +665,10 @@
                                         @foreach (Auth::user()->mensajesRecibidos as $mensaje)
                                         <hr>
                                         <p>{{ $mensaje->mensaje }}</p>
-                                        <button type="button" class="btn btn-primary">Aceptar invitación</button>
-                                        <a href="#" class="btn btn-success">Ver detalles</a>
+                                        <form action="{{ route('aceptarInvitacion', ['mensajeId' => $mensaje->id]) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary">Aceptar invitación</button>
+                                        </form> <a href="#" class="btn btn-success">Ver detalles</a>
                                         <hr>
                                         @endforeach
 
