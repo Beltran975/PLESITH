@@ -13,6 +13,7 @@
      <h1>PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO</h1>
      <p>Te quiero invitar a que colabores conmigo en mi Nodo</p>
      <p>*Si te gustaría colaborar entra al siguiente enlace</p>
+     <a href="http://127.0.0.1:8000/home">Ir a mi perfil de PLESITH</a>
      <p>*Si no te gustaría colaborar solo ignora el correo</p>
 </body>
 </html>
