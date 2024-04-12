@@ -228,6 +228,7 @@ Route::post('/generar', [App\Http\Controllers\ReportenodoController::class, 'gen
 Route::get('/instituciones', [App\Http\Controllers\InstitucionController::class, 'obtenerInstituciones']);
 
 Route::post('/enviar-correo/{nodoId}', [App\Http\Controllers\ColaboradoresController::class, 'enviarCorreo'])->name('enviarCorreo');
+Route::post('/enviar-correo/{nodoId}', [App\Http\Controllers\ListaNodosController::class, 'enviarCorreo'])->name('enviarCorreo');
 Route::post('/aceptar-invitacion/{mensajeId}', 'App\Http\Controllers\ColaboradoresController@aceptarInvitacion')->name('aceptarInvitacion');
 
 

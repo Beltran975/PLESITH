@@ -33,6 +33,7 @@
                         <div class="col-2">
                             <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Buscar</button>
                         </div>
+                        </form>
                     </div>
                 </div>
                 <hr class="hr-gob" >
@@ -55,8 +56,8 @@
                             <td class="contenido-produccion">{{ $d->linea_inv}}</td>
                             <td class="contenido-produccion">{{ $d->institucion_ligada}}</td>
                             <td>
-                                <button class="btn btn-primary" onclick="AlertaColaborador()" type="button">
-                                    <i class="bi bi-send-plus"></i> Colaborar
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-colaborar-{{$d->id}}">
+                                    Colaborar
                                 </button>
                             </td>
                             <td>
@@ -65,6 +66,7 @@
                                 </a>
                             </td>
                         </tr>
+                        @include('nodo.solicitudNodo')
                         @endforeach
                     </tbody>
                 </table>
