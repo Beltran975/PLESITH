@@ -19,7 +19,16 @@
         @include('layouts/header-nav')
         <br>
         <main class="page">
-            <a href="/home" class="btn btn-primary"><i class="bi bi-arrow-bar-left"></i> Volver atrás</a>
+        <div class="titulo row d-flex mb-3"  style="margin-left: 150px;">
+            <h3 >Mis producciones</h3>
+        </div>
+        <hr class="hr-gob">
+        </hr>
+        <div class="d-flex justify-content-start" style="margin-left: 150px;">
+            <a href="/home" class="btn btn-primary"> <i class="bi bi-arrow-bar-left"></i> Volver atrás</a>
+        </div>
+        
+
             <div id="tab5" class="tabs-producciones active">
                 <table class="table table-bordered">
                     <thead>

@@ -21,6 +21,11 @@ body {
     
 }
 
+.table.table-bordered {
+  width: 80%; 
+  margin: 0 auto; 
+}
+
 /*hr de gobierno*/
 .content .hr-gob{
   margin: 10px 0 10px;
