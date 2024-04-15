@@ -20,10 +20,6 @@ class homeAdminController extends Controller
         $nodoCount = Nodo::count(); // contar el numero de nodos
         $infotechCount = Infotech::count(); // contar el numero en infotech
         $bibliotechCount = Bibliotech::count(); // contar el numero en bibliotech
-
-
-
         return view('administrador.home-admin', compact('userCount', 'postulacionesCount', 'produccionesCount', 'nodoCount', 'infotechCount', 'bibliotechCount'));
     }
-    
 }

@@ -32,9 +32,16 @@
                                     <li class="list-group-item">Número de usuarios : 
                                         <span>{{ $userCount }}</span>
                                     </li>
+                                    <li class="list-group-item">Usuarios verificados : 
+                                        <span>{{ $verificadoCount }}</span>
+                                    </li>
                                     <li class="list-group-item">Número de postulaciones : 
                                         <span>{{ $postulacionesCount }}</span>
                                     </li>
+                                    <li class="list-group-item">Usuarios inhabilitados : 
+                                        <span>{{ $inhabilitadosCount  }}</span>
+                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>

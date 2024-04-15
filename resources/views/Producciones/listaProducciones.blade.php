@@ -16,7 +16,7 @@
     </head>
     <body>
         @include('layouts/headregob')
-        @include('layouts/header')
+        @include('layouts/header-nav')
         <br>
         <main class="page">
             <a href="/home" class="btn btn-primary"><i class="bi bi-arrow-bar-left"></i> Volver atrás</a>

@@ -234,3 +234,4 @@ Route::post('/aceptar-invitacion/{mensajeId}', 'App\Http\Controllers\Colaborador
 
 
 Route::post('/postulacion/{id}/no-revisado',[App\Http\Controllers\tablaController::class, 'marcarNoRevisado'])->name('postulacion.no_revisado');
+

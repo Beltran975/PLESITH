@@ -20,7 +20,7 @@
           <div class="avatar-circle">
             <i class="fa fa-user fa-2x"></i>
           </div>
-          <a href="/home-admin"><span>{{ Auth::user()->name }}</span></a>
+        <a href="/home-admin" class="link-usuario"><span>{{ Auth::user()->name }}</span></a>
         </div>
         <ul>
           <li><a href="/administrador/postulaciones/tabla"><i class="bi bi-person-fill"></i>Usuarios</a></li>

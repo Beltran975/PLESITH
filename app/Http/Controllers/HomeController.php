@@ -36,11 +36,13 @@ class HomeController extends Controller
         $produccionesCount = Producciones::count(); // contar el numero de producciones
         $nodoCount = Nodo::count(); // contar el numero de nodos
         $infotechCount = Infotech::count(); // contar el numero en infotech
+        $verificadoCount = Postulaciones::where('estatus', 'Aprobado')->count();
+        $inhabilitadosCount = User::where('tipo', 'Inhabilitado')->count();
         $bibliotechCount = Bibliotech::count(); // contar el numero en bibliotech
 
 
 
-        return view('administrador.home-admin', compact('userCount', 'postulacionesCount', 'produccionesCount', 'nodoCount', 'infotechCount', 'bibliotechCount'));
+        return view('administrador.home-admin', compact('userCount', 'postulacionesCount', 'produccionesCount', 'nodoCount', 'infotechCount', 'bibliotechCount','verificadoCount', 'inhabilitadosCount'));
         return view('administrador.home-admin');
     }
     
