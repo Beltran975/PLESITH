@@ -51,7 +51,7 @@
                                     <label class="form-label" for="grado">Grado académico</label>
                                     <div class="tooltipUNO">
                                         <div class="iconUNO">?</div>
-                                        <div class="tooltiptextUNO">(Ingeniería, Maestría, Doctorado, etc.)</div>
+                                        <div class="tooltiptextUNO">Debe coincidir con la documentación adjunta anteriormente</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -76,7 +76,7 @@
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
                                     <div class="tooltipUNO">
                                         <div class="iconUNO">?</div>
-                                        <div class="tooltiptextUNO">¡Asegurate de que sea el correcto!</div>
+                                        <div class="tooltiptextUNO">Solo se permiten archivos emitidos por una institución académica. Asegurate de adjuntar el archivo correcto.</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

@@ -217,6 +217,10 @@
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaGrado">Evidencia del grado académico </label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Solo se permiten archivos emitidos por una institución académica. Asegurate de adjuntar el archivo correcto, no se podrá editar.</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="file" name="evidenciaGrado" accept=".pdf" placeholder="Seleccionar archivo PDF" required />
@@ -239,6 +243,10 @@
                             <div class="row form-outline mb-4">
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidenciaSni">Evidencia SNI </label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Solo se permiten archivos emitidos por una institución académica. Asegurate de adjuntar el archivo correcto.</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="file" name="evidenciaSni" id="evidenciaSni" accept=".pdf" placeholder="Seleccionar archivo PDF" required disabled />
@@ -514,6 +522,10 @@
                                 <!-- Documentación -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="evidencia">{{ __('Documentación *')}}</label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Asegurate de adjuntar el archivo correcto. ¡No se podrá editar!</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" type="file" name="evidencia" onchange="validarDocumento(event)" required>
@@ -613,6 +625,10 @@
                                 <!-- Documentación -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="documento">{{ __('Documentación *')}}</label>
+                                    <div class="tooltipUNO">
+                                        <div class="iconUNO">?</div>
+                                        <div class="tooltiptextUNO">Asegurate de adjuntar el archivo correcto. ¡No se podrá editar!</div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" type="file" name="documento" id="documento" onchange="validarDocumento(event)" required>
