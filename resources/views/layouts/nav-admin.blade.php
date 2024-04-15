@@ -20,10 +20,10 @@
           <div class="avatar-circle">
             <i class="fa fa-user fa-2x"></i>
           </div>
-          <span>{{ Auth::user()->name }}</span>
+          <a href="/home-admin"><span>{{ Auth::user()->name }}</span></a>
         </div>
         <ul>
-          <li><a href="/administrador/postulaciones/tabla"><i class="bi bi-person-fill"></i> Postulaciones</a></li>
+          <li><a href="/administrador/postulaciones/tabla"><i class="bi bi-person-fill"></i>Usuarios</a></li>
           <li><a href="/administrador/producciones/table"><i class="bi bi-file-text-fill"></i> Producciones</a></li>
           <li><a href="/administrador/nodos/tabla"><i class="bi bi-folder2"></i> Nodos de colaboración</a></li>
           <li><a href="/administrador/bibliotech/tabla"><i class="bi bi-file-earmark-check-fill"></i> Bibliotech</a></li>
