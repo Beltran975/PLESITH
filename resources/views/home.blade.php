@@ -393,12 +393,6 @@
                     </div>
                     <div class="card-body collapse" id="nodos-colab">
                         <div class="row row-cols-auto">
-                            <div class="col">
-                                <a class="btn btn-primary" id="btnAbrirModalProduccion" data-bs-toggle="modal" data-bs-target="#Modal-crear-nodo"><i class="bi bi-plus-circle-fill"></i> Crear</a>
-                            </div>
-                            <div class="col">
-                                <a class="btn btn-primary" href="/nodo/listaNodos"><i class="bi bi-list-ul"></i> Mis nodos</a>
-                            </div>
                         </div>
                         <table class="table">
                             <thead>
@@ -481,7 +475,7 @@
                                 <div class="col-md-6 mb-3">
                                     <select class="form-control" name="tipo" required>
                                         <option name="tipo" value="" disabled selected>Seleccionar</option>
-                                        <option name="tipo" value="Libros o capitulos de libro">Libros o capítulos de libro</option>
+                                        <option name="tipo" value="Libros o capítulos de libro">Libros o capítulos de libro</option>
                                         <option name="tipo" value="Articulos arbitrados y articulos indexados">Artículos arbitrados y artículos indexados</option>
                                         <option name="tipo" value="Propiedad intelectual">Propiedad intelectual</option>
                                         <option name="tipo" value="Modelos de utilidad">Modelos de utilidad</option>
@@ -671,7 +665,6 @@
                                         </form> <a href="#" class="btn btn-success">Ver detalles</a>
                                         <hr>
                                         @endforeach
-
                                     </div>
                                 </div>
                             </div>
