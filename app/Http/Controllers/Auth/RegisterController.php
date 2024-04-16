@@ -51,7 +51,12 @@ class RegisterController extends Controller
         $request ->validate([
             'name' => 'required',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'curp'=> 'required',
+            'curp' => ['required', 'string', 'max:18', function ($attribute, $value, $fail) {
+                $existeCurp = User::where('curp', $value)->exists();
+                if ($existeCurp) {
+                    $fail('El CURP ingresado ya existe en la base de datos.');
+                }
+            }],
             'institucion' => 'required',
             'programa' => 'required',
             'password' => ['required', 'string', 'min:8', 'confirmed'],

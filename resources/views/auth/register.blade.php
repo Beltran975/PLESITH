@@ -78,14 +78,22 @@
                 </div>
                 <!-- CURP -->
                 <div class="col-md-4">
-                  <label class="control-label" for="curp" class="">{{ __('CURP *')}}</label>
+                  <label class="control-label" for="curp">{{ __('CURP *')}}</label>
                   <div class="tooltipUNO">
                     <div class="iconUNO">?</div>
-                    <div class="tooltiptextUNO">Asegurate de ingresar correctamente los 18 caracteres que coincidan con el archivo.</div>
+                    <div class="tooltiptextUNO">Asegúrate de ingresar correctamente los 18 caracteres que coincidan con el archivo.</div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <input id="curp" ttype="text" onkeyup="mayus(this);" class="form-control" name="curp" required maxlength="18">
+                  <input id="curp" type="text" onkeyup="mayus(this);" class="form-control @error('curp') is-invalid @enderror" name="curp" required maxlength="18">
+                  @error('curp')
+                  <span class="invalid-feedback" role="alert">
+                    <div class="alert alert-danger alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <strong>{{ $message }}</strong>
+                    </div>
+                  </span>
+                  @enderror
                 </div>
                 <!-- Documentación CURP -->
                 <div class="col-md-4">
