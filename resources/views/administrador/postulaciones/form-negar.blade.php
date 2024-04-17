@@ -25,7 +25,7 @@
                             @csrf
                             <div class="mb-3">
                                 <blockquote>
-                                    <p>Para aprobar al usuario favor de llenar el siguiente formulario:</p>
+                                    <p>Para aprobar al usuario <span style="background-color: #691b32;">{{$pos->user->name}}</span> favor de llenar el siguiente formulario:</p>
                                 </blockquote>
                             </div>
                             <div class="md-3">

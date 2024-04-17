@@ -123,6 +123,16 @@ Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 //generar PDF del CV para el usuario
 Route::get('/generate-CV',[PdfController::class, 'generateCV']);
 
+//generar reportes PDF
+//reporte general de usuarios
+Route::get('/generate-reporte-users',[PdfController::class, 'ReporteGeneralUsers']);
+//reporte de usuarios no revisados
+Route::get('/generate-reporte-noRevisados',[PdfController::class, 'ReporteNoRevisados']);
+//reporte de postulaciones revisadas 
+Route::get('/generate-revisados',[PdfController::class,'ReportesRevisados']);
+//reporte de usuarios inhabilitados
+Route::get('/generate-reporte-inhabilitados', [PdfController::class, 'usersInhabilitados']);
+
 Route::get('administrador/postulaciones/tabla', [tablaController::class, 'mostrarDatos'])->middleware('soloadmin')->middleware('auth')->name('tabla');
 
 //Rutas para enviar correos 

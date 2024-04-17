@@ -19,6 +19,7 @@ class Informacion extends Model
         'evidenciaGrado',
         'pertenece',
         'evidenciaSni',
+        'nivel',
     ];
     public function user()
     {

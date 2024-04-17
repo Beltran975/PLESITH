@@ -210,7 +210,15 @@
                                     <label class="form-label" for="grado">Grado académico</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" name="grado" class="form-control" pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios" required />
+                                    <select class="form-control" name="grado" required>
+                                        <option name="grado" value="" disabled selected>Seleccionar</option>
+                                        <option name="grado" value="Técnico">Técnico</option>
+                                        <option name="grado" value="Licenciatura">Licenciatura</option>
+                                        <option name="grado" value="Ingeniería">Ingeniería</option>
+                                        <option name="grado" value="Maestría">Maestría</option>
+                                        <option name="grado" value="Doctorado">Doctorado</option>
+                                        <option name="grado" value="Comunidad">Comunidad</option>
+                                    </select>
                                 </div>
                             </div>
                             <!-- Evidencia Grado Academico -->
@@ -274,7 +282,23 @@
                             </div>
                             <div class="col-md-6">
                                 <p>{{ $info->grado}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Evidencia del grado académico :</p>
+                            </div>
+                            <div class="col-md-6">
                                 <a href="documentos-users/info-PLESITH/academico/{{ $info->evidenciaGrado}}" target="blanck_">{{ $info->evidenciaGrado}}</a>
+                            </div>
+                        </div>
+                        <!--Nivel-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Nivel PLSESITH :</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $info->nivel}}</p>
                             </div>
                         </div>
 
@@ -285,6 +309,14 @@
                             </div>
                             <div class="col-md-6">
                                 <p>{{ $info->pertenece}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Evidencia SNI :</p>
+                            </div>
+                            <div class="col-md-6">
                                 <a href="documentos-users/info-PLESITH/evidencia/{{ $info->evidenciaSni}}" target="blanck_">{{ $info->evidenciaSni}}</a>
                             </div>
                         </div>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('evidenciaGrado');
             $table->string('pertenece');
             $table->string('evidenciaSni')->nullable();
+            $table->string('nivel');
 
             //table->foreign('id_user')->references('id')->on('users');
             $table->foreignId('id_user')

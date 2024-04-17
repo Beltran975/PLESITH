@@ -55,8 +55,15 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" name="grado" value="{{$dato->grado}}" pattern="[a-zA-Z\s\"']*"  title="Solo se permiten letras y espacios" required />
-                                </div>
+                                <select class="form-control" name="grado" required>
+                                <option disabled selected>{{$dato->grado}}</option>
+                                        <option name="grado" value="Técnico">Técnico</option>
+                                        <option name="grado" value="Licenciatura">Licenciatura</option>
+                                        <option name="grado" value="Ingeniería">Ingeniería</option>
+                                        <option name="grado" value="Maestría">Maestría</option>
+                                        <option name="grado" value="Doctorado">Doctorado</option>
+                                        <option name="grado" value="Comunidad">Comunidad</option>
+                                    </select>                                </div>
                             </div>
                             <!-- Pertenece al SNI -->
                             <div class="row justify-content-center mb-3">

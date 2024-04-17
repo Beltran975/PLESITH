@@ -19,7 +19,7 @@
                 <div class="col invisible"></div>
                 <div class="col obscuro">
                     <div class="titulo row d-flex  mb-3">
-                        <h1>{{ __('Postulaciones') }}</h1>
+                        <h1>{{ __('Gestión de usuarios') }}</h1>
                     </div>
                     <hr class="hr-gob">
                     <!-- postulaciones -->
@@ -27,20 +27,65 @@
                         <div class="card postulaciones">
                             <div class="card-header postulaciones">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">No revisados</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Revisados</button>
+                                <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-users" data-bs-toggle="tab" data-bs-target="#home-users-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Usuarios</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">Usuarios inhabilitados</button>
                                     </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">Postulaciones no revisadas</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Postulaciones revisadas</button>
+                                    </li>
+                                    
                                 </ul>
                             </div>
                             <div class="tab-content" id="myTabContent">
+                                <!--General usuarios-->
+                                <div class="tab-pane fade show active" id="home-users-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                    <a href="/generate-reporte-users" class="btn btn-success">
+                                        Generar reporte
+                                        .
+                                        <i class="bi bi-download"></i>
+                                    </a>
+                                    <table class="table header">
+                                        <thead>
+                                            <tr>
+                                                <th class="subtitulo1">Usuario</th>
+                                                <th class="subtitulo1">Área de conocimiento</th>
+                                                <th class="subtitulo1">Institución ligada</th>
+                                                <th class="subtitulo1">CURP</th>
+                                                <th class="subtitulo1">Nivel PLESITH</th>
+                                                <th class="subtitulo2">Fecha de registro</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($users as $user)
+                                            @if($user->id > 1)
+                                            <tr>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->programa}}</td>
+                                                <td>{{ $user->institucion}}</td>
+                                                <td>{{ $user->curp}}</td>
+                                                @foreach($user->datos as $info)
+                                                <td>{{ $info->nivel}}</td>
+                                                @endforeach
+                                                <td>{{ $user->created_at->format(' d/m/Y') }}</td>
+                                            </tr>
+                                            @endif
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <!-- no revisados -->
-                                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                <div class="tab-pane fade" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                <a href="/generate-reporte-noRevisados" class="btn btn-success">
+                                        Generar reporte
+                                        .
+                                        <i class="bi bi-download"></i>
+                                    </a>
                                     <table class="table header">
                                         <thead>
                                             <tr>
@@ -79,6 +124,11 @@
                                 </div>
                                 <!-- revisados -->
                                 <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                <a href="/generate-revisados" class="btn btn-success">
+                                        Generar reporte
+                                        .
+                                        <i class="bi bi-download"></i>
+                                    </a>
                                     <table class="table header">
                                         <thead>
                                             <tr>
@@ -130,6 +180,11 @@
                                 </div>
                                 <!-- inhabilitados -->
                                 <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+                                <a href="/generate-reporte-inhabilitados" class="btn btn-success">
+                                        Generar reporte
+                                        .
+                                        <i class="bi bi-download"></i>
+                                    </a>
                                     <table class="table header">
                                         <thead>
                                             <tr>

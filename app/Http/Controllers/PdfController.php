@@ -60,4 +60,54 @@ class PdfController extends Controller
         
         return $pdf->download($pdfFilename);
     }
+
+    public function ReporteGeneralUsers()
+    {
+        $users = User::all();
+
+        $pdf = PDF::loadView('administrador.postulaciones.reportes.reporte-users', compact('users'));
+
+        $pdfFilename = 'Reporte_usuarios.pdf';
+        $pdf->save(public_path('/documentos-admin/reportes/'.$pdfFilename));
+
+        return $pdf->download(($pdfFilename));
+    }
+
+    public function ReporteNoRevisados()
+    {
+        $users = User::all();
+
+        $pdf = PDF::loadView('administrador.postulaciones.reportes.reporte-no-revisados', compact('users'));
+
+        $pdfFilename = 'Reporte_usuarios_no_revisados.pdf';
+        $pdf->save(public_path('/documentos-admin/reportes/'.$pdfFilename));
+
+        return $pdf->download(($pdfFilename));
+    }
+
+    public function ReportesRevisados()
+    {
+        $users = User::all();
+
+        $pdf = PDF::loadView('administrador.postulaciones.reportes.reporte-revisados', compact('users'));
+
+        $pdfFilename = 'Reporte_usuarios_revisados.pdf';
+        $pdf->save(public_path('/documentos-admin/reportes/'.$pdfFilename));
+
+        return $pdf->download(($pdfFilename));
+    }
+    
+    public function usersInhabilitados()
+    {
+        $users = User::get();
+
+        $pdf = PDF::loadView('administrador.postulaciones.reportes.reporte-users-inhabilitados', compact('users'));
+
+        $pdfFilename = 'Reporte_usuarios_inhabilitados.pdf';
+        $pdf->save(public_path('/documentos-admin/reportes/'.$pdfFilename));
+
+        return $pdf->download(($pdfFilename));
+
+
+    }
 }
