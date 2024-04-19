@@ -66,6 +66,8 @@
                                     <td scope="row">
                                         @if($usuario && $usuario->id == $nodo->colaboradores)
                                         {{$usuario->name}}
+                                        @else(count($datos)<=0)
+                                            <h6>"No existen colaboradores"</h6>
                                         @endif
                                     </td>
                                     @endforeach
