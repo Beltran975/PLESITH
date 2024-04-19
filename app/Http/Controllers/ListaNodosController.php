@@ -8,6 +8,8 @@ use App\Models\Nodo;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User; //nombre de el modelo que contengs en campo 'email'
 use App\Mail\CorreoColaborador;
+use App\Mail\emailSolicitudColab;
+use App\Mail\emailAceptarSoli;
 use Illuminate\Support\Facades\Mail;
 use App\Models\MensajesUsers;
 
@@ -68,7 +70,7 @@ class ListaNodosController extends Controller
             }
         }
 
-        return redirect()->route('home.index');
+        return redirect()->route('home.index')->with('SendInvitacion', 'Solicitud aceptada');
     }
 
     //Solicitud para colaborar en un nodo 
@@ -94,13 +96,13 @@ class ListaNodosController extends Controller
                 $mensajeUsuario->save();
 
                 // Envía el correo electrónico
-                $correo = new CorreoColaborador($correoColaborador);
+                $correo = new emailSolicitudColab($correoColaborador);
                 Mail::to($correoColaborador)->send($correo);
             } else {
                
             }
         }
 
-        return redirect()->route('home.index');
+        return redirect()->route('home.index')->with('solicitud', 'La solicitud se ha enviado correctamente.');
     }
 }

@@ -716,7 +716,7 @@
                                             <button type="submit" class="btn btn-primary">Aceptar solicitud</button>
                                         </form>
                                         @elseif($mensaje->id_user_destinatario == Auth::user()->id)
-                                        
+
                                         <form action="{{ route('aceptarInvitacion', ['mensajeId' => $mensaje->id]) }}" method="POST">
                                             @csrf
                                             <button type="submit" class="btn btn-primary">Aceptar invitación</button>
@@ -758,6 +758,55 @@
         </div>
 
     </main>
+    @if(session('solicitud'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: 'Solicitud enviada',
+            text: 'Recibirás una respuesta a tu correo electrónico una vez que el líder del nodo acepte tu solicitud para colaborar.',
+            icon: 'success',
+            iconColor: '#bc955b',
+            confirmButtonText: 'Aceptar',
+            customClass: {
+                confirmButton: 'btn btn-primary'
+            }
+        });
+    </script>
+    @endif
+    @if(session('solicitudAceptada'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: "success",
+            title: "Solicitud aceptada",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    </script>
+    @endif
+    @if(session('invitacion'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: "success",
+            title: "¡¡Felicidades ahora eres parte de un nodo de colaboración!!",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    </script>
+    @endif
+    @if(session('SendInvitacion'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: "success",
+            title: "Invitación enviada con exito",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    </script>
+    @endif
+
 
     @include('layouts/footer')
 

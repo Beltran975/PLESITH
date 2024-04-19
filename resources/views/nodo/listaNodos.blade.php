@@ -18,7 +18,7 @@
 
 <body>
     @include('layouts/headregob')
-    @include('layouts/header-nav')
+    @include('layouts/header')
     <br>
     <main class="page">
         <div class="content">
