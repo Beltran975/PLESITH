@@ -188,3 +188,8 @@ body {
   text-align: center;
   line-height: 20px;
 }
+@media screen and (max-width: 768px) {
+  .page{
+    margin-top: 15%;
+  }
+}

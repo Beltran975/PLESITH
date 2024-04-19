@@ -21,6 +21,7 @@ class ColaboradoresController extends Controller
 {
     
     $correoColaborador = $request->input('correo');
+    
 
     // Verifica si el correo del colaborador es válido antes de enviar
     if ($correoColaborador) {
@@ -42,10 +43,7 @@ class ColaboradoresController extends Controller
             $correo = new CorreoColaborador($correoColaborador);
             Mail::to($correoColaborador)->send($correo);
         } else {
-            // Maneja la situación si no se encuentra el usuario
-            // Por ejemplo, muestra un mensaje de error o registra un log
-            // Puedes adaptar esta parte según tus necesidades
-            // Por ejemplo: return back()->with('error', 'Usuario no encontrado');
+            
         }
     }
 
@@ -58,11 +56,56 @@ public function aceptarInvitacion($mensajeId)
 
         // Encuentra el nodo relacionado con el mensaje
         $nodo = Nodo::findOrFail($mensaje->nodo_id);
-
-        // Actualiza el campo colaboradores del nodo
-        // Por ejemplo, podrías concatenar el ID del usuario que acepta la invitación
-        // con los colaboradores existentes, separados por comas
+        
         $nodo->colaboradores = $nodo->colaboradores ? $nodo->colaboradores . ',' . auth()->user()->id : auth()->user()->id;
+        $nodo->save();
+
+        // Redirige a donde desees después de aceptar la invitación
+        return redirect()->route('home.index');
+    }
+
+    public function enviarSolicitud(Request $request, $nodoId)
+    {
+        $correoColaborador = $request->input('correo');
+    
+
+        // Verifica si el correo del colaborador es válido antes de enviar
+        if ($correoColaborador) {
+            // Encuentra al usuario asociado al correo electrónico
+            $usuario = User::where('email', $correoColaborador)->first();
+    
+            $nodo = Nodo::find($nodoId);
+    
+            if ($usuario && $nodo) {
+                // Crea un nuevo mensaje de usuario
+                $mensajeUsuario = new MensajesUsers();
+                $mensajeUsuario->id_user_emisor	 = auth()->user()->id; // Supongo que obtienes el ID del remitente de alguna manera
+                $mensajeUsuario->id_user_destinatario	 = $usuario->id;
+                $mensajeUsuario->mensaje = auth()->user()->name . "  quiere colaborar contigo en el Nodo '" . $nodo->tema_inv . "'";
+                $mensajeUsuario->nodo_id = $nodo->id;
+                $mensajeUsuario->save();
+    
+                // Envía el correo electrónico
+                $correo = new CorreoColaborador($correoColaborador);
+                Mail::to($correoColaborador)->send($correo);
+            } else {
+                
+            }
+        }
+    
+        return redirect()->route('home.index');
+    }
+
+    //Aceptar solicitud para colaborar
+    public function aceptarSolicitud($solicitudId)
+    {
+          // Encuentra el mensaje por su ID
+        $mensaje = MensajesUsers::findOrFail($solicitudId);
+
+        // Encuentra el nodo relacionado con el mensaje
+        $nodo = Nodo::findOrFail($mensaje->nodo_id);
+        
+        $nodo->colaboradores = $mensaje->id_user_emisor;
         $nodo->save();
 
         // Redirige a donde desees después de aceptar la invitación

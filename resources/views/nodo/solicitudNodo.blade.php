@@ -1,16 +1,19 @@
 <!-- Modal -->
-<div class="modal fade" id="Modal-colaborar-{{$d->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@foreach($d->nodos as $nodo)
+<div class="modal fade" id="Modal-colaborar-{{$nodo->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$d->tema_inv}}</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$nodo->tema_inv}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ route('enviarCorreo', ['nodoId' => $d->id]) }}" method="POST">
+        <form action="{{ route('enviarSolicitud', ['nodoId' => $nodo->id]) }}" method="POST">
           @csrf
-          <label for="correoColaborador" class="form-label">Correo de colaboración</label>
-          <input class="form-control" id="correoColaborador" name="correo" type="text">
+          <label for="correoColaborador" class="form-label">
+            Enviar solisitud a {{$d->name}} para colaborar dentro del nodo {{$nodo->tema_inv}}
+          </label>
+          <input hidden class="form-control" id="correoColaborador" name="correo" type="text" value="{{$d->email}}">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -20,6 +23,7 @@
     </div>
   </div>
 </div>
+@endforeach
 
 
 <script>

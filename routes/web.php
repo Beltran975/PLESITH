@@ -209,13 +209,13 @@ Route::get('/home', [mensajesController::class, 'mostrarMensajes'])->name('home'
 Route::resource('/nodo', ListaNodosController::class);
 Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista']);
 
-Route::get('/Producciones/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista']);
+Route::get('/Producciones/listaProducciones', [App\Http\Controllers\ProduccionesController::class, 'lista'])->middleware('auth');
 //Route::resource('/listaProducciones', ProduccionesController::class);
 Route::resource('/Producciones/editProduc', ProduccionesController::class,);
 Route::resource('/home', VistaController::class)->middleware('auth');
 
 Route::resource('/nodo', ListaNodosController::class);
-Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista'])->name('listaNodos');
+Route::get('/nodo/listaNodos', [App\Http\Controllers\ListaNodosController::class, 'lista'])->name('listaNodos')->middleware('auth');
 
 
 Route::get('/buscar-producciones', [AdminProduccionesController::class, 'index'])->name('buscar-producciones');
@@ -237,9 +237,15 @@ Route::post('/generar', [App\Http\Controllers\ReportenodoController::class, 'gen
 //ruta para obtener las isntituciones
 Route::get('/instituciones', [App\Http\Controllers\InstitucionController::class, 'obtenerInstituciones']);
 
-Route::post('/enviar-correo/{nodoId}', [App\Http\Controllers\ColaboradoresController::class, 'enviarCorreo'])->name('enviarCorreo');
+//Enviar invitación para colaborar en un nodo de colaboración
 Route::post('/enviar-correo/{nodoId}', [App\Http\Controllers\ListaNodosController::class, 'enviarCorreo'])->name('enviarCorreo');
 Route::post('/aceptar-invitacion/{mensajeId}', 'App\Http\Controllers\ColaboradoresController@aceptarInvitacion')->name('aceptarInvitacion');
+
+//Enviar solicitud a participar en un nodo de colaboración
+Route::post('/enviar-solicitud/{nodoId}', [App\Http\Controllers\ListaNodosController::class, 'enviarSolicitud'])->name('enviarSolicitud');
+Route::post('/aceptar-solicitud/{solicitudId}', 'App\Http\Controllers\ColaboradoresController@aceptarSolicitud')->name('aceptarSolicitud');
+
+
 
 
 

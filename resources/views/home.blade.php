@@ -429,7 +429,7 @@
                 </div>
                 <div class="card mb-3">
                     <div disabled class="card-header" data-bs-toggle="collapse" href="#nodos-colab">
-                        Nodos donde colaboras
+                        Nodos en colaboración
                     </div>
                     <div class="card-body collapse" id="nodos-colab">
                         <div class="row row-cols-auto">
@@ -687,6 +687,8 @@
                 </div>
             </div>
         </div>
+
+        <!--Modal mensajes-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -707,11 +709,25 @@
                                         @foreach (Auth::user()->mensajesRecibidos as $mensaje)
                                         <hr>
                                         <p>{{ $mensaje->mensaje }}</p>
+                                        @foreach(Auth::user()->nodos as $nodo)
+                                        @if($mensaje->nodo_id == $nodo->id)
+                                        <form action="{{ route('aceptarSolicitud', ['solicitudId' => $mensaje->id]) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary">Aceptar solicitud</button>
+                                        </form>
+                                        @elseif($mensaje->id_user_destinatario == Auth::user()->id)
+                                        
                                         <form action="{{ route('aceptarInvitacion', ['mensajeId' => $mensaje->id]) }}" method="POST">
                                             @csrf
                                             <button type="submit" class="btn btn-primary">Aceptar invitación</button>
-                                        </form> <a href="#" class="btn btn-success">Ver detalles</a>
+                                            <a href="/NodosComunidad" class="btn btn-success">Ver detalles</a>
+                                        </form>
+                                        @endif
+
+
+
                                         <hr>
+                                        @endforeach
                                         @endforeach
                                     </div>
                                 </div>

@@ -99,7 +99,7 @@ class PdfController extends Controller
     
     public function usersInhabilitados()
     {
-        $users = User::get();
+        $users = User::all();
 
         $pdf = PDF::loadView('administrador.postulaciones.reportes.reporte-users-inhabilitados', compact('users'));
 

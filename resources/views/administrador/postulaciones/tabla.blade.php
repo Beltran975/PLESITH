@@ -209,7 +209,7 @@
                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
                                                         <ul class="dropdown-menu">
                                                             <div class="card">
-                                                            <li><a class="dropdown-item" href="/storage/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a></li>
+                                                            <li><a class="dropdown-item" href="/documentos-users/postulaciones/{{ $postulacion->pdfPostulacion }}" target="_blank">Ver postulación</a></li>
                                                             <li><a class="dropdown-item" href="/administrador/postulaciones/form-aprobar/{{ $postulacion->id }}">Aprobar postulación</a></li>
                                                             <li><a class="dropdown-item" href="/administrador/postulaciones/form-negar/{{$postulacion->id}}">Negar postulación</a></li>
                                                             </div>

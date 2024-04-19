@@ -10,9 +10,12 @@
 
 <body>
     <header>
-        <a href="/">
+       <div class="title">
+       <a class="btn btn-xs" href="/">
             <h3>PLATAFORMA ESTATAL DE INVESTIGADORES Y TECNÓLOGOS DE HIDALGO</h3>
         </a>
+       </div>
+        
         <div class="nav-header">
             <ul>
                 <li>

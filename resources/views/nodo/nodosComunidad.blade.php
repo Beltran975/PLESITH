@@ -15,7 +15,7 @@
     </head>
     <body>
         @include('layouts/headregob')
-        @include('layouts/header')
+        @include('layouts/header-nav')
         <main class="page d-flex justify-content-center">
             <div class="content">
                 <div class="container ">
@@ -50,22 +50,32 @@
                     </thead>
                     <tbody>
                         @foreach ($datos as $d)
+                        @foreach ($d->nodos as $nodo)
                         <tr>
-                            <td class="contenido-produccion">{{ $d->tema_inv}}</td>
-                            <td class="contenido-produccion">{{ $d->lider}}</td>
-                            <td class="contenido-produccion">{{ $d->linea_inv}}</td>
-                            <td class="contenido-produccion">{{ $d->institucion_ligada}}</td>
+                            <td class="contenido-produccion">{{ $nodo->tema_inv}}</td>
+                            <td class="contenido-produccion">{{ $nodo->lider}}</td>
+                            <td class="contenido-produccion">{{ $nodo->linea_inv}}</td>
+                            <td class="contenido-produccion">{{ $nodo->institucion_ligada}}</td>
+                            @if($nodo->id_user == Auth::user()->id)
                             <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-colaborar-{{$d->id}}">
+                            <button disabled type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">
                                     Colaborar
                                 </button>
                             </td>
+                            @else
                             <td>
-                                <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $d->id }}">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-colaborar-{{$nodo->id}}">
+                                    Colaborar
+                                </button>
+                            </td>
+                            @endif
+                            <td>
+                                <a href="#" class="btn btn-primary" id="btnAbrirModalnodo" data-bs-toggle="modal" data-bs-target="#Modal-crear-produccion-{{ $nodo->id }}">
                                     <i class="bi bi-book"></i> Leer más
                                 </a>
                             </td>
                         </tr>
+                        @endforeach
                         @include('nodo.solicitudNodo')
                         @endforeach
                     </tbody>
@@ -73,42 +83,43 @@
                 
                 <!-- Modal de nodos de colaboración -->
                 @foreach ($datos as $d)
-                <div class="modal fade" id="Modal-crear-produccion-{{ $d->id }}">
+                @foreach ($d->nodos as $nodo)
+                <div class="modal fade" id="Modal-crear-produccion-{{ $nodo->id }}">
                     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">{{ $d->tema_inv}}</h4>
+                                <h4 class="modal-title">{{$nodo->tema_inv}}</h4>
                             </div>
                             <div class="modal-body">
                                 <table class="tabla-modal table table-borderless" >
                                     <tbody>
                                         <tr>
                                             <th class="rotated-header">Área de conocimiento: </th>
-                                            <td class="contenido-produccion">{{ $d->linea_inv}}</td>
+                                            <td class="contenido-produccion">{{ $nodo->linea_inv}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Categoría: </th>
-                                            <td class="contenido-produccion">{{ $d->categoria}}</td>
+                                            <td class="contenido-produccion">{{ $nodo->categoria}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Líder:</th>
-                                            <td class="contenido-produccion">{{ $d->lider}}</td>
+                                            <td class="contenido-produccion">{{ $nodo->lider}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Colaboradores: </th>
-                                            <td class="contenido-produccion">{{ $d->colaboradores}}</td>
+                                            <td class="contenido-produccion">{{ $nodo->colaboradores}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Institución ligada: </th>
-                                            <td class="contenido-produccion">{{ $d->institucion_ligada}}</td>
+                                            <td class="contenido-produccion">{{ $nodo->institucion_ligada}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Descripción: </th>
-                                            <td class="contenido-produccion">{{ $d->descripcion}}</td>
+                                            <td class="contenido-produccion">{{ $nodo->descripcion}}</td>
                                         </tr>
                                         <tr>
                                             <th class="rotated-header">Documentación: </th>
-                                            <td class="contenido-produccion"><a href="/nodos/{{ $d->documento}}" target="blanck_">{{ $d->documento}}</a></td>
+                                            <td class="contenido-produccion"><a href="/documentos-users/nodos/{{ $nodo->documento}}" target="blanck_">{{ $nodo->documento}}</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -119,6 +130,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
                 @endforeach
             </div>
         </main>
