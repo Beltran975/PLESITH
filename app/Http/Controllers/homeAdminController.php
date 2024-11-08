@@ -9,17 +9,26 @@ use App\Models\Producciones;
 use App\Models\Nodo;
 use App\Models\Infotech;
 use App\Models\Bibliotech;
+use App\Models\Reserva;
 
 class homeAdminController extends Controller
 {
     public function getUser()
     {
-        $userCount = User::count(); // contar el numero de usuarios
-        $postulacionesCount = Postulaciones::count(); // contar el numero de postulaciones
-        $produccionesCount = Producciones::count(); // contar el numero de producciones
-        $nodoCount = Nodo::count(); // contar el numero de nodos
-        $infotechCount = Infotech::count(); // contar el numero en infotech
-        $bibliotechCount = Bibliotech::count(); // contar el numero en bibliotech
-        return view('administrador.home-admin', compact('userCount', 'postulacionesCount', 'produccionesCount', 'nodoCount', 'infotechCount', 'bibliotechCount'));
+        $userCount = User::count();
+        $postulacionesCount = Postulaciones::count();
+        $produccionesCount = Producciones::count();
+        $nodoCount = Nodo::count();
+        $infotechCount = Infotech::count();
+        $bibliotechCount = Bibliotech::count();
+        $reservasCount = Reserva::count();
+        $verificadoCount = Postulaciones::where('estatus', 'Aprobado')->count();
+        $inhabilitadosCount = User::where('tipo', 'Inhabilitado')->count();
+    
+        return view('administrador.home-admin', compact(
+            'userCount', 'postulacionesCount', 'produccionesCount', 
+            'nodoCount', 'infotechCount', 'bibliotechCount', 
+            'reservasCount', 'verificadoCount', 'inhabilitadosCount'
+        ));
     }
-}
+}    

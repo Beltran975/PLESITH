@@ -1,0 +1,414 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el fondo borroso */
+.blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente */
+    backdrop-filter: blur(3px); /* Efecto de desenfoque */
+    z-index: 1000; /* Colocar por encima de la ventana flotante */
+}
+
+.content {
+    padding-top: 100px;
+    margin: 0 50px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.carreraVentana {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.controles {
+    margin: 40px 0 25px;
+}
+
+#map {
+    height: 600px;
+    width: 60%;
+    margin: 20px 0;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+#info-box {
+    margin-top: 250px;
+    margin-right: 35px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    position: absolute;
+    top: 102px;
+    right: 20px;
+    width: 35%;
+    height: 600px;
+    overflow: auto;
+}
+
+#info-box img {
+    border-radius: 10px;
+}
+
+select {
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los select */
+#instituciones {
+    width: 100%;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none; /* Para Safari */
+    -moz-appearance: none; /* Para Firefox */
+    background-color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Estilo para las opciones normales */
+#instituciones option {
+    background-color: #fff; /* Fondo blanco por defecto */
+}
+
+/* Estilo para las opciones cuando se pasa el mouse */
+#instituciones option:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+}
+
+#institution-image {
+    display: none;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+#institution-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px; /* Ajusta según tu preferencia */
+}
+
+.container-info {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85%;
+    margin-top: 20px;
+}
+
+#carreras {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#lab-list {
+    width: 100%;
+}
+
+.lab-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#mostrarTodas {
+    color: #fff;
+    background-color: #BC955B;
+    border-color: #BC955B;
+    transition: 0.2s;
+    padding: 6px 15px;
+    border-radius: 4px;
+    margin-left: 4px;
+    text-align: center;
+}
+
+#mostrarTodas:hover {
+    color: #fff;
+    background-color: #9E2343;
+    border-color: #691B32
+}
+
+#busqueda {
+    border-radius: 5px;
+}
+
+#instituciones {
+    width: 35%;
+}
+
+.career-images-carousel {
+    margin-bottom: 10px;
+}
+
+.titleInf {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ventana-flotante .titleInf {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px; /* Ajusta la sangría izquierda según sea necesario */
+}
+
+.ventana-flotante .responsable {
+    margin-left: -20px; /* Ajusta la sangría izquierda para el div del responsable */
+}
+
+.ventana-flotante ul {
+    margin-bottom: 10px;
+}
+
+.ventana-flotante ul li {
+    padding-left: 10px; /* Ajusta la sangría izquierda para los elementos de lista */
+    line-height: 1.6; /* Ajusta el interlineado de los elementos de lista según sea necesario */
+    margin-bottom: 5px;
+}
+
+@media (max-width: 1200px) {
+    .content {
+        margin: 0 30px;
+    }
+
+    #map {
+        width: 100%;
+    }
+
+    #info-box {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    #institution-name {
+        font-size: 90%;
+    }
+
+    .lab-title {
+        font-size: 80%;
+    }
+
+    #instituciones {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    #map {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 400px;
+    }
+
+    .controles {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controles input,
+    .controles select,
+    .controles button {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    #map {
+        height: 300px;
+    }
+
+    .controles input,
+    .controles select,
+    .controles button {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 320px) {
+    .ventana-flotante {
+        width: 90%; /* Utilizar el 90% del ancho de la pantalla en dispositivos móviles */
+    }
+    .ventana-flotante h3 h4{
+        font-size:20px;
+    }
+    .ventana-flotante h3 {
+                        font-weight:bold;
+
+    }
+    
+}
+
+/* Estilos para la ventana flotante */
+.ventana-flotante {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    text-align: center;
+    border: 1px solid #ccc;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-width: 80%;
+    max-height: 90%;
+    overflow-y: auto;
+    border-radius: 10px;
+    -ms-overflow-style: none; /* Para IE y Edge */
+    scrollbar-width: none; /* Para Firefox */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE y Edge */
+    animation: ventana-flotante-entrada 0.3s ease forwards;
+}
+
+/* Definir la animación de entrada */
+@keyframes ventana-flotante-entrada {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilos para la ventana flotante cerrada */
+.ventana-flotante-cerrada {
+    animation: ventana-flotante-salida 0.3s ease forwards;
+}
+
+/* Definir la animación de salida */
+@keyframes ventana-flotante-salida {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.ventana-flotante::-webkit-scrollbar {
+    display: none; /* Ocultar la barra de desplazamiento en Chrome, Safari, y Opera */
+}
+
+.ventana-flotante img {
+    border-radius: 10px;
+}
+
+.ventana-contenido {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    align-items: stretch; /* Hacer que ambos elementos se estiren para igualar la altura */
+    justify-content: space-between; /* Alinear los elementos a los lados */
+    margin-bottom: 20px;
+}
+
+.ventana-izquierda {
+    flex: 1.8; /* Ocupa 2/3 del espacio disponible */
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.ventana-derecha {
+    flex: 1.2; /* Ocupa 1/3 del espacio disponible */
+    text-align: left;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .ventana-flotante {
+        width: 100%;
+        max-height: 95%;
+        padding:40px 20px;
+    }
+
+    .ventana-contenido {
+        flex-direction: column;
+    }
+
+    .ventana-izquierda {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.lab-images-carousel {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btnCerrar {
+    margin-top: 20px;
+    background-color: #BC955B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnCerrar:hover {
+    background-color: #9E2343;
+}
+
+.btnReservar {
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnReservar:hover {
+    background-color: #45a049;
+}

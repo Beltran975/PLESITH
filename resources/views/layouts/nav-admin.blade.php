@@ -24,10 +24,14 @@
         </div>
         <ul>
           <li><a href="/administrador/postulaciones/tabla"><i class="bi bi-person-fill"></i>Usuarios</a></li>
+          @if(Auth::user()->codigo=="adm1")
           <li><a href="/administrador/producciones/table"><i class="bi bi-file-text-fill"></i> Producciones</a></li>
           <li><a href="/administrador/nodos/tabla"><i class="bi bi-folder2"></i> Nodos de colaboración</a></li>
           <li><a href="/administrador/bibliotech/tabla"><i class="bi bi-file-earmark-check-fill"></i> Bibliotech</a></li>
           <li><a href="/administrador/infotech/tabla"><i class="bi bi-exclamation-circle-fill"></i> Infotech</a></li>
+          <li><a href="/administrador/administradores"><i class="bi bi-person-lock"></i> Administradores</a></li> <!-- Nuevo enlace aquí -->
+
+          @endif
         </ul>
         <div class="container text-center">
           <div aria-labelledby="navbarDropdown">

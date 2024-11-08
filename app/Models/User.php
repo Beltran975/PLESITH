@@ -32,6 +32,11 @@ class User extends Authenticatable
         'codigo',
     ];
 
+    public function reservas()
+    {
+        return $this->hasMany(Reserva::class, 'user_id');
+    }
+
     public function postulaciones()
     {
         return $this->hasMany(Postulaciones::class, 'user_id');
@@ -65,5 +70,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(MensajesUsers::class,'id_user_destinatario');
     }
+// En el modelo User
+public function infoPlesith()
+{
+    return $this->hasOne(Informacion::class, 'id_user', 'id');
+}
+
+
+public function informacion()
+{
+    return $this->hasOne(Informacion::class, 'id_user', 'id');
+}
 
 }

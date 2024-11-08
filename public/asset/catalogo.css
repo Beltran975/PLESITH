@@ -1,0 +1,11 @@
+body {
+    margin: 40; /* Ensures there's no default margin */
+}
+
+.header {
+    height: 60px; /* Adjust this value according to your header's height */
+}
+
+.main {
+    margin-top: 60px; /* Same height as the header */
+}

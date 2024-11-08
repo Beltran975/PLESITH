@@ -21,6 +21,7 @@
                     </div>
                     <hr class="hr-gob">
                     <!--Administrador-->
+                    @if(Auth::user()->codigo=="adm1")
                     <div class="card-group modal-body">
                         <!-- postulaciones plesith -->
                         <div class="card home-admin">
@@ -79,6 +80,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </main>
     </body>

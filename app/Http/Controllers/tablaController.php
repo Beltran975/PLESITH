@@ -10,7 +10,11 @@ use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\emailDictamenAprobacion;
 use App\Mail\emailDictamenNegado;
+use App\Mail\ReservationApproved;
+use App\Models\Reserva;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Psy\Readline\Hoa\Console;
 
 class tablaController extends Controller
 {

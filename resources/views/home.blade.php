@@ -488,18 +488,18 @@
                                 </div>
                                 <!-- Autor -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="autores">{{ __('Autor *')}}</label>
+                                    <label class="form-label" for="autores">{{ __('Autor(es) *')}}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <input class="form-control" name="autores" type="text" required value="{{ Auth::user()->name}}">
                                 </div>
                                 <!-- Fecha -->
                                 <div class="col-md-4">
-                                    <label class="form-label" for="year">{{ __('Fecha *')}}</label>
+                                    <label class="form-label" for="year">{{ __('Fecha *') }}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input id="fecha-input" class="form-control" name="year" type="date" min=<?php $hoy = date("Y-m-d");
-                                                                                                                echo $hoy; ?> max="2099" step="1" required />
+                                    <input id="fecha-input" class="form-control" name="year" type="date"
+                                        min="2017-01-01" max="<?php echo date('Y-m-d'); ?>" step="1" required />
                                 </div>
                                 <!-- País -->
                                 <div class="col-md-4">
@@ -513,10 +513,11 @@
                                     <label class="form-label" for="tipo">{{ __('Tipo *') }}</label>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <select class="form-control" name="tipo" required>
+                                    <select class="form-control" name="tipo" id="tipo-select" required onchange="mostrarCamposEspecificos()">
                                         <option name="tipo" value="" disabled selected>Seleccionar</option>
                                         <option name="tipo" value="Libros o capítulos de libro">Libros o capítulos de libro</option>
                                         <option name="tipo" value="Articulos arbitrados y articulos indexados">Artículos arbitrados y artículos indexados</option>
+                                        <option name="tipo" value="Consultoria">Consultoria</option>
                                         <option name="tipo" value="Propiedad intelectual">Propiedad intelectual</option>
                                         <option name="tipo" value="Modelos de utilidad">Modelos de utilidad</option>
                                         <option name="tipo" value="Patentes">Patentes</option>
@@ -528,6 +529,142 @@
                                         <option name="tipo" value="Otro">Otro</option>
                                     </select>
                                 </div>
+
+                                <!-- Campos para Libros, inicialmente ocultos -->
+                                <div id="campos-libros" style="display: none;">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="editorial">{{ __('Editorial *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" name="editorial" id="editorial" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="edicion">{{ __('Edición *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" name="edicion" id="edicion" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="paginas">{{ __('Páginas *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input class="form-control" name="paginas_libro" type="text" id="paginas-input" placeholder="Ej: 2-5, 60-79">
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label for="estado">{{ __('Estado *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" class="form-control" id="estado_libro" name="estado_libro" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="isbn">{{ __('ISBN *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" name="isbn" id="isbn" class="form-control" pattern="\d+" title="Solo números son permitidos" placeholder="Ej: 978-3-16-148410-0" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Campos para Artículos Arbitrados, inicialmente ocultos -->
+                                <div id="campos-articulos" style="display: none;">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="revista">{{ __('Revista *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" name="revista" id="revista" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="volumen">{{ __('Volumen *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" name="volumen" id="volumen" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="paginas">{{ __('Páginas *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input class="form-control" name="paginas" type="text" id="paginas-input" placeholder="Ej: 2-5, 60-79">
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="issn">{{ __('ISSN *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" name="issn" id="issn" class="form-control" pattern="\d+" title="Solo números son permitidos" placeholder="Ej: 1234-5678" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label for="estado">{{ __('Estado *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" class="form-control" id="estado_articulo" name="estado_articulo" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label class="form-label" for="direccion_articulo">{{ __('Dirección del Artículo *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" name="direccion_articulo" id="direccion_articulo" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Campos Consultoria -->
+                                <div id="campos-consultoria" style="display: none;">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label for="alcance_objetivo">{{ __('Alcance / Objetivo *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <textarea class="form-control" id="alcance_objetivo" name="alcance_objetivo" rows="3"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label for="empresa_beneficiaria">{{ __('Empresa Beneficiaria *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" class="form-control" id="empresa_beneficiaria" name="empresa_beneficiaria" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <label for="estado">{{ __('Estado *') }}</label>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" class="form-control" id="estado" name="estado" />
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <!-- Propósito -->
                                 <div class="col-md-4">
                                     <label class="form-label" for="proposito">{{ __('Propósito *')}}</label>
@@ -1149,17 +1286,30 @@
         // Llama a la función para mostrar los países
         mostrarPaises();
     </script>
+
+
     <script>
         // Obtener la fecha actual del sistema
         var fechaActual = new Date();
 
-        // Formatear la fecha en el formato adecuado para el campo de entrada
+        // Formatear la fecha actual en el formato adecuado para el campo de entrada (YYYY-MM-DD)
         var formattedDate = fechaActual.toISOString().split('T')[0];
 
-        // Establecer el valor del campo de entrada como la fecha actual
-        document.getElementById('fecha-input').value = formattedDate;
-        document.getElementById('#fecha-input').value = new Date().toDateInputValue();
+        // Establecer la fecha máxima como la fecha actual
+        var maxDate = formattedDate;
+
+        // Establecer la fecha mínima como el 1 de enero de 2017
+        var minDate = "2017-01-01";
+
+        // Aplicar el rango de fechas al input de tipo fecha
+        var fechaInput = document.getElementById('fecha-input');
+        fechaInput.setAttribute('min', minDate);
+        fechaInput.setAttribute('max', maxDate);
+
+        // Establecer el valor del campo de entrada como la fecha actual (si no se ha seleccionado ninguna fecha)
+        fechaInput.value = formattedDate;
     </script>
+
 
     <script>
         // Seleccionar los elementos relevantes
@@ -1195,6 +1345,43 @@
         });
     </script>
     @endif
+
+
+    <!-- Script de para mostrar campos -->
+    <script>
+        function mostrarCamposEspecificos() {
+            const tipo = document.getElementById("tipo-select").value; // Obtener el valor del tipo seleccionado
+            const camposLibros = document.getElementById("campos-libros"); // Campos de libros
+            const camposArticulos = document.getElementById("campos-articulos"); // Campos de artículos
+            const camposConsultoria = document.getElementById("campos-consultoria"); // Campos de consultoría
+
+            // Mostrar u ocultar campos según el tipo seleccionado
+            if (tipo === "Libros o capítulos de libro") {
+                camposLibros.style.display = "block";
+                camposArticulos.style.display = "none"; // Asegúrate de ocultar los campos de artículos
+                camposConsultoria.style.display = "none"; // Asegúrate de ocultar los campos de consultoría
+            } else if (tipo === "Articulos arbitrados y articulos indexados") {
+                camposArticulos.style.display = "block";
+                camposLibros.style.display = "none"; // Asegúrate de ocultar los campos de libros
+                camposConsultoria.style.display = "none"; // Asegúrate de ocultar los campos de consultoría
+            } else if (tipo === "Consultoria") {
+                camposConsultoria.style.display = "block";
+                camposLibros.style.display = "none"; // Asegúrate de ocultar los campos de libros
+                camposArticulos.style.display = "none"; // Asegúrate de ocultar los campos de artículos
+            } else {
+                camposLibros.style.display = "none";
+                camposArticulos.style.display = "none"; // Ocultar ambos si no se selecciona un tipo válido
+                camposConsultoria.style.display = "none"; // Ocultar los campos de consultoría también
+            }
+        }
+
+        // Llama a la función al cargar la página para establecer el estado inicial
+        document.addEventListener("DOMContentLoaded", function() {
+            mostrarCamposEspecificos();
+        });
+    </script>
+
+
 
 
 </body>

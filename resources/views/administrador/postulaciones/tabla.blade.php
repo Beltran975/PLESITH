@@ -27,9 +27,10 @@
                         <div class="card postulaciones">
                             <div class="card-header postulaciones">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
+                                    <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="home-users" data-bs-toggle="tab" data-bs-target="#home-users-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Usuarios</button>
                                     </li>
+                                    @if(Auth::user()->codigo == 'adm1')
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">Usuarios inhabilitados</button>
                                     </li>
@@ -39,17 +40,32 @@
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Postulaciones revisadas</button>
                                     </li>
-                                    
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="reservan-tab" data-bs-toggle="tab" data-bs-target="#reservan-tab-pane" type="button" role="tab" aria-controls="reservan-tab-pane" aria-selected="false">Reservas no revisadas</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link " id="reservas-tab" data-bs-toggle="tab" data-bs-target="#reservas-tab-pane" type="button" role="tab" aria-controls="reservas-tab-pane" aria-selected="false">Reservas revisadas</button>
+                                    </li>
+                                    @elseif(Auth::user()->archivoCurp="adm2")
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="reservan-tab" data-bs-toggle="tab" data-bs-target="#reservan-tab-pane" type="button" role="tab" aria-controls="reservan-tab-pane" aria-selected="false">Reservas no revisadas</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link " id="reservas-tab" data-bs-toggle="tab" data-bs-target="#reservas-tab-pane" type="button" role="tab" aria-controls="reservas-tab-pane" aria-selected="false">Reservas revisadas</button>
+                                    </li>
+                                    @endif
                                 </ul>
                             </div>
                             <div class="tab-content" id="myTabContent">
                                 <!--General usuarios-->
                                 <div class="tab-pane fade show active" id="home-users-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                    @if(Auth::user()->codigo=="adm1")
                                     <a href="/generate-reporte-users" class="btn btn-success">
                                         Generar reporte
                                         .
                                         <i class="bi bi-download"></i>
                                     </a>
+                                    @endif
                                     <table class="table header">
                                         <thead>
                                             <tr>
@@ -172,6 +188,182 @@
                                                 </td>
                                             </tr>
                                             @include('administrador.postulaciones.modal')
+                                            @endif
+                                            @endforeach
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- reservas no revisadas -->
+                                <div class="tab-pane fade" id="reservan-tab-pane" role="tabpanel" aria-labelledby="reservan-tab" tabindex="0">
+                                    <table class="table header">
+                                        <thead>
+                                            <tr>
+                                                <th class="subtitulo4">Postulante</th>
+                                                <th class="subtitulo1">Área de conocimiento</th>
+                                                <th class="suntitulo2">Institucion laboratorio</th>
+                                                <th class="subtitulo2">Laboratorio reservado</th>
+                                                <th class="subtitulo5">Estatus</th>
+                                                <th class="subtitulo5">Fecha de creación de solicitud</th>
+                                                <th class="subtitulo5">Opciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if(session('success'))
+                                                <div class="alert alert-success">
+                                                    {{ session('success') }}
+                                                </div>
+                                            @endif
+
+                                            @foreach ($users as $user)
+                                            @foreach ($user->reservas as $reserva)
+                                            @if($user->reservas->count() > 0 && (Auth::user()->codigo=="adm1") && ($reserva->estado == 'No revisado' || $reserva->estado == 'Aprobado por el primer administrador'))
+                                            <tr>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user-> programa}}</td>
+                                                <td>{{ $reserva->institucion_laboratorio }}</td>
+                                                <td>{{ $reserva->laboratorio }}</td>
+                                                <td>{{ $reserva->estado}}</td>
+                                                <td>{{ $reserva->created_at->format(' d/m/Y') }}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
+                                                        <ul class="dropdown-menu ">
+                                                            <div class="card">
+                                                                <li><a class="dropdown-item" href="/documentos-users/reservas/{{ $reserva->pdfReserva }}" target="_blank">Ver reserva</a></li>
+                                                                <!--<li><a class="dropdown-item" href="/administrador/reservas/aprobar/{{ $reserva->id }}">Aprobar reserva</a></li>-->
+                                                                <li>
+                                                                    @if($reserva->estado == 'No revisado')
+                                                                        <a href="/administrador/reservas/aprobar/{{ $reserva->id }}" class="dropdown-item">Aprobar reserva</a>
+                                                                    @elseif($reserva->estado == 'Aprobado por el primer administrador')
+                                                                        <a href="/administrador/reservas/aprobar/{{ $reserva->id }}" class="dropdown-item">Aprobar reserva (Segundo Administrador)</a>
+                                                                    @endif
+                                                                </li>                                                                
+                                                                <li><a class="dropdown-item" href="/administrador/reservas/rechazar/{{ $reserva->id }}">Rechazar reserva</a></li>
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @elseif($user->reservas->count() > 0 && ($reserva->estado == 'No revisado' || $reserva->estado == 'Aprobado por el primer administrador') && ($reserva->institucion_laboratorio == Auth::user()->institucion))
+                                            <tr>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user-> programa}}</td>
+                                                <td>{{ $reserva->institucion_laboratorio }}</td>
+                                                <td>{{ $reserva->laboratorio }}</td>
+                                                <td>{{ $reserva->estado}}</td>
+                                                <td>{{ $reserva->created_at->format(' d/m/Y') }}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
+                                                        <ul class="dropdown-menu ">
+                                                            <div class="card">
+                                                                <li><a class="dropdown-item" href="/documentos-users/reservas/{{ $reserva->pdfReserva }}" target="_blank">Ver reserva</a></li>
+                                                                <!--<li><a class="dropdown-item" href="/administrador/reservas/aprobar/{{ $reserva->id }}">Aprobar reserva</a></li>-->
+                                                                <li>
+                                                                    @if($reserva->estado == 'No revisado')
+                                                                        <a href="/administrador/reservas/aprobar/{{ $reserva->id }}" class="dropdown-item">Aprobar reserva</a>
+                                                                    @elseif($reserva->estado == 'Aprobado por el primer administrador')
+                                                                        <a href="/administrador/reservas/aprobar/{{ $reserva->id }}" class="dropdown-item">Aprobar reserva (Segundo Administrador)</a>
+                                                                    @endif
+                                                                </li>                                                                
+                                                                <li><a class="dropdown-item" href="/administrador/reservas/rechazar/{{ $reserva->id }}">Rechazar reserva</a></li>
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @endif
+                                            @endforeach
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <!-- reservas revisadas -->
+                                <div class="tab-pane fade" id="reservas-tab-pane" role="tabpanel" aria-labelledby="reservas-tab" tabindex="0">
+                                    <table class="table header">
+                                        <thead>
+                                            <tr>
+                                                <th class="subtitulo4">Postulante</th>
+                                                <th class="subtitulo1">Área de conocimiento</th>
+                                                <th class="suntitulo2">Institucion laboratorio</th>
+                                                <th class="subtitulo2">Laboratorio reservado</th>
+                                                <th class="subtitulo5">Estatus</th>
+                                                <th class="subtitulo5">Fecha de creación de solicitud</th>
+                                                <th class="subtitulo5">Opciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if(session('success'))
+                                                <div class="alert alert-success">
+                                                    {{ session('success') }}
+                                                </div>
+                                            @endif
+                                            @foreach ($users as $user)
+                                            @foreach ($user->reservas as $reserva)
+                                            @if($user->reservas->count() > 0 && (Auth::user()->codigo=="adm1") && ($reserva->estado == 'Aprobado por ambos administradores' || $reserva->estado == 'Rechazado'))
+                                            <tr>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user-> programa}}</td>
+                                                <td>{{ $reserva->institucion_laboratorio }}</td>
+                                                <td>{{ $reserva->laboratorio }}</td>
+                                                <td>{{ $reserva->estado}}</td>
+                                                <td>{{ $reserva->created_at->format('d/m/Y') }}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
+                                                        <ul class="dropdown-menu">
+                                                            <div class="card">
+                                                            <li><a class="dropdown-item" href="/documentos-users/reservas/{{ $reserva->pdfReserva }}" target="_blank">Ver reserva</a></li>
+                                                            @if($reserva->estado == 'Rechazado')
+                                                            <!--<li><a class="dropdown-item" href="/administrador/reservas/aprobar/{{ $reserva->id }}">Aprobar reserva</a></li>-->
+                                                                <li>
+                                                                @if($reserva->estado == 'Rechazado')
+                                                                    <a href="/administrador/reservas/aprobar/{{ $reserva->id }}" class="dropdown-item">Aprobar reserva</a>
+                                                                @elseif($reserva->estado == 'Aprobado por el primer administrador')
+                                                                    <a href="/administrador/reservas/aprobar/{{ $reserva->id }}" class="dropdown-item">Aprobar reserva (Segundo Administrador)</a>
+                                                                @endif
+                                                                </li>
+                                                            @else
+                                                            <li><a class="dropdown-item" href="/administrador/reservas/rechazar/{{ $reserva->id }}">Rechazar reserva</a></li>
+                                                            @endif
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @elseif($user->reservas->count() > 0 && ($reserva->estado == 'Aprobado por ambos administradores' || $reserva->estado == 'Rechazado') && ($reserva->institucion_laboratorio == Auth::user()->institucion))
+                                            <tr>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user-> programa}}</td>
+                                                <td>{{ $reserva->institucion_laboratorio }}</td>
+                                                <td>{{ $reserva->laboratorio }}</td>
+                                                <td>{{ $reserva->estado}}</td>
+                                                <td>{{ $reserva->created_at->format('d/m/Y') }}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list"></i></button>
+                                                        <ul class="dropdown-menu">
+                                                            <div class="card">
+                                                            <li><a class="dropdown-item" href="/documentos-users/reservas/{{ $reserva->pdfReserva }}" target="_blank">Ver reserva</a></li>
+                                                            @if($reserva->estado == 'Rechazado')
+                                                            <!--<li><a class="dropdown-item" href="/administrador/reservas/aprobar/{{ $reserva->id }}">Aprobar reserva</a></li>-->
+                                                                <li>
+                                                                @if($reserva->estado == 'Rechazado')
+                                                                    <a href="/administrador/reservas/aprobar/{{ $reserva->id }}" class="dropdown-item">Aprobar reserva</a>
+                                                                @elseif($reserva->estado == 'Aprobado por el primer administrador')
+                                                                    <a href="/administrador/reservas/aprobar/{{ $reserva->id }}" class="dropdown-item">Aprobar reserva (Segundo Administrador)</a>
+                                                                @endif
+                                                                </li>
+                                                            @else
+                                                            <li><a class="dropdown-item" href="/administrador/reservas/rechazar/{{ $reserva->id }}">Rechazar reserva</a></li>
+                                                            @endif
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                             @endif
                                             @endforeach
                                             @endforeach

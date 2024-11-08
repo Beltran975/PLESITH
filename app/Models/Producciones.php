@@ -28,4 +28,23 @@ class Producciones extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
+    public function libro()
+{
+    return $this->hasOne(Libros::class, 'produccion_id', 'id_pro');
+}
+
+// Relación con Articulos
+public function articulos()
+{
+    return $this->hasMany(Articulo::class, 'produccion_id', 'id_pro');
+}
+
+
+ // Relación con la consultoria
+ public function consultoria()
+ {
+     return $this->hasOne(Consultoria::class, 'produccion_id', 'id_pro');
+ }
 }
